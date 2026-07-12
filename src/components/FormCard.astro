@@ -1,0 +1,89 @@
+---
+// Card do formulário de agendamento (reutilizável: hero + rodapé).
+// idPrefix evita IDs duplicados quando há dois formulários na mesma página.
+// action="{FORM_ENDPOINT}" é placeholder (trocar pelo endpoint real).
+interface Props { idPrefix?: string; title?: string }
+const { idPrefix = 'f', title } = Astro.props;
+const id = (s: string) => `${idPrefix}-${s}`;
+---
+<form class="form-card" action="{FORM_ENDPOINT}" method="POST" novalidate>
+  {title && <p class="form-card__title">{title}</p>}
+  <div class="row">
+    <div class="field">
+      <label for={id('nome')}>Nome *</label>
+      <input id={id('nome')} name="nome" required autocomplete="name" placeholder="Seu nome completo" />
+    </div>
+    <div class="field">
+      <label for={id('tel')}>Telefone *</label>
+      <input id={id('tel')} name="telefone" type="tel" inputmode="tel" required
+             data-mask="phone" placeholder="(62) 99999-9999" autocomplete="tel" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label for={id('email')}>E-mail *</label>
+      <input id={id('email')} name="email" type="email" required autocomplete="email" placeholder="voce@email.com" />
+    </div>
+    <div class="field">
+      <label for={id('modal')}>Modalidade</label>
+      <select id={id('modal')} name="modalidade">
+        <option>Online (telenutrição)</option>
+        <option>Presencial em Goiânia</option>
+      </select>
+    </div>
+  </div>
+  <label class="consent">
+    <input type="checkbox" name="consentimento" required />
+    <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="/politica-de-privacidade">Política de Privacidade</a> (LGPD).</span>
+  </label>
+  <button type="submit" class="submit">Enviar e agendar</button>
+  <p class="note">Campos com * são obrigatórios. Você receberá retorno para confirmar o agendamento.</p>
+</form>
+
+<script>
+  // Máscara de telefone BR: (XX) XXXX-XXXX (fixo) / (XX) XXXXX-XXXX (celular)
+  document.querySelectorAll('input[data-mask="phone"]').forEach((el) => {
+    const input = el as HTMLInputElement;
+    const fmt = (raw: string) => {
+      const d = raw.replace(/\D/g, '').slice(0, 11);
+      if (!d) return '';
+      let out = '(' + d.slice(0, 2);
+      if (d.length >= 2) out += ') ';
+      if (d.length <= 6) return out + d.slice(2);
+      if (d.length <= 10) return out + d.slice(2, 6) + '-' + d.slice(6);
+      return out + d.slice(2, 7) + '-' + d.slice(7);
+    };
+    input.addEventListener('input', () => { input.value = fmt(input.value); });
+  });
+</script>
+
+<style>
+  .form-card {
+    background: #fff; border-radius: var(--r-lg); padding: clamp(20px, 3vw, 30px);
+    box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 14px;
+    container-type: inline-size; /* campos respondem à largura do card, não da tela */
+  }
+  .form-card__title { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin: 0 0 4px; }
+  .row { display: grid; gap: 14px; }
+  /* 2 colunas só quando o card tem largura suficiente (evita aperto no hero estreito) */
+  @container (min-width: 420px) { .row { grid-template-columns: 1fr 1fr; } }
+  .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .field label { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+  .field input, .field select {
+    font-family: var(--sans); font-size: .95rem; color: var(--ink); padding: 12px 14px;
+    border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: #fff; width: 100%;
+  }
+  .field input::placeholder { color: var(--ink-faint); }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--sage-500); box-shadow: 0 0 0 3px var(--sage-100); }
+  .field input:user-invalid { border-color: var(--clay-400); }
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .82rem; color: var(--ink-soft); }
+  .consent input { margin-top: 3px; accent-color: var(--sage-600); }
+  .consent a { color: var(--sage-700); text-decoration: underline; }
+  .submit {
+    margin-top: 4px; background: var(--clay-400); color: #fff; border: 0; border-radius: 999px;
+    padding: 14px 22px; font-weight: 600; font-family: var(--sans); font-size: .95rem; cursor: pointer;
+    transition: background .16s ease, transform .16s ease;
+  }
+  .submit:hover { background: var(--clay-500); transform: translateY(-1px); }
+  .note { font-size: .78rem; color: var(--ink-faint); margin: 0; }
+</style>

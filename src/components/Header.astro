@@ -1,0 +1,91 @@
+---
+import Button from './Button.astro';
+import { NAV, SITE } from '../lib/site';
+interface Props { overHero?: boolean }
+const { overHero = false } = Astro.props;
+const current = Astro.url.pathname;
+---
+<header class:list={['site-header', overHero && 'over-hero']} data-header>
+ <div class="container bar">
+ <a href="/" class="brand" aria-label={`${SITE.name}, início`}>
+ <img src="/logo-aca.png" alt="" width="36" height="36" class="brand__mark" />
+ <span class="brand__wm"><em>Ana&nbsp;Clara</em> <b>Nutri</b></span>
+ </a>
+
+ <nav class="nav" aria-label="Navegação principal">
+ {NAV.map((item) => (
+ <a href={item.href}
+ class:list={['nav__link', current === item.href && 'is-active']}
+ aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
+ ))}
+ </nav>
+
+ <div class="cta"><Button href="/contato" variant="clay" size="sm">Agendar</Button></div>
+
+ <button class="burger" aria-label="Abrir menu" aria-expanded="false" data-burger>
+ <span></span><span></span><span></span>
+ </button>
+ </div>
+
+ <nav class="mobile-nav" data-mobile-nav aria-label="Menu">
+ {NAV.map((item) => <a href={item.href} class="mobile-nav__link">{item.label}</a>)}
+ <Button href="/contato" variant="clay">Agendar consulta</Button>
+ </nav>
+</header>
+
+<script>
+ const burger = document.querySelector('[data-burger]');
+ const menu = document.querySelector('[data-mobile-nav]');
+ burger?.addEventListener('click', () => {
+ const open = menu?.classList.toggle('open');
+ burger.setAttribute('aria-expanded', String(!!open));
+ });
+</script>
+
+<style>
+ .site-header {
+ position: sticky; top: 0; z-index: 50;
+ background: var(--paper); border-bottom: 1px solid var(--line);
+ transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+ }
+ /* sobre o hero full-bleed: transparente até rolar */
+ .site-header.over-hero { position: fixed; left: 0; right: 0; background: transparent; border-color: transparent; }
+ .site-header.over-hero :global(.brand__wm),
+ .site-header.over-hero .nav__link { color: #fff; }
+ .site-header.over-hero.is-solid {
+ position: fixed; background: var(--paper); border-color: var(--line); box-shadow: var(--shadow-sm);
+ }
+ .site-header.over-hero.is-solid :global(.brand__wm),
+ .site-header.over-hero.is-solid .nav__link { color: var(--ink); }
+ .site-header.is-solid { box-shadow: var(--shadow-sm); }
+
+ .bar { display: flex; align-items: center; gap: 18px; height: var(--header-h); }
+ .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+ .brand__mark { border-radius: 8px; }
+ .brand__wm { font-family: var(--serif); font-size: 1.25rem; line-height: 1; color: var(--ink); }
+ .brand__wm em { font-style: italic; }
+ .brand__wm b { font-weight: 400; }
+
+ .nav { display: none; gap: 4px; margin-left: auto; }
+ .nav__link { font-size: .9rem; font-weight: 500; color: var(--ink-soft); padding: 8px 10px; border-radius: 8px; text-decoration: none; }
+ .nav__link:hover { background: var(--sage-50); color: var(--sage-700); text-decoration: none; }
+ .nav__link.is-active { color: var(--sage-700); }
+ .cta { display: none; }
+
+ .burger { margin-left: auto; display: inline-flex; flex-direction: column; gap: 5px; background: none; border: 0; padding: 8px; cursor: pointer; }
+ .burger span { width: 22px; height: 2px; background: currentColor; border-radius: 2px; }
+ .over-hero .burger { color: #fff; }
+ .over-hero.is-solid .burger { color: var(--ink); }
+
+ .mobile-nav { display: none; flex-direction: column; gap: 6px; padding: 12px 20px 20px; background: var(--paper); border-bottom: 1px solid var(--line); }
+ .mobile-nav.open { display: flex; }
+ .mobile-nav__link { padding: 10px; border-radius: 8px; color: var(--ink); font-weight: 500; }
+ .mobile-nav__link:hover { background: var(--sage-50); text-decoration: none; }
+
+ @media (min-width: 960px) {
+ .nav { display: flex; }
+ .cta { display: block; }
+ .burger { display: none; }
+ .mobile-nav { display: none !important; }
+ }
+</style>

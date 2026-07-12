@@ -1,0 +1,56 @@
+/* ============================================================
+   ANA CLARA NUTRI — Design Tokens (portado do Design Book v1.0)
+   ============================================================ */
+:root {
+  /* ---- Neutrals / paper ---- */
+  --paper: #FAF8F3;
+  --paper-2: #F4EFE5;
+  --sand-50: #F3EEE4;
+  --sand-100: #E9E0D0;
+  --sand-200: #DDD1BC;
+  --sand-300: #CFC0A4;
+  --line: #E4DBCB;
+  --line-strong: #D2C6B0;
+
+  /* ---- Sage green scale ---- */
+  --sage-50: #EBF1EA;
+  --sage-100: #D7E2D4;
+  --sage-200: #BBD0B6;
+  --sage-300: #A3C29D;
+  --sage-400: #8FB99B;  /* PRIMARY */
+  --sage-500: #6F9C7C;
+  --sage-600: #557A60;
+  --sage-700: #3E5641;  /* forest */
+  --sage-800: #2F4233;
+  --sage-900: #223126;
+
+  /* ---- Clay accent (≤10% da tela) ---- */
+  --clay-200: #EBC9B6;
+  --clay-300: #DCAA8E;
+  --clay-400: #C98A6B;
+  --clay-500: #B5714F;
+
+  /* ---- Butter (chart only) ---- */
+  --butter: #E7CE8F;
+
+  /* ---- Ink ---- */
+  --ink: #232722;
+  --ink-soft: #5C6157;
+  --ink-faint: #8B9086;
+
+  /* ---- Type ---- */
+  --serif: "Newsreader Variable", Georgia, serif;
+  --sans: "Hanken Grotesk Variable", -apple-system, system-ui, sans-serif;
+  --mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  /* ---- Radii / shadow ---- */
+  --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-xl: 30px;
+  --shadow-sm: 0 1px 2px rgba(46,40,30,.04), 0 2px 8px rgba(46,40,30,.05);
+  --shadow-md: 0 4px 14px rgba(46,40,30,.06), 0 14px 40px rgba(46,40,30,.07);
+  --shadow-lg: 0 10px 30px rgba(46,40,30,.08), 0 30px 80px rgba(46,40,30,.10);
+
+  /* ---- Layout ---- */
+  --maxw: 1100px;
+  --maxw-prose: 720px;
+  --header-h: 72px;
+}

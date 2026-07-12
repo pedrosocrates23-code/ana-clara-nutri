@@ -1,0 +1,82 @@
+---
+import '@fontsource-variable/hanken-grotesk';
+import '@fontsource-variable/newsreader';
+import '@fontsource-variable/newsreader/wght-italic.css';
+import '@fontsource-variable/jetbrains-mono';
+// woff2 das fontes críticas above-the-fold (preload p/ CWV)
+import hankenWoff2 from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
+import newsreaderWoff2 from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  graph?: object;          // @graph JSON-LD da página (buildGraph)
+  overHero?: boolean;      // header transparente sobre hero full-bleed
+  ogImage?: string;
+}
+const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage } = Astro.props;
+const canonical = new URL(path, SITE.url).href;
+const fullTitle = title.includes(SITE.name) ? title : `${title}`;
+const img = ogImage ?? '/og-default.jpg';
+---
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href={hankenWoff2} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={newsreaderWoff2} as="font" type="font/woff2" crossorigin />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(img, SITE.url).href} />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  {graph && (
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+  )}
+</head>
+<body>
+  <Header overHero={overHero} />
+  <main id="conteudo">
+    <slot />
+  </main>
+  <Footer />
+
+  <!-- Header sólido ao rolar + reveal on scroll (ilhas mínimas) -->
+  <script>
+    const header = document.querySelector('[data-header]');
+    const onScroll = () => header?.classList.toggle('is-solid', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+    }
+  </script>
+</body>
+</html>

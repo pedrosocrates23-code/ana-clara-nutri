@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../lib/site';
+import { buildGraph } from '../lib/schema/shared';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Contato', href: '/contato' }];
+const graph = buildGraph({ path: '/contato', title: 'Agendar consulta | Ana Clara Nutri', mainEntity: 'business', breadcrumb });
+---
+<BaseLayout
+ title="Agendar consulta | Ana Clara Nutri"
+ description="Agende sua consulta nutricional com Ana Clara, online (telenutrição) para todo o Brasil ou presencial em Goiânia. Atendimento particular."
+ path="/contato" graph={graph}>
+ <PageHero kicker="Agendamento" title="Vamos cuidar da sua alimentação?"
+ sub="Atendimento particular, online para todo o Brasil e presencial em Goiânia. Preencha o formulário ou fale pelo WhatsApp." breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container grid grid--2 contato">
+ <form class="card form" action="{FORM_ENDPOINT}" method="POST">
+ <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" required /></div>
+ <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required /></div>
+ <div class="field"><label for="tel">Telefone / WhatsApp</label><input id="tel" name="telefone" required /></div>
+ <div class="field"><label for="modal">Modalidade</label>
+ <select id="modal" name="modalidade">
+ <option>Online (telenutrição)</option>
+ <option>Presencial em Goiânia</option>
+ </select>
+ </div>
+ <div class="field"><label for="msg">Mensagem (opcional)</label><textarea id="msg" name="mensagem" rows="4"></textarea></div>
+ <label class="consent">
+ <input type="checkbox" name="consentimento" required />
+ <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="/politica-de-privacidade">Política de Privacidade</a> (LGPD).</span>
+ </label>
+ <button type="submit" class="btn btn--clay">Enviar e agendar</button>
+ <p class="note">O envio deste formulário não inicia a consulta. Você receberá retorno para confirmar o agendamento.</p>
+ </form>
+
+ <aside class="info">
+ <h2>Outras formas de falar comigo</h2>
+ <p><strong>WhatsApp / Telefone:</strong><br />{SITE.phone}</p>
+ <p><strong>Instagram:</strong><br />{SITE.social.instagram}</p>
+ <p><strong>Atendimento presencial:</strong><br />{SITE.address.street}, Goiânia - GO</p>
+ <p class="muted">Atendimento exclusivamente particular (sem convênios). {SITE.crn}.</p>
+ </aside>
+ </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .contato { align-items: start; }
+ .form { display: flex; flex-direction: column; gap: 14px; }
+ .field { display: flex; flex-direction: column; gap: 6px; }
+ .field label { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+ .field input, .field select, .field textarea {
+ font-family: var(--sans); font-size: .95rem; color: var(--ink); padding: 11px 14px;
+ border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: #fff; width: 100%;
+ }
+ .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage-500); box-shadow: 0 0 0 3px var(--sage-100); }
+ .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .85rem; color: var(--ink-soft); }
+ .consent input { margin-top: 3px; }
+ .btn--clay { background: var(--clay-400); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; font-weight: 600; cursor: pointer; font-family: var(--sans); }
+ .btn--clay:hover { background: var(--clay-500); }
+ .note { font-size: .8rem; color: var(--ink-faint); margin: 0; }
+ .info h2 { margin-top: 0; }
+ .info p { color: var(--ink-soft); }
+ .muted { color: var(--ink-faint); font-size: .85rem; }
+</style>

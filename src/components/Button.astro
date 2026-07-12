@@ -1,0 +1,36 @@
+---
+interface Props {
+  href: string;
+  variant?: 'primary' | 'clay' | 'sage' | 'outline' | 'ghost';
+  size?: 'md' | 'sm';
+  class?: string;
+}
+const { href, variant = 'primary', size = 'md', class: cls = '' } = Astro.props;
+---
+<a href={href} class:list={['btn', `btn--${variant}`, size === 'sm' && 'btn--sm', cls]}>
+  <slot />
+</a>
+
+<style>
+  .btn {
+    font-family: var(--sans); font-weight: 600; font-size: .9rem;
+    padding: 12px 22px; border-radius: 999px; border: 1px solid transparent;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 9px;
+    line-height: 1; text-decoration: none; transition: transform .16s ease, background .16s ease, border-color .16s ease;
+    position: relative; overflow: hidden;
+  }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn:active { transform: translateY(1px) scale(.985); }
+  .btn--sm { padding: 8px 15px; font-size: .8rem; }
+
+  .btn--primary { background: var(--sage-700); color: #fff; }
+  .btn--primary:hover { background: var(--sage-800); }
+  .btn--clay { background: var(--clay-400); color: #fff; }
+  .btn--clay:hover { background: var(--clay-500); }
+  .btn--sage { background: var(--sage-400); color: var(--sage-900); }
+  .btn--sage:hover { background: var(--sage-300); }
+  .btn--outline { background: transparent; color: var(--sage-700); border-color: var(--line-strong); }
+  .btn--outline:hover { border-color: var(--sage-500); background: var(--sage-50); }
+  .btn--ghost { background: transparent; color: var(--ink-soft); }
+  .btn--ghost:hover { background: var(--sand-50); }
+</style>

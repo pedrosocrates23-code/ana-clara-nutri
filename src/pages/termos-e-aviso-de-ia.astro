@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../lib/site';
+import { buildGraph } from '../lib/schema/shared';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Termos e Aviso de IA', href: '/termos-e-aviso-de-ia' }];
+const graph = buildGraph({ path: '/termos-e-aviso-de-ia', title: 'Termos de Uso e Aviso de IA | Ana Clara Nutri', breadcrumb });
+---
+<BaseLayout
+  title="Termos de Uso e Aviso de IA | Ana Clara Nutri"
+  description="Termos de uso do site e aviso sobre o uso de ferramentas de inteligência artificial na produção de conteúdo."
+  path="/termos-e-aviso-de-ia" graph={graph}>
+  <PageHero kicker="Legal" title="Termos de Uso e Aviso de IA" breadcrumb={breadcrumb} />
+
+  <section class="section">
+    <div class="container prose reveal">
+      <p><em>Este documento é um modelo inicial e deve ser revisado por um responsável antes da publicação definitiva.</em></p>
+
+      <h2>Termos de uso</h2>
+      <p>O conteúdo deste site tem caráter informativo e educativo e não substitui uma consulta nutricional individual nem orientação médica. Nenhuma informação aqui deve ser interpretada como promessa de resultado.</p>
+      <p>As marcas, textos e imagens são de uso de {SITE.legalName} ({SITE.crn}), salvo indicação em contrário.</p>
+
+      <h2>Conteúdo educativo, não prescrição</h2>
+      <p>Artigos, receitas e materiais do site são gerais e não constituem prescrição dietética individualizada. Cada caso exige avaliação própria em consulta.</p>
+
+      <h2>Conformidade profissional</h2>
+      <p>Este site segue o Código de Ética do Nutricionista (CFN): sem promessa de resultado, sem comparações de "antes e depois", sem indicação de marcas de alimentos ou suplementos e com identificação profissional visível.</p>
+    </div>
+  </section>
+</BaseLayout>

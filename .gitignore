@@ -1,0 +1,12 @@
+# build / deps
+node_modules/
+dist/
+.astro/
+
+# env / system
+.env
+.env.production
+.DS_Store
+
+# logs
+npm-debug.log*

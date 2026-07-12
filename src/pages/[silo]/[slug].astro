@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import ArticlePage from '../../components/ArticlePage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts
+    .filter((p) => p.data.silo !== 'blog')
+    .map((entry) => ({ params: { silo: entry.data.silo, slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+---
+<ArticlePage entry={entry} />

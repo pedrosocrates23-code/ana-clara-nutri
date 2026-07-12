@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Button from '../../components/Button.astro';
+import { buildGraph } from '../../lib/schema/shared';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Receitas', href: '/receitas/' }];
+const graph = buildGraph({ path: '/receitas/', title: 'Receitas | Ana Clara Nutri', type: 'CollectionPage', breadcrumb });
+---
+<BaseLayout
+ title="Receitas | Ana Clara Nutri"
+ description="Receitas práticas e equilibradas para o dia a dia, com ingredientes acessíveis e sem complicação."
+ path="/receitas/" graph={graph}>
+ <PageHero kicker="Conteúdo" title="Receitas para o dia a dia"
+ sub="Ideias práticas para comer bem sem complicar a rotina, com ingredientes acessíveis." breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container reveal">
+ <p class="lead">Estou preparando uma seção de receitas com carinho, práticas, equilibradas e fáceis de encaixar na sua rotina. Em breve, novas receitas por aqui.</p>
+ <p>Enquanto isso, que tal um acompanhamento individual para uma alimentação que faça sentido para você?</p>
+ <Button href="/contato" variant="clay">Agendar consulta</Button>
+ </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .lead { font-size: 1.1rem; color: var(--ink-soft); max-width: var(--maxw-prose); }
+</style>

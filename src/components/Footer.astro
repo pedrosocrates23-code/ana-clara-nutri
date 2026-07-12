@@ -1,0 +1,59 @@
+---
+import { SITE, NAV, SILOS } from '../lib/site';
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="container cols">
+    <div class="col">
+      <div class="brand"><em>Ana&nbsp;Clara</em> <b>Nutri</b></div>
+      <p class="muted">Nutrição com abordagem comportamental e educacional. Atendimento particular, online e presencial em Goiânia.</p>
+    </div>
+
+    <nav class="col" aria-label="Navegação">
+      <h3 class="col__title">Navegar</h3>
+      {NAV.map((i) => <a href={i.href}>{i.label}</a>)}
+      <a href="/contato">Contato</a>
+    </nav>
+
+    <nav class="col" aria-label="Áreas de atuação">
+      <h3 class="col__title">Áreas de atuação</h3>
+      {SILOS.map((s) => <a href={s.href}>{s.label}</a>)}
+    </nav>
+
+    <div class="col">
+      <h3 class="col__title">Profissional</h3>
+      <p class="muted">
+        {SITE.legalName}<br />
+        {SITE.crn}<br />
+        {SITE.address.street}, {SITE.address.locality} - {SITE.address.region}<br />
+        {SITE.phone}
+      </p>
+      <div class="legal">
+        <a href="/politica-de-privacidade">Política de Privacidade / LGPD</a>
+        <a href="/termos-e-aviso-de-ia">Termos e Aviso de IA</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container bottom">
+    <span>© {year} {SITE.legalName} · {SITE.crn}</span>
+    <span class="muted">Atendimento exclusivamente particular.</span>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--sage-900); color: var(--sand-100); padding-block: 48px 24px; }
+  .cols { display: grid; gap: 28px; }
+  @media (min-width: 720px) { .cols { grid-template-columns: 1.4fr 1fr 1.2fr 1.4fr; } }
+  .brand { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 10px; }
+  .brand em { font-style: italic; } .brand b { font-weight: 400; }
+  .col__title { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-300); margin: 0 0 12px; }
+  .col a { display: block; color: var(--sand-100); font-size: .9rem; padding: 4px 0; text-decoration: none; }
+  .col a:hover { color: #fff; text-decoration: underline; }
+  .muted { color: var(--sage-200); font-size: .88rem; line-height: 1.7; }
+  .legal { margin-top: 14px; }
+  .legal a { font-size: .82rem; color: var(--sage-300); }
+  .bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
+    margin-top: 32px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1);
+    font-family: var(--mono); font-size: .72rem; color: var(--sage-300); }
+</style>

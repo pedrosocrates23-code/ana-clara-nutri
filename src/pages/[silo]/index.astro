@@ -1,0 +1,76 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Faq from '../../components/Faq.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import Button from '../../components/Button.astro';
+import { buildGraph } from '../../lib/schema/shared';
+
+export async function getStaticPaths() {
+ const silos = await getCollection('silos');
+ return silos.map((entry) => ({ params: { silo: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const path = `/${entry.id}/`;
+
+const breadcrumb = [
+ { name: 'Início', href: '/' },
+ { name: 'Áreas de atuação', href: '/#atendimento' },
+ { name: data.title, href: path },
+];
+
+const graph = buildGraph({
+ path, title: data.metaTitle, type: 'CollectionPage',
+ mainEntity: undefined, faqs: data.faqs, breadcrumb,
+});
+---
+<BaseLayout title={data.metaTitle} description={data.description} path={path} graph={graph}>
+ <PageHero kicker={data.kicker} title={data.h1} sub={data.sub}
+ cta={{ label: 'Agendar consulta', href: '/contato' }} breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container prose reveal">
+ <Content />
+ </div>
+ </section>
+
+ {data.spokes.length > 0 && (
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Aprofunde no tema</span><h2>O que você vai encontrar</h2></div>
+ <ul class="spokes">
+ {data.spokes.map((s) => <li>{s}</li>)}
+ </ul>
+ <p class="muted">Conteúdos em produção, em breve publicados neste silo.</p>
+ </div>
+ </section>
+ )}
+
+ {data.faqs.length > 0 && <Faq items={data.faqs} />}
+
+ <section class="section cta-final">
+ <div class="container reveal">
+ <h2>Quer trabalhar esse tema?</h2>
+ <p>Agende sua consulta, atendimento online para todo o Brasil ou presencial em Goiânia.</p>
+ <div class="cta-row">
+ <Button href="/contato" variant="clay">Agendar consulta</Button>
+ <Button href="/nutricionista-online/" variant="outline" size="sm">Atendimento online</Button>
+ <Button href="/nutricionista-em-goiania/" variant="outline" size="sm">Atendimento em Goiânia</Button>
+ </div>
+ <div class="container author-wrap"><AuthorBox /></div>
+ </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .spokes { list-style: none; padding: 0; display: grid; gap: 10px; max-width: var(--maxw-prose); }
+ .spokes li { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 18px; color: var(--ink); font-weight: 500; }
+ .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 14px; }
+ .cta-final { text-align: center; }
+ .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+ .author-wrap { max-width: var(--maxw-prose); text-align: left; margin-top: 8px; }
+</style>

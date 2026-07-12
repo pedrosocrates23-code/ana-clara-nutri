@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Faq from '../../components/Faq.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import Button from '../../components/Button.astro';
+import { SILOS, SITE } from '../../lib/site';
+import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
+
+const faqs = [
+ { q: 'A telenutrição funciona?', a: 'Sim. A consulta online permite uma avaliação completa e um plano individualizado. O que muda é o formato, não o cuidado. Os resultados dependem de cada pessoa e do processo, por isso não trabalho com promessas.' },
+ { q: 'Como recebo meu plano alimentar?', a: 'Após a consulta, o seu plano é enviado de forma digital, junto com as orientações que combinarmos.' },
+ { q: 'A Ana atende a minha cidade?', a: 'Sim. O atendimento online é por telenutrição e atende qualquer cidade do Brasil.' },
+ { q: 'Como é a videoconsulta?', a: 'É feita por vídeo, em horário agendado. Você recebe o link e as orientações com antecedência.' },
+ { q: 'O atendimento é particular?', a: 'Sim, somente particular. Não trabalho com convênios.' },
+];
+const path = '/nutricionista-online/';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Atendimento Online', href: path }];
+const serviceNode = {
+ '@type': 'Service',
+ '@id': `${SITE.url}${path}#service`,
+ name: 'Nutricionista online (telenutrição)',
+ serviceType: 'Telenutrição, consulta nutricional online',
+ provider: { '@id': SCHEMA_IDS.person },
+ areaServed: { '@type': 'Country', name: 'Brasil' },
+ offers: { '@type': 'Offer', price: SITE.priceOnline, priceCurrency: 'BRL', category: 'Atendimento particular' },
+ isPartOf: { '@id': `${SITE.url}${path}#webpage` },
+};
+const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) | Ana Clara Nutri', faqs, breadcrumb, extraNodes: [serviceNode] });
+---
+<BaseLayout
+ title="Nutricionista Online (Telenutrição) | Ana Clara Nutri"
+ description="Consulta nutricional online por telenutrição para todo o Brasil, com abordagem comportamental. Atendimento particular. Veja como funciona e agende."
+ path={path} graph={graph}>
+ <PageHero kicker="Telenutrição · todo o Brasil"
+ title="Nutricionista online: atendimento por telenutrição para todo o Brasil"
+ sub="Onde você estiver, um acompanhamento próximo, baseado em evidências e sem dietas restritivas."
+ cta={{ label: 'Agendar consulta online', href: '/contato' }} breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container prose reveal">
+ <h2>O atendimento online é para você?</h2>
+ <p>Se a sua rotina é corrida, se você mora longe de Goiânia ou simplesmente prefere a praticidade de ser atendida em casa, a telenutrição resolve. O cuidado é exatamente o mesmo do presencial: individual, com escuta de verdade e um plano construído para a sua realidade.</p>
+
+ <h2>Como funciona a telenutrição</h2>
+ <p>A telenutrição é o atendimento nutricional feito por videoconsulta, regulamentado para nutricionistas. Funciona em quatro passos:</p>
+ <p><strong>1. Agendamento.</strong> Você escolhe o horário e recebe o link da consulta.</p>
+ <p><strong>2. Consentimento.</strong> Antes da primeira consulta, você assina um termo de consentimento (TCLE), com todas as informações sobre como o atendimento online funciona.</p>
+ <p><strong>3. Consulta.</strong> Conversamos por vídeo, com calma. Faço a sua avaliação completa e entendo a sua rotina.</p>
+ <p><strong>4. Plano e acompanhamento.</strong> Você recebe o seu plano de forma digital e seguimos com retornos para ajustar o caminho. Tudo com sigilo e tratamento dos seus dados conforme a LGPD.</p>
+
+ <h2>Investimento</h2>
+ <p>O atendimento é <strong>particular</strong>, com valores informados de forma transparente antes do agendamento. A consulta online inclui avaliação nutricional completa, plano alimentar individualizado e o acompanhamento combinado. Sem pacotes confusos e sem letras miúdas.</p>
+ </div>
+ </section>
+
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Áreas</span><h2>O que posso acompanhar <em>online</em></h2></div>
+ <div class="areas">{SILOS.map((s) => <a class="area" href={s.href}>{s.label} <span>→</span></a>)}</div>
+ </div>
+ </section>
+
+ <Faq items={faqs} />
+
+ <section class="section cta-final">
+ <div class="container reveal">
+ <h2>Pronta para começar?</h2>
+ <p>Agende a sua consulta e cuide da sua alimentação de onde estiver.</p>
+ <Button href="/contato" variant="clay">Agendar consulta online</Button>
+ <div class="aw"><AuthorBox /></div>
+ </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .areas { display: grid; gap: 10px; }
+ @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
+ @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
+ .area { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff;
+ border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none; }
+ .area:hover { border-color: var(--sage-300); box-shadow: var(--shadow-sm); text-decoration: none; }
+ .area span { color: var(--sage-500); }
+ .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
+ .aw { max-width: var(--maxw-prose); margin: 8px auto 0; text-align: left; }
+</style>

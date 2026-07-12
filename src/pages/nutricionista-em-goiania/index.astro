@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Faq from '../../components/Faq.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import Button from '../../components/Button.astro';
+import { SILOS, SITE } from '../../lib/site';
+import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
+
+const faqs = [
+ { q: 'Onde fica o consultório?', a: `No ${SITE.address.street}, em Goiânia, em um ponto de fácil acesso.` },
+ { q: 'Qual o valor da consulta?', a: 'O atendimento é particular; o valor é informado de forma transparente antes do agendamento.' },
+ { q: 'Quais os horários de atendimento?', a: 'O agendamento é feito pelo site ou WhatsApp, em horários combinados.' },
+ { q: 'Atende quais regiões?', a: 'Goiânia e região, incluindo Aparecida de Goiânia.' },
+ { q: 'Atende por convênio?', a: 'Não. O atendimento é exclusivamente particular.' },
+ { q: 'Também faz atendimento online?', a: 'Sim. Se preferir a praticidade, há a opção de consulta online por telenutrição para todo o Brasil.' },
+];
+const path = '/nutricionista-em-goiania/';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Atendimento Presencial', href: path }];
+const offerNode = {
+ '@type': 'Offer',
+ '@id': `${SITE.url}${path}#offer`,
+ itemOffered: { '@id': SCHEMA_IDS.business },
+ price: SITE.pricePresencial, priceCurrency: 'BRL', category: 'Atendimento particular',
+};
+const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrades', mainEntity: 'business', faqs, breadcrumb, extraNodes: [offerNode] });
+---
+<BaseLayout
+ title="Nutricionista em Goiânia | Ana Clara Andrades"
+ description="Nutricionista em Goiânia com atendimento presencial e abordagem comportamental. Atendimento particular. Agende sua consulta."
+ path={path} graph={graph}>
+ <PageHero kicker="Presencial · Goiânia"
+ title="Nutricionista em Goiânia, atendimento presencial"
+ sub="Consultório acolhedor em Goiânia, com um cuidado próximo e baseado em evidências."
+ cta={{ label: 'Agendar consulta', href: '/contato' }} breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container prose reveal">
+ <h2>Onde fica o consultório</h2>
+ <p>Atendo presencialmente em Goiânia, em um ponto de fácil acesso, pensado para receber você com tranquilidade.</p>
+ <ul>
+ <li><strong>Endereço:</strong> {SITE.address.street}, {SITE.address.locality} - {SITE.address.region}</li>
+ <li><strong>Telefone/WhatsApp:</strong> {SITE.phone}</li>
+ </ul>
+ <p class="muted">Mapa interativo entra aqui quando o endereço for confirmado.</p>
+
+ <h2>Como funciona o atendimento presencial</h2>
+ <p><strong>1. Agendamento.</strong> Você reserva o seu horário pelo site ou WhatsApp.</p>
+ <p><strong>2. Primeira consulta.</strong> No consultório, faço uma avaliação completa e uma conversa de escuta sobre a sua rotina, o seu histórico e os seus objetivos.</p>
+ <p><strong>3. Acompanhamento.</strong> Construímos o seu plano e seguimos com retornos para ajustar o caminho ao longo do tempo, sempre respeitando o seu ritmo.</p>
+ <p>Para a primeira consulta, leve seus exames recentes, se tiver, e a lista de medicamentos ou suplementos que você usa. O mais importante você já tem: a sua história.</p>
+
+ <h2>Investimento</h2>
+ <p>O atendimento é <strong>particular</strong> e inclui avaliação nutricional completa, plano alimentar individualizado e o acompanhamento combinado. Valores informados com transparência, sem surpresas.</p>
+
+ <h2>Atendimento em Goiânia e região</h2>
+ <p>O consultório fica em Goiânia, com fácil acesso para quem vem de diferentes regiões da cidade e também de Aparecida de Goiânia. O objetivo é tornar esse cuidado simples de encaixar na sua rotina, com horários flexíveis e um espaço acolhedor.</p>
+ </div>
+ </section>
+
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Áreas</span><h2>Em que posso te <em>acompanhar</em></h2></div>
+ <div class="areas">{SILOS.map((s) => <a class="area" href={s.href}>{s.label} <span>→</span></a>)}</div>
+ <p class="muted">Não atendo gestantes e crianças.</p>
+ </div>
+ </section>
+
+ <Faq items={faqs} />
+
+ <section class="section cta-final">
+ <div class="container reveal">
+ <h2>Vamos começar?</h2>
+ <p>Se está em Goiânia ou região, agende a sua consulta presencial.</p>
+ <Button href="/contato" variant="clay">Agendar consulta</Button>
+ <div class="aw"><AuthorBox /></div>
+ </div>
+ </section>
+</BaseLayout>
+
+<style>
+ .areas { display: grid; gap: 10px; }
+ @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
+ @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
+ .area { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff;
+ border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none; }
+ .area:hover { border-color: var(--sage-300); box-shadow: var(--shadow-sm); text-decoration: none; }
+ .area span { color: var(--sage-500); }
+ .muted { color: var(--ink-faint); font-size: .85rem; }
+ .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
+ .aw { max-width: var(--maxw-prose); margin: 8px auto 0; text-align: left; }
+</style>

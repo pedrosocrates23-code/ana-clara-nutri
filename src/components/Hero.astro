@@ -1,0 +1,54 @@
+---
+import FormCard from './FormCard.astro';
+// Hero verde (sem foto — a foto da Ana fica na página /sobre, otimizada p/ entidade).
+// Primeira dobra com o formulário de agendamento à direita.
+---
+<section class="hero" aria-label="Apresentação">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="container hero__inner">
+    <div class="hero__content reveal">
+      <p class="kicker hero__kicker">Nutricionista</p>
+      <h1 class="hero__title">Nutrição com abordagem<br /><em>comportamental e educacional</em></h1>
+      <p class="hero__sub">
+        Atendimento presencial em Goiânia e online por telenutrição para todo o Brasil.
+        Um cuidado próximo, baseado em evidências e sem dietas restritivas.
+      </p>
+    </div>
+
+    <div class="hero__form reveal">
+      <FormCard idPrefix="hero" title="Agende sua consulta" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
+  .hero__bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 90% at 80% 15%, var(--sage-300) 0%, rgba(143,185,155,0) 55%),
+      linear-gradient(160deg, var(--sage-600) 0%, var(--sage-800) 100%);
+  }
+  /* overlay leve para o contraste do texto sobre o verde */
+  .hero__overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(34,49,38,.30) 0%, rgba(34,49,38,.10) 40%, rgba(34,49,38,.40) 100%);
+  }
+  .hero__inner {
+    position: relative; z-index: 2; width: 100%;
+    padding-block: clamp(96px, 13vh, 150px) clamp(40px, 7vh, 80px);
+    display: grid; gap: 36px;
+  }
+  @media (min-width: 760px) {
+    .hero__inner { grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; }
+  }
+
+  .hero__content { color: #fff; max-width: 560px; }
+  .hero__kicker { color: var(--sage-100); }
+  .hero__title { color: #fff; font-weight: 300; font-size: clamp(2rem, 5vw, 3.4rem); margin: 12px 0 0; }
+  .hero__title em { font-style: italic; color: var(--sage-200); }
+  .hero__sub { color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.5vw, 1.12rem); margin: 16px 0 0; max-width: 480px; }
+
+  .hero__form { width: 100%; }
+</style>

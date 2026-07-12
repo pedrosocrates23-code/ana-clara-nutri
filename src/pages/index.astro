@@ -1,0 +1,239 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Faq from '../components/Faq.astro';
+import Button from '../components/Button.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { SILOS } from '../lib/site';
+import { buildGraph } from '../lib/schema/shared';
+
+// Últimas 3 postagens do blog (atualiza a cada build/publicação — sempre as mais recentes)
+const latestPosts = (await getCollection('posts'))
+  .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1))
+  .slice(0, 3);
+
+const faqs = [
+ { q: 'A Ana atende online e presencial?', a: 'Sim. O atendimento presencial é em Goiânia e o online é por telenutrição, para qualquer cidade do Brasil.' },
+ { q: 'O que é nutrição comportamental?', a: 'É uma abordagem que olha para a sua relação com a comida, gatilhos, hábitos, emoções e rotina, em vez de focar apenas no prato. O objetivo é construir autonomia, com base em evidências, sem dietas restritivas.' },
+ { q: 'A consulta é particular?', a: 'Sim, o atendimento é exclusivamente particular. Os valores são informados de forma transparente antes do agendamento.' },
+ { q: 'Como é a primeira consulta?', a: 'É um momento de escuta e avaliação. Entendo o seu histórico, a sua rotina e os seus objetivos para construir um plano junto com você.' },
+ { q: 'Para quais objetivos a Ana atende?', a: 'Nutrição comportamental, educação alimentar, reeducação alimentar, nutrição esportiva, clínica, saúde intestinal e alimentação vegetariana/vegana. No momento, não atende gestantes e crianças.' },
+];
+
+const graph = buildGraph({
+ path: '/', title: 'Nutrição com abordagem comportamental e educacional',
+ mainEntity: 'person', faqs,
+});
+
+const passos = [
+ { n: '1', t: 'Agendamento', d: 'Você escolhe online ou presencial e reserva o melhor horário pelo site ou WhatsApp.' },
+ { n: '2', t: 'Primeira consulta', d: 'Um encontro de escuta e avaliação. Entendo sua rotina e seu histórico antes de qualquer plano.' },
+ { n: '3', t: 'Acompanhamento', d: 'Construímos juntas um caminho possível, com ajustes ao longo do tempo. No online, por telenutrição com consentimento.' },
+];
+---
+<BaseLayout
+ title="Ana Clara Nutri | Nutricionista em Goiânia e Online"
+ description="Nutrição com abordagem comportamental e educacional. Atendimento presencial em Goiânia e online (telenutrição) para todo o Brasil. Agende sua consulta."
+ path="/" overHero graph={graph}>
+
+ <Hero />
+
+ <!-- Faixa de confiança -->
+ <section class="section section--alt">
+ <div class="container">
+ <div class="trust reveal">
+ <span>✓ CRN-1 ativo</span>
+ <span>✓ Baseada em evidências</span>
+ <span>✓ Sem dietas restritivas</span>
+ <span>✓ Online e presencial</span>
+ </div>
+ </div>
+ </section>
+
+ <!-- Sobre (3ª dobra: quem é a Ana, logo após a confiança) -->
+ <section class="section">
+ <div class="container sobre-grid">
+ <div class="reveal sobre">
+ <span class="kicker">Sobre</span>
+ <h2>Prazer, sou a <em>Ana Clara</em></h2>
+ <p>Sou nutricionista (CRN-1) e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
+ <p>Meu trabalho parte de uma ideia simples: comida é também relação, rotina e história. Quando a gente entende isso, a mudança fica leve e dura mais.</p>
+ <Button href="/sobre" variant="outline" size="sm">Conheça minha história →</Button>
+ </div>
+ <div class="sobre-photo reveal" role="img" aria-label="Ana Clara, nutricionista">
+ <span class="sobre-photo__hint">Foto · Ana Clara</span>
+ </div>
+ </div>
+ </section>
+
+ <!-- Modalidades -->
+ <section class="section" id="atendimento">
+ <div class="container">
+ <div class="section__head">
+ <span class="kicker">Atendimento</span>
+ <h2>Dois jeitos de cuidar da sua <em>alimentação</em></h2>
+ <p>Você escolhe a forma que combina com a sua rotina. O cuidado é o mesmo nas duas: individual, próximo e construído com você.</p>
+ </div>
+ <div class="grid grid--2">
+ <article class="card reveal">
+ <span class="kicker">Online · Brasil</span>
+ <h3>Atendimento online</h3>
+ <p>Consultas por telenutrição para qualquer cidade do Brasil. Prático, sem deslocamento e com o mesmo acompanhamento de perto.</p>
+ <Button href="/nutricionista-online/" variant="outline" size="sm">Ver atendimento online →</Button>
+ </article>
+ <article class="card reveal">
+ <span class="kicker">Presencial · Goiânia</span>
+ <h3>Atendimento presencial em Goiânia</h3>
+ <p>Consultório acolhedor para quem prefere o encontro pessoalmente, com horários flexíveis.</p>
+ <Button href="/nutricionista-em-goiania/" variant="outline" size="sm">Ver atendimento presencial →</Button>
+ </article>
+ </div>
+ </div>
+ </section>
+
+ <!-- Áreas de atuação (silos) -->
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head">
+ <span class="kicker">Áreas de atuação</span>
+ <h2>Em que posso te <em>acompanhar</em></h2>
+ <p>Cada pessoa tem uma história com a comida. Trabalho diferentes frentes da nutrição sempre pela mesma lente: comportamento e educação alimentar.</p>
+ </div>
+ <div class="areas-grid">
+ {SILOS.map((s) => (
+ <a class="area-card reveal" href={s.href}>
+ <div class="area-card__body">
+ <h3>{s.label}</h3>
+ <p>{s.intro}</p>
+ <span class="area-card__more">Saiba mais →</span>
+ </div>
+ </a>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ <!-- Como funciona -->
+ <section class="section">
+ <div class="container">
+ <div class="section__head">
+ <span class="kicker">Como funciona</span>
+ <h2>Do primeiro contato ao <em>acompanhamento</em></h2>
+ </div>
+ <div class="grid grid--3">
+ {passos.map((p) => (
+ <article class="card reveal">
+ <div class="step">{p.n}</div>
+ <h3>{p.t}</h3>
+ <p>{p.d}</p>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ <Faq items={faqs} />
+
+ <!-- Últimas postagens do blog (rotativo: sempre as 3 mais recentes) -->
+ {latestPosts.length > 0 && (
+ <section class="section">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Do blog</span><h2>Últimos <em>conteúdos</em></h2></div>
+ <div class="posts">
+ {latestPosts.map((p) => (
+ <a class="post" href={p.data.path}>
+ <span class="kicker">{p.data.siloLabel}</span>
+ <h3>{p.data.title}</h3>
+ <p>{p.data.description}</p>
+ <span class="post__more">Ler artigo →</span>
+ </a>
+ ))}
+ </div>
+ <p class="blog-all"><a href="/blog">Ver todos os artigos →</a></p>
+ </div>
+ </section>
+ )}
+
+ <!-- Formulário de agendamento (última seção) -->
+ <ContactForm />
+</BaseLayout>
+
+<script>
+  // Remove a legenda placeholder quando a foto real existir em /ana-clara.jpg
+  const probe = new Image();
+  probe.onload = () => document.querySelectorAll('.sobre-photo__hint').forEach((e) => e.remove());
+  probe.src = '/ana-clara.jpg';
+</script>
+
+<style>
+ .areas { display: grid; gap: 10px; }
+ @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
+ @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
+ .area {
+ display: flex; justify-content: space-between; align-items: center; gap: 12px;
+ background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
+ padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none;
+ transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+ }
+ .area:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: var(--sage-300); text-decoration: none; }
+ .area span { color: var(--sage-500); }
+ .step { width: 38px; height: 38px; border-radius: 50%; background: var(--sage-100); color: var(--sage-700);
+ font-family: var(--serif); font-size: 1.2rem; display: grid; place-items: center; margin-bottom: 12px; }
+ .sobre { max-width: var(--maxw-prose); }
+ /* Sobre em 2 colunas: texto à esquerda, foto orgânica à direita */
+ .sobre-grid { display: grid; gap: 32px; align-items: center; }
+ @media (min-width: 860px) { .sobre-grid { grid-template-columns: 1.05fr .95fr; } }
+ .sobre-photo {
+ position: relative; width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin-inline: auto;
+ /* foto real quando existir; gradiente sage como fallback (não quebra se faltar) */
+ background-image: url('/ana-clara.jpg');
+ background-color: var(--sage-400);
+ background-size: cover; background-position: center top;
+ box-shadow: var(--shadow-lg);
+ /* formato orgânico (blob) */
+ border-radius: 46% 54% 57% 43% / 50% 44% 56% 50%;
+ display: grid; place-items: center; isolation: isolate;
+ }
+ /* moldura sage atrás, para profundidade orgânica */
+ .sobre-photo::before {
+ content: ''; position: absolute; inset: -14px -10px -10px -14px; z-index: -1;
+ background: var(--sage-200);
+ border-radius: 54% 46% 43% 57% / 44% 56% 44% 56%;
+ opacity: .6;
+ }
+ .sobre-photo__hint {
+ font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+ color: var(--sage-900); background: rgba(250,248,243,.78); padding: 6px 12px; border-radius: 999px;
+ }
+ .posts { display: grid; gap: 18px; }
+ @media (min-width: 720px) { .posts { grid-template-columns: repeat(3, 1fr); } }
+ .post {
+ display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--line);
+ border-radius: var(--r-lg); padding: 22px; color: inherit; text-decoration: none;
+ transition: transform .2s ease, box-shadow .2s ease;
+ }
+ .post:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); text-decoration: none; }
+ .post h3 { margin: 4px 0; font-size: 1.2rem; }
+ .post p { color: var(--ink-soft); font-size: .92rem; }
+ .post__more { color: var(--sage-700); font-weight: 600; font-size: .9rem; margin-top: auto; }
+ .blog-all { margin-top: 22px; }
+ .blog-all a { color: var(--sage-700); font-weight: 600; }
+ /* Cards de áreas de atuação (imagem + título + intro) */
+ .areas-grid { display: grid; gap: 22px; }
+ @media (min-width: 640px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+ @media (min-width: 940px) { .areas-grid { grid-template-columns: repeat(3, 1fr); } }
+ .area-card {
+ display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line);
+ border-radius: var(--r-lg); overflow: hidden; color: inherit; text-decoration: none;
+ box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+ }
+ .area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); text-decoration: none; }
+ .area-card__body { display: flex; flex-direction: column; gap: 8px; padding: 24px; flex: 1; }
+ .area-card__body h3 { margin: 0; font-size: 1.2rem; }
+ .area-card__body p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
+ .area-card__more { margin-top: auto; padding-top: 6px; color: var(--sage-700); font-weight: 600; font-size: .9rem; }
+ .cta-final { text-align: center; }
+ .cta-final h2 { margin-bottom: .2em; }
+ .cta-final p { margin-inline: auto; }
+</style>

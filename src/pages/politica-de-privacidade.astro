@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { SITE } from '../lib/site';
+import { buildGraph } from '../lib/schema/shared';
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Política de Privacidade', href: '/politica-de-privacidade' }];
+const graph = buildGraph({ path: '/politica-de-privacidade', title: 'Política de Privacidade | Ana Clara Nutri', breadcrumb });
+---
+<BaseLayout
+ title="Política de Privacidade | Ana Clara Nutri"
+ description="Como tratamos os seus dados pessoais neste site, em conformidade com a LGPD."
+ path="/politica-de-privacidade" graph={graph}>
+ <PageHero kicker="Legal" title="Política de Privacidade" sub="Como seus dados são tratados, em conformidade com a LGPD (Lei nº 13.709/2018)." breadcrumb={breadcrumb} />
+
+ <section class="section">
+ <div class="container prose reveal">
+ <p><em>Este documento é um modelo inicial e deve ser revisado por um responsável antes da publicação definitiva.</em></p>
+
+ <h2>1. Quem é o responsável pelos dados</h2>
+ <p>{SITE.legalName}, nutricionista ({SITE.crn}), é a responsável pelo tratamento dos dados coletados neste site.</p>
+
+ <h2>2. Quais dados coletamos</h2>
+ <p>Coletamos apenas os dados que você fornece voluntariamente no formulário de contato/agendamento, como nome, e-mail e telefone e dados de navegação anônimos para melhorar o site.</p>
+
+ <h2>3. Para que usamos</h2>
+ <p>Os dados são usados exclusivamente para responder ao seu contato, realizar o agendamento e prestar o atendimento nutricional. Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing.</p>
+
+ <h2>4. Dados sensíveis e de saúde</h2>
+ <p>Informações de saúde compartilhadas durante o atendimento são tratadas com sigilo profissional e segurança reforçada, conforme a LGPD e o Código de Ética do Nutricionista. Dados de crianças e adolescentes recebem proteção adicional.</p>
+
+ <h2>5. Seus direitos</h2>
+ <p>Você pode solicitar, a qualquer momento, acesso, correção ou exclusão dos seus dados, além de revogar o consentimento. Basta entrar em contato pelos canais informados na página de <a href="/contato">Contato</a>.</p>
+
+ <h2>6. Segurança e retenção</h2>
+ <p>Adotamos medidas para proteger seus dados e os mantemos apenas pelo tempo necessário às finalidades descritas ou conforme exigências legais.</p>
+
+ <h2>7. Atualizações</h2>
+ <p>Esta política pode ser atualizada. A versão vigente estará sempre publicada nesta página.</p>
+ </div>
+ </section>
+</BaseLayout>

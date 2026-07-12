@@ -1,0 +1,66 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from './PageHero.astro';
+import Faq from './Faq.astro';
+import AuthorBox from './AuthorBox.astro';
+import Button from './Button.astro';
+import { buildGraph, SCHEMA_IDS } from '../lib/schema/shared';
+import { SITE } from '../lib/site';
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const siloHref = data.silo === 'blog' ? '/blog' : `/${data.silo}/`;
+const breadcrumb = [
+  { name: 'Início', href: '/' },
+  { name: data.siloLabel, href: siloHref },
+  { name: data.title, href: data.path },
+];
+
+const articleNode = {
+  '@type': data.medical ? 'MedicalWebPage' : 'Article',
+  '@id': `${SITE.url}${data.path}#article`,
+  headline: data.title,
+  description: data.description,
+  author: { '@id': SCHEMA_IDS.person },
+  publisher: { '@id': SCHEMA_IDS.person },
+  datePublished: data.datePublished,
+  dateModified: data.datePublished,
+  inLanguage: 'pt-BR',
+  ...(data.medical ? { lastReviewed: data.datePublished, reviewedBy: { '@id': SCHEMA_IDS.person } } : {}),
+};
+
+const graph = buildGraph({
+  path: data.path, title: data.metaTitle, faqs: data.faqs, breadcrumb,
+  extraNodes: [articleNode],
+});
+---
+<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph}>
+  <PageHero kicker={data.siloLabel} title={data.h1} breadcrumb={breadcrumb} />
+
+  <article class="section">
+    <div class="container prose reveal">
+      <Content />
+      <AuthorBox />
+      <p class="back"><a href={siloHref}>← Voltar para {data.siloLabel}</a></p>
+    </div>
+  </article>
+
+  {data.faqs.length > 0 && <Faq items={data.faqs} />}
+
+  <section class="section cta-final">
+    <div class="container reveal">
+      <h2>Quer um acompanhamento individual?</h2>
+      <p>Atendimento online para todo o Brasil ou presencial em Goiânia.</p>
+      <Button href="/contato" variant="clay">Agendar consulta</Button>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .back { margin-top: 24px; font-weight: 600; }
+  .cta-final { text-align: center; background: var(--paper-2); }
+  .cta-final p { margin-inline: auto; }
+</style>

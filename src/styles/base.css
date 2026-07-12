@@ -1,0 +1,99 @@
+/* ============================================================
+   BASE — reset, tipografia, utilitários (mobile-first)
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, picture, svg, video { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; letter-spacing: -.015em; margin: 0 0 .4em; }
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 300; }
+h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight: 300; }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+h2 em, h1 em { font-style: italic; color: var(--sage-600); }
+
+p { margin: 0 0 1rem; max-width: var(--maxw-prose); }
+.prose p, .prose li { color: var(--ink-soft); }
+strong { color: var(--ink); font-weight: 600; }
+
+/* ---- Kicker (mono label) ---- */
+.kicker {
+  font-family: var(--mono); font-size: .69rem; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--sage-600);
+}
+
+/* ---- Layout helpers ---- */
+.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 20px; }
+.section { padding-block: clamp(48px, 8vw, 88px); }
+.section--alt { background: var(--paper-2); }
+.section__head { max-width: 640px; margin-bottom: clamp(24px, 4vw, 44px); }
+
+/* ---- Grid ---- */
+.grid { display: grid; gap: 18px; }
+@media (min-width: 720px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---- Card base ---- */
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 24px; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.card h3 { margin-top: 0; }
+
+/* ---- Tabela mobile-safe: SÓ a tabela rola, nunca a página ---- */
+.table-wrap {
+  width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line); border-radius: var(--r-md); margin: 1.25rem 0;
+}
+.table-wrap table { width: 100%; min-width: 480px; border-collapse: collapse; }
+.table-wrap th, .table-wrap td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.table-wrap thead th { background: var(--sage-50); color: var(--sage-700); font-family: var(--sans); }
+
+/* ---- Faixa de confiança ---- */
+.trust { display: flex; flex-wrap: wrap; gap: 14px 32px; justify-content: center;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+.trust span { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ---- Acessibilidade ---- */
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--sage-500); outline-offset: 2px; border-radius: 6px;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---- Prose (markdown renderizado: hubs e artigos) ---- */
+.prose { max-width: var(--maxw-prose); }
+.prose > * { max-width: 100%; }
+.prose h2 { margin-top: 2em; }
+.prose h3 { margin-top: 1.6em; }
+.prose p, .prose li { color: var(--ink-soft); }
+.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1rem; }
+.prose li { margin-bottom: .4em; }
+.prose a { color: var(--sage-700); text-decoration: underline; }
+.prose strong { color: var(--ink); }
+.prose blockquote { border-left: 3px solid var(--sage-300); margin: 1.2rem 0; padding: .2rem 0 .2rem 1rem; color: var(--ink-soft); font-style: italic; }
+
+/* ---- Reveal on scroll (respeita reduced-motion) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.75,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+}
