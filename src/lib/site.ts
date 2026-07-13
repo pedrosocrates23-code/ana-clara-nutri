@@ -16,7 +16,7 @@ export const SITE = {
  legalName: 'Ana Clara Andrades Santos',
  jobTitle: 'Nutricionista',
  url: 'https://nutrianaclara.com.br', // domínio confirmado (responde 200)
- crn: 'CRN-1 nº {XXXXX}', // a preencher
+ crn: 'CRN-1 nº 19825',
  // NAP: precisa bater exatamente com o Google Business Profile
  // Ana atende dentro do beLIV; o pin do mapa é o do espaço, não um consultório próprio.
  venue: 'beLIV Espaço de Saúde e Bem-Estar',
@@ -68,7 +68,7 @@ export const HAS_INSTAGRAM = !isPlaceholder(SITE.social.instagram);
  * (erro no console, e o Lighthouse penaliza em Práticas Recomendadas).
  * Ao colocar a foto em public/ e preencher aqui, ela aparece sozinha.
  */
-export const FOTO_ANA = ''; // ex.: '/ana-clara.jpg'
+export const FOTO_ANA = '/ana-clara-nutricionista.webp';
 export const TEM_FOTO = FOTO_ANA !== '';
 
 // Endereço em uma linha, usado em texto corrido e no footer.

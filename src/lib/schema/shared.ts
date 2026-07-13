@@ -1,6 +1,6 @@
 // Gera o @graph JSON-LD (padrão 2026: grafo único, @id canônico reusado).
 // Ver SCHEMA-JSONLD.md. Wikidata (additionalType/about) a resolver via map-entity-wikidata.
-import { SITE, MAPS_LINK, isPlaceholder } from '../site';
+import { SITE, MAPS_LINK, isPlaceholder, FOTO_ANA, TEM_FOTO } from '../site';
 // isPlaceholder detecta chaves em QUALQUER posição ('CRN-1 nº {XXXXX}' também conta),
 // não só strings inteiramente envoltas em chaves.
 
@@ -23,6 +23,7 @@ export function sharedNodes() {
  description:
  'Nutricionista formada pela Universidade Federal de Goiás (UFG), com mais de quatro anos de experiência em nutrição clínica nos contextos hospitalar e ambulatorial. Atendimento particular, individualizado e baseado em evidências, online e presencial em Goiânia.',
  url: `${SITE.url}/sobre`,
+ ...(TEM_FOTO && { image: `${SITE.url}${FOTO_ANA}` }),
  worksFor: { '@id': ID.business },
  alumniOf: {
  '@type': 'CollegeOrUniversity',

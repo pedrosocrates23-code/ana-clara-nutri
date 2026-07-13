@@ -97,6 +97,39 @@ O rótulo vem da prop `secao` do componente `FormCard`. Ao adicionar um formulá
 
 ---
 
+## Notificação a cada lead
+
+A Ana não precisa ficar abrindo a planilha: o script avisa a cada envio.
+
+O Apps Script **não** consegue mandar WhatsApp sozinho (o Google não tem API de WhatsApp). Então:
+
+| Canal | Como |
+|---|---|
+| **E-mail** | `MailApp`, nativo do Google. Confiável, sem dependência externa. Vai com `replyTo` = e-mail de quem preencheu, então responder o e-mail já responde a pessoa. |
+| **WhatsApp** | [CallMeBot](https://www.callmebot.com/), serviço gratuito de auto-notificação. **Não** é a API oficial da Meta — e isso é proposital: registrar o número da Ana na API oficial a impediria de usar o WhatsApp normal com as pacientes. |
+
+### Configuração (Propriedades do script)
+
+Apps Script → **Configurações do projeto** → **Propriedades do script**. Ficam guardadas na conta do Google, **fora do código** — segredo nenhum vai para o repositório.
+
+| Propriedade | Valor |
+|---|---|
+| `EMAIL_DESTINO` | `pedrosocrates27@gmail.com,pedrosocrates23@gmail.com,nutrianaclaraa@gmail.com` (vários, separados por vírgula) |
+| `WHATSAPP_DESTINO` | `+5562994959804` |
+| `CALLMEBOT_APIKEY` | chave do CallMeBot — **ainda não configurada** |
+
+**Propriedade ausente = canal pulado, sem erro.** Hoje só o e-mail está ligado.
+
+Para ligar o WhatsApp: a Ana manda `I allow callmebot to send me messages` para **+34 644 51 95 23** pelo WhatsApp dela; o bot responde com a chave. Basta criar a propriedade `CALLMEBOT_APIKEY` com esse valor — as propriedades são lidas em tempo de execução e **não** são versionadas junto com a implantação, então o WhatsApp passa a funcionar no lead seguinte, **sem republicar o Web App e sem tocar no código**.
+
+> **A notificação nunca derruba o lead.** A linha é gravada na planilha primeiro; a notificação vem depois, com `try/catch` próprio. Se o CallMeBot cair, o lead continua salvo e o erro só aparece no log de execuções.
+
+**Limites:** `MailApp` em conta Gmail comum permite 100 e-mails/dia (folgado para um consultório). O CallMeBot, por ser gratuito, limita a poucas mensagens por minuto — irrelevante, já que é uma por lead.
+
+Para testar sem preencher o formulário: no editor do Apps Script, selecione a função `testarNotificacao` e clique em Executar.
+
+---
+
 ## Anti-spam
 
 O formulário tem um **honeypot**: um campo `website` invisível para pessoas. Bots costumam preencher tudo. Se ele vier preenchido, o envio é descartado silenciosamente — o site finge sucesso e nada é gravado.
