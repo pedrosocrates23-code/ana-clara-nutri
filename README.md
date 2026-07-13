@@ -1,6 +1,6 @@
 # Ana Clara Nutri: Site (Astro)
 
-Site institucional de SEO local + entidade da nutricionista Ana Clara Andrades Santos.
+Site institucional de SEO local + entidade da nutricionista Ana Clara Andrade Santos.
 Stack: **Astro 7 (SSG)** · Vite 8/Rolldown · Markdown Rust (Sätteri) · CSS tokens do Design Book · fontes self-host + preload (Fontsource) · schema `@graph`.
 
 ## Rodar

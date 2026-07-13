@@ -13,7 +13,7 @@ export function absoluteUrl(p: string): string {
 
 export const SITE = {
  name: 'Ana Clara Nutri',
- legalName: 'Ana Clara Andrades Santos',
+ legalName: 'Ana Clara Andrade Santos',
  jobTitle: 'Nutricionista',
  url: 'https://nutrianaclara.com.br', // domínio confirmado (responde 200)
  crn: 'CRN-1 nº 19825',
@@ -76,10 +76,10 @@ export const TEM_FOTO = FOTO_ANA !== '';
 // title = tooltip do mouse; NÃO substitui o alt (nem todo leitor de tela anuncia).
 // descricao = detalhamento via aria-describedby, para quem não vê a imagem.
 export const FOTO_ANA_TEXTOS = {
- alt: 'Ana Clara Andrades Santos, nutricionista, sorrindo',
- title: 'Ana Clara Andrades Santos, nutricionista em Goiânia e online',
+ alt: 'Ana Clara Andrade Santos, nutricionista, sorrindo',
+ title: 'Ana Clara Andrade Santos, nutricionista em Goiânia e online',
  descricao:
- 'Retrato profissional da nutricionista Ana Clara Andrades Santos: mulher jovem, cabelos castanhos longos presos de lado, sorrindo para a câmera, em um corredor claro e bem iluminado.',
+ 'Retrato profissional da nutricionista Ana Clara Andrade Santos: mulher jovem, cabelos castanhos longos presos de lado, sorrindo para a câmera, em um corredor claro e bem iluminado.',
 } as const;
 
 // Endereço em uma linha, usado em texto corrido e no footer.

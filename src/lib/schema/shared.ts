@@ -18,7 +18,7 @@ export function sharedNodes() {
  '@id': ID.person,
  name: SITE.legalName,
  givenName: 'Ana Clara',
- familyName: 'Andrades Santos',
+ familyName: 'Andrade Santos',
  jobTitle: SITE.jobTitle,
  description:
  'Nutricionista formada pela Universidade Federal de Goiás (UFG), com mais de quatro anos de experiência em nutrição clínica nos contextos hospitalar e ambulatorial. Atendimento particular, individualizado e baseado em evidências, online e presencial em Goiânia.',
