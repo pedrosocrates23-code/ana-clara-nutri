@@ -71,6 +71,17 @@ export const HAS_INSTAGRAM = !isPlaceholder(SITE.social.instagram);
 export const FOTO_ANA = '/ana-clara-nutricionista.webp';
 export const TEM_FOTO = FOTO_ANA !== '';
 
+// Textos da foto, num lugar só (usados no alt, no title e na descrição longa).
+// alt = nome acessível, lido por leitor de tela e indexado pelo Google Imagens.
+// title = tooltip do mouse; NÃO substitui o alt (nem todo leitor de tela anuncia).
+// descricao = detalhamento via aria-describedby, para quem não vê a imagem.
+export const FOTO_ANA_TEXTOS = {
+ alt: 'Ana Clara Andrades Santos, nutricionista, sorrindo',
+ title: 'Ana Clara Andrades Santos, nutricionista em Goiânia e online',
+ descricao:
+ 'Retrato profissional da nutricionista Ana Clara Andrades Santos: mulher jovem, cabelos castanhos longos presos de lado, sorrindo para a câmera, em um corredor claro e bem iluminado.',
+} as const;
+
 // Endereço em uma linha, usado em texto corrido e no footer.
 export const ADDRESS_LINE =
  `${SITE.address.street}, ${SITE.address.locality} - ${SITE.address.region}, ${SITE.address.postalCode}`;
