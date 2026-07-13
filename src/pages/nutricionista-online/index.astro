@@ -4,7 +4,8 @@ import PageHero from '../../components/PageHero.astro';
 import Faq from '../../components/Faq.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Button from '../../components/Button.astro';
-import { SILOS, SITE } from '../../lib/site';
+import AreasGrid from '../../components/AreasGrid.astro';
+import { SITE } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
 
 const faqs = [
@@ -38,7 +39,7 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
  cta={{ label: 'Agendar consulta online', href: '/contato' }} breadcrumb={breadcrumb} />
 
  <section class="section">
- <div class="container prose reveal">
+ <div class="container prose">
  <h2>O atendimento online é para você?</h2>
  <p>Se a sua rotina é corrida, se você mora longe de Goiânia ou simplesmente prefere a praticidade de ser atendida em casa, a telenutrição resolve. O cuidado é exatamente o mesmo do presencial: individual, com escuta de verdade e um plano construído para a sua realidade.</p>
 
@@ -57,7 +58,7 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
  <section class="section section--alt">
  <div class="container">
  <div class="section__head"><span class="kicker">Áreas</span><h2>O que posso acompanhar <em>online</em></h2></div>
- <div class="areas">{SILOS.map((s) => <a class="area" href={s.href}>{s.label} <span>→</span></a>)}</div>
+ <AreasGrid />
  </div>
  </section>
 
@@ -74,13 +75,6 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
 </BaseLayout>
 
 <style>
- .areas { display: grid; gap: 10px; }
- @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
- @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
- .area { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff;
- border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none; }
- .area:hover { border-color: var(--sage-300); box-shadow: var(--shadow-sm); text-decoration: none; }
- .area span { color: var(--sage-500); }
  .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
  .aw { max-width: var(--maxw-prose); margin: 8px auto 0; text-align: left; }
 </style>

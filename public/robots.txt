@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anaclaranutri.com.br/sitemap-index.xml
+Sitemap: https://nutrianaclara.com.br/sitemap.xml

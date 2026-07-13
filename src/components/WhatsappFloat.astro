@@ -1,0 +1,297 @@
+---
+import { WHATSAPP_URL, CRN_SUFIXO } from '../lib/site';
+
+const href = WHATSAPP_URL;
+const delay = 30000; // janela de conversa abre após ~30s na página
+---
+
+<div class="wa" data-wa data-delay={String(delay)}>
+  <div class="wa-chat" data-wa-card role="dialog" aria-modal="false" aria-labelledby="wa-title" hidden>
+    <!-- Barra superior, no formato de conversa do WhatsApp -->
+    <div class="wa-top">
+      <img class="wa-avatar" src="/logo-aca.png" alt="" width="40" height="40" />
+      <div class="wa-who">
+        <p class="wa-name" id="wa-title">Ana Clara Nutri</p>
+        <p class="wa-status">Nutricionista{CRN_SUFIXO}</p>
+      </div>
+      <button class="wa-close" type="button" data-wa-close aria-label="Fechar conversa">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Corpo da conversa -->
+    <div class="wa-body">
+      <div class="wa-bubble">
+        <p>Oi! Aqui é do consultório da Ana Clara. 👋</p>
+        <span class="wa-time">agora</span>
+      </div>
+
+      <div class="wa-bubble wa-bubble-2">
+        <p>
+          Posso te explicar como funciona a consulta, presencial em Goiânia ou online por
+          telenutrição, o que está incluso e os valores. Atendimento particular, sem convênio.
+        </p>
+        <span class="wa-time">agora</span>
+      </div>
+    </div>
+
+    <!-- "Campo de resposta" que abre a conversa real -->
+    <a class="wa-reply" href={href} target="_blank" rel="noopener">
+      <span class="wa-reply-text">Escreva sua mensagem</span>
+      <span class="wa-send" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </span>
+    </a>
+
+    <p class="wa-note">
+      Canal para informações e agendamento. Orientação nutricional individual acontece somente
+      em consulta, com avaliação. Não por mensagem.
+    </p>
+  </div>
+
+  <a
+    class="wa-fab"
+    href={href}
+    target="_blank"
+    rel="noopener"
+    data-wa-fab
+    aria-label="Falar pelo WhatsApp sobre agendamento de consulta"
+  >
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.65 4.2 3.72.59.25 1.05.4 1.4.52.59.18 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z" />
+    </svg>
+  </a>
+</div>
+
+<style>
+  .wa {
+    position: fixed;
+    right: clamp(14px, 3vw, 24px);
+    bottom: clamp(14px, 3vw, 24px);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .wa-fab {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: var(--sage-600);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+    transition: transform .18s ease, background-color .18s ease;
+  }
+  .wa-fab:hover { background: var(--sage-700); transform: translateY(-2px); }
+  .wa-fab:focus-visible { outline: 3px solid var(--clay-400); outline-offset: 3px; }
+
+  /* ---- Janela de conversa ---- */
+  .wa-chat {
+    width: min(330px, calc(100vw - 32px));
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg);
+    text-align: left;
+  }
+  .wa-chat[hidden] { display: none; }
+
+  .wa-chat.is-in { animation: wa-in .3s cubic-bezier(.2, .8, .2, 1) both; }
+  @keyframes wa-in {
+    from { opacity: 0; transform: translateY(12px) scale(.96); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .wa-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--sage-700);
+    color: #fff;
+  }
+  .wa-avatar {
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--paper);
+    object-fit: contain;
+  }
+  .wa-who { flex: 1; min-width: 0; }
+  .wa-name {
+    margin: 0;
+    font-size: .92rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .wa-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 2px 0 0;
+    font-size: .72rem;
+    color: rgba(255, 255, 255, .78);
+  }
+  .wa-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--sage-300);
+  }
+
+  .wa-close {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, .8);
+    cursor: pointer;
+  }
+  .wa-close:hover { background: rgba(255, 255, 255, .14); color: #fff; }
+  .wa-close:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+
+  /* Fundo da conversa: papel de parede pontilhado, no espírito do WhatsApp */
+  .wa-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 12px;
+    background-color: var(--paper-2);
+    background-image: radial-gradient(circle at 1px 1px, rgba(62, 86, 65, .07) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+
+  .wa-bubble {
+    position: relative;
+    align-self: flex-start;
+    max-width: 92%;
+    padding: 8px 38px 8px 11px;
+    background: #fff;
+    border-radius: 0 var(--r-md) var(--r-md) var(--r-md);
+    box-shadow: var(--shadow-sm);
+  }
+  .wa-bubble p {
+    margin: 0;
+    font-size: .84rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  /* Rabicho do primeiro balão */
+  .wa-bubble:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -7px;
+    border-width: 0 8px 9px 0;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+  }
+  .wa-time {
+    position: absolute;
+    right: 9px;
+    bottom: 6px;
+    font-size: .62rem;
+    color: var(--ink-faint);
+  }
+
+  /* Segundo balão entra logo depois, como numa conversa real */
+  .wa-chat.is-in .wa-bubble-2 { animation: wa-bubble .3s ease .55s both; }
+  @keyframes wa-bubble {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .wa-reply {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 9px 9px 14px;
+    background: var(--paper-2);
+    border-top: 1px solid var(--line);
+  }
+  .wa-reply-text {
+    flex: 1;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: .82rem;
+    color: var(--ink-faint);
+  }
+  .wa-send {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: var(--sage-600);
+    color: #fff;
+  }
+  .wa-reply:hover .wa-send { background: var(--sage-700); }
+  .wa-reply:focus-visible { outline: 3px solid var(--clay-400); outline-offset: -3px; }
+
+  .wa-note {
+    margin: 0;
+    padding: 10px 14px 12px;
+    background: var(--paper);
+    font-size: .68rem;
+    line-height: 1.45;
+    color: var(--ink-faint);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .wa-chat.is-in,
+    .wa-chat.is-in .wa-bubble-2 { animation: none; }
+    .wa-fab { transition: none; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector('[data-wa]');
+  const card = root?.querySelector('[data-wa-card]') as HTMLElement | null;
+  const closeBtn = root?.querySelector('[data-wa-close]');
+  const reply = root?.querySelector('.wa-reply');
+  const KEY = 'wa-convite-visto';
+
+  if (root && card && !sessionStorage.getItem(KEY)) {
+    const delay = Number(root.getAttribute('data-delay')) || 30000;
+
+    const dismiss = () => {
+      card.hidden = true;
+      card.classList.remove('is-in');
+      sessionStorage.setItem(KEY, '1');
+      document.removeEventListener('keydown', onKey);
+    };
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && !card.hidden) dismiss();
+    };
+
+    const timer = window.setTimeout(() => {
+      if (document.visibilityState !== 'visible') return;
+      card.hidden = false;
+      card.classList.add('is-in');
+      document.addEventListener('keydown', onKey);
+    }, delay);
+
+    closeBtn?.addEventListener('click', dismiss);
+    // Se o visitante já foi para o WhatsApp, não reabrir a conversa.
+    reply?.addEventListener('click', () => sessionStorage.setItem(KEY, '1'));
+    window.addEventListener('pagehide', () => window.clearTimeout(timer), { once: true });
+  }
+</script>

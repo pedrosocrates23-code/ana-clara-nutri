@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { SITE } from '../lib/site';
+import { SITE, HAS_CRN, CRN_PARENTESES } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Termos e Aviso de IA', href: '/termos-e-aviso-de-ia' }];
 const graph = buildGraph({ path: '/termos-e-aviso-de-ia', title: 'Termos de Uso e Aviso de IA | Ana Clara Nutri', breadcrumb });
@@ -13,18 +13,33 @@ const graph = buildGraph({ path: '/termos-e-aviso-de-ia', title: 'Termos de Uso 
   <PageHero kicker="Legal" title="Termos de Uso e Aviso de IA" breadcrumb={breadcrumb} />
 
   <section class="section">
-    <div class="container prose reveal">
+    <div class="container prose">
       <p><em>Este documento é um modelo inicial e deve ser revisado por um responsável antes da publicação definitiva.</em></p>
 
       <h2>Termos de uso</h2>
-      <p>O conteúdo deste site tem caráter informativo e educativo e não substitui uma consulta nutricional individual nem orientação médica. Nenhuma informação aqui deve ser interpretada como promessa de resultado.</p>
-      <p>As marcas, textos e imagens são de uso de {SITE.legalName} ({SITE.crn}), salvo indicação em contrário.</p>
+      <p>O conteúdo deste site tem caráter informativo e educativo e não substitui uma consulta nutricional individual nem orientação médica. Nenhuma informação aqui deve ser interpretada como promessa ou garantia de resultado.</p>
+      <p>As marcas, textos e imagens são de uso de {SITE.legalName}{CRN_PARENTESES}, salvo indicação em contrário.</p>
 
       <h2>Conteúdo educativo, não prescrição</h2>
       <p>Artigos, receitas e materiais do site são gerais e não constituem prescrição dietética individualizada. Cada caso exige avaliação própria em consulta.</p>
 
+      <h2>Aviso de uso de inteligência artificial</h2>
+      <p>Parte dos conteúdos informativos deste site (artigos, textos das páginas e materiais educativos) é produzida com apoio de ferramentas de inteligência artificial e de automação, utilizadas como suporte de redação e organização.</p>
+      <p>Todo o conteúdo é definido, revisado e assumido tecnicamente por {SITE.legalName}{CRN_PARENTESES}, que responde integralmente por ele. As ferramentas não substituem, em nenhuma hipótese, a avaliação e a conduta profissional da nutricionista.</p>
+      <p>Este site <strong>não</strong> utiliza imagens, vídeos ou áudios gerados por IA que simulem pessoas reais ou resultados clínicos.</p>
+      <p>A consulta nutricional, presencial ou por telenutrição, é sempre conduzida diretamente pela nutricionista.</p>
+
       <h2>Conformidade profissional</h2>
-      <p>Este site segue o Código de Ética do Nutricionista (CFN): sem promessa de resultado, sem comparações de "antes e depois", sem indicação de marcas de alimentos ou suplementos e com identificação profissional visível.</p>
+      <p>Este site segue o Código de Ética e Conduta da(o) Nutricionista, aprovado pela <strong>Resolução CFN nº 856/2026</strong>. Na prática, isso significa:</p>
+      <ul>
+        {HAS_CRN && <li><strong>Identificação profissional visível</strong> (nome, profissão e número de inscrição no CRN), conforme o art. 24.</li>}
+        <li><strong>Sem promessa ou garantia de resultado</strong>, conforme o art. 69, § 6º.</li>
+        <li><strong>Sem imagens de resultados</strong>, comparações de "antes e depois", composição corporal, exames ou gráficos, conforme o art. 69, § 2º.</li>
+        <li><strong>Sem indicação de marcas</strong> de alimentos, bebidas, suplementos ou produtos, conforme o art. 74.</li>
+        <li><strong>Sem ofertas, promoções ou sorteios</strong> de consultas e serviços, conforme o art. 68, III.</li>
+        <li><strong>Sem uso de títulos não reconhecidos</strong> pelo CFN, conforme o art. 24, § 2º.</li>
+        <li><strong>Declaração de uso de IA</strong>, conforme o art. 37.</li>
+      </ul>
     </div>
   </section>
 </BaseLayout>

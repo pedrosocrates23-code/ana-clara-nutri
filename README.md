@@ -1,4 +1,4 @@
-# Ana Clara Nutri — Site (Astro)
+# Ana Clara Nutri: Site (Astro)
 
 Site institucional de SEO local + entidade da nutricionista Ana Clara Andrades Santos.
 Stack: **Astro 7 (SSG)** · Vite 8/Rolldown · Markdown Rust (Sätteri) · CSS tokens do Design Book · fontes self-host + preload (Fontsource) · schema `@graph`.
@@ -24,7 +24,7 @@ src/
 
 ## Pendências (placeholders a preencher em `src/lib/site.ts`)
 - CRN-1 nº, endereço/bairro/CEP, telefone/WhatsApp, geo (lat/lng)
-- valores das consultas (online/presencial) — atendimento **particular**
+- valores das consultas (online/presencial): atendimento **particular**
 - perfis sociais (Instagram/LinkedIn/GBP) para `sameAs`
 - domínio definitivo (em `astro.config.mjs` e `site.ts`)
 
@@ -37,4 +37,4 @@ src/
 `/sobre`, `/nutricionista-online/`, `/nutricionista-em-goiania/`, hubs dos 7 silos,
 `/receitas/`, `/blog`, `/contato`, legais. Textos em `../REDACAO-ONDA-*.md`.
 
-> Conformidade CFN é gate de publicação — ver `../CHECKLIST-MESTRE.md`.
+> Conformidade CFN é gate de publicação: ver `../CHECKLIST-MESTRE.md`.

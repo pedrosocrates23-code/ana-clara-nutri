@@ -1,6 +1,7 @@
 ---
 // Seção de agendamento do rodapé (faixa verde + intro + FormCard).
 import FormCard from './FormCard.astro';
+import { ADDRESS_LINE } from '../lib/site';
 ---
 <section class="agendar" id="agendar" aria-label="Agendar consulta">
   <div class="container agendar__grid">
@@ -13,8 +14,10 @@ import FormCard from './FormCard.astro';
         <li>Atendimento online e presencial</li>
         <li>Seus dados protegidos (LGPD)</li>
       </ul>
+
+      <p class="agendar__addr">Atendimento presencial: {ADDRESS_LINE}</p>
     </div>
-    <div class="reveal"><FormCard idPrefix="rodape" /></div>
+    <div class="reveal"><FormCard idPrefix="rodape" secao="Home — seção Agendar (rodapé)" /></div>
   </div>
 </section>
 
@@ -31,4 +34,5 @@ import FormCard from './FormCard.astro';
   .agendar__points { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
   .agendar__points li { color: var(--sage-100); font-size: .92rem; padding-left: 24px; position: relative; }
   .agendar__points li::before { content: '✓'; position: absolute; left: 0; color: var(--sage-300); font-family: var(--mono); }
+  .agendar__addr { color: var(--sage-100); font-size: .85rem; margin: 20px 0 0; max-width: 380px; }
 </style>

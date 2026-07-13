@@ -3,60 +3,81 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
 import Button from '../components/Button.astro';
-import { SILOS, SITE } from '../lib/site';
+import AreasGrid from '../components/AreasGrid.astro';
+import { SITE, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 
 const faqs = [
- { q: 'Qual a formação da Ana?', a: 'Sou nutricionista, com registro ativo no CRN-1. Atuo com foco na abordagem comportamental e na educação alimentar, sempre com base em evidências.' },
- { q: 'O que significa abordagem comportamental?', a: 'É olhar para a sua relação com a comida, hábitos, gatilhos e rotina, em vez de focar só no prato, construindo autonomia sem dietas restritivas.' },
- { q: 'Como confirmo o registro no CRN?', a: 'A consulta é pública e gratuita no portal do CRN-1. Verificar o registro de qualquer nutricionista é um direito seu.' },
+ ...(HAS_CRN ? [{ q: 'Como confirmo o registro no CRN?', a: 'A consulta é pública e gratuita no portal do CRN-1. Verificar o registro de qualquer nutricionista é um direito seu.' }] : []),
+ { q: 'Qual a formação da Ana Clara?', a: 'Sou nutricionista formada pela Universidade Federal de Goiás (UFG).' },
+ { q: 'Quanto tempo de experiência ela tem?', a: 'Mais de quatro anos de atuação em nutrição clínica, nos contextos hospitalar e ambulatorial.' },
  { q: 'Atende particular ou convênio?', a: 'O atendimento é exclusivamente particular. Não trabalho com convênios.' },
 ];
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Sobre', href: '/sobre' }];
-const graph = buildGraph({ path: '/sobre', title: 'Sobre Ana Clara | Nutricionista Comportamental, CRN-1', type: 'ProfilePage', mainEntity: 'person', faqs, breadcrumb });
+const graph = buildGraph({ path: '/sobre', title: 'Sobre Ana Clara | Nutricionista formada pela UFG', type: 'ProfilePage', mainEntity: 'person', faqs, breadcrumb });
+
+// Credenciais reais. Fonte: texto de apresentação enviado pela própria Ana Clara.
+const creds = [
+ ...(HAS_CRN ? [{ n: CRN, d: 'Registro profissional ativo' }] : []),
+ { n: 'UFG', d: 'Formada pela Universidade Federal de Goiás' },
+ { n: '4+ anos', d: 'De experiência em nutrição clínica' },
+ { n: 'Hospitalar e ambulatorial', d: 'Contextos em que atuo' },
+];
 ---
 <BaseLayout
- title="Sobre Ana Clara | Nutricionista Comportamental, CRN-1"
- description={`Conheça Ana Clara Andrades Santos, nutricionista (${SITE.crn}) com abordagem comportamental e educacional. Atendimento particular em Goiânia e online.`}
+ title="Sobre Ana Clara | Nutricionista formada pela UFG"
+ description={`Ana Clara Andrades Santos, nutricionista formada pela UFG${CRN_SUFIXO}, com mais de 4 anos de experiência em nutrição clínica hospitalar e ambulatorial. Atendimento particular em Goiânia e online.`}
  path="/sobre" graph={graph}>
- <PageHero kicker={`Nutricionista · ${SITE.crn}`} title="Ana Clara Andrades Santos"
- sub="Nutricionista com abordagem comportamental e educacional. Atendimento particular, presencial em Goiânia e online para todo o Brasil." breadcrumb={breadcrumb} />
+ <PageHero kicker={HAS_CRN ? `Nutricionista · ${CRN}` : 'Nutricionista'} title="Ana Clara Andrades Santos"
+ sub="Formada pela Universidade Federal de Goiás, com mais de quatro anos de experiência em nutrição clínica. Atendimento particular, presencial em Goiânia e online para todo o Brasil." breadcrumb={breadcrumb} />
 
- <section class="section">
- <div class="container prose reveal">
- <h2>Como cheguei até aqui</h2>
- <p>Desde cedo me incomodou a forma como a nutrição costuma ser apresentada: cheia de proibições, culpa e promessas que não se sustentam. Eu via pessoas entrando em dietas radicais, perdendo peso por um tempo e depois voltando à estaca zero, sempre se sentindo culpadas. Eu queria fazer diferente.</p>
- <p>Na minha trajetória como nutricionista, fui me aproximando da abordagem comportamental porque ela responde a uma pergunta que as dietas tradicionais ignoram: por que comemos do jeito que comemos? A resposta quase nunca está só no prato.</p>
- <p>Hoje, meu trabalho é justamente esse, ajudar cada pessoa a entender a própria relação com a comida e a construir uma alimentação possível, sem viver em guerra com o prato. Atendo de forma individual, dando atenção real a cada história.</p>
-
- <h2>Como eu trabalho</h2>
- <p>Atuo com foco na <strong>abordagem comportamental</strong> e na <strong>educação alimentar</strong>, sempre com base em evidências científicas. Na prática, isso se traduz em três compromissos.</p>
- <p><strong>Sem dietas restritivas.</strong> Nada de cardápios impossíveis ou listas enormes de proibições. Restrição extrema gera compulsão e não é assim que se constrói saúde.</p>
- <p><strong>Foco no comportamento, não só nas calorias.</strong> O que mais importa é entender os seus hábitos, os seus gatilhos e o seu contexto de vida.</p>
- <p><strong>Autonomia como objetivo.</strong> Quero que você aprenda a fazer escolhas e não dependa de mim para sempre.</p>
- <p>Não prometo resultados milagrosos nem comparo "antes e depois". Acredito em um processo respeitoso, no seu tempo, que leva em conta a sua saúde como um todo.</p>
-
- <h2>O que esperar do acompanhamento</h2>
- <p>Você pode esperar escuta de verdade, clareza nas orientações e respeito ao seu tempo. Mudança de hábito não acontece da noite para o dia, e tudo bem, o acompanhamento existe justamente para sustentar esse processo, livre de julgamento.</p>
+ <section class="section section--alt">
+ <div class="container">
+ <ul class="creds reveal">
+ {creds.map((c) => <li><strong>{c.n}</strong><span>{c.d}</span></li>)}
+ </ul>
  </div>
  </section>
 
+ <section class="section">
+ <div class="container prose reveal">
+ <h2>Quem sou</h2>
+ <p>Sou nutricionista formada pela <strong>Universidade Federal de Goiás (UFG)</strong>, com mais de quatro anos de experiência na área de <strong>nutrição clínica</strong>, atuando nos contextos hospitalar e ambulatorial.</p>
+ <p>Foi nesses anos, acompanhando pessoas em momentos muito diferentes da vida, que a minha forma de atender tomou o formato que tem hoje.</p>
+
+ <h2>No que eu acredito</h2>
+ <p>Acredito que a alimentação vai muito além de uma prescrição. Cada pessoa possui uma história, uma rotina e desafios únicos, e nenhum plano alimentar funciona se ignorar isso.</p>
+ <p>Por isso meu propósito é oferecer um atendimento <strong>acolhedor</strong>, <strong>individualizado</strong> e <strong>baseado em evidências científicas</strong>.</p>
+
+ <h2>Como eu trabalho</h2>
+ <p><strong>Acolhimento.</strong> Antes de qualquer orientação, escuta. Você não vai ser julgada pelo que come nem pelo ponto em que está agora.</p>
+ <p><strong>Individualização.</strong> Sua história, sua rotina e seus desafios são o ponto de partida, não um cardápio pronto que serviu para outra pessoa.</p>
+ <p><strong>Evidência científica.</strong> As condutas seguem o que a ciência sustenta, sem modismos e sem promessas milagrosas.</p>
+
+ <h2>O que esperar do acompanhamento</h2>
+ <p>Meu compromisso é caminhar ao seu lado na construção de mudanças <strong>reais, sustentáveis e possíveis</strong>. Não do que funciona na teoria, mas do que cabe na sua vida.</p>
+ <p>O objetivo final é que você conquiste mais saúde, mais qualidade de vida e, principalmente, <strong>autonomia na sua alimentação</strong>: que você aprenda a fazer as próprias escolhas, e não dependa de mim para sempre.</p>
+ </div>
+ </section>
+
+ {/* Bloco de verificação do registro: só existe quando temos o número real do CRN.
+     Sem ele, o convite a "verificar" não teria o que verificar. */}
+ {HAS_CRN && (
  <section class="section section--alt">
  <div class="container crn reveal">
  <span class="kicker">Confiança</span>
  <h2>Verifique meu registro</h2>
- <p>Sou inscrita no Conselho Regional de Nutricionistas, <strong>{SITE.crn}</strong>. O CRN-1 abrange Goiás, Distrito Federal, Tocantins e Mato Grosso.</p>
+ <p>Sou inscrita no Conselho Regional de Nutricionistas, <strong>{CRN}</strong>. O CRN-1 abrange Goiás, Distrito Federal, Tocantins e Mato Grosso.</p>
  <p>Você pode (e deve) verificar o registro de qualquer nutricionista antes de iniciar um acompanhamento. A consulta é pública e gratuita.</p>
  <Button href="https://www.crn1.org.br" variant="outline" size="sm">Verificar registro no CRN-1 →</Button>
  </div>
  </section>
+ )}
 
  <section class="section">
  <div class="container">
  <div class="section__head"><span class="kicker">Áreas</span><h2>Onde posso te <em>acompanhar</em></h2></div>
- <div class="areas">
- {SILOS.map((s) => <a class="area" href={s.href}>{s.label} <span>→</span></a>)}
- </div>
+ <AreasGrid />
  <p class="muted">Atualmente não atendo nutrição materno-infantil (gestantes e crianças).</p>
  </div>
  </section>
@@ -73,14 +94,14 @@ const graph = buildGraph({ path: '/sobre', title: 'Sobre Ana Clara | Nutricionis
 </BaseLayout>
 
 <style>
+ .creds { display: grid; gap: 12px; list-style: none; padding: 0; margin: 0; }
+ @media (min-width: 640px) { .creds { grid-template-columns: 1fr 1fr; } }
+ @media (min-width: 960px) { .creds { grid-template-columns: repeat(4, 1fr); } }
+ .creds li { display: flex; flex-direction: column; gap: 4px; background: #fff;
+ border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; }
+ .creds strong { color: var(--ink); font-size: 1.05rem; line-height: 1.25; }
+ .creds span { color: var(--ink-faint); font-size: .85rem; }
  .crn { max-width: var(--maxw-prose); }
- .areas { display: grid; gap: 10px; }
- @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
- @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
- .area { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: #fff;
- border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none; }
- .area:hover { border-color: var(--sage-300); box-shadow: var(--shadow-sm); text-decoration: none; }
- .area span { color: var(--sage-500); }
- .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 16px; }
+ .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 18px; }
  .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
 </style>

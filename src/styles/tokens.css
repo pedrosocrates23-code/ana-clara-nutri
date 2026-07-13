@@ -1,5 +1,5 @@
 /* ============================================================
-   ANA CLARA NUTRI — Design Tokens (portado do Design Book v1.0)
+   ANA CLARA NUTRI · Design Tokens (portado do Design Book v1.0)
    ============================================================ */
 :root {
   /* ---- Neutrals / paper ---- */
@@ -19,7 +19,9 @@
   --sage-300: #A3C29D;
   --sage-400: #8FB99B;  /* PRIMARY */
   --sage-500: #6F9C7C;
-  --sage-600: #557A60;
+  /* Usado no kicker e nos <em> dos títulos. O antigo #557A60 dava 4.22:1 sobre o
+     --sand-50 das seções alternadas e reprovava no WCAG AA. Este dá 5.20:1. */
+  --sage-600: #4A6B54;
   --sage-700: #3E5641;  /* forest */
   --sage-800: #2F4233;
   --sage-900: #223126;
@@ -27,8 +29,12 @@
   /* ---- Clay accent (≤10% da tela) ---- */
   --clay-200: #EBC9B6;
   --clay-300: #DCAA8E;
-  --clay-400: #C98A6B;
+  --clay-400: #C98A6B;  /* decorativo: só para fundos/detalhes, NUNCA sob texto branco */
   --clay-500: #B5714F;
+  /* CTA: é o único clay que passa no WCAG AA com texto branco (4.67:1).
+     O --clay-400 dava 2.86:1 e reprovava em todos os botões do site. */
+  --clay-600: #A5643F;
+  --clay-700: #8F5330;  /* hover do CTA */
 
   /* ---- Butter (chart only) ---- */
   --butter: #E7CE8F;
@@ -36,12 +42,15 @@
   /* ---- Ink ---- */
   --ink: #232722;
   --ink-soft: #5C6157;
-  --ink-faint: #8B9086;
+  /* Usado em labels de formulário, kickers e notas: precisa passar no WCAG AA (4.5:1).
+     O antigo #8B9086 dava só 3.27:1 no branco e reprovava no Lighthouse.
+     Este passa nos dois fundos do site: 5.33:1 no #fff e 4.61:1 no --sand-50. */
+  --ink-faint: #676D62;
 
   /* ---- Type ---- */
   --serif: "Newsreader Variable", Georgia, serif;
   --sans: "Hanken Grotesk Variable", -apple-system, system-ui, sans-serif;
-  --mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 
   /* ---- Radii / shadow ---- */
   --r-sm: 8px; --r-md: 14px; --r-lg: 22px; --r-xl: 30px;

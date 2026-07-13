@@ -1,6 +1,8 @@
 // Gera o @graph JSON-LD (padrão 2026: grafo único, @id canônico reusado).
 // Ver SCHEMA-JSONLD.md. Wikidata (additionalType/about) a resolver via map-entity-wikidata.
-import { SITE } from '../site';
+import { SITE, MAPS_LINK, isPlaceholder } from '../site';
+// isPlaceholder detecta chaves em QUALQUER posição ('CRN-1 nº {XXXXX}' também conta),
+// não só strings inteiramente envoltas em chaves.
 
 const ID = {
  person: `${SITE.url}/#person`,
@@ -19,15 +21,24 @@ export function sharedNodes() {
  familyName: 'Andrades Santos',
  jobTitle: SITE.jobTitle,
  description:
- 'Nutricionista com abordagem comportamental e educacional. Atendimento particular, online e presencial em Goiânia.',
+ 'Nutricionista formada pela Universidade Federal de Goiás (UFG), com mais de quatro anos de experiência em nutrição clínica nos contextos hospitalar e ambulatorial. Atendimento particular, individualizado e baseado em evidências, online e presencial em Goiânia.',
  url: `${SITE.url}/sobre`,
  worksFor: { '@id': ID.business },
+ alumniOf: {
+ '@type': 'CollegeOrUniversity',
+ name: 'Universidade Federal de Goiás',
+ alternateName: 'UFG',
+ sameAs: 'https://www.wikidata.org/wiki/Q7894375',
+ },
  knowsAbout: [
  'nutrição comportamental', 'educação alimentar', 'reeducação alimentar',
  'nutrição esportiva', 'nutrição clínica', 'saúde intestinal',
  'telenutrição',
  ],
- hasCredential: {
+ hasCredential: [
+ // O registro no CRN só entra no grafo quando o número real existir: um
+ // identifier com placeholder é pior do que credencial nenhuma.
+ ...(isPlaceholder(SITE.crn) ? [] : [{
  '@type': 'EducationalOccupationalCredential',
  credentialCategory: 'Registro profissional',
  identifier: SITE.crn,
@@ -35,8 +46,21 @@ export function sharedNodes() {
  '@type': 'Organization',
  name: 'Conselho Regional de Nutricionistas - 1ª Região (CRN-1)',
  },
+ }]),
+ {
+ '@type': 'EducationalOccupationalCredential',
+ credentialCategory: 'degree',
+ educationalLevel: 'Bacharelado',
+ name: 'Bacharelado em Nutrição',
+ recognizedBy: {
+ '@type': 'CollegeOrUniversity',
+ name: 'Universidade Federal de Goiás',
  },
- sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.gbp].filter(Boolean),
+ },
+ ],
+ // filter(Boolean) não basta: '{IG}' é uma string truthy e vazaria para o grafo.
+ sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.gbp]
+ .filter((u) => u && !isPlaceholder(u)),
  },
  {
  '@type': ['ProfessionalService', 'LocalBusiness'],
@@ -50,7 +74,7 @@ export function sharedNodes() {
  priceRange: '$$',
  currenciesAccepted: 'BRL',
  paymentAccepted: 'Particular (sem convênios)',
- telephone: SITE.phone,
+ telephone: SITE.phoneE164,
  address: {
  '@type': 'PostalAddress',
  streetAddress: SITE.address.street,
@@ -59,7 +83,30 @@ export function sharedNodes() {
  postalCode: SITE.address.postalCode,
  addressCountry: SITE.address.country,
  },
- geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
+ hasMap: MAPS_LINK,
+ // Ana atende dentro do beLIV: o espaço é o Place, ela é o ProfessionalService.
+ containedInPlace: {
+ '@type': 'Place',
+ name: SITE.venue,
+ address: {
+ '@type': 'PostalAddress',
+ streetAddress: SITE.address.street,
+ addressLocality: SITE.address.locality,
+ addressRegion: SITE.address.region,
+ postalCode: SITE.address.postalCode,
+ addressCountry: SITE.address.country,
+ },
+ },
+ contactPoint: {
+ '@type': 'ContactPoint',
+ contactType: 'Agendamento de consulta',
+ telephone: SITE.phoneE164,
+ availableLanguage: 'pt-BR',
+ },
+ // geo só entra quando as coordenadas reais forem confirmadas
+ ...(isPlaceholder(SITE.geo.lat) || isPlaceholder(SITE.geo.lng)
+ ? {}
+ : { geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng } }),
  areaServed: [
  { '@type': 'City', name: 'Goiânia' },
  { '@type': 'City', name: 'Aparecida de Goiânia' },

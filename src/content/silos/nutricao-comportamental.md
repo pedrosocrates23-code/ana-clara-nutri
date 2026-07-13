@@ -1,6 +1,6 @@
 ---
 title: "Nutrição Comportamental"
-metaTitle: "Nutricionista Comportamental | Ana Clara Nutri"
+metaTitle: "Nutrição Comportamental: o que é e como funciona | Ana Clara"
 description: "O que é nutrição comportamental e como ela ajuda a construir uma relação saudável com a comida. Atendimento com Ana Clara, online e em Goiânia."
 kicker: "Área de atuação · abordagem"
 h1: "Nutrição comportamental: entenda a sua relação com a comida"
@@ -11,8 +11,8 @@ faqs:
     a: "Não. Não é uma dieta, e sim uma abordagem. Em vez de uma lista de proibições, o foco é entender e transformar a sua relação com a comida."
   - q: "Preciso ter compulsão para fazer esse tipo de acompanhamento?"
     a: "Não. A abordagem serve para qualquer pessoa que queira uma relação mais saudável e consciente com a alimentação, com ou sem questões emocionais envolvidas."
-  - q: "A Ana é \"especialista\" em nutrição comportamental?"
-    a: "Atuo com a abordagem comportamental e tenho formação na área. Não uso o título de \"especialista\", pois ele tem um significado formal específico no conselho."
+  - q: "A Ana é \"nutricionista comportamental\" ou \"especialista\" na área?"
+    a: "Não, e é importante explicar por quê: \"especialista\" é um título formal do CFN, e a nutrição comportamental não está no rol de especialidades reconhecidas pelo conselho. Ou seja, o título \"nutricionista comportamental\" não existe oficialmente, e nenhum profissional pode usá-lo. Sou nutricionista, com experiência em nutrição clínica, e conduzo o atendimento com uma abordagem centrada no comportamento alimentar e na sua autonomia."
   - q: "Funciona no atendimento online?"
     a: "Sim. A abordagem comportamental funciona muito bem por telenutrição, já que se baseia em conversa e acompanhamento."
   - q: "Em quanto tempo vejo mudança?"

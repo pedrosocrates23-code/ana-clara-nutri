@@ -1,13 +1,13 @@
 ---
 import FormCard from './FormCard.astro';
-// Hero verde (sem foto — a foto da Ana fica na página /sobre, otimizada p/ entidade).
+// Hero verde (sem foto: a foto da Ana fica na página /sobre, otimizada p/ entidade).
 // Primeira dobra com o formulário de agendamento à direita.
 ---
 <section class="hero" aria-label="Apresentação">
   <div class="hero__bg"></div>
   <div class="hero__overlay"></div>
   <div class="container hero__inner">
-    <div class="hero__content reveal">
+    <div class="hero__content">
       <p class="kicker hero__kicker">Nutricionista</p>
       <h1 class="hero__title">Nutrição com abordagem<br /><em>comportamental e educacional</em></h1>
       <p class="hero__sub">
@@ -16,8 +16,8 @@ import FormCard from './FormCard.astro';
       </p>
     </div>
 
-    <div class="hero__form reveal">
-      <FormCard idPrefix="hero" title="Agende sua consulta" />
+    <div class="hero__form">
+      <FormCard idPrefix="hero" title="Agende sua consulta" secao="Home — hero (topo)" />
     </div>
   </div>
 </section>

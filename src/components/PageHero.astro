@@ -18,7 +18,9 @@ const { kicker, title, sub, cta, breadcrumb } = Astro.props;
         ))}
       </nav>
     )}
-    <div class="reveal">
+    {/* Sem .reveal: este bloco é above-the-fold e é o elemento de LCP das
+        páginas internas. Com reveal, o LCP só era pintado depois do JS (4,1s). */}
+    <div>
       {kicker && <span class="kicker">{kicker}</span>}
       <h1 set:html={title} />
       {sub && <p class="page-hero__sub">{sub}</p>}

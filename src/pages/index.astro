@@ -5,10 +5,11 @@ import Hero from '../components/Hero.astro';
 import Faq from '../components/Faq.astro';
 import Button from '../components/Button.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { SILOS } from '../lib/site';
+import AreasGrid from '../components/AreasGrid.astro';
+import { HAS_CRN, CRN, CRN_PARENTESES, FOTO_ANA, TEM_FOTO } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 
-// Últimas 3 postagens do blog (atualiza a cada build/publicação — sempre as mais recentes)
+// Últimas 3 postagens do blog (atualiza a cada build/publicação, sempre as mais recentes)
 const latestPosts = (await getCollection('posts'))
   .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1))
   .slice(0, 3);
@@ -43,7 +44,7 @@ const passos = [
  <section class="section section--alt">
  <div class="container">
  <div class="trust reveal">
- <span>✓ CRN-1 ativo</span>
+ {HAS_CRN && <span>✓ {CRN} ativo</span>}
  <span>✓ Baseada em evidências</span>
  <span>✓ Sem dietas restritivas</span>
  <span>✓ Online e presencial</span>
@@ -57,12 +58,13 @@ const passos = [
  <div class="reveal sobre">
  <span class="kicker">Sobre</span>
  <h2>Prazer, sou a <em>Ana Clara</em></h2>
- <p>Sou nutricionista (CRN-1) e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
+ <p>Sou nutricionista{CRN_PARENTESES} e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
  <p>Meu trabalho parte de uma ideia simples: comida é também relação, rotina e história. Quando a gente entende isso, a mudança fica leve e dura mais.</p>
  <Button href="/sobre" variant="outline" size="sm">Conheça minha história →</Button>
  </div>
- <div class="sobre-photo reveal" role="img" aria-label="Ana Clara, nutricionista">
- <span class="sobre-photo__hint">Foto · Ana Clara</span>
+ <div class="sobre-photo reveal" role="img" aria-label="Ana Clara, nutricionista"
+  style={TEM_FOTO ? `background-image: url('${FOTO_ANA}')` : undefined}>
+ {!TEM_FOTO && <span class="sobre-photo__hint">Foto · Ana Clara</span>}
  </div>
  </div>
  </section>
@@ -100,17 +102,7 @@ const passos = [
  <h2>Em que posso te <em>acompanhar</em></h2>
  <p>Cada pessoa tem uma história com a comida. Trabalho diferentes frentes da nutrição sempre pela mesma lente: comportamento e educação alimentar.</p>
  </div>
- <div class="areas-grid">
- {SILOS.map((s) => (
- <a class="area-card reveal" href={s.href}>
- <div class="area-card__body">
- <h3>{s.label}</h3>
- <p>{s.intro}</p>
- <span class="area-card__more">Saiba mais →</span>
- </div>
- </a>
- ))}
- </div>
+ <AreasGrid />
  </div>
  </section>
 
@@ -159,13 +151,6 @@ const passos = [
  <ContactForm />
 </BaseLayout>
 
-<script>
-  // Remove a legenda placeholder quando a foto real existir em /ana-clara.jpg
-  const probe = new Image();
-  probe.onload = () => document.querySelectorAll('.sobre-photo__hint').forEach((e) => e.remove());
-  probe.src = '/ana-clara.jpg';
-</script>
-
 <style>
  .areas { display: grid; gap: 10px; }
  @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
@@ -186,8 +171,7 @@ const passos = [
  @media (min-width: 860px) { .sobre-grid { grid-template-columns: 1.05fr .95fr; } }
  .sobre-photo {
  position: relative; width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin-inline: auto;
- /* foto real quando existir; gradiente sage como fallback (não quebra se faltar) */
- background-image: url('/ana-clara.jpg');
+ /* A foto entra por style inline (ver TEM_FOTO). Sem ela, fica o gradiente sage. */
  background-color: var(--sage-400);
  background-size: cover; background-position: center top;
  box-shadow: var(--shadow-lg);
@@ -219,20 +203,6 @@ const passos = [
  .post__more { color: var(--sage-700); font-weight: 600; font-size: .9rem; margin-top: auto; }
  .blog-all { margin-top: 22px; }
  .blog-all a { color: var(--sage-700); font-weight: 600; }
- /* Cards de áreas de atuação (imagem + título + intro) */
- .areas-grid { display: grid; gap: 22px; }
- @media (min-width: 640px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
- @media (min-width: 940px) { .areas-grid { grid-template-columns: repeat(3, 1fr); } }
- .area-card {
- display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line);
- border-radius: var(--r-lg); overflow: hidden; color: inherit; text-decoration: none;
- box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
- }
- .area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); text-decoration: none; }
- .area-card__body { display: flex; flex-direction: column; gap: 8px; padding: 24px; flex: 1; }
- .area-card__body h3 { margin: 0; font-size: 1.2rem; }
- .area-card__body p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
- .area-card__more { margin-top: auto; padding-top: 6px; color: var(--sage-700); font-weight: 600; font-size: .9rem; }
  .cta-final { text-align: center; }
  .cta-final h2 { margin-bottom: .2em; }
  .cta-final p { margin-inline: auto; }

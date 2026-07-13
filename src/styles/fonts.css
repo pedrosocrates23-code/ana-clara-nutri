@@ -1,0 +1,34 @@
+/* Fontes do site: apenas o subset LATINO.
+ *
+ * Substitui os imports do Fontsource (@fontsource-variable/*), que traziam 16
+ * @font-face para 13 subsets — cirílico, grego, vietnamita, latin-ext... Como o
+ * CSS é inline, essas declarações pesavam ~10 KiB em cada uma das 17 páginas, e
+ * os .woff2 dos subsets não usados ainda eram publicados em dist/.
+ *
+ * O site é pt-BR: o latino cobre tudo, inclusive acentuação e ç.
+ *
+ * Os pesos são intervalos porque as fontes são variáveis: um único arquivo serve
+ * todos os pesos, então não há requisição extra por peso.
+ *
+ * font-display: swap — o texto aparece na fonte do sistema e troca quando a
+ * fonte carrega. Evita bloquear o FCP.
+ *
+ * Sem unicode-range de propósito: com um único subset ele não filtra nada e só
+ * adiciona bytes.
+ */
+
+@font-face {
+  font-family: 'Hanken Grotesk Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+@font-face {
+  font-family: 'Newsreader Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2') format('woff2-variations');
+}

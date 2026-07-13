@@ -25,7 +25,9 @@ const graph = buildGraph({ path: '/blog', title: 'Blog | Ana Clara Nutri', bread
  {posts.map((p) => (
  <a class="card post" href={p.data.path}>
  <span class="kicker">{p.data.siloLabel}</span>
- <h3>{p.data.title}</h3>
+ {/* h2, não h3: o h1 da página é "Blog" e cada card é uma seção direta dele.
+     Pular de h1 para h3 quebra a ordem de cabeçalhos para leitores de tela. */}
+ <h2>{p.data.title}</h2>
  <p>{p.data.description}</p>
  <span class="post__more">Ler artigo →</span>
  </a>
@@ -39,7 +41,9 @@ const graph = buildGraph({ path: '/blog', title: 'Blog | Ana Clara Nutri', bread
 <style>
  .post { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 6px; }
  .post:hover { text-decoration: none; }
- .post h3 { margin: 4px 0; }
+ /* h2 semântico, mas com o tamanho visual de h3: a hierarquia é para o leitor
+    de tela, não para a escala tipográfica do card. */
+ .post h2 { margin: 4px 0; font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
  .post p { color: var(--ink-soft); font-size: .95rem; }
  .post__more { color: var(--sage-700); font-weight: 600; font-size: .9rem; margin-top: auto; }
  .muted { color: var(--ink-faint); }

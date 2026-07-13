@@ -1,5 +1,5 @@
 ---
-import { SITE, NAV, SILOS } from '../lib/site';
+import { SITE, NAV, SILOS, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, MAPS_LINK, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
 const year = 2026;
 ---
 <footer class="site-footer">
@@ -10,24 +10,24 @@ const year = 2026;
     </div>
 
     <nav class="col" aria-label="Navegação">
-      <h3 class="col__title">Navegar</h3>
+      <h2 class="col__title">Navegar</h2>
       {NAV.map((i) => <a href={i.href}>{i.label}</a>)}
       <a href="/contato">Contato</a>
     </nav>
 
     <nav class="col" aria-label="Áreas de atuação">
-      <h3 class="col__title">Áreas de atuação</h3>
+      <h2 class="col__title">Áreas de atuação</h2>
       {SILOS.map((s) => <a href={s.href}>{s.label}</a>)}
     </nav>
 
     <div class="col">
-      <h3 class="col__title">Profissional</h3>
-      <p class="muted">
-        {SITE.legalName}<br />
-        {SITE.crn}<br />
-        {SITE.address.street}, {SITE.address.locality} - {SITE.address.region}<br />
-        {SITE.phone}
-      </p>
+      <h2 class="col__title">Contato</h2>
+      <address class="muted contact">
+        <span>{SITE.legalName}{HAS_CRN && <><br />{CRN}</>}</span>
+        <a href={MAPS_LINK} target="_blank" rel="noopener">{SITE.venue}, {ADDRESS_LINE}</a>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener">WhatsApp: {SITE.phone}</a>
+        <a href={TEL_URL}>Telefone: {SITE.phone}</a>
+      </address>
       <div class="legal">
         <a href="/politica-de-privacidade">Política de Privacidade / LGPD</a>
         <a href="/termos-e-aviso-de-ia">Termos e Aviso de IA</a>
@@ -36,7 +36,7 @@ const year = 2026;
   </div>
 
   <div class="container bottom">
-    <span>© {year} {SITE.legalName} · {SITE.crn}</span>
+    <span>© {year} {SITE.legalName}{CRN_SUFIXO}</span>
     <span class="muted">Atendimento exclusivamente particular.</span>
   </div>
 </footer>
@@ -51,6 +51,9 @@ const year = 2026;
   .col a { display: block; color: var(--sand-100); font-size: .9rem; padding: 4px 0; text-decoration: none; }
   .col a:hover { color: #fff; text-decoration: underline; }
   .muted { color: var(--sage-200); font-size: .88rem; line-height: 1.7; }
+  .contact { font-style: normal; display: block; }
+  .contact span { display: block; margin-bottom: 6px; }
+  .contact a { color: var(--sand-100); font-size: .88rem; }
   .legal { margin-top: 14px; }
   .legal a { font-size: .82rem; color: var(--sage-300); }
   .bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;

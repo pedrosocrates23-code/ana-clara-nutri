@@ -1,12 +1,22 @@
 ---
-// Card do formulário de agendamento (reutilizável: hero + rodapé).
+// Card do formulário de agendamento (reutilizável: hero, contato).
 // idPrefix evita IDs duplicados quando há dois formulários na mesma página.
-// action="{FORM_ENDPOINT}" é placeholder (trocar pelo endpoint real).
-interface Props { idPrefix?: string; title?: string }
-const { idPrefix = 'f', title } = Astro.props;
+//
+// Envio: POST para um Web App do Google Apps Script, que grava a linha na
+// planilha do Google Sheets. Ver docs/FORMULARIOS-GOOGLE-SHEETS.md.
+// O endpoint vem de PUBLIC_SHEETS_ENDPOINT (.env) e é embutido no build.
+import { SITE } from '../lib/site';
+
+// `secao` identifica QUAL formulário converteu. A página sozinha não basta: a home
+// tem dois (hero e rodapé) e ambos gravariam "/". Vai para a coluna Seção da planilha.
+interface Props { idPrefix?: string; title?: string; withMessage?: boolean; secao?: string }
+const { idPrefix = 'f', title, withMessage = false, secao = idPrefix } = Astro.props;
 const id = (s: string) => `${idPrefix}-${s}`;
+const endpoint = import.meta.env.PUBLIC_SHEETS_ENDPOINT ?? '';
 ---
-<form class="form-card" action="{FORM_ENDPOINT}" method="POST" novalidate>
+<form class="form-card" method="POST" novalidate
+      data-sheets-form data-endpoint={endpoint} data-whatsapp={SITE.whatsapp} data-secao={secao}>
+  <div data-campos>
   {title && <p class="form-card__title">{title}</p>}
   <div class="row">
     <div class="field">
@@ -32,12 +42,49 @@ const id = (s: string) => `${idPrefix}-${s}`;
       </select>
     </div>
   </div>
+
+  {withMessage && (
+    <div class="field">
+      <label for={id('msg')}>Mensagem (opcional)</label>
+      <textarea id={id('msg')} name="mensagem" rows="4" placeholder="Conte um pouco do que você procura."></textarea>
+    </div>
+  )}
+
+  {/* Honeypot: invisível para pessoas, preenchido por bots. Descartado no servidor. */}
+  <div class="hp" aria-hidden="true">
+    <label for={id('site')}>Não preencha este campo</label>
+    <input id={id('site')} name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
   <label class="consent">
     <input type="checkbox" name="consentimento" required />
     <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="/politica-de-privacidade">Política de Privacidade</a> (LGPD).</span>
   </label>
+
   <button type="submit" class="submit">Enviar e agendar</button>
   <p class="note">Campos com * são obrigatórios. Você receberá retorno para confirmar o agendamento.</p>
+  <p class="status" data-status role="status" aria-live="polite"></p>
+  </div>
+
+  {/*
+    Confirmação. Substitui os campos no lugar, sem trocar de página: a pessoa não
+    é jogada para fora do site nem redirecionada ao WhatsApp. O contato já está
+    gravado na planilha; o WhatsApp aqui é atalho opcional, não o caminho único.
+  */}
+  <div class="obrigado" data-obrigado hidden>
+    <p class="obrigado__selo" aria-hidden="true">✓</p>
+    <p class="obrigado__titulo" data-obrigado-titulo>Recebido!</p>
+    <p class="obrigado__texto">
+      Seus dados chegaram para a Ana Clara. Ela retorna pessoalmente para confirmar
+      o horário da sua consulta.
+    </p>
+    <a class="obrigado__wa" data-obrigado-wa href="#" target="_blank" rel="noopener">
+      Quer adiantar? Mande uma mensagem no WhatsApp
+    </a>
+    <p class="obrigado__nota">
+      Não é preciso mandar mensagem: o seu contato já foi registrado.
+    </p>
+  </div>
 </form>
 
 <script>
@@ -55,6 +102,96 @@ const id = (s: string) => `${idPrefix}-${s}`;
     };
     input.addEventListener('input', () => { input.value = fmt(input.value); });
   });
+
+  // Envio para o Google Sheets via Apps Script.
+  document.querySelectorAll('form[data-sheets-form]').forEach((el) => {
+    const form = el as HTMLFormElement;
+    const endpoint = form.dataset.endpoint;
+    const whatsapp = form.dataset.whatsapp ?? '';
+    const botao = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const status = form.querySelector('[data-status]') as HTMLParagraphElement;
+    const campos = form.querySelector('[data-campos]') as HTMLDivElement;
+    const obrigado = form.querySelector('[data-obrigado]') as HTMLDivElement;
+    const obrigadoTitulo = form.querySelector('[data-obrigado-titulo]') as HTMLParagraphElement;
+    const obrigadoWa = form.querySelector('[data-obrigado-wa]') as HTMLAnchorElement;
+
+    const avisar = (msg: string, tipo: 'ok' | 'erro') => {
+      status.textContent = msg;
+      status.dataset.tipo = tipo;
+    };
+
+    // Primeiro nome, só para a confirmação soar pessoal.
+    const primeiroNome = (nome: string) => nome.trim().split(/\s+/)[0] ?? '';
+
+    /**
+     * Troca os campos pela confirmação. O WhatsApp já vai pré-preenchido dizendo
+     * que a pessoa veio do formulário: a Ana abre a conversa sabendo que os dados
+     * dela estão na planilha, e não precisa pedir tudo de novo.
+     */
+    const confirmar = (nome: string, modalidade: string) => {
+      obrigadoTitulo.textContent = nome ? `Recebido, ${primeiroNome(nome)}!` : 'Recebido!';
+
+      if (whatsapp) {
+        const partes = [
+          'Olá, Ana Clara! Acabei de enviar o formulário do site.',
+          nome ? `Meu nome é ${nome.trim()}.` : '',
+          modalidade ? `Modalidade: ${modalidade}.` : '',
+        ].filter(Boolean);
+        obrigadoWa.href = `https://wa.me/${whatsapp}?text=${encodeURIComponent(partes.join(' '))}`;
+      } else {
+        obrigadoWa.hidden = true;
+      }
+
+      campos.hidden = true;
+      obrigado.hidden = false;
+      obrigado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const dados = new FormData(form);
+      const nome = String(dados.get('nome') ?? '');
+      const modalidade = String(dados.get('modalidade') ?? '');
+
+      // Bot preencheu o honeypot: fingimos sucesso e não gravamos nada.
+      if (dados.get('website')) {
+        confirmar(nome, modalidade);
+        return;
+      }
+
+      if (!endpoint) {
+        avisar('Formulário ainda não configurado. Fale pelo WhatsApp enquanto isso.', 'erro');
+        return;
+      }
+
+      dados.delete('website');
+      dados.set('pagina', window.location.pathname);
+      dados.set('secao', form.dataset.secao ?? '');
+
+      const textoOriginal = botao.textContent ?? 'Enviar e agendar';
+      botao.disabled = true;
+      botao.textContent = 'Enviando...';
+      avisar('', 'ok');
+
+      try {
+        // URLSearchParams => content-type "simples" => sem preflight CORS,
+        // que o Apps Script não responde.
+        await fetch(endpoint, {
+          method: 'POST',
+          body: new URLSearchParams(dados as any),
+        });
+        form.reset();
+        confirmar(nome, modalidade);
+      } catch {
+        avisar('Não consegui enviar agora. Tente novamente ou fale pelo WhatsApp.', 'erro');
+        botao.disabled = false;
+        botao.textContent = textoOriginal;
+      }
+    });
+  });
 </script>
 
 <style>
@@ -69,21 +206,50 @@ const id = (s: string) => `${idPrefix}-${s}`;
   @container (min-width: 420px) { .row { grid-template-columns: 1fr 1fr; } }
   .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
   .field label { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
-  .field input, .field select {
+  .field input, .field select, .field textarea {
     font-family: var(--sans); font-size: .95rem; color: var(--ink); padding: 12px 14px;
     border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: #fff; width: 100%;
   }
-  .field input::placeholder { color: var(--ink-faint); }
-  .field input:focus, .field select:focus { outline: none; border-color: var(--sage-500); box-shadow: 0 0 0 3px var(--sage-100); }
-  .field input:user-invalid { border-color: var(--clay-400); }
-  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .82rem; color: var(--ink-soft); }
-  .consent input { margin-top: 3px; accent-color: var(--sage-600); }
+  .field textarea { resize: vertical; }
+  .field input::placeholder, .field textarea::placeholder { color: var(--ink-faint); }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage-500); box-shadow: 0 0 0 3px var(--sage-100); }
+  .field input:user-invalid { border-color: var(--clay-600); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .consent { display: flex; gap: 10px; align-items: center; font-size: .82rem; color: var(--ink-soft); }
+    /* 24x24: alvo de toque mínimo do WCAG (o padrão do navegador é 13px e reprova). */
+  .consent input { inline-size: 24px; block-size: 24px; flex: 0 0 24px; margin: 0; accent-color: var(--sage-600); }
   .consent a { color: var(--sage-700); text-decoration: underline; }
   .submit {
-    margin-top: 4px; background: var(--clay-400); color: #fff; border: 0; border-radius: 999px;
+    margin-top: 4px; background: var(--clay-600); color: #fff; border: 0; border-radius: 999px;
     padding: 14px 22px; font-weight: 600; font-family: var(--sans); font-size: .95rem; cursor: pointer;
     transition: background .16s ease, transform .16s ease;
   }
-  .submit:hover { background: var(--clay-500); transform: translateY(-1px); }
+  .submit:hover:not(:disabled) { background: var(--clay-700); transform: translateY(-1px); }
+  .submit:disabled { opacity: .6; cursor: progress; }
   .note { font-size: .78rem; color: var(--ink-faint); margin: 0; }
+  .status { font-size: .85rem; margin: 0; }
+  .status:empty { display: none; }
+  .status[data-tipo="ok"] { color: var(--sage-700); }
+  .status[data-tipo="erro"] { color: var(--clay-500); }
+
+  /* Confirmação pós-envio (substitui os campos) */
+  /* `display` de classe vence o [hidden] do navegador: reforçar aqui, senão o
+     painel aparece já no carregamento da página. */
+  .obrigado[hidden] { display: none; }
+  .obrigado { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; padding-block: 10px; }
+  .obrigado__selo {
+    display: grid; place-items: center; width: 46px; height: 46px; margin: 0;
+    border-radius: 999px; background: var(--sage-100); color: var(--sage-700);
+    font-size: 1.3rem; line-height: 1;
+  }
+  .obrigado__titulo { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin: 0; }
+  .obrigado__texto { font-size: .92rem; color: var(--ink-soft); margin: 0; max-width: 34ch; }
+  .obrigado__wa {
+    display: inline-flex; align-items: center; margin-top: 6px;
+    background: #25d366; color: #fff; text-decoration: none;
+    padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: .9rem;
+    transition: background .16s ease, transform .16s ease;
+  }
+  .obrigado__wa:hover { background: #1eb955; transform: translateY(-1px); text-decoration: none; }
+  .obrigado__nota { font-size: .76rem; color: var(--ink-faint); margin: 0; }
 </style>

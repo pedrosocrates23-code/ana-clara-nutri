@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { SITE } from '../lib/site';
+import { SITE, CRN_PARENTESES } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Política de Privacidade', href: '/politica-de-privacidade' }];
 const graph = buildGraph({ path: '/politica-de-privacidade', title: 'Política de Privacidade | Ana Clara Nutri', breadcrumb });
@@ -13,11 +13,11 @@ const graph = buildGraph({ path: '/politica-de-privacidade', title: 'Política d
  <PageHero kicker="Legal" title="Política de Privacidade" sub="Como seus dados são tratados, em conformidade com a LGPD (Lei nº 13.709/2018)." breadcrumb={breadcrumb} />
 
  <section class="section">
- <div class="container prose reveal">
+ <div class="container prose">
  <p><em>Este documento é um modelo inicial e deve ser revisado por um responsável antes da publicação definitiva.</em></p>
 
  <h2>1. Quem é o responsável pelos dados</h2>
- <p>{SITE.legalName}, nutricionista ({SITE.crn}), é a responsável pelo tratamento dos dados coletados neste site.</p>
+ <p>{SITE.legalName}, nutricionista{CRN_PARENTESES}, é a responsável pelo tratamento dos dados coletados neste site.</p>
 
  <h2>2. Quais dados coletamos</h2>
  <p>Coletamos apenas os dados que você fornece voluntariamente no formulário de contato/agendamento, como nome, e-mail e telefone e dados de navegação anônimos para melhorar o site.</p>

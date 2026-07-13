@@ -1,6 +1,6 @@
 ---
 title: "Nutrição Esportiva"
-metaTitle: "Nutricionista Esportivo | Online e em Goiânia, Ana Clara"
+metaTitle: "Nutrição Esportiva | Online e em Goiânia, Ana Clara"
 description: "Nutrição esportiva para alinhar a alimentação ao seu treino e objetivo, com abordagem comportamental. Atendimento online e presencial em Goiânia."
 kicker: "Área de atuação"
 h1: "Nutrição esportiva: alimentação alinhada ao seu treino"
@@ -14,7 +14,7 @@ faqs:
   - q: "O atendimento esportivo funciona online?"
     a: "Sim. A nutrição esportiva funciona muito bem por telenutrição, com avaliação completa e plano individualizado."
   - q: "A Ana atende em Goiânia presencialmente?"
-    a: "Sim, no consultório em Goiânia, além do atendimento online para todo o Brasil."
+    a: "Sim, presencialmente em Goiânia, no beLIV Espaço de Saúde e Bem-Estar, além do atendimento online para todo o Brasil."
   - q: "Posso fazer mesmo sem academia?"
     a: "Sim. Corrida, esportes, treinos em casa ou ao ar livre, qualquer atividade física regular se beneficia de uma alimentação bem ajustada."
   - q: "Nutrição esportiva serve para emagrecer?"

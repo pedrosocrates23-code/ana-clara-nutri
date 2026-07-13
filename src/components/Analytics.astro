@@ -1,0 +1,41 @@
+---
+// Medição: Google Analytics 4 (gtag.js) e Microsoft Clarity (heatmap + gravação
+// de sessão). Ambos só entram na build de produção: em dev, os acessos do
+// localhost virariam sessões reais nos relatórios.
+//
+// is:inline é obrigatório: sem ele o Astro empacota o script e os snippets
+// deixam de funcionar como os fornecedores esperam. E o corpo vai por set:html,
+// não por define:vars, porque define:vars embrulha tudo numa IIFE e gtag()
+// deixaria de ser global, quebrando eventos disparados por outros scripts.
+import { GA_ID, CLARITY_ID } from '../lib/site';
+
+const prod = import.meta.env.PROD;
+const temGa = prod && GA_ID !== '';
+const temClarity = prod && CLARITY_ID !== '';
+
+const gtagInit = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${GA_ID}');
+`;
+
+const clarityInit = `
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "${CLARITY_ID}");
+`;
+---
+{temGa && (
+  <>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+    <script is:inline set:html={gtagInit}></script>
+  </>
+)}
+
+{temClarity && (
+  <script is:inline type="text/javascript" set:html={clarityInit}></script>
+)}

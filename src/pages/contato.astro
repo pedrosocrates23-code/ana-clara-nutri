@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { SITE } from '../lib/site';
+import MapEmbed from '../components/MapEmbed.astro';
+import FormCard from '../components/FormCard.astro';
+import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, HAS_CRN, CRN, HAS_INSTAGRAM } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Contato', href: '/contato' }];
 const graph = buildGraph({ path: '/contato', title: 'Agendar consulta | Ana Clara Nutri', mainEntity: 'business', breadcrumb });
@@ -15,32 +17,39 @@ const graph = buildGraph({ path: '/contato', title: 'Agendar consulta | Ana Clar
 
  <section class="section">
  <div class="container grid grid--2 contato">
- <form class="card form" action="{FORM_ENDPOINT}" method="POST">
- <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" required /></div>
- <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required /></div>
- <div class="field"><label for="tel">Telefone / WhatsApp</label><input id="tel" name="telefone" required /></div>
- <div class="field"><label for="modal">Modalidade</label>
- <select id="modal" name="modalidade">
- <option>Online (telenutrição)</option>
- <option>Presencial em Goiânia</option>
- </select>
- </div>
- <div class="field"><label for="msg">Mensagem (opcional)</label><textarea id="msg" name="mensagem" rows="4"></textarea></div>
- <label class="consent">
- <input type="checkbox" name="consentimento" required />
- <span>Autorizo o contato e o tratamento dos meus dados conforme a <a href="/politica-de-privacidade">Política de Privacidade</a> (LGPD).</span>
- </label>
- <button type="submit" class="btn btn--clay">Enviar e agendar</button>
- <p class="note">O envio deste formulário não inicia a consulta. Você receberá retorno para confirmar o agendamento.</p>
- </form>
+ <FormCard idPrefix="contato" withMessage secao="Página de contato" />
 
  <aside class="info">
  <h2>Outras formas de falar comigo</h2>
- <p><strong>WhatsApp / Telefone:</strong><br />{SITE.phone}</p>
- <p><strong>Instagram:</strong><br />{SITE.social.instagram}</p>
- <p><strong>Atendimento presencial:</strong><br />{SITE.address.street}, Goiânia - GO</p>
- <p class="muted">Atendimento exclusivamente particular (sem convênios). {SITE.crn}.</p>
+
+ <a class="wa" href={WHATSAPP_URL} target="_blank" rel="noopener">
+ <span class="wa__icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+ <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43l-.47-.01c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/>
+ </svg>
+ </span>
+ <span class="wa__text">
+ <b>Chamar no WhatsApp</b>
+ <small>{SITE.phone}</small>
+ </span>
+ </a>
+
+ <p><strong>Telefone:</strong><br /><a href={TEL_URL}>{SITE.phone}</a></p>
+ {HAS_INSTAGRAM && <p><strong>Instagram:</strong><br />{SITE.social.instagram}</p>}
+ <p><strong>Endereço de atendimento:</strong><br />{ADDRESS_LINE}</p>
+ <p class="muted">Atendimento exclusivamente particular (sem convênios).{HAS_CRN ? ` ${CRN}.` : ''}</p>
  </aside>
+ </div>
+ </section>
+
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head">
+ <span class="kicker">Como chegar</span>
+ <h2>Onde fica o <em>atendimento presencial</em></h2>
+ <p>O atendimento presencial acontece no <strong>{SITE.venue}</strong>, na {SITE.address.street}, em {SITE.address.locality} - {SITE.address.region}. Se preferir a consulta online, a telenutrição cobre todo o Brasil.</p>
+ </div>
+ <MapEmbed />
  </div>
  </section>
 </BaseLayout>
@@ -55,12 +64,27 @@ const graph = buildGraph({ path: '/contato', title: 'Agendar consulta | Ana Clar
  border: 1px solid var(--line-strong); border-radius: var(--r-sm); background: #fff; width: 100%;
  }
  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage-500); box-shadow: 0 0 0 3px var(--sage-100); }
- .consent { display: flex; gap: 10px; align-items: flex-start; font-size: .85rem; color: var(--ink-soft); }
- .consent input { margin-top: 3px; }
- .btn--clay { background: var(--clay-400); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; font-weight: 600; cursor: pointer; font-family: var(--sans); }
- .btn--clay:hover { background: var(--clay-500); }
+ .consent { display: flex; gap: 10px; align-items: center; font-size: .85rem; color: var(--ink-soft); }
+   .consent input { inline-size: 24px; block-size: 24px; flex: 0 0 24px; margin: 0; accent-color: var(--sage-600); }
+ .btn--clay { background: var(--clay-600); color: #fff; border: 0; border-radius: 999px; padding: 12px 22px; font-weight: 600; cursor: pointer; font-family: var(--sans); }
+ .btn--clay:hover { background: var(--clay-700); }
  .note { font-size: .8rem; color: var(--ink-faint); margin: 0; }
  .info h2 { margin-top: 0; }
  .info p { color: var(--ink-soft); }
  .muted { color: var(--ink-faint); font-size: .85rem; }
+
+ .wa {
+ display: inline-flex; align-items: center; gap: 12px;
+ /* Texto escuro, não branco: branco sobre o verde do WhatsApp dá 1.98:1 e
+    reprova no WCAG. O mesmo verde com --ink dá 7.65:1 e mantém a marca. */
+ background: #25d366; color: var(--ink); text-decoration: none;
+ padding: 12px 20px; border-radius: 999px; margin-bottom: 18px;
+ box-shadow: var(--shadow-sm);
+ transition: transform .16s ease, background .16s ease;
+ }
+ .wa:hover { background: #1eb955; transform: translateY(-1px); text-decoration: none; }
+ .wa__icon { display: inline-flex; }
+ .wa__text { display: flex; flex-direction: column; line-height: 1.25; }
+ .wa__text b { font-weight: 600; font-size: .95rem; }
+ .wa__text small { font-size: .8rem; }
 </style>

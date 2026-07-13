@@ -1,8 +1,10 @@
 ---
-import '@fontsource-variable/hanken-grotesk';
-import '@fontsource-variable/newsreader';
-import '@fontsource-variable/newsreader/wght-italic.css';
-import '@fontsource-variable/jetbrains-mono';
+// O CSS pronto do Fontsource declarava 16 @font-face cobrindo 13 subsets
+// (cirílico, grego, vietnamita...). Como o CSS é inline, esses ~10 KiB de
+// declarações inúteis iam em TODA página, e os .woff2 dos subsets eram
+// publicados em dist/. O site é pt-BR: só o latino importa.
+// Declaramos as fontes à mão em fonts.css, importando os arquivos abaixo.
+import '../styles/fonts.css';
 // woff2 das fontes críticas above-the-fold (preload p/ CWV)
 import hankenWoff2 from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
 import newsreaderWoff2 from '@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2?url';
@@ -10,7 +12,9 @@ import '../styles/tokens.css';
 import '../styles/base.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE } from '../lib/site';
+import WhatsappFloat from '../components/WhatsappFloat.astro';
+import Analytics from '../components/Analytics.astro';
+import { SITE, absoluteUrl } from '../lib/site';
 
 interface Props {
   title: string;
@@ -21,7 +25,7 @@ interface Props {
   ogImage?: string;
 }
 const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage } = Astro.props;
-const canonical = new URL(path, SITE.url).href;
+const canonical = absoluteUrl(path);
 const fullTitle = title.includes(SITE.name) ? title : `${title}`;
 const img = ogImage ?? '/og-default.jpg';
 ---
@@ -52,20 +56,37 @@ const img = ogImage ?? '/og-default.jpg';
   {graph && (
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
   )}
+
+  <!-- Google tag (gtag.js) + Microsoft Clarity -->
+  <Analytics />
 </head>
 <body>
+  <!-- Sentinela do header: ver o script abaixo. Não ocupa espaço nem é lido por leitores de tela. -->
+  <div data-topo aria-hidden="true"></div>
   <Header overHero={overHero} />
   <main id="conteudo">
     <slot />
   </main>
   <Footer />
+  <WhatsappFloat />
 
   <!-- Header sólido ao rolar + reveal on scroll (ilhas mínimas) -->
   <script>
+    // O header fica sólido quando a sentinela do topo sai da viewport.
+    //
+    // A versão anterior usava um listener de scroll lendo window.scrollY. Ler
+    // geometria durante o scroll obriga o navegador a recalcular o layout
+    // (forced reflow, ~37ms no Lighthouse). O IntersectionObserver entrega a
+    // mesma informação de forma assíncrona, sem tocar no layout.
     const header = document.querySelector('[data-header]');
-    const onScroll = () => header?.classList.toggle('is-solid', window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    const topo = document.querySelector('[data-topo]');
+
+    if (header && topo) {
+      new IntersectionObserver(
+        ([entry]) => header.classList.toggle('is-solid', !entry.isIntersecting),
+        { threshold: 0 },
+      ).observe(topo);
+    }
 
     if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
       const io = new IntersectionObserver((entries) => {

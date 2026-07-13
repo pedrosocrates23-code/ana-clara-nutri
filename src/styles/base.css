@@ -1,5 +1,5 @@
 /* ============================================================
-   BASE — reset, tipografia, utilitários (mobile-first)
+   BASE · reset, tipografia, utilitários (mobile-first)
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -55,7 +55,7 @@ strong { color: var(--ink); font-weight: 600; }
   transition: transform .22s ease, box-shadow .22s ease;
 }
 .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-.card h3 { margin-top: 0; }
+.card h2, .card h3 { margin-top: 0; }
 
 /* ---- Tabela mobile-safe: SÓ a tabela rola, nunca a página ---- */
 .table-wrap {
@@ -93,7 +93,24 @@ strong { color: var(--ink); font-weight: 600; }
 .prose blockquote { border-left: 3px solid var(--sage-300); margin: 1.2rem 0; padding: .2rem 0 .2rem 1rem; color: var(--ink-soft); font-style: italic; }
 
 /* ---- Reveal on scroll (respeita reduced-motion) ---- */
+/* Reveal on scroll.
+   NUNCA usar em conteúdo above-the-fold: o elemento nasce com opacity 0 e só
+   aparece quando o JS roda e o IntersectionObserver dispara. O hero estava assim
+   e o LCP era medido no fade-in, não na renderização: 4,4s no 4G lento contra
+   0,9s de FCP. Reveal é para o que está ABAIXO da dobra. */
 @media (prefers-reduced-motion: no-preference) {
   .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.75,.2,1); }
   .reveal.in { opacity: 1; transform: none; }
+}
+
+/* Sentinela do header (ver BaseLayout): 24px no topo, fora do fluxo.
+   Enquanto ela estiver visível o header é transparente; ao sair, vira sólido.
+   Substitui o antigo listener de scroll, que causava forced reflow. */
+[data-topo] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 24px;
+  pointer-events: none;
 }

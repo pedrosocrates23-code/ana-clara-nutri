@@ -1,0 +1,44 @@
+---
+import { SILOS } from '../lib/site';
+
+interface Props {
+  // Silos a omitir (ex.: a própria página). Valores = href do silo.
+  exclude?: readonly string[];
+}
+const { exclude = [] } = Astro.props;
+const areas = SILOS.filter((s) => !exclude.includes(s.href));
+---
+
+<div class="areas-grid">
+  {areas.map((s) => (
+    <a class="area-card reveal" href={s.href}>
+      <div class="area-card__body">
+        <h3>{s.label}</h3>
+        <p>{s.intro}</p>
+        <span class="area-card__more">Saiba mais →</span>
+      </div>
+    </a>
+  ))}
+</div>
+
+<style>
+  .areas-grid { display: grid; gap: 22px; }
+  @media (min-width: 640px) { .areas-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 940px) { .areas-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .area-card {
+    display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line);
+    border-radius: var(--r-lg); overflow: hidden; color: inherit; text-decoration: none;
+    box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); text-decoration: none; }
+  .area-card__body { display: flex; flex-direction: column; gap: 8px; padding: 24px; flex: 1; }
+  .area-card__body h3 { margin: 0; font-size: 1.2rem; }
+  .area-card__body p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
+  .area-card__more { margin-top: auto; padding-top: 6px; color: var(--sage-700); font-weight: 600; font-size: .9rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .area-card { transition: none; }
+    .area-card:hover { transform: none; }
+  }
+</style>

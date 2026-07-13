@@ -8,7 +8,7 @@ sub: "Comer bem em uma alimentação vegetariana ou vegana, com todos os nutrien
 order: 7
 faqs:
   - q: "Dá para ter todos os nutrientes sem carne?"
-    a: "Sim. Uma alimentação vegetariana ou vegana bem planejada é completa. O acompanhamento garante que nada importante fique de fora."
+    a: "Sim. Uma alimentação vegetariana ou vegana bem planejada é completa. O acompanhamento existe justamente para reduzir o risco de alguma lacuna nutricional passar despercebida."
   - q: "Preciso tomar suplemento?"
     a: "Alguns nutrientes, como a vitamina B12, costumam exigir atenção e suplementação. Oriento de forma individualizada, sempre por tipo de nutriente, sem indicar marcas."
   - q: "Como conseguir proteína suficiente?"
@@ -16,7 +16,7 @@ faqs:
   - q: "Funciona no atendimento online?"
     a: "Sim. O acompanhamento vegetariano e vegano funciona muito bem por telenutrição."
   - q: "Alimentação vegana é saudável em qualquer idade?"
-    a: "Quando bem planejada, sim, é considerada adequada em todas as fases da vida. O planejamento é justamente o que garante isso."
+    a: "Quando bem planejada, sim, é considerada adequada em todas as fases da vida. O planejamento é justamente o que sustenta essa adequação."
   - q: "Vou perder massa muscular sem proteína animal?"
     a: "Não, desde que a ingestão de proteína vegetal seja adequada e bem distribuída ao longo do dia. Isso é parte central do acompanhamento, especialmente para quem treina."
 spokes:
@@ -32,7 +32,7 @@ spokes:
 
 Bem planejada, uma alimentação vegetariana ou vegana é completa e saudável em todas as fases da vida. O segredo está justamente no planejamento.
 
-O papel do acompanhamento é garantir que a sua alimentação seja equilibrada, variada e nutricionalmente adequada, sem deixar lacunas.
+O papel do acompanhamento é trabalhar para que a sua alimentação seja equilibrada, variada e nutricionalmente adequada, atenta a possíveis lacunas.
 
 Outro ponto importante é que existem diferentes formas de alimentação vegetariana, de quem consome ovos e laticínios a quem segue uma dieta totalmente vegana. O acompanhamento se adapta ao seu estilo, sem tentar te encaixar em um modelo único.
 
@@ -70,8 +70,8 @@ Quando isso é bem feito, a alimentação vegetal pode ser rica, variada e sabor
 
 ## Para quem é
 
-É para quem já é vegetariana ou vegana e quer garantir que a alimentação esteja equilibrada e completa.
+É para quem já é vegetariana ou vegana e quer cuidar para que a alimentação esteja equilibrada e completa.
 
 Também é para quem está em transição e quer fazer essa mudança com segurança, sem deficiências nutricionais e sem improviso.
 
-E é para quem faz essa escolha por consciência ambiental ou ética e quer garantir que ela venha acompanhada de saúde, porque cuidar do planeta e cuidar de você podem (e devem) caminhar juntos.
+E é para quem faz essa escolha por consciência ambiental ou ética e quer que ela venha acompanhada de saúde, porque cuidar do planeta e cuidar de você podem (e devem) caminhar juntos.
