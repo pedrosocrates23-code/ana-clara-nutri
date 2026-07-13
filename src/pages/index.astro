@@ -62,7 +62,7 @@ const passos = [
  <p>Meu trabalho parte de uma ideia simples: comida é também relação, rotina e história. Quando a gente entende isso, a mudança fica leve e dura mais.</p>
  <Button href="/sobre" variant="outline" size="sm">Conheça minha história →</Button>
  </div>
- <div class="sobre-photo reveal">
+ <div class:list={['sobre-photo', 'reveal', { 'sobre-photo--vazia': !TEM_FOTO }]}>
  {TEM_FOTO ? (
  <>
  <img
@@ -71,7 +71,7 @@ const passos = [
  alt={FOTO_ANA_TEXTOS.alt}
  title={FOTO_ANA_TEXTOS.title}
  aria-describedby="foto-ana-desc"
- width="854" height="1280"
+ width="854" height="922"
  loading="lazy" decoding="async"
  />
  <p id="foto-ana-desc" class="sr-only">{FOTO_ANA_TEXTOS.descricao}</p>
@@ -185,23 +185,28 @@ const passos = [
  @media (min-width: 860px) { .sobre-grid { grid-template-columns: 1.05fr .95fr; } }
  .sobre-photo {
  position: relative; width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin-inline: auto;
- /* Sem foto (ver TEM_FOTO), sobra o sage sólido com o rótulo no centro. */
+ /* formato orgânico (blob) */
+ border-radius: 46% 54% 57% 43% / 50% 44% 56% 50%;
+ display: grid; place-items: center;
+ }
+ /* Sem foto (ver TEM_FOTO): sage sólido com o rótulo no centro. Com foto, o
+    sage sairia como uma borda esverdeada em volta do recorte do blob. */
+ .sobre-photo--vazia {
  background-color: var(--sage-400);
  box-shadow: var(--shadow-lg);
- /* formato orgânico (blob) — recorta também a <img> dentro dele */
- border-radius: 46% 54% 57% 43% / 50% 44% 56% 50%;
- overflow: hidden;
- display: grid; place-items: center; isolation: isolate;
  }
- /* A foto preenche o blob; o topo é preservado para não cortar o rosto. */
+ /* A foto É o blob: o recorte vai nela, não num container por cima. */
  .sobre-photo__img {
+ position: relative; z-index: 1; /* sempre à frente da moldura decorativa */
  width: 100%; height: 100%;
  object-fit: cover; object-position: center top;
  display: block;
+ border-radius: inherit;
+ box-shadow: var(--shadow-lg);
  }
- /* moldura sage atrás, para profundidade orgânica */
+ /* moldura sage ATRÁS, só o que escapa do blob aparece (profundidade orgânica) */
  .sobre-photo::before {
- content: ''; position: absolute; inset: -14px -10px -10px -14px; z-index: -1;
+ content: ''; position: absolute; inset: -14px -10px -10px -14px; z-index: 0;
  background: var(--sage-200);
  border-radius: 54% 46% 43% 57% / 44% 56% 44% 56%;
  opacity: .6;
