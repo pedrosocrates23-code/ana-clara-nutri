@@ -43,18 +43,6 @@ Este artigo descreve o acompanhamento de uma nutricionista que não passa dieta 
 
 Se você já começou uma dieta numa segunda e desistiu antes de a outra segunda chegar, provavelmente mais de uma vez, você já entendeu que aquele caminho não é o seu. Escrevi esta página para essa leitora. A que travou numa dúvida bem prática: se não tem cardápio, tem o quê?
 
-**Neste artigo**
-
-- [**O que é uma nutricionista que não passa dieta restritiva**](#o-que-é-uma-nutricionista-que-não-passa-dieta-restritiva)
-- [**Por que a dieta restritiva costuma falhar**](#por-que-a-dieta-restritiva-costuma-falhar-e-por-que-a-culpa-não-é-sua)
-- [**Como é a consulta quando não tem cardápio para entregar**](#como-é-a-consulta-o-que-acontece-quando-não-tem-cardápio-para-entregar)
-- [**O que você leva para casa no lugar da folha de cardápio**](#o-que-você-leva-para-casa-no-lugar-da-folha-de-cardápio)
-- [**Por que eu não te prometo um número nem um prazo**](#por-que-eu-não-te-prometo-um-número-nem-um-prazo)
-- [**Quando a dieta restritiva é a conduta certa**](#quando-a-dieta-restritiva-é-a-conduta-certa)
-- [**Para quem esse acompanhamento faz sentido**](#para-quem-esse-acompanhamento-faz-sentido-e-para-quem-talvez-não)
-- [**Atendimento em Goiânia e por telenutrição**](#atendimento-em-goiânia-e-por-telenutrição-para-todo-o-brasil)
-- [**Como começar**](#como-começar)
-
 ## O que é uma nutricionista que não passa dieta restritiva
 
 Uma nutricionista que não passa dieta restritiva substitui o cardápio pronto por um trabalho com o **comportamento alimentar**, que é o nome técnico para uma coisa simples: como, quando, por que e em que situação você come. A orientação continua existindo. O que muda é de onde ela sai.
@@ -82,6 +70,15 @@ Alguém que come tranquilamente o dia inteiro e come muito, sem fome, às dez da
 Nenhuma lista de permitidos resolve isso, porque a lista não sabe que dia foi aquele. Ela não sabe que você não almoçou. Não sabe que você chorou no carro.
 
 Por isso a conversa começa antes do prato.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que a dieta restritiva costuma falhar (e por que a culpa não é sua)
 
@@ -207,6 +204,15 @@ A balança costuma ser a única régua que você recebeu. Ficar sem ela dá uma 
 Mas como saber se está indo bem sem ela? No acompanhamento, o que se observa são sinais qualitativos, conversados na consulta: como está a sua relação com a comida, com que frequência aparecem os episódios que te incomodam, quanta culpa vem depois de comer, quanto espaço a comida ocupa na sua cabeça, se as escolhas estão saindo de você ou de uma regra.
 
 Uma ressalva que eu não vou pular. Isso não é uma régua para você aplicar sozinha em casa, e eu não estou prometendo que esses sinais vão melhorar em algum prazo. Essa leitura é individual e acontece na consulta, com avaliação. Aqui eu só estou te contando o que se olha.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que eu não te prometo um número nem um prazo
 

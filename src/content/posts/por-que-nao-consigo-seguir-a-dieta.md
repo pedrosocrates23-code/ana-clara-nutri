@@ -41,18 +41,6 @@ references:
 
 Se você **não consegue seguir a dieta**, o problema quase nunca é falta de força de vontade. Dietas muito restritivas são insustentáveis por design: o corpo reage à privação com mais fome e o cérebro reage à proibição com mais desejo. A nutricionista **Ana Clara Andrade Santos** (**CRN-1 nº 19825**), em Goiânia, explica o mecanismo por trás disso.
 
-**Neste artigo**
-
-- [**O que você está procurando aqui não é uma dieta nova**](#o-que-você-está-procurando-aqui-provavelmente-não-é-uma-dieta-nova)
-- [**A força de vontade é finita e se gasta ao longo do dia**](#a-força-de-vontade-é-finita-e-se-gasta-ao-longo-do-dia)
-- [**O que acontece no seu corpo quando você corta demais**](#o-que-acontece-no-seu-corpo-quando-você-corta-demais)
-- [**Por que a proibição vira descontrole**](#por-que-a-proibição-vira-descontrole)
-- [**Por que um pedaço de bolo vira "já que estraguei tudo"**](#por-que-um-pedaço-de-bolo-vira-já-que-estraguei-tudo)
-- [**Como reconhecer uma dieta que já nasce insustentável**](#como-reconhecer-uma-dieta-que-já-nasce-insustentável)
-- [**O que existe no lugar da dieta**](#o-que-existe-no-lugar-da-dieta-e-não-é-outra-dieta)
-- [**Um cuidado sem culpa, sem dieta maluca e sem promessa**](#um-cuidado-sem-culpa-sem-dieta-maluca-e-sem-promessa)
-- [**O que você leva daqui**](#o-que-você-leva-daqui)
-
 ## O que você está procurando aqui provavelmente não é uma dieta nova
 
 Você já sabe beber água. Você já leu as sete dicas, já organizou a geladeira num domingo à noite, já comprou os potinhos. Eu não vou repetir nada disso aqui.
@@ -64,6 +52,15 @@ Então eu prefiro começar pelo que este texto faz: ele nomeia o mecanismo. Não
 Você vai encontrar aqui quatro coisas. O que a restrição faz com os seus hormônios e com o seu gasto de energia. Por que a proibição aumenta o desejo em vez de reduzi-lo. Por que um pedaço de bolo consegue derrubar uma semana inteira. E um critério prático para você olhar para qualquer abordagem, antes de começar, e reconhecer se ela tende a se sustentar.
 
 O que você não vai encontrar: cardápio, lista de proibidos, plano alimentar nem prazo. Orientação individual acontece em consulta, com avaliação, e não num artigo. Este texto entrega o critério. Não entrega comida.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## A força de vontade é finita e se gasta ao longo do dia
 
@@ -150,6 +147,15 @@ Comer disparado por estresse, tédio ou ansiedade é comum e tem explicação. O
 Eu não faço diagnóstico por texto, e nenhum texto deveria fazer. O que dá para dizer é o seguinte: comer além do planejado depois de períodos de restrição é uma resposta comum e explicável pelo mecanismo descrito acima.
 
 Existe um limite que merece cuidado, e ele se apresenta assim: perda de controle frequente, sofrimento intenso com a comida, ou a comida ocupando boa parte dos seus pensamentos. Quando isso aparece, procurar um nutricionista para uma avaliação individual é o caminho, e às vezes uma equipe multiprofissional. Procurar ajuda é cuidado, e não confissão de fraqueza.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que um pedaço de bolo vira "já que estraguei tudo"
 

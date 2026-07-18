@@ -51,17 +51,6 @@ Depois você senta na cama, pega o celular e digita: compulsão alimentar como p
 
 Eu não vou te dar dez dicas para se controlar melhor. Controle é justamente o que já não funcionou, e você tem as provas guardadas. Quero te mostrar o ciclo que produz o episódio, porque é ele que se desarma.
 
-**Neste artigo**
-
-- [**O que é compulsão alimentar, e o que não é**](#o-que-é-compulsão-alimentar-e-o-que-não-é)
-- [**Por que você não consegue parar mesmo querendo parar**](#por-que-você-não-consegue-parar-mesmo-querendo-parar)
-- [**Por que isso não é falta de força de vontade**](#não-é-falta-de-força-de-vontade)
-- [**Começos possíveis, sem entrar em outra dieta**](#como-parar-a-compulsão-alimentar-sem-entrar-em-outra-dieta)
-- [**Como perceber a diferença entre fome física e fome emocional**](#fome-física-ou-fome-emocional-como-perceber-a-diferença)
-- [**Até onde vai o "sozinha", e quando pedir ajuda**](#até-onde-vai-o-sozinha-quando-pedir-ajuda)
-- [**Como é buscar ajuda de verdade**](#como-é-buscar-ajuda-de-verdade-e-por-que-não-é-mais-uma-dieta)
-- [**Um cuidado sem culpa e no seu tempo**](#um-cuidado-sem-culpa-sem-dieta-restritiva-e-no-seu-tempo)
-
 ## O que é compulsão alimentar (e o que não é)
 
 Vale nomear o que aconteceu, porque metade do sofrimento vem de não ter nome para aquilo. A compulsão alimentar é o episódio em que você come uma quantidade de comida claramente maior do que a maioria comeria numa situação parecida, num intervalo curto, com a sensação de que não consegue parar. Depois vem a culpa, a vergonha, às vezes o nojo de si mesma.
@@ -85,6 +74,15 @@ Um dia de exagero não é um episódio de compulsão. Uma sobremesa a mais no do
 Quem passa a tratar toda vontade de comer como sintoma acaba com medo de comer. E o medo de comer aperta o ciclo, em vez de afrouxar.
 
 Ter episódios também não fecha diagnóstico. O quadro clínico existe, tem nome e tem critério, e quem avalia isso é um profissional. Voltarei nesse ponto mais adiante, com calma e sem alarme.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que você não consegue parar mesmo querendo parar
 
@@ -176,6 +174,15 @@ E no dia seguinte, o que você faz com o que aconteceu na noite anterior? Esse d
 Não compense comendo menos, não pule o café da manhã, não se puna com treino e não prometa "nunca mais". Cada uma dessas reações é uma restrição nova, e restrição nova é gasolina para o próximo episódio. Cortar grupos de alimentos por conta própria tem o mesmo efeito.
 
 O dia seguinte a um episódio é um dia de comer normal. Só isso. Parece pouco, e é a coisa mais difícil da lista.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Fome física ou fome emocional? Como perceber a diferença
 

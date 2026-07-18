@@ -6,12 +6,13 @@ import Faq from './Faq.astro';
 import AuthorBox from './AuthorBox.astro';
 import References from './References.astro';
 import Button from './Button.astro';
+import TableOfContents from './TableOfContents.astro';
 import { buildGraph, SCHEMA_IDS } from '../lib/schema/shared';
-import { SITE } from '../lib/site';
+import { SITE, WHATSAPP_URL } from '../lib/site';
 
 const { entry } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 
 const siloHref = data.silo === 'blog' ? '/blog' : `/${data.silo}/`;
 const breadcrumb = [
@@ -48,10 +49,15 @@ const graph = buildGraph({
   )}
 
   <article class="section">
-    <div class="container prose">
-      <Content />
-      <AuthorBox />
-      <p class="back"><a href={siloHref}>← Voltar para {data.siloLabel}</a></p>
+    <div class="container article-layout">
+      <div class="article-layout__content prose">
+        <Content />
+        <AuthorBox />
+        <p class="back"><a href={siloHref}>← Voltar para {data.siloLabel}</a></p>
+      </div>
+      <aside class="article-layout__toc">
+        <TableOfContents headings={headings} />
+      </aside>
     </div>
   </article>
 
@@ -62,8 +68,11 @@ const graph = buildGraph({
   <section class="section cta-final">
     <div class="container reveal">
       <h2>Quer um acompanhamento individual?</h2>
-      <p>Atendimento online para todo o Brasil ou presencial em Goiânia.</p>
-      <Button href="/contato" variant="clay">Agendar consulta</Button>
+      <p>Atendimento online para todo o Brasil ou presencial em Goiânia, sem dieta restritiva e sem culpa.</p>
+      <div class="cta-final__actions">
+        <Button href={WHATSAPP_URL} variant="clay" target="_blank" rel="noopener">Falar no WhatsApp</Button>
+        <Button href="/sobre" variant="outline">Conhecer o atendimento</Button>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -85,4 +94,24 @@ const graph = buildGraph({
   .back { margin-top: 24px; font-weight: 600; }
   .cta-final { text-align: center; background: var(--paper-2); }
   .cta-final p { margin-inline: auto; }
+  .cta-final__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 18px; }
+
+  /* Mobile: conteúdo empilhado, sem sumário (posição atual, sem alterações). */
+  .article-layout__toc { display: none; }
+
+  /* Desktop: conteúdo à esquerda, sumário fixo à direita. */
+  @media (min-width: 960px) {
+    .article-layout {
+      display: grid;
+      grid-template-columns: minmax(0, var(--maxw-prose)) minmax(240px, 300px);
+      gap: 56px;
+      align-items: start;
+    }
+    .article-layout__content { max-width: var(--maxw-prose); }
+    .article-layout__toc {
+      display: block;
+      position: sticky;
+      top: calc(var(--header-h) + 24px);
+    }
+  }
 </style>

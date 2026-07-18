@@ -48,17 +48,6 @@ Essa dúvida é justa. Ela merece uma resposta honesta, e não um discurso de ve
 
 Então vou te contar o que muda, o que não muda e onde a consulta a distância realmente aperta. Inclusive a parte que não me favorece.
 
-**Neste artigo**
-
-- [**A resposta honesta**](#nutricionista-online-vale-a-pena-a-resposta-honesta)
-- [**O que não muda na consulta online**](#o-que-não-muda-na-consulta-online)
-- [**O que muda de verdade na consulta a distância**](#o-que-muda-de-verdade-na-consulta-a-distância)
-- [**Online ou presencial: o comparativo honesto**](#online-ou-presencial-o-comparativo-honesto)
-- [**A consulta online é regulamentada?**](#a-consulta-com-nutricionista-online-é-regulamentada)
-- [**O que a ciência mostra sobre a consulta a distância**](#o-que-a-ciência-mostra-sobre-a-consulta-nutricional-a-distância)
-- [**Quando o online vale a pena para você (e quando não)**](#quando-o-online-vale-a-pena-para-você-e-quando-não)
-- [**Como é o atendimento online com a Ana Clara**](#como-é-o-atendimento-online-com-a-ana-clara)
-
 ## Nutricionista online vale a pena? A resposta honesta
 
 A consulta com nutricionista online vale a pena quando o que você procura é **acompanhamento**. Ela tem limites reais, e o Conselho Federal de Nutricionistas mantém o atendimento presencial como **padrão de referência** na prestação de serviços em alimentação e nutrição. As duas coisas são verdade ao mesmo tempo.
@@ -76,6 +65,15 @@ Quando você digita **"nutricionista online vale a pena"**, você não está pes
 Faz todo o sentido você desconfiar. A internet está cheia de "plano alimentar" vendido por quem nunca viu você e nunca vai ver. Isso existe, e é ruim mesmo.
 
 Só que essa coisa que você está imaginando tem outro nome, e não é telenutrição. Na definição da norma, a telenutrição é prestada exclusivamente por nutricionista. Cardápio automático, aplicativo e planilha genérica estão fora por definição legal, e não por opinião minha.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que não muda na consulta online
 
@@ -176,6 +174,15 @@ O comparativo entre a consulta com nutricionista online e a consulta presencial 
 Onde o presencial ganha? Em duas linhas, e vale reler as duas. Sinais físicos e linguagem não verbal são os lugares onde o atendimento presencial leva vantagem de verdade. O resto empata ou muda de mão sem perder qualidade.
 
 Se você mora em Goiânia, você tem as duas portas abertas: o [atendimento presencial em Goiânia](/nutricionista-em-goiania) ou o vídeo. E pode trocar de porta no meio do caminho.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## A consulta com nutricionista online é regulamentada?
 

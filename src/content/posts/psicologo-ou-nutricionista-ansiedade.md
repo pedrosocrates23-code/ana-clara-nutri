@@ -48,16 +48,6 @@ Quem come por ansiedade geralmente precisa de dois profissionais: o psicólogo, 
 
 **Psicólogo ou nutricionista para quem come por ansiedade: este guia explica o que cada profissional faz por lei, como diferenciar fome física de fome emocional, por que a dieta restritiva alimenta o descontrole, quais sinais pedem avaliação de saúde mental e por quem começar quando você não pode pagar os dois agora.**
 
-**Neste artigo**
-
-- [**A resposta curta, sem enrolação**](#a-resposta-curta-sem-enrolação)
-- [**O que cada profissional faz, por lei**](#o-que-cada-profissional-faz-e-o-que-nenhum-dos-dois-pode-fazer-pelo-outro)
-- [**Comer por ansiedade é da cabeça ou da comida?**](#comer-por-ansiedade-é-da-cabeça-ou-da-comida-as-duas-coisas-e-por-partes-diferentes)
-- [**Por quem começar: uma regra de decisão**](#por-quem-começar-uma-regra-de-decisão-que-você-consegue-aplicar-hoje)
-- [**Sinais de que é hora de procurar um profissional de saúde mental**](#sinais-de-que-é-hora-de-procurar-um-profissional-de-saúde-mental)
-- [**Como é o acompanhamento nutricional quando o gatilho é emocional**](#como-é-o-acompanhamento-nutricional-quando-o-gatilho-é-emocional)
-- [**Comece pela porta certa**](#comece-pela-porta-certa)
-
 ## A resposta curta, sem enrolação
 
 Se você já pesquisou isso antes, encontrou respostas diferentes. Um profissional diz que o psicólogo vem primeiro. Outro diz que o psiquiatra vem primeiro, para fechar um diagnóstico. Nas páginas de perguntas e respostas da Doctoralia, a mesma dúvida recebe indicações incompatíveis, escritas por gente igualmente qualificada. Não é impressão sua. A confusão está publicada, e você saiu dela mais perdida do que entrou.
@@ -71,6 +61,15 @@ Antes de seguir, uma coisa precisa ficar dita. **Comer por ansiedade** não é f
 E não é só com você. Na audiência pública da Comissão de Assuntos Sociais do Senado, em 5 de setembro de 2024, o psiquiatra Táki Athanássios Cordás, do HCFMUSP, afirmou que os comportamentos alimentares anormais atingem **quase 5% da população brasileira**, cerca de 11 milhões de pessoas. Na mesma audiência, José Carlos Borges Appolinário, coordenador de Transtornos Alimentares da Associação Brasileira de Psiquiatria, apresentou que a compulsão alimentar atinge **mais de 6%** das pessoas, e que os transtornos alimentares aparecem mais em mulheres do que em homens.
 
 Nada disso é frescura. O problema é comum, já foi estudado, e existe profissional formado para cuidar de cada parte.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que cada profissional faz (e o que nenhum dos dois pode fazer pelo outro)
 
@@ -136,6 +135,15 @@ Aqui mora a parte que quase ninguém conta. A dieta muito restritiva produz os d
 Esse é o **ciclo de restrição e compulsão**, que em português do dia a dia significa: quanto mais você proíbe, mais forte o descontrole volta. Se você já viveu isso cinco vezes e terminou igual nas cinco, isso não é coincidência. A explicação está na restrição que veio antes, e não numa falha sua.
 
 Foi por isso que eu não trabalho com dieta restritiva. O caminho é o oposto: [reeducação alimentar no seu tempo](/emagrecimento/como-comecar-uma-reeducacao-alimentar), com regularidade e sem lista de proibições.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por quem começar: uma regra de decisão que você consegue aplicar hoje
 

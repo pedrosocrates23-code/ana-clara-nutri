@@ -1,0 +1,49 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+interface Props {
+  headings: Heading[];
+}
+
+const { headings } = Astro.props;
+// Só H2 no sumário: sucinto, sem subitens de H3.
+const items = headings.filter((h) => h.depth === 2);
+---
+
+{items.length > 0 && (
+  <nav class="toc" aria-label="Sumário do artigo">
+    <ul class="toc__list">
+      {items.map((h) => (
+        <li class="toc__item">
+          <a href={`#${h.slug}`}>{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<style>
+  .toc__list {
+    list-style: disc;
+    margin: 0;
+    padding-left: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .toc__item a {
+    font-size: .92rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .toc__item a:hover,
+  .toc__item a:focus-visible {
+    color: var(--sage-700);
+  }
+</style>

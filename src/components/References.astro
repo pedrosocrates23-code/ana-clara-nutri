@@ -16,11 +16,7 @@ const { items, title = 'Referências' } = Astro.props;
  <ol class="refs__list">
  {items.map((item) => (
  <li class="refs__item">
- {item.url ? (
- <a href={item.url} target="_blank" rel="noopener nofollow">{item.label}</a>
- ) : (
  <span class="refs__label">{item.label}</span>
- )}
  {item.detail && <span class="refs__detail">{item.detail}</span>}
  </li>
  ))}
@@ -45,8 +41,6 @@ const { items, title = 'Referências' } = Astro.props;
  font-size: 0.95rem;
  line-height: 1.55;
  }
- .refs__item a { color: var(--sage-600); text-decoration: underline; text-underline-offset: 2px; }
- .refs__item a:hover { color: var(--clay-600, var(--sage-600)); }
  .refs__label { color: var(--ink); }
  .refs__detail { display: block; color: var(--ink-soft); font-size: 0.88rem; }
  .refs__note {

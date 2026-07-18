@@ -54,18 +54,6 @@ Antes de qualquer critério, uma coisa precisa ser dita. Se você seguiu por tr�
 
 Este texto responde a sua pergunta de um jeito que funciona com qualquer nome. Inclusive com o meu.
 
-**Neste artigo**
-
-- [**O que "bom" quer dizer aqui**](#o-que-bom-quer-dizer-aqui-e-o-que-ele-não-mede)
-- [**Critério 1: registro ativo no CRN**](#critério-1-registro-ativo-no-crn-o-único-que-é-sim-ou-não)
-- [**Critério 2: a abordagem está declarada?**](#critério-2-a-abordagem-está-declarada-antes-de-você-marcar)
-- [**Critério 3: os sinais de alerta**](#critério-3-os-sinais-de-alerta-e-por-que-a-promessa-é-o-maior-deles)
-- [**Três perguntas que revelam quase tudo**](#três-perguntas-que-revelam-quase-tudo-antes-de-você-pagar)
-- [**Quem esse profissional não atende**](#o-critério-que-quase-ninguém-escreve-quem-esse-profissional-não-atende)
-- [**Nutricionista, nutrólogo ou os dois**](#nutricionista-nutrólogo-ou-os-dois-com-quem-marcar)
-- [**Como saber se o trabalho é processo**](#como-saber-se-o-trabalho-é-processo-e-não-uma-entrega-única)
-- [**O que você leva deste guia**](#o-que-você-leva-deste-guia)
-
 ## O que "bom" quer dizer aqui (e o que ele não mede)
 
 Um bom nutricionista, para efeito de escolha, é a soma de duas coisas verificáveis: critérios objetivos que qualquer pessoa consegue conferir sozinha e adequação entre o que você precisa e o que aquele profissional faz na prática.
@@ -81,6 +69,15 @@ O que eles medem é risco. Eles reduzem a chance de você repetir a experiência
 Então o que sobra para conferir antes de pagar? Sobra bastante coisa, e quase tudo é público.
 
 Você vai ver seis critérios ao longo do texto. Cada um deles serve para qualquer nutricionista, em qualquer cidade, no presencial ou no online.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Critério 1: registro ativo no CRN, o único que é sim ou não
 
@@ -164,6 +161,15 @@ Os outros sinais:
 - **Titulação que não existe.** O código veda usar titulação não possuída ou especialidade não reconhecida. Perfil cheio de títulos é um bom motivo para perguntar quais são.
 
 Uma ressalva, sem terrorismo: a maior parte dos profissionais é séria. Esta lista existe para você reconhecer a exceção, e não para desconfiar de todo mundo.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Três perguntas que revelam quase tudo antes de você pagar
 

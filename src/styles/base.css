@@ -114,3 +114,68 @@ strong { color: var(--ink); font-weight: 600; }
   height: 24px;
   pointer-events: none;
 }
+
+/* ============================================================================
+   CTA de artigo (.cta-artigo) — card verde-fundo, injetado no corpo por
+   scripts/inject-cta.py (antes do 2º H2 e do H2 do meio). O 3º CTA (fim) é a
+   seção .cta-final do ArticlePage. Global: o markup vem do markdown.
+   Fontes do site (Newsreader/mono), cores dos tokens, WCAG AA.
+   CFN 856/2026: sem promessa, sem prazo/valores, sem oferta/escassez.
+   ============================================================================ */
+.cta-artigo {
+  background: #3C5240;
+  border-radius: 20px;
+  padding: 34px 34px 32px;
+  margin: 44px 0;
+  color: #F4F3EC;
+  box-shadow: 0 12px 36px rgba(47, 66, 51, 0.22);
+}
+.prose .cta-artigo__eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+}
+.prose .cta-artigo__titulo {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(23px, 3.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px;
+  color: #FFFFFF;
+}
+.prose .cta-artigo__titulo em { font-style: italic; color: #FFFFFF; }
+.prose .cta-artigo__texto {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #FFFFFF;
+  max-width: 480px;
+  margin: 0 0 24px;
+}
+.cta-artigo__acao { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.cta-artigo__btn {
+  display: inline-block; text-decoration: none;
+  font-family: var(--sans); font-size: 15px; font-weight: 600;
+  color: var(--ink); background: #92BC94;
+  padding: 14px 30px; border-radius: 999px;
+  transition: background .2s ease, transform .2s ease;
+}
+.cta-artigo__btn:hover { background: #7FAD82; transform: translateY(-1px); text-decoration: none; }
+.cta-artigo__btn:focus-visible { outline: 2px solid var(--sage-200); outline-offset: 3px; }
+/* vence a regra .prose a (underline) que estava sublinhando o botão dentro do artigo */
+.prose .cta-artigo__btn, .prose .cta-artigo__btn:hover { text-decoration: none; }
+.cta-artigo__link {
+  font-family: var(--sans); font-size: 14.5px; font-weight: 600;
+  color: #F4F3EC; text-decoration: underline; text-underline-offset: 3px;
+}
+.cta-artigo__link:hover { color: #fff; }
+
+@media (max-width: 560px) {
+  .cta-artigo { padding: 26px 22px; }
+  .cta-artigo__acao { gap: 12px; }
+  .cta-artigo__btn { width: 100%; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { .cta-artigo__btn { transition: none; } }

@@ -43,17 +43,6 @@ Se você já tentou emagrecer três, quatro, seis vezes por conta própria, o qu
 
 Nas próximas linhas eu te mostro o que você está comprando de fato, comparo o caminho pago com a dieta gratuita da internet, falo de dinheiro com transparência e digo abertamente para quem esse modelo pode não valer a pena agora.
 
-**Neste artigo**
-
-- [**Antes de responder, a pergunta certa**](#antes-de-responder-a-pergunta-certa)
-- [**O que você está comprando**](#o-que-você-está-comprando-quando-paga-um-nutricionista)
-- [**Acompanhamento pago x dieta gratuita da internet**](#acompanhamento-pago-x-dieta-gratuita-da-internet)
-- [**Quanto custa e como funciona a conversa sobre valor**](#quanto-custa-e-como-funciona-a-conversa-sobre-valor)
-- [**E se eu pagar e não conseguir de novo?**](#e-se-eu-pagar-e-não-conseguir-de-novo)
-- [**Para quem vale a pena, e para quem talvez não valha agora**](#para-quem-vale-a-pena-e-para-quem-talvez-não-valha-agora)
-- [**Presencial em Goiânia ou online: como começar**](#presencial-em-goiânia-ou-online-como-funciona-e-como-começar)
-- [**A pergunta nunca foi sobre o preço de uma dieta**](#a-pergunta-nunca-foi-sobre-o-preço-de-uma-dieta)
-
 ## Antes de responder, a pergunta certa
 
 **"Vale a pena pagar nutricionista para emagrecer"** depende inteiramente de uma coisa que quase ninguém pergunta antes de responder: o que você acha que está comprando? A resposta muda por completo conforme a expectativa.
@@ -73,6 +62,15 @@ E é uma frase verdadeira. Você sabe que refrigerante não ajuda. Você já leu
 Então por que não funcionou? O problema nunca foi o dado. Foi a distância entre saber e conseguir fazer numa terça-feira às 22h, depois de um dia que não terminou quando você saiu do trabalho.
 
 Essa distância tem nome no meu trabalho. Chama-se **adesão**, que é a palavra técnica para a capacidade de sustentar um plano dentro da vida real, com imprevisto, cansaço e jantar fora. Informação está sobrando desde 2010. Acompanhamento é que está faltando.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que você está comprando quando paga um nutricionista
 
@@ -168,6 +166,15 @@ A tabela da FNN existe para proteger os dois lados da mesa, e o lado que ela mai
 Quando existe um piso público, você consegue comparar com critério. Você percebe quando um valor está muito abaixo da referência da categoria e pode perguntar por quê, do mesmo jeito que percebe quando está muito acima.
 
 E existe uma pergunta melhor do que "quanto custa". Antes de agendar com qualquer profissional, faça estas três: quantas consultas estão previstas? Como funcionam os retornos? Existe canal para dúvidas entre uma consulta e outra? Dois valores parecidos podem estar comprando coisas completamente diferentes.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Dá para comer bem <em>sem viver de dieta</em></p>
+<p class="cta-artigo__texto">Se quiser dar o próximo passo, fale comigo pelo WhatsApp e a gente encontra o formato que cabe na sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## E se eu pagar e não conseguir de novo?
 
