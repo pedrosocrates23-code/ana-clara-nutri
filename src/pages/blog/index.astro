@@ -24,6 +24,9 @@ const graph = buildGraph({ path: '/blog', title: 'Blog | Ana Clara Nutri', bread
  <div class="grid grid--2">
  {posts.map((p) => (
  <a class="card post" href={p.data.path}>
+ {p.data.image && (
+ <img class="post__thumb" src={p.data.image} alt={p.data.imageAlt ?? p.data.title} width="1536" height="1024" loading="lazy" />
+ )}
  <span class="kicker">{p.data.siloLabel}</span>
  {/* h2, não h3: o h1 da página é "Blog" e cada card é uma seção direta dele.
      Pular de h1 para h3 quebra a ordem de cabeçalhos para leitores de tela. */}
@@ -41,6 +44,7 @@ const graph = buildGraph({ path: '/blog', title: 'Blog | Ana Clara Nutri', bread
 <style>
  .post { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 6px; }
  .post:hover { text-decoration: none; }
+ .post__thumb { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 10px; margin-bottom: 6px; display: block; }
  /* h2 semântico, mas com o tamanho visual de h3: a hierarquia é para o leitor
     de tela, não para a escala tipográfica do card. */
  .post h2 { margin: 4px 0; font-size: clamp(1.2rem, 2.2vw, 1.5rem); }

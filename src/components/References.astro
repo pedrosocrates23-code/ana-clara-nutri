@@ -1,0 +1,60 @@
+---
+// Referências do artigo. Renderiza DEPOIS do FAQ (ver ArticlePage.astro).
+// Só lista fonte efetivamente consultada na produção do texto. Fonte que não
+// sustenta nenhuma afirmação do artigo não entra: bibliografia decorativa
+// enfraquece E-E-A-T em vez de reforçar.
+interface Props {
+ items: { label: string; detail?: string; url?: string }[];
+ title?: string;
+}
+const { items, title = 'Referências' } = Astro.props;
+---
+
+<section class="section refs" aria-label={title}>
+ <div class="container">
+ <div class="section__head"><span class="kicker">Fontes</span><h2>{title}</h2></div>
+ <ol class="refs__list">
+ {items.map((item) => (
+ <li class="refs__item">
+ {item.url ? (
+ <a href={item.url} target="_blank" rel="noopener nofollow">{item.label}</a>
+ ) : (
+ <span class="refs__label">{item.label}</span>
+ )}
+ {item.detail && <span class="refs__detail">{item.detail}</span>}
+ </li>
+ ))}
+ </ol>
+ <p class="refs__note">
+ Consultadas na produção deste conteúdo. As normas do Conselho Federal de Nutricionistas
+ podem ser atualizadas, e a redação vigente prevalece sobre o que está descrito aqui.
+ </p>
+ </div>
+</section>
+
+<style>
+ .refs__list {
+ max-width: var(--maxw-prose);
+ margin: 0;
+ padding-left: 1.2rem;
+ display: grid;
+ gap: 10px;
+ }
+ .refs__item {
+ color: var(--ink-soft);
+ font-size: 0.95rem;
+ line-height: 1.55;
+ }
+ .refs__item a { color: var(--sage-600); text-decoration: underline; text-underline-offset: 2px; }
+ .refs__item a:hover { color: var(--clay-600, var(--sage-600)); }
+ .refs__label { color: var(--ink); }
+ .refs__detail { display: block; color: var(--ink-soft); font-size: 0.88rem; }
+ .refs__note {
+ max-width: var(--maxw-prose);
+ margin: 18px 0 0;
+ padding-top: 14px;
+ border-top: 1px solid var(--line);
+ color: var(--ink-soft);
+ font-size: 0.85rem;
+ }
+</style>
