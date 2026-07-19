@@ -11,6 +11,12 @@ export function absoluteUrl(p: string): string {
  return new URL(canonicalPath(p), SITE.url).href;
 }
 
+const DATE_FORMATTER = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+/** "2026-06-29" -> "29 de junho de 2026". Meio-dia UTC evita o post datado um dia antes por fuso. */
+export function formatarDataPt(iso: string): string {
+ return DATE_FORMATTER.format(new Date(`${iso}T00:00:00`));
+}
+
 export const SITE = {
  name: 'Ana Clara Nutri',
  legalName: 'Ana Clara Andrade Santos',

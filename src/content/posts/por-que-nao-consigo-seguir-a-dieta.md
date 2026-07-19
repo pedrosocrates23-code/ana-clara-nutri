@@ -8,6 +8,8 @@ silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-16"
 medical: true
+image: "/blog/por-que-nao-consigo-seguir-a-dieta.webp"
+imageAlt: "Café da manhã saudável servido em mesa com luz natural"
 faqs:
   - q: "Por que eu não consigo seguir a dieta, mesmo querendo muito?"
     a: "Porque dietas muito restritivas são insustentáveis por design. A restrição eleva a grelina, o hormônio que estimula a fome, e reduz a leptina, que sinaliza saciedade. O corpo diminui o gasto de energia para se proteger, e a proibição aumenta o desejo pelo alimento proibido. Querer muito não altera nenhum desses mecanismos."

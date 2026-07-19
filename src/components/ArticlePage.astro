@@ -1,7 +1,6 @@
 ---
 import { render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from './PageHero.astro';
 import Faq from './Faq.astro';
 import AuthorBox from './AuthorBox.astro';
 import References from './References.astro';
@@ -39,8 +38,11 @@ const graph = buildGraph({
   extraNodes: [articleNode],
 });
 ---
-<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph}>
-  <PageHero kicker={data.siloLabel} title={data.h1} breadcrumb={breadcrumb} />
+<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph} ogImage={data.image}>
+  <div class="container article-head">
+    <span class="kicker">{data.siloLabel}</span>
+    <h1 set:html={data.h1} />
+  </div>
 
   {data.image && (
     <figure class="article-cover">
@@ -78,6 +80,18 @@ const graph = buildGraph({
 </BaseLayout>
 
 <style>
+  /* Cabeçalho simples do artigo: sem faixa colorida nem breadcrumb (a versão
+     com .page-hero ficava ruim em cima da foto de capa). Breadcrumb continua
+     só no JSON-LD (BreadcrumbList), não é mais renderizado na página. */
+  .article-head {
+    padding: clamp(28px, 5vw, 48px) 20px 40px;
+  }
+  .article-head h1 {
+    max-width: 720px;
+    margin: 6px 0 0;
+  }
+  .article-head h1 :global(em) { font-style: italic; color: var(--sage-600); }
+
   .article-cover {
     max-width: var(--maxw, 1120px);
     margin: 0 auto 8px;
@@ -91,6 +105,7 @@ const graph = buildGraph({
     border-radius: 14px;
     display: block;
   }
+
   .back { margin-top: 24px; font-weight: 600; }
   .cta-final { text-align: center; background: var(--paper-2); }
   .cta-final p { margin-inline: auto; }

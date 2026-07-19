@@ -6,8 +6,10 @@ h1: "Nutricionista que não passa dieta restritiva: como é o acompanhamento"
 path: "/nutricao-comportamental/nutricionista-sem-dieta-restritiva"
 silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
-datePublished: "2026-07-16"
+datePublished: "2026-07-15"
 medical: true
+image: "/blog/nutricionista-sem-dieta-restritiva.webp"
+imageAlt: "Variedade de frutas e vegetais coloridos sobre a mesa"
 faqs:
   - q: "Nutricionista que não passa dieta restritiva ajuda a emagrecer?"
     a: "O foco do acompanhamento com abordagem comportamental é a sua relação com a comida e a construção de hábitos que você consiga sustentar, não um número na balança dentro de um prazo. Mudanças de peso podem acontecer ao longo do processo, mas não são prometidas nem garantidas, e nenhuma nutricionista pode prometer isso: o Código de Ética da profissão proíbe. O objetivo declarado é a sua autonomia."

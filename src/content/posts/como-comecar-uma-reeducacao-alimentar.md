@@ -6,8 +6,10 @@ h1: "Como começar uma reeducação alimentar (mesmo sozinha)"
 path: "/emagrecimento/como-comecar-uma-reeducacao-alimentar"
 silo: "emagrecimento"
 siloLabel: "Emagrecimento e Reeducação Alimentar"
-datePublished: "2026-06-29"
+datePublished: "2026-07-10"
 medical: false
+image: "/blog/como-comecar-uma-reeducacao-alimentar.webp"
+imageAlt: "Mesa com alimentos variados e saudáveis, organizados de forma editorial"
 faqs:
   - q: "Quanto tempo leva uma reeducação alimentar?"
     a: "Não há um prazo fixo, porque é um processo contínuo de mudança de hábitos. Mais importante que a velocidade é a consistência."

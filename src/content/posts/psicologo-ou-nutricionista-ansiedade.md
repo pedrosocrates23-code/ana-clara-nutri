@@ -6,8 +6,10 @@ h1: "Psicólogo ou nutricionista: quem procurar quando se come por ansiedade"
 path: "/nutricao-comportamental/psicologo-ou-nutricionista-ansiedade"
 silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
-datePublished: "2026-07-16"
+datePublished: "2026-07-17"
 medical: true
+image: "/blog/psicologo-ou-nutricionista-ansiedade.webp"
+imageAlt: "Pessoa tomando chá em momento tranquilo"
 faqs:
   - q: "Comer por ansiedade é falta de força de vontade?"
     a: "Não. Comer por ansiedade é um comportamento com gatilhos, ligado ao jeito como você lida com as emoções e, muitas vezes, a um histórico de restrição alimentar. Isso não é questão de caráter. Tratar como fraqueza moral só aumenta a culpa, e a culpa faz parte do que mantém o ciclo girando."
