@@ -35,41 +35,73 @@ references:
     url: "https://cfn.org.br/cfn-publica-resolucao-que-regulamenta-a-telenutricao/"
 ---
 
-O **nutricionista** é o profissional de saúde graduado em Nutrição e registrado no **Conselho Regional de Nutricionistas (CRN)** que cuida da alimentação das pessoas. Faz avaliação nutricional, monta o plano alimentar individualizado, orienta a educação alimentar e acompanha a evolução com retornos e ajustes. Em **Goiânia**, esse cuidado é feito por **Ana Clara Andrade Santos**, **CRN-1 nº 19825**.
+O **nutricionista** é o profissional de saúde graduado em Nutrição e registrado no **Conselho Regional de Nutricionistas (CRN)** que cuida da alimentação das pessoas. Faz avaliação nutricional, monta o plano alimentar individualizado, orienta a educação alimentar e acompanha a evolução com retornos e ajustes.
+
+Em **Goiânia**, esse cuidado é feito por **Ana Clara Andrade Santos**, **CRN-1 nº 19825**.
 
 Este artigo descreve o que um nutricionista faz de verdade: os quatro atos que sustentam o trabalho, a diferença entre entregar uma dieta e acompanhar, o que ele pode fazer além do cardápio, onde termina o escopo e começa o ato médico, e o que verificar antes de escolher um profissional.
 
-Você digitou "o que faz um nutricionista" e não estava procurando saber quanto ela ganha nem quantos anos dura a faculdade. Você quer saber se procurar esse profissional vai fazer diferença na sua vida, e o que acontece quando você senta na frente dele. Boa parte do que se lê responde a outra pergunta, a de quem pensa em cursar Nutrição. Este texto responde pela sua ótica, e traz uma ideia que muda tudo: o trabalho de um nutricionista não termina na folha da dieta. Ele começa ali.
+Você digitou "o que faz um nutricionista" e não estava procurando saber quanto ela ganha nem quantos anos dura a faculdade. Você quer saber se procurar esse profissional vai fazer diferença na sua vida, e o que acontece quando você senta na frente dele.
+
+Boa parte do que se lê responde a outra pergunta, a de quem pensa em cursar Nutrição. Este texto responde pela sua ótica, e traz uma ideia que muda tudo: o trabalho de um nutricionista não termina na folha da dieta.
+
+Ele começa ali.
 
 ## O que um nutricionista faz, de verdade
 
-O nutricionista é o profissional graduado em Nutrição e inscrito no Conselho Regional de Nutricionistas, o CRN, o órgão que registra e fiscaliza quem pode exercer a profissão. Sem inscrição ativa, não há exercício legal. É a primeira coisa que separa um profissional de um palpite bem-intencionado da internet.
+O nutricionista é o profissional graduado em Nutrição e inscrito no Conselho Regional de Nutricionistas, o CRN, o órgão que registra e fiscaliza quem pode exercer a profissão. Sem inscrição ativa, não há exercício legal.
 
-O trabalho dele se apoia em quatro atos que se somam. O primeiro é a **avaliação nutricional**, a investigação inicial: o nutricionista conhece seu histórico de saúde, sua rotina, seus hábitos e os exames que você já tem. Quem entrega um cardápio sem conhecer você está pulando a parte mais importante.
+É a primeira coisa que separa um profissional de um palpite bem-intencionado da internet.
 
-Depois vem o **diagnóstico nutricional**, a leitura do seu estado nutricional a partir do que foi avaliado. Repare que ele tem sobrenome: nutricional. Não é diagnóstico de doença, que pertence ao médico. São leituras diferentes, e você vai ver por que essa distinção importa.
+O trabalho dele se apoia em quatro atos que se somam. O primeiro é a **avaliação nutricional**, a investigação inicial: o nutricionista conhece seu histórico de saúde, sua rotina, seus hábitos e os exames que você já tem.
 
-O terceiro ato é o **plano alimentar individualizado**, o nome técnico da tal "dieta". A prescrição do plano alimentar é atividade privativa do nutricionista pela [Lei nº 8.234/1991](https://www.planalto.gov.br/ccivil_03/leis/1989_1994/l8234.htm), que regulamenta a profissão. Privativa quer dizer que só ele pode fazer. E, pela própria lei, esse plano nasce da avaliação e da sua vida real, não de um modelo pronto igual para todo mundo.
+Quem entrega um cardápio sem conhecer você está pulando a parte mais importante.
 
-O quarto ato é a **educação alimentar** somada ao acompanhamento ao longo do tempo. A mesma Lei nº 8.234/1991 coloca a educação nutricional como núcleo da profissão, não como um extra opcional. A ideia por trás dela é a autonomia: você aprender a fazer as próprias escolhas, em vez de decorar uma lista para obedecer. Quem quiser pode ver o que envolve a [educação alimentar](/educacao-alimentar/) como trabalho. O que muda como você escolhe um profissional está na diferença entre o terceiro ato e o quarto.
+Depois vem o **diagnóstico nutricional**, a leitura do seu estado nutricional a partir do que foi avaliado. Repare que ele tem sobrenome: nutricional.
+
+Não é diagnóstico de doença, que pertence ao médico. São leituras diferentes, e você vai ver por que essa distinção importa.
+
+O terceiro ato é o **plano alimentar individualizado**, o nome técnico da tal "dieta". A prescrição do plano alimentar é atividade privativa do nutricionista pela [Lei nº 8.234/1991](https://www.planalto.gov.br/ccivil_03/leis/1989_1994/l8234.htm), que regulamenta a profissão.
+
+Privativa quer dizer que só ele pode fazer. E, pela própria lei, esse plano nasce da avaliação e da sua vida real, não de um modelo pronto igual para todo mundo.
+
+O quarto ato é a **educação alimentar** somada ao acompanhamento ao longo do tempo. A mesma Lei nº 8.234/1991 coloca a educação nutricional como núcleo da profissão, não como um extra opcional.
+
+A ideia por trás dela é a autonomia: você aprender a fazer as próprias escolhas, em vez de decorar uma lista para obedecer. Quem quiser pode ver o que envolve a [educação alimentar](/educacao-alimentar/) como trabalho.
+
+O que muda como você escolhe um profissional está na diferença entre o terceiro ato e o quarto.
 
 ## Dieta ou acompanhamento: onde está o trabalho de verdade
 
-Se você já saiu de um consultório com uma folha impressa e a sensação de estar sozinha para dar conta dela, você conhece o problema por dentro. A folha é o produto mais visível do trabalho, e a menor parte dele. Um plano alimentar é uma fotografia de um momento: montado para a sua rotina daquela semana e os seus exames daquele mês. E a vida não fica parada. O que acompanha essa mudança não é a folha, é o retorno: voltar, olhar o que coube e o que não coube, e ajustar. Esse movimento de ida e volta tem um nome simples, acompanhamento, e é ele que transforma uma folha de papel num processo que devolve para você a capacidade de decidir sozinha o que comer numa quinta-feira comum.
+Se você já saiu de um consultório com uma folha impressa e a sensação de estar sozinha para dar conta dela, você conhece o problema por dentro. A folha é o produto mais visível do trabalho, e a menor parte dele.
 
-Aqui mora a confusão que faz muita gente escolher errado. Quando você acredita que nutricionista é "quem entrega a dieta", compara por preço, como se o produto fosse a folha. Só que o produto é o acompanhamento, e esse não vem impresso. Eu não trabalho entregando um plano e desejando boa sorte, porque é essa entrega solta que falha.
+Um plano alimentar é uma fotografia de um momento: montado para a sua rotina daquela semana e os seus exames daquele mês. E a vida não fica parada.
 
-Se as suas tentativas anteriores pararam depois de poucos dias, existe uma explicação, e ela não é falta de força de vontade. Um plano rígido demais, feito sem olhar a sua rotina, quebra no primeiro imprevisto. A causa está no método que não te acompanhou, não em algum defeito seu. É por isso que muita gente precisa antes [trabalhar a relação com a comida](/nutricao-comportamental/), e não receber mais um cardápio para seguir sozinha.
+O que acompanha essa mudança não é a folha, é o retorno: voltar, olhar o que coube e o que não coube, e ajustar. Esse movimento de ida e volta tem um nome simples, acompanhamento, e é ele que transforma uma folha de papel num processo que devolve para você a capacidade de decidir sozinha o que comer numa quinta-feira comum.
+
+Aqui mora a confusão que faz muita gente escolher errado. Quando você acredita que nutricionista é "quem entrega a dieta", compara por preço, como se o produto fosse a folha.
+
+Só que o produto é o acompanhamento, e esse não vem impresso. Eu não trabalho entregando um plano e desejando boa sorte, porque é essa entrega solta que falha.
+
+Se as suas tentativas anteriores pararam depois de poucos dias, existe uma explicação, e ela não é falta de força de vontade. Um plano rígido demais, feito sem olhar a sua rotina, quebra no primeiro imprevisto.
+
+A causa está no método que não te acompanhou, não em algum defeito seu. É por isso que muita gente precisa antes [trabalhar a relação com a comida](/nutricao-comportamental/), e não receber mais um cardápio para seguir sozinha.
 
 Um passo por vez já é progresso. Você não precisa reorganizar tudo de uma vez para que valha a pena começar.
 
 ## Como é o acompanhamento na prática
 
-O que mais trava a decisão de procurar um nutricionista é não saber o que vai acontecer lá dentro. A primeira consulta costuma ser bem diferente do medo: no meu atendimento, ela é quase toda escuta, a avaliação nutricional acontecendo na prática. Um bom acompanhamento não funciona na base da bronca. Eu acredito num cuidado sem culpa, e isso é método: a comida entra como informação para orientar o cuidado, não como confissão. Você pode contar que come pão às onze da noite sem que isso vire uma sentença.
+O que mais trava a decisão de procurar um nutricionista é não saber o que vai acontecer lá dentro. A primeira consulta costuma ser bem diferente do medo: no meu atendimento, ela é quase toda escuta, a avaliação nutricional acontecendo na prática.
+
+Um bom acompanhamento não funciona na base da bronca. Eu acredito num cuidado sem culpa, e isso é método: a comida entra como informação para orientar o cuidado, não como confissão.
+
+Você pode contar que come pão às onze da noite sem que isso vire uma sentença.
 
 ### E o atendimento online, funciona?
 
-Funciona, e não é improviso. A telenutrição é regulamentada pela Resolução CFN nº 760/2023, que exige inscrição ativa no CRN e cadastro prévio na plataforma e-Nutricionista, o sistema oficial do Conselho para o atendimento a distância, além do Código de Ética e da proteção dos seus dados. Na prática, a avaliação, o plano e os retornos acontecem por videochamada, com a mesma lógica da consulta presencial. Para quem mora longe, o [atendimento online](/nutricionista-online) abre a porta sem tirar o rigor.
+Funciona, e não é improviso. A telenutrição é regulamentada pela Resolução CFN nº 760/2023, que exige inscrição ativa no CRN e cadastro prévio na plataforma e-Nutricionista, o sistema oficial do Conselho para o atendimento a distância, além do Código de Ética e da proteção dos seus dados.
+
+Na prática, a avaliação, o plano e os retornos acontecem por videochamada, com a mesma lógica da consulta presencial. Para quem mora longe, o [atendimento online](/nutricionista-online) abre a porta sem tirar o rigor.
 
 ## O que o nutricionista pode fazer além da dieta
 
@@ -77,17 +109,29 @@ Duas competências surpreendem quem só conhece a parte da dieta.
 
 ### O nutricionista pode pedir exames?
 
-Pode. A Resolução CFN nº 306/2003 prevê a solicitação de exames laboratoriais necessários à avaliação, à prescrição e à evolução nutricional. Há uma linha fina que quase nenhum texto explica: o nutricionista olha o exame para orientar a alimentação; diagnosticar uma doença a partir dele é ato do médico. Dois olhares sobre o mesmo papel, cada um no seu escopo.
+Pode. A Resolução CFN nº 306/2003 prevê a solicitação de exames laboratoriais necessários à avaliação, à prescrição e à evolução nutricional.
+
+Há uma linha fina que quase nenhum texto explica: o nutricionista olha o exame para orientar a alimentação; diagnosticar uma doença a partir dele é ato do médico. Dois olhares sobre o mesmo papel, cada um no seu escopo.
 
 ### E suplementos?
 
-Também pode, com critério. A Resolução CFN nº 656/2020 permite ao nutricionista a prescrição de suplementos por tipo de nutriente, sempre depois da avaliação, nunca antes. Tipo de nutriente quer dizer a categoria da substância, como uma vitamina ou um mineral, e não uma marca de prateleira. Suplemento sério não é indicado no escuro: ele nasce de uma avaliação que mostrou que você precisa. Se alguém oferece suplemento antes de te conhecer, desconfie.
+Também pode, com critério. A Resolução CFN nº 656/2020 permite ao nutricionista a prescrição de suplementos por tipo de nutriente, sempre depois da avaliação, nunca antes.
+
+Tipo de nutriente quer dizer a categoria da substância, como uma vitamina ou um mineral, e não uma marca de prateleira. Suplemento sério não é indicado no escuro: ele nasce de uma avaliação que mostrou que você precisa.
+
+Se alguém oferece suplemento antes de te conhecer, desconfie.
 
 ## Onde termina o escopo: o que é ato médico
 
-Saber o que um profissional faz também é saber onde o trabalho dele termina. Diagnóstico de doença e prescrição de medicamentos são atos médicos, definidos pela [Lei nº 12.842/2013](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12842.htm), conhecida como Lei do Ato Médico. O nutricionista não diagnostica doença e não prescreve medicamento. O que ele faz é o diagnóstico nutricional, a leitura do seu estado alimentar e nutricional, que é diferente. Quando houver necessidade de medicamento, isso entra pela indicação médica.
+Saber o que um profissional faz também é saber onde o trabalho dele termina. Diagnóstico de doença e prescrição de medicamentos são atos médicos, definidos pela [Lei nº 12.842/2013](https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12842.htm), conhecida como Lei do Ato Médico.
 
-Não é uma lista de proibições, é divisão de trabalho. Na prática, costuma significar cuidado somado, não dividido: quem tem um quadro de saúde a tratar segue com o médico e tem no nutricionista o profissional da alimentação. Se a sua dúvida é sobre o médico que também cuida de nutrição, vale entender [a diferença entre nutricionista e nutrólogo](/blog/diferenca-entre-nutricionista-e-nutrologo), formações distintas.
+O nutricionista não diagnostica doença e não prescreve medicamento. O que ele faz é o diagnóstico nutricional, a leitura do seu estado alimentar e nutricional, que é diferente.
+
+Quando houver necessidade de medicamento, isso entra pela indicação médica.
+
+Não é uma lista de proibições, é divisão de trabalho. Na prática, costuma significar cuidado somado, não dividido: quem tem um quadro de saúde a tratar segue com o médico e tem no nutricionista o profissional da alimentação.
+
+Se a sua dúvida é sobre o médico que também cuida de nutrição, vale entender [a diferença entre nutricionista e nutrólogo](/blog/diferenca-entre-nutricionista-e-nutrologo), formações distintas.
 
 <aside class="cta-artigo" aria-label="Falar com a nutricionista">
 <p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
@@ -100,7 +144,9 @@ Não é uma lista de proibições, é divisão de trabalho. Na prática, costuma
 
 ## As frentes de atuação: por qual porta a sua necessidade entra
 
-Um mesmo nutricionista pode atuar em mais de uma frente, dentro da própria formação. Cada frente é uma abordagem de trabalho, não um título separado, e o que segue descreve o atendimento individual a adultos. Pense nelas como portas de entrada.
+Um mesmo nutricionista pode atuar em mais de uma frente, dentro da própria formação. Cada frente é uma abordagem de trabalho, não um título separado, e o que segue descreve o atendimento individual a adultos.
+
+Pense nelas como portas de entrada.
 
 - A abordagem comportamental é para quem sabe o que fazer e não consegue fazer, e olha a relação com a comida e o que dispara certos comportamentos.
 - A educação alimentar é para quem quer autonomia nas escolhas: o foco é você entender, não apenas seguir.
@@ -113,9 +159,15 @@ Um mesmo nutricionista pode atuar em mais de uma frente, dentro da própria form
 
 Você não precisa de encaminhamento para procurar um nutricionista: o acesso é direto e não depende de pedido médico. Se você já tem exames ou um acompanhamento médico em andamento, leve tudo, porque ajuda a construir o plano.
 
-Antes de fechar uma consulta, vale conferir duas coisas. A primeira é o registro. O cadastro do nutricionista é público e pode ser consultado no CRN da região, que em Goiás, Distrito Federal, Mato Grosso e Tocantins é o [CRN-1](https://novoportal.crn1.org.br/servicos-online-outros/). A consulta retorna o nome, o número da inscrição e a situação. Um profissional sério não tem nada a esconder ali.
+Antes de fechar uma consulta, vale conferir duas coisas. A primeira é o registro.
 
-A segunda é o método, e a melhor forma é perguntar: como funciona o acompanhamento, com que frequência acontecem os retornos, como o plano é ajustado. É o que separa a entrega de uma folha de dieta de um acompanhamento de verdade. E um sinal de alerta: quem promete resultado rápido e garantido está prometendo o que não pode cumprir.
+O cadastro do nutricionista é público e pode ser consultado no CRN da região, que em Goiás, Distrito Federal, Mato Grosso e Tocantins é o [CRN-1](https://novoportal.crn1.org.br/servicos-online-outros/). A consulta retorna o nome, o número da inscrição e a situação.
+
+Um profissional sério não tem nada a esconder ali.
+
+A segunda é o método, e a melhor forma é perguntar: como funciona o acompanhamento, com que frequência acontecem os retornos, como o plano é ajustado. É o que separa a entrega de uma folha de dieta de um acompanhamento de verdade.
+
+E um sinal de alerta: quem promete resultado rápido e garantido está prometendo o que não pode cumprir.
 
 ## Atendimento em Goiânia e por telenutrição para todo o Brasil
 
@@ -125,7 +177,9 @@ Com transparência, porque você tem o direito de saber antes de agendar: o aten
 
 ## Como começar
 
-Se o que você procura é alguém que cuide da sua alimentação com avaliação, plano individual e acompanhamento próximo, esse profissional é o nutricionista. O atendimento é para adultos, presencial em Goiânia e por telenutrição para todo o país. Gestantes e crianças não fazem parte do escopo.
+Se o que você procura é alguém que cuide da sua alimentação com avaliação, plano individual e acompanhamento próximo, esse profissional é o nutricionista. O atendimento é para adultos, presencial em Goiânia e por telenutrição para todo o país.
+
+Gestantes e crianças não fazem parte do escopo.
 
 Se você quer reorganizar a alimentação pelo comportamento, no seu tempo e sem culpa, o primeiro passo é uma conversa. [Agendar consulta](/contato).
 
