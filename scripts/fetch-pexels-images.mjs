@@ -66,6 +66,40 @@ const PLANO = {
     query: 'nutritionist healthy meal consultation table',
     alt: 'Nutricionista apresentando refeição saudável durante consulta',
   },
+  // Lote 23/07/2026 (8 novos posts). Queries conceituais e CFN-safe:
+  // comida, cozinha, consulta e acolhimento. Nunca corpo, balança ou antes/depois.
+  'o-que-faz-um-nutricionista': {
+    query: 'nutritionist writing notes desk consultation',
+    alt: 'Nutricionista fazendo anotações durante uma consulta',
+  },
+  'quando-procurar-um-nutricionista': {
+    query: 'woman thinking coffee window morning light',
+    alt: 'Mulher pensativa com um café, junto à janela com luz da manhã',
+  },
+  'quais-problemas-um-nutricionista-resolve': {
+    query: 'variety whole foods grains vegetables table',
+    alt: 'Variedade de alimentos integrais, grãos e legumes sobre a mesa',
+  },
+  'como-um-nutricionista-avalia-alimentacao': {
+    query: 'notebook fresh healthy food table daylight',
+    alt: 'Caderno de anotações ao lado de alimentos frescos, sobre a mesa',
+  },
+  'por-que-sinto-fome-o-tempo-todo': {
+    query: 'bowl oatmeal fruit breakfast table',
+    alt: 'Tigela de aveia com frutas no café da manhã, sobre a mesa',
+  },
+  'como-melhorar-a-alimentacao-em-casa': {
+    query: 'home cooking fresh ingredients kitchen preparation',
+    alt: 'Preparo de ingredientes frescos numa cozinha em casa',
+  },
+  'quais-dietas-um-nutricionista-recomenda': {
+    query: 'colorful balanced healthy plate vegetables',
+    alt: 'Prato colorido e equilibrado com legumes variados',
+  },
+  'quando-um-problema-alimentar-e-grave': {
+    query: 'hands holding warm cup of tea comfort',
+    alt: 'Mãos segurando uma xícara de chá, num momento de acolhimento',
+  },
 };
 
 async function buscarFoto(query) {
