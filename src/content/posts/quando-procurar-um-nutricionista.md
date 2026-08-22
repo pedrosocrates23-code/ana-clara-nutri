@@ -83,7 +83,7 @@ Leve os exames que você já tem, mesmo os antigos, porque eles ajudam na avalia
 
 Tem um tipo de incômodo que não aparece em exame nenhum. É pensar em comida o tempo todo, comer escondido, terminar a refeição e sentir culpa.
 
-Se você se reconhece nisso, esse é um motivo tão legítimo quanto qualquer resultado laboratorial. A culpa que aparece depois de comer costuma vir da restrição que veio antes, não de um defeito seu.
+Se você se reconhece nisso, esse é um motivo tão legítimo quanto qualquer resultado laboratorial. A culpa que aparece depois de comer costuma vir da restrição que veio antes.
 
 Essa relação é o centro de uma [abordagem comportamental](/nutricao-comportamental/), o jeito de cuidar que olha para os hábitos e para o que dispara cada escolha, não só para o prato.
 

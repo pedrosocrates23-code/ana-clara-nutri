@@ -115,7 +115,7 @@ O que isso quer dizer na prática? A fome que você sentiu meses depois não era
 
 Em 2024, um estudo publicado na revista **Nature** mostrou algo ainda mais desconfortável. O tecido adiposo, a gordura do corpo, guarda uma **memória epigenética** do estado anterior. Memória epigenética quer dizer que as células mantêm marcas de como funcionavam antes e voltam a responder rápido quando o ambiente permite.
 
-Boa parte do peso perdido tende a voltar ao longo dos anos seguintes, e isso aparece associado a alterações metabólicas e fisiológicas do organismo, que lê a privação como ameaça e reage tentando compensar. A explicação está na privação que veio antes e na resposta hormonal que ela dispara, não no seu caráter.
+Boa parte do peso perdido tende a voltar ao longo dos anos seguintes, e isso aparece associado a alterações metabólicas e fisiológicas do organismo, que lê a privação como ameaça e reage tentando compensar. A explicação está na privação que veio antes e na resposta hormonal que ela dispara. É fisiologia, e ela funciona assim em todo mundo.
 
 Uma trava de honestidade, porque ela importa: nada disso significa que trabalhar comportamento evita o retorno do peso. Essa garantia não existe, e eu não vou te dar uma. Este trecho serve para uma coisa só, que é tirar você do lugar de culpada.
 
@@ -232,7 +232,7 @@ Traduzindo para o que isso significa na sua vida: existe uma regra que impede qu
 
 Aqui vai o critério, de graça, para você usar com qualquer profissional, inclusive comigo. Se alguém te promete um número em um prazo, ou te mostra um antes e depois, essa pessoa está fazendo algo que a norma da própria profissão dela proíbe. Isso não te diz que ela é má pessoa. Te diz que a informação que você está recebendo não vale como previsão.
 
-Você também pode conferir o registro de quem vai te atender. O meu é o [CRN-1 nº 19825](https://crn1.org.br) e ele é público. Um registro que se oferece à conferência vale mais do que um selo bonito na página.
+Você também pode conferir o registro de quem vai te atender. O meu é o [CRN-1 nº 19825](https://novoportal.crn1.org.br/servicos-online-outros/) e ele é público. Um registro que se oferece à conferência vale mais do que um selo bonito na página.
 
 ### E se eu recair ou desistir no meio?
 
@@ -240,7 +240,7 @@ Essa é a pergunta que segura o seu dedo em cima do botão de agendar. Ela merec
 
 A recaída faz parte. Ela não é o fim do processo nem motivo de culpa: é informação sobre o comportamento, e é justamente o material com que se trabalha. Um episódio de compulsão numa quinta à noite conta alguma coisa sobre aquela quinta à noite. E sobre o dia inteiro que veio antes dela.
 
-Quando você passa horas comendo pouco e o corpo cobra a conta de uma vez, a explicação está no dia que veio antes, não na sua força de vontade.
+Quando você passa horas comendo pouco e o corpo cobra a conta de uma vez, o que explica a noite é o dia que veio antes.
 
 Se você sumir, você pode voltar. Não tem sermão esperando. Desistir no meio não fecha a porta, e voltar depois de três meses sem dar notícia não é vergonha nenhuma: é bem mais comum do que você imagina, e o acolhimento vem antes de qualquer cobrança.
 

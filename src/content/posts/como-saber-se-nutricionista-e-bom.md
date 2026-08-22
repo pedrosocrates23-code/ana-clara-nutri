@@ -52,7 +52,7 @@ Se você já saiu de um consultório com um papel na mão que não durou três s
 
 Essa pergunta é boa. Ela vem de quem já pagou uma vez e voltou para casa achando que gastou à toa.
 
-Antes de qualquer critério, uma coisa precisa ser dita. Se você seguiu por três semanas e largou, a explicação mais provável está no plano que chegou pronto, sem passar pela sua rotina, e não no seu caráter.
+Antes de qualquer critério, uma coisa precisa ser dita. Se você seguiu por três semanas e largou, a explicação mais provável está no plano que chegou pronto, sem nunca ter passado pela sua rotina.
 
 Este texto responde a sua pergunta de um jeito que funciona com qualquer nome. Inclusive com o meu.
 
@@ -136,7 +136,7 @@ Qual das duas você procura? Responder isso para si mesma, antes de marcar, vale
 
 ### Individualização: seu plano nasce da sua vida ou de um molde?
 
-**Individualização** quer dizer que a conduta parte da sua vida real, dos seus exames e da sua rotina, e não de um cardápio pronto que já existia antes de você entrar na sala. Um plano montado antes de você falar é o contrário do que o trabalho pede.
+**Individualização** quer dizer que a conduta parte da sua vida real, dos seus exames e da sua rotina. O cardápio nasce depois dessa leitura, dentro da sala, com o seu nome nele. Um plano montado antes de você falar é o contrário do que o trabalho pede.
 
 O critério prático é simples de aplicar. Pergunte se o plano é montado depois da avaliação ou se ele já existe.
 
@@ -265,6 +265,6 @@ Recapitulando o que dá para conferir antes de marcar:
 
 Você não precisa checar todos hoje. Um de cada vez já muda a sua próxima escolha.
 
-Se você não se adaptou ao primeiro profissional, a causa costuma estar na incompatibilidade entre o que você procurava e o que aquele atendimento entregava, e não na sua falta de esforço. A diferença é que agora você consegue enxergar essa incompatibilidade antes de pagar, e não depois. A próxima escolha é sua, e você tem como fazê-la com critério.
+Se você não se adaptou ao primeiro profissional, a causa costuma estar na incompatibilidade entre o que você procurava e o que aquele atendimento entregava. Esforço você já colocou. A diferença é que agora você consegue enxergar essa incompatibilidade antes de pagar, e não depois. A próxima escolha é sua, e você tem como fazê-la com critério.
 
 Este conteúdo tem caráter educativo e não substitui avaliação individual. Orientação nutricional é feita em consulta, com avaliação. Ana Clara Andrade Santos atende adultos, em Goiânia e por telenutrição, em modelo exclusivamente particular, e não realiza atendimento materno-infantil.

@@ -41,11 +41,11 @@ Este texto responde essa pergunta e funciona como um índice. Cada seção abaix
 
 Você lê pela que reconhece como sua e segue para o conteúdo daquele ponto. Antes da lista, vale desfazer um mal-entendido que atrapalha muita gente na porta.
 
-## Nutricionista não é só sobre emagrecer
+## Quem procura nutricionista nem sempre quer emagrecer
 
-Existe uma ideia espalhada de que nutricionista é quem passa a dieta para emagrecer. Ela não está errada por completo: o emagrecimento é um dos motivos de procura, e é legítimo.
+Existe uma ideia espalhada de que nutricionista é quem passa a dieta para emagrecer. O emagrecimento é mesmo um dos motivos de procura, e é legítimo.
 
-O problema mora no "só". Quando a alimentação vira sinônimo de perder peso, dores importantes ficam sem cuidado, porque a pessoa pensa "não é questão de peso, então não é comigo".
+A distorção começa quando ele vira o único. Se alimentação passa a significar perder peso, dores importantes ficam sem cuidado: a pessoa olha para o próprio caso, vê que peso ali não é o assunto, e conclui que aquilo é consultório para outra pessoa.
 
 Repare na lista a seguir. Metade dela não tem relação direta com a balança.
 
@@ -63,7 +63,7 @@ Nesses casos, a alimentação entra como aliada do cuidado, ao lado do acompanha
 
 O nutricionista pode solicitar e analisar exames dentro da avaliação, o que está previsto na Resolução CFN nº 306/2003.
 
-O que fazer no seu caso depende de avaliação; por isso este texto não diz "coma isto" ou "corte aquilo". Se o seu ponto de partida é um exame alterado, o passo seguinte é entender a [alimentação como aliada do cuidado clínico](/nutricao-clinica), e há um conteúdo específico sobre [o que a alimentação faz quando o colesterol vem alto](/nutricao-clinica/colesterol-alterado-o-que-comer), sempre no plano educativo.
+O que fazer no seu caso depende de avaliação; por isso este texto não diz "coma isto" ou "corte aquilo". Se o seu ponto de partida é um exame alterado, o passo seguinte é entender a [alimentação como aliada do cuidado clínico](/nutricao-clinica), e há um conteúdo específico sobre [o que a alimentação faz quando o colesterol vem alto](/nutricao-clinica/colesterol-alto-o-que-a-alimentacao-pode-ajudar), sempre no plano educativo.
 
 ## Compulsão, comer emocional e a fome da noite
 
@@ -73,23 +73,23 @@ Se essa cena se repete, a primeira coisa que eu quero dizer é que ela quase nun
 
 O comer emocional e a compulsão costumam ter causas concretas. Restrição excessiva durante o dia, sono ruim, uma rotina sem trégua: o corpo cobra de uma vez à noite o que faltou.
 
-A explicação está nesse acúmulo, não na sua disciplina. Se quiser olhar de perto esse padrão, veja como [aquela fome que aperta à noite tem explicação](/nutricao-comportamental/compulsao-alimentar-a-noite).
+O acúmulo é que cobra. É o corpo respondendo a uma conta que ficou aberta durante o dia. Se quiser olhar de perto esse padrão, veja como [aquela fome que aperta à noite tem explicação](/nutricao-comportamental/compulsao-alimentar-como-parar).
 
 A compulsão costuma envolver mais de um profissional: o diagnóstico de um transtorno alimentar é médico, em geral do psiquiatra; a terapia dos gatilhos emocionais é do psicólogo; e o nutricionista cuida da alimentação e do comportamento alimentar no dia a dia. Nenhum substitui o outro.
 
-Dá para começar a [trabalhar a relação com a comida](/nutricao-comportamental) sem ter tudo resolvido antes, e existe um caminho para [lidar com a compulsão sem se culpar](/nutricao-comportamental/lidar-com-compulsao-sozinha), no seu tempo.
+Dá para começar a [trabalhar a relação com a comida](/nutricao-comportamental) sem ter tudo resolvido antes, e existe um caminho para [lidar com a compulsão sem se culpar](/nutricao-comportamental/compulsao-alimentar-como-parar), no seu tempo.
 
 ## A dieta que nunca dura
 
 Talvez você tenha, guardados em algum canto, três ou quatro planos alimentares impressos, cada um seguido por poucos dias, cada abandono com a mesma frase: "o problema sou eu". Se só de pensar em recomeçar já bate um cansaço, existe outro caminho, que é um [acompanhamento sem dieta restritiva](/nutricao-comportamental/nutricionista-sem-dieta-restritiva).
 
-Uma dieta rígida, igual para todo mundo e pensada para durar pouco tempo, tende a ser abandonada mesmo. Não porque você é indisciplinada, mas porque o modelo "dieta descartável" não conversa com a sua rotina, com o seu trabalho, com o jantar de sexta.
+Uma dieta rígida, igual para todo mundo e pensada para durar pouco tempo, tende a ser abandonada mesmo. O modelo "dieta descartável" cobra uma rotina que quase ninguém tem: ele ignora o seu trabalho, o horário em que você chega em casa, o jantar de sexta.
 
-A dificuldade tem endereço no método, não na sua vontade.
+A dificuldade tem endereço, e o endereço é o método.
 
 O caminho oposto tem nome: educação alimentar, o núcleo do que o nutricionista faz e uma atribuição prevista na Lei nº 8.234/1991. A proposta é [aprender a comer com autonomia](/educacao-alimentar), para não depender de uma folha nova a cada recaída.
 
-Emagrecer pode continuar sendo um objetivo seu; a diferença está em como se chega lá, e [reorganizar a alimentação no seu tempo](/emagrecimento) pesa mais do que qualquer prazo apertado. Para decidir com honestidade, há um conteúdo que pergunta se o que você procura é [reeducação alimentar ou mais uma dieta](/emagrecimento/reeducacao-alimentar-ou-dieta).
+Emagrecer pode continuar sendo um objetivo seu; a diferença está em como se chega lá, e [reorganizar a alimentação no seu tempo](/emagrecimento) pesa mais do que qualquer prazo apertado. Para decidir com honestidade, há um conteúdo que pergunta se o que você procura é [reeducação alimentar ou mais uma dieta](/emagrecimento/como-comecar-uma-reeducacao-alimentar).
 
 ## Intestino: inchaço, gases e má digestão
 
@@ -126,7 +126,7 @@ Existe um receio que quase ninguém diz em voz alta, mas que segura muita gente 
 
 O trabalho começa por uma avaliação nutricional, a etapa de entender a sua história, a sua rotina e os exames que você já tem. A partir daí se constrói um plano que caiba na sua vida, com retorno e ajuste ao longo do tempo.
 
-Julgar o que você come não faz parte disso, porque culpa não muda comportamento, só afasta. Se quer saber como esse encontro funciona por dentro, dá para ver [como é a primeira consulta](/blog/como-e-a-primeira-consulta-com-nutricionista) antes de marcar.
+Julgar o que você come não faz parte disso, porque culpa não muda comportamento, só afasta. Se quer saber como esse encontro funciona por dentro, dá para ver [como é a primeira consulta](/nutricionista-em-goiania/) antes de marcar.
 
 ### E o atendimento online, resolve igual?
 
@@ -156,7 +156,7 @@ Você não precisa dar conta de todas de uma vez; começar por uma já é começ
 - Se é o desconforto no intestino, o ajuste de alimentação e rotina entra, junto do médico quando há suspeita de doença.
 - Se é o treino sem energia, a alimentação alinhada ao esforço é o foco.
 
-Nenhuma dessas portas é a errada. Todas levam ao mesmo lugar: um acompanhamento que parte da sua vida real, e não de um modelo pronto.
+Nenhuma dessas portas é a errada. Todas levam ao mesmo lugar: um acompanhamento construído em cima da sua vida real.
 
 ## Atendimento em Goiânia e por telenutrição para todo o Brasil
 

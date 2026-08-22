@@ -101,7 +101,7 @@ Tem também a outra face da mesma moeda. O acompanhamento constrói o seu entend
 
 ## Por que a dieta genérica não se sustenta
 
-Se você já começou uma dieta numa segunda e desistiu antes da segunda seguinte, provavelmente mais de uma vez, quero que a primeira coisa que você leia aqui seja esta: isso não é um defeito seu. A explicação está no método, não no seu caráter.
+Se você já começou uma dieta numa segunda e desistiu antes da segunda seguinte, provavelmente mais de uma vez, quero que a primeira coisa que você leia aqui seja esta: isso não é um defeito seu. O método é que não se sustenta.
 
 Um plano rígido, imposto de fora, com lógica de tudo ou nada, ignora a sua vida real, e o que ignora a vida real não dura na vida real.
 
@@ -139,7 +139,7 @@ Quem faz isso é a avaliação, olhando para você.
 Depois de tudo isso, fica mais fácil montar um critério de triagem que serve para a vida toda. Se você está avaliando quem procurar, repare em alguns sinais.
 
 - Não promete número nem prazo. Nenhuma nutricionista habilitada pode prometer resultado, perda de peso ou tempo garantido: é vedação do Código de Ética da profissão (Resolução CFN nº 856/2026). Existe uma regra que impede a profissional de te enganar, e ela protege você.
-- Individualiza em vez de impor a dieta do momento. O plano parte da sua história e da sua rotina, não de uma tabela que serve para qualquer um.
+- Individualiza em vez de impor a dieta do momento. O plano se monta em cima do que a sua semana comporta.
 - Tem registro visível e verificável. O número do CRN é público e a consulta é rápida. Confirmar antes de fechar é um cuidado simples e legítimo.
 - Explica em vez de mandar obedecer. Você sai entendendo o porquê de cada escolha, não decorando uma lista.
 

@@ -112,7 +112,11 @@ export function sharedNodes() {
  { '@type': 'City', name: 'Goiânia' },
  { '@type': 'City', name: 'Aparecida de Goiânia' },
  ],
- // additionalType: '{WD:nutricionista}', // resolver via map-entity-wikidata
+ // Ancora o tipo de serviço no conceito público "nutricionista" do Wikidata.
+ // Q2576499 = nutricionista (en: nutritionist). VERIFICADO na Special:EntityData
+ // em 11/08/2026. ATENÇÃO: o plano antigo indicava Q186360, que é ENFERMEIRO.
+ // Não trocar sem conferir o label na fonte.
+ additionalType: 'https://www.wikidata.org/wiki/Q2576499',
  },
  {
  '@type': 'WebSite',

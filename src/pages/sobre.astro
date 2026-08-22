@@ -14,7 +14,7 @@ const faqs = [
  { q: 'Atende particular ou convênio?', a: 'O atendimento é exclusivamente particular. Não trabalho com convênios.' },
 ];
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Sobre', href: '/sobre' }];
-const graph = buildGraph({ path: '/sobre', title: 'Sobre Ana Clara | Nutricionista formada pela UFG', type: 'ProfilePage', mainEntity: 'person', faqs, breadcrumb });
+const graph = buildGraph({ path: '/sobre', title: 'Ana Clara Andrade Santos, nutricionista em Goiânia | Ana Clara Nutri', type: 'ProfilePage', mainEntity: 'person', faqs, breadcrumb });
 
 // Credenciais reais. Fonte: texto de apresentação enviado pela própria Ana Clara.
 const creds = [
@@ -25,7 +25,7 @@ const creds = [
 ];
 ---
 <BaseLayout
- title="Sobre Ana Clara | Nutricionista formada pela UFG"
+ title="Ana Clara Andrade Santos, nutricionista em Goiânia | Ana Clara Nutri"
  description={`Ana Clara Andrade Santos, nutricionista formada pela UFG${CRN_SUFIXO}, com mais de 4 anos de experiência em nutrição clínica hospitalar e ambulatorial. Atendimento particular em Goiânia e online.`}
  path="/sobre" graph={graph}>
  <PageHero kicker={HAS_CRN ? `Nutricionista · ${CRN}` : 'Nutricionista'} title="Ana Clara Andrade Santos"
@@ -69,7 +69,7 @@ const creds = [
  <h2>Verifique meu registro</h2>
  <p>Sou inscrita no Conselho Regional de Nutricionistas, <strong>{CRN}</strong>. O CRN-1 abrange Goiás, Distrito Federal, Tocantins e Mato Grosso.</p>
  <p>Você pode (e deve) verificar o registro de qualquer nutricionista antes de iniciar um acompanhamento. A consulta é pública e gratuita.</p>
- <Button href="https://www.crn1.org.br" variant="outline" size="sm">Verificar registro no CRN-1 →</Button>
+ <Button href="https://novoportal.crn1.org.br/servicos-online-outros/" variant="outline" size="sm">Verificar registro no CRN-1 →</Button>
  </div>
  </section>
  )}

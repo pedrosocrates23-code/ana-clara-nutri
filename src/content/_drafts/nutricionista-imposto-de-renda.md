@@ -98,7 +98,7 @@ Não adianta o gasto ser com saúde. Não adianta ter recibo, nem registro profi
 
 É por isso que enfermeiro, assistente social e massagista também ficam de fora, a não ser quando o valor integra a conta de um hospital. A própria Receita Federal responde assim para essas três categorias (Perguntas e Respostas IRPF 2026, pergunta 382). Não existe uma perseguição à nutrição. Existe uma lista curta que deixou muita gente do lado de fora.
 
-E eu quero reconhecer uma coisa antes de seguir. Se você faz terapia, você sabe que a consulta com psicólogo entra. Achar estranho que a nutricionista não entre é justo, e a explicação está no desenho de uma lei de 1995 que nunca foi atualizada nesse ponto, não em nenhuma distração sua na hora de ler.
+E eu quero reconhecer uma coisa antes de seguir. Se você faz terapia, você sabe que a consulta com psicólogo entra. Achar estranho que a nutricionista não entre é justo, e a explicação está no desenho de uma lei de 1995 que nunca foi atualizada nesse ponto.
 
 ## A única exceção: quando o nutricionista está na conta do hospital
 

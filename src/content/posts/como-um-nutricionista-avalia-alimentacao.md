@@ -61,7 +61,7 @@ Faz sentido sentir isso, porque a cultura das dietas ensinou a associar comida a
 
 Quando você relata que belisca à noite, isso não é confissão de fraqueza. É um dado, que pode estar ligado ao sono, à rotina de trabalho, ao tempo que passou sem comer durante o dia.
 
-O receio de sentar naquela cadeira, o medo da balança, tudo isso é real, e você encontra esse lado em [o que você vai sentir na primeira consulta com nutricionista](/blog/como-e-a-primeira-consulta-com-nutricionista). Aqui, o foco é o método.
+O receio de sentar naquela cadeira, o medo da balança, tudo isso é real, e você encontra esse lado em [o que você vai sentir na primeira consulta com nutricionista](/nutricionista-em-goiania/). Aqui, o foco é o método.
 
 ## O que o nutricionista investiga na sua alimentação
 
@@ -164,7 +164,7 @@ Ainda assim, dois cuidados simples ajudam: leve os exames recentes que você já
 
 E, para escolher bem, pergunte antes de fechar se a profissional pede exames e se o plano vem depois de avaliar. Desconfie de quem entrega um plano igual para todo mundo sem antes conhecer você.
 
-Se quer saber como será a experiência de sentar nessa conversa, o receio da chegada e como ele se dissolve, veja [o que você vai sentir na primeira consulta com nutricionista](/blog/como-e-a-primeira-consulta-com-nutricionista). Método aqui, vivência lá; as duas leituras se completam.
+Se quer saber como será a experiência de sentar nessa conversa, o receio da chegada e como ele se dissolve, veja [o que você vai sentir na primeira consulta com nutricionista](/nutricionista-em-goiania/). Método aqui, vivência lá; as duas leituras se completam.
 
 ## Atendimento em Goiânia e por telenutrição para todo o Brasil
 

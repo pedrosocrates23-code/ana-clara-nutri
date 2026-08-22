@@ -63,7 +63,7 @@ Não é diagnóstico de doença, que pertence ao médico. São leituras diferent
 
 O terceiro ato é o **plano alimentar individualizado**, o nome técnico da tal "dieta". A prescrição do plano alimentar é atividade privativa do nutricionista pela [Lei nº 8.234/1991](https://www.planalto.gov.br/ccivil_03/leis/1989_1994/l8234.htm), que regulamenta a profissão.
 
-Privativa quer dizer que só ele pode fazer. E, pela própria lei, esse plano nasce da avaliação e da sua vida real, não de um modelo pronto igual para todo mundo.
+Privativa quer dizer que só ele pode fazer. E, pela própria lei, esse plano nasce da avaliação e da sua vida real, com o seu nome nele.
 
 O quarto ato é a **educação alimentar** somada ao acompanhamento ao longo do tempo. A mesma Lei nº 8.234/1991 coloca a educação nutricional como núcleo da profissão, não como um extra opcional.
 
@@ -85,7 +85,7 @@ Só que o produto é o acompanhamento, e esse não vem impresso. Eu não trabalh
 
 Se as suas tentativas anteriores pararam depois de poucos dias, existe uma explicação, e ela não é falta de força de vontade. Um plano rígido demais, feito sem olhar a sua rotina, quebra no primeiro imprevisto.
 
-A causa está no método que não te acompanhou, não em algum defeito seu. É por isso que muita gente precisa antes [trabalhar a relação com a comida](/nutricao-comportamental/), e não receber mais um cardápio para seguir sozinha.
+A causa está no método que te deixou sozinha no meio do caminho. É por isso que muita gente precisa antes [trabalhar a relação com a comida](/nutricao-comportamental/), e não receber mais um cardápio para seguir sozinha.
 
 Um passo por vez já é progresso. Você não precisa reorganizar tudo de uma vez para que valha a pena começar.
 

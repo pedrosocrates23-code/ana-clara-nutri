@@ -58,9 +58,9 @@ Minha resposta é esta: quem come por ansiedade quase sempre precisa dos dois, e
 
 Existe uma ordem, e ela não é negociável quando o sofrimento aperta. Se os episódios se repetem, se você come escondido, se a culpa depois é grande, o primeiro telefonema é para um profissional de saúde mental, psicólogo ou psiquiatra. A comida entra junto ou logo em seguida.
 
-Antes de seguir, uma coisa precisa ficar dita. **Comer por ansiedade** não é falta de força de vontade. Esse comportamento tem gatilho, tem história e, quase sempre, tem uma fila de dietas restritivas atrás dele. A explicação está aí, e não no seu caráter.
+Antes de seguir, uma coisa precisa ficar dita. **Comer por ansiedade** não é falta de força de vontade. Esse comportamento tem gatilho, tem história e, quase sempre, tem uma fila de dietas restritivas atrás dele. A origem é essa.
 
-E não é só com você. Na audiência pública da Comissão de Assuntos Sociais do Senado, em 5 de setembro de 2024, o psiquiatra Táki Athanássios Cordás, do HCFMUSP, afirmou que os comportamentos alimentares anormais atingem **quase 5% da população brasileira**, cerca de 11 milhões de pessoas. Na mesma audiência, José Carlos Borges Appolinário, coordenador de Transtornos Alimentares da Associação Brasileira de Psiquiatria, apresentou que a compulsão alimentar atinge **mais de 6%** das pessoas, e que os transtornos alimentares aparecem mais em mulheres do que em homens.
+E você está longe de ser exceção. Na audiência pública da Comissão de Assuntos Sociais do Senado, em 5 de setembro de 2024, o psiquiatra Táki Athanássios Cordás, do HCFMUSP, afirmou que os comportamentos alimentares anormais atingem **quase 5% da população brasileira**, cerca de 11 milhões de pessoas. Na mesma audiência, José Carlos Borges Appolinário, coordenador de Transtornos Alimentares da Associação Brasileira de Psiquiatria, apresentou que a compulsão alimentar atinge **mais de 6%** das pessoas, e que os transtornos alimentares aparecem mais em mulheres do que em homens.
 
 Nada disso é frescura. O problema é comum, já foi estudado, e existe profissional formado para cuidar de cada parte.
 
@@ -202,7 +202,7 @@ Quem avalia isso é o psicólogo ou o médico. Não é você lendo esta lista, e
 
 Se você já entendeu que a comida é uma frente legítima, falta a pergunta seguinte: como isso funciona sem virar mais uma dieta para você furar? A resposta curta é que o ponto de partida é outro.
 
-O acompanhamento parte da sua história e da sua rotina, não de um cardápio pronto que serve para qualquer pessoa. A gente olha o que acontece em volta da comida, e não só o que está no prato: os horários, o sono, o trabalho, a hora do dia em que aperta. O objetivo final é a sua [educação alimentar](/educacao-alimentar/), de forma que você aprenda a decidir sozinha e não dependa de mim para sempre.
+O acompanhamento começa onde a sua semana começa: horário, trabalho, casa, o que você gosta de comer. A gente olha o que acontece em volta da comida, além do que está no prato: os horários, o sono, o trabalho, a hora do dia em que aperta. O objetivo final é a sua [educação alimentar](/educacao-alimentar/), de forma que você aprenda a decidir sozinha e não dependa de mim para sempre.
 
 ### A primeira consulta: o que acontece e o que não acontece
 

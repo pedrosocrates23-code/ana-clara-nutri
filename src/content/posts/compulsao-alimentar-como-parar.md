@@ -138,13 +138,13 @@ Agora junta tudo. Você chega às dez da noite com a grelina lá em cima, a lept
 
 ### Por que "se controlar" é justamente o que não funciona
 
-O verbo que você digitou lá atrás foi "parar". Ele carrega uma ideia embutida: a de que existe um botão, e que você não está apertando com força suficiente. E se o problema estiver no botão que te venderam, e não no seu dedo?
+O verbo que você digitou lá atrás foi "parar". Ele carrega uma ideia embutida: a de que existe um botão, e que você não está apertando com força suficiente. E se o problema estiver no botão que te venderam?
 
 O esforço de controle é a própria restrição, com outro nome. Cada regra nova aumenta a proibição, e a proibição é um dos maiores disparadores do próximo episódio. Apertar o controle aperta o dedo no disparador.
 
 É por isso que eu não trabalho com dieta restritiva. É por isso, também, que o caminho aqui passa por [entender a sua relação com a comida](/nutricao-comportamental/), e não por mais uma regra que você vai furar na quarta e usar contra si mesma na quinta.
 
-Então, quando você diz "eu me sabotei", o que aconteceu de verdade tem outro nome: um corpo em déficit cobrando a conta de uma vez, no fim de um dia inteiro de proibição. A explicação está aí, na restrição que veio antes, e não no seu caráter.
+Então, quando você diz "eu me sabotei", o que aconteceu de verdade tem outro nome: um corpo em déficit cobrando a conta de uma vez, no fim de um dia inteiro de proibição. O nome disso é restrição, e ela veio antes.
 
 ## Como parar a compulsão alimentar sem entrar em outra dieta
 
@@ -250,7 +250,7 @@ Não é disso que eu estou falando.
 
 Na [abordagem comportamental](/nutricao-comportamental/), o trabalho não começa no prato. Começa na sua história, na sua rotina, no que você já tentou e no que aconteceu depois.
 
-São três coisas que sustentam esse jeito de trabalhar: escutar antes de orientar; construir a partir da sua vida real, e não de um cardápio pronto; e se apoiar em evidência científica, sem modismo e sem promessa mágica.
+São três coisas que sustentam esse jeito de trabalhar: escutar antes de orientar; construir a partir da sua vida real; e se apoiar em evidência científica, sem modismo e sem promessa mágica.
 
 A literatura de nutrição comportamental descreve esse papel com clareza: o nutricionista não apenas prescreve, ele ajuda a pessoa a compreender o próprio comportamento alimentar, acolhe e traz estratégias de mudança. O objetivo declarado é a sua autonomia. Eu quero que chegue um dia em que você não precise nem de mim, nem de regra nenhuma.
 

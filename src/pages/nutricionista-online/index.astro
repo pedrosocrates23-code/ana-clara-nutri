@@ -5,7 +5,7 @@ import Faq from '../../components/Faq.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Button from '../../components/Button.astro';
 import AreasGrid from '../../components/AreasGrid.astro';
-import { SITE } from '../../lib/site';
+import { SITE, isPlaceholder } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
 
 const faqs = [
@@ -24,7 +24,11 @@ const serviceNode = {
  serviceType: 'Telenutrição, consulta nutricional online',
  provider: { '@id': SCHEMA_IDS.person },
  areaServed: { '@type': 'Country', name: 'Brasil' },
+ // Preço ainda não informado (isPlaceholder): omitir offers em vez de vazar
+ // "{VALOR_ONLINE}" literal para o JSON-LD (EOK-10/TEC-04, achado 21/08/2026).
+ ...(isPlaceholder(SITE.priceOnline) ? {} : {
  offers: { '@type': 'Offer', price: SITE.priceOnline, priceCurrency: 'BRL', category: 'Atendimento particular' },
+ }),
  isPartOf: { '@id': `${SITE.url}${path}#webpage` },
 };
 const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) | Ana Clara Nutri', faqs, breadcrumb, extraNodes: [serviceNode] });

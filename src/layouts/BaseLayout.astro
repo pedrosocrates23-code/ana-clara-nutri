@@ -27,7 +27,10 @@ interface Props {
 const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage } = Astro.props;
 const canonical = absoluteUrl(path);
 const fullTitle = title.includes(SITE.name) ? title : `${title}`;
-const img = ogImage ?? '/og-default.jpg';
+// '/og-default.jpg' nunca existiu em public/ (404 em produção nas 15 páginas
+// sem ogImage próprio, TEC-06, achado 21/08/2026) — a foto editorial da Ana já
+// usada no hero é o fallback real.
+const img = ogImage ?? '/ana-clara-nutricionista.webp';
 ---
 <!doctype html>
 <html lang="pt-BR">

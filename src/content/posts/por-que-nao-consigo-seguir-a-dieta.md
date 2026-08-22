@@ -231,7 +231,7 @@ Você não precisa estar indo bem para voltar à consulta. É justamente quando 
 
 Se o problema é um método que trabalha contra o seu corpo, faz sentido procurar quem trabalha com ele. É isso que a **Ana Clara Andrade Santos** faz: nutricionista formada pela **Universidade Federal de Goiás**, **CRN-1 nº 19825**, com mais de 4 anos de experiência em nutrição clínica, hospitalar e ambulatorial.
 
-O atendimento parte de três compromissos simples. Acolhimento, o que significa escutar antes de orientar, sem julgar você pelo que come nem pelo ponto em que está. Individualização, o que significa começar pela sua história e pela sua rotina, e não por um cardápio pronto. Evidência científica, o que significa sem modismos e sem promessa milagrosa.
+O atendimento parte de três compromissos simples. Acolhimento, o que significa escutar antes de orientar, sem julgar você pelo que come nem pelo ponto em que está. Individualização, o que significa começar pela sua história e pela sua rotina. Evidência científica, o que significa sem modismos e sem promessa milagrosa.
 
 O objetivo declarado é a autonomia. Que você aprenda a fazer as próprias escolhas e não dependa de uma nutricionista para sempre. Eu sei que isso soa estranho vindo de quem atende, e é dito assim mesmo.
 

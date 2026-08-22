@@ -45,7 +45,7 @@ Em vez de olhar para o prato, olhe para a estrutura em volta dele: o que você c
 
 Você não precisa saber de nutrição para dar o primeiro passo. Nenhum diploma é exigido para lavar uma fruta e deixá-la na frente.
 
-Quem escorrega num ambiente mal montado não falhou por fraqueza. A explicação está na estrutura que estava ali, não no seu caráter.
+Quem escorrega num ambiente mal montado não falhou por fraqueza. A explicação está na estrutura que estava ali: a fruta no fundo da gaveta, o biscoito à mão, o jantar sem plano às nove da noite.
 
 Ajustar essa estrutura cansa menos do que apostar toda a mudança na força de vontade.
 

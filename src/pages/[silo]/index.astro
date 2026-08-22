@@ -17,6 +17,12 @@ const { data } = entry;
 const { Content } = await render(entry);
 const path = `/${entry.id}/`;
 
+// Spokes publicados deste silo. O hub linka para eles: é o que fecha o siloing.
+// Enquanto não houver nenhum publicado, cai no fallback de spokes planejados (texto).
+const publicados = (await getCollection('posts'))
+ .filter((p) => p.data.silo === entry.id)
+ .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1));
+
 const breadcrumb = [
  { name: 'Início', href: '/' },
  { name: 'Áreas de atuação', href: '/#atendimento' },
@@ -38,7 +44,25 @@ const graph = buildGraph({
  </div>
  </section>
 
- {data.spokes.length > 0 && (
+ {publicados.length > 0 && (
+ <section class="section section--alt">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Aprofunde no tema</span><h2>O que você vai encontrar</h2></div>
+ <ul class="spokes spokes--live">
+ {publicados.map((p) => (
+ <li>
+ <a href={p.data.path}>
+ <span class="spokes__title">{p.data.title}</span>
+ <span class="spokes__desc">{p.data.description}</span>
+ </a>
+ </li>
+ ))}
+ </ul>
+ </div>
+ </section>
+ )}
+
+ {publicados.length === 0 && data.spokes.length > 0 && (
  <section class="section section--alt">
  <div class="container">
  <div class="section__head"><span class="kicker">Aprofunde no tema</span><h2>O que você vai encontrar</h2></div>
@@ -69,6 +93,11 @@ const graph = buildGraph({
 <style>
  .spokes { list-style: none; padding: 0; display: grid; gap: 10px; max-width: var(--maxw-prose); }
  .spokes li { background: #fff; border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 18px; color: var(--ink); font-weight: 500; }
+ .spokes--live li { padding: 0; transition: border-color .2s ease, transform .2s ease; }
+ .spokes--live li:hover { border-color: var(--clay, var(--ink)); transform: translateY(-2px); }
+ .spokes--live a { display: block; padding: 16px 18px; text-decoration: none; color: inherit; }
+ .spokes__title { display: block; font-weight: 600; color: var(--ink); }
+ .spokes__desc { display: block; margin-top: 5px; font-weight: 400; font-size: .9rem; line-height: 1.5; color: var(--ink-soft, var(--ink-faint)); }
  .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 14px; }
  .cta-final { text-align: center; }
  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }

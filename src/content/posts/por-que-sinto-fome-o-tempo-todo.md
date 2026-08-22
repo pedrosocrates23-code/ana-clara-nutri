@@ -153,7 +153,7 @@ Você chegou até aqui e talvez esteja esperando a parte prática, o "então me 
 
 Pode ser sono, composição das refeições, restrição, estresse, ou uma combinação disso tudo em proporções que só a sua história revela. O trabalho do nutricionista é fazer uma avaliação que olha o seu histórico, a sua rotina e a sua relação com a comida.
 
-É daí, e não de uma regra genérica, que sai o que ajustar. Um número solto num artigo serviria para todo mundo, o que quer dizer que não serviria bem para ninguém.
+É daí que sai o que ajustar. Um número solto num artigo serviria para todo mundo, o que quer dizer que não serviria bem para ninguém.
 
 Esse trabalho também acontece a distância, com a mesma seriedade e a mesma avaliação individual. Se você quer entender como é esse acompanhamento antes de decidir, dá para começar sabendo se o [atendimento online faz sentido para o seu caso](/blog/nutricionista-online-vale-a-pena).
 

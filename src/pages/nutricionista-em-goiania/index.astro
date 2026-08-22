@@ -6,7 +6,7 @@ import AuthorBox from '../../components/AuthorBox.astro';
 import Button from '../../components/Button.astro';
 import MapEmbed from '../../components/MapEmbed.astro';
 import AreasGrid from '../../components/AreasGrid.astro';
-import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL } from '../../lib/site';
+import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, isPlaceholder } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
 
 const faqs = [
@@ -19,16 +19,19 @@ const faqs = [
 ];
 const path = '/nutricionista-em-goiania/';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Atendimento Presencial', href: path }];
-const offerNode = {
+// Preço ainda não informado (isPlaceholder): omitir o nó Offer inteiro é o padrão
+// já usado para CRN/sameAs/geo em shared.ts — um Offer com "{VALOR_PRESENCIAL}"
+// literal no JSON-LD é pior do que nenhum Offer (EOK-10/TEC-04, achado 21/08/2026).
+const offerNode = isPlaceholder(SITE.pricePresencial) ? null : {
  '@type': 'Offer',
  '@id': `${SITE.url}${path}#offer`,
  itemOffered: { '@id': SCHEMA_IDS.business },
  price: SITE.pricePresencial, priceCurrency: 'BRL', category: 'Atendimento particular',
 };
-const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade', mainEntity: 'business', faqs, breadcrumb, extraNodes: [offerNode] });
+const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade Santos', mainEntity: 'business', faqs, breadcrumb, extraNodes: offerNode ? [offerNode] : [] });
 ---
 <BaseLayout
- title="Nutricionista em Goiânia | Ana Clara Andrade"
+ title="Nutricionista em Goiânia | Ana Clara Andrade Santos"
  description="Nutricionista em Goiânia com atendimento presencial e abordagem comportamental. Atendimento particular. Agende sua consulta."
  path={path} graph={graph}>
  <PageHero kicker="Presencial · Goiânia"

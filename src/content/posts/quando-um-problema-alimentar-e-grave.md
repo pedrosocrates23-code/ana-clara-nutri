@@ -85,7 +85,7 @@ Quando comer passa a exigir cálculo constante, e a cada semana sobra menos cois
 
 No extremo oposto da restrição está a compulsão, os episódios de comer com sensação de perda de controle, seguidos quase sempre de culpa pesada e da promessa de compensar amanhã. Um episódio isolado acontece com muita gente, e o que chama atenção é a repetição, quando o ciclo volta toda semana e a culpa não alivia.
 
-Se você convive com isso, vale entender os [episódios de compulsão que se repetem à noite](/nutricao-comportamental/compulsao-alimentar-a-noite) e reconhecer o limite entre [tentar lidar com a compulsão sozinha e onde está o limite](/nutricao-comportamental/lidar-com-compulsao-sozinha).
+Se você convive com isso, vale entender os [episódios de compulsão que se repetem à noite](/nutricao-comportamental/compulsao-alimentar-como-parar) e reconhecer o limite entre [tentar lidar com a compulsão sozinha e onde está o limite](/nutricao-comportamental/compulsao-alimentar-como-parar).
 
 ### Comportamentos de compensação, o sinal mais silencioso
 
@@ -196,7 +196,7 @@ E, com transparência, porque você tem o direito de saber antes de agendar: o a
 
 ## Como começar
 
-Se você chegou até aqui, já consegue reparar sozinha em uma coisa: pedir ajuda é um ato de força, não de fraqueza. O meu trabalho é a porta da alimentação, cuidar da sua relação com a comida, no seu tempo, dentro de um cuidado que, quando precisa, envolve também médico e psicólogo.
+Se você chegou até aqui, já consegue reparar sozinha em uma coisa: pedir ajuda exige mais coragem do que aguentar calada. O meu trabalho é a porta da alimentação, cuidar da sua relação com a comida, no seu tempo, dentro de um cuidado que, quando precisa, envolve também médico e psicólogo.
 
 Eu não trato um transtorno sozinha, e é justamente essa honestidade de escopo que protege você.
 
