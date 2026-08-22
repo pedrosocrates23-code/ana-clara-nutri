@@ -50,6 +50,20 @@ Em vez de contar apenas calorias, a gente entende os seus gatilhos e a sua rotin
 
 Esse deslocamento de foco, do número para o comportamento, é o que separa "emagrecer por um mês" de construir uma relação saudável com a comida para a vida toda.
 
+## O que você não vai encontrar aqui, e por quê
+
+Eu decidi, desde o início, o que esse espaço não vai oferecer. Não tem cardápio fechado de 7 dias, não tem protocolo detox e não tem comparação de fotos de antes e depois. Essa não é uma regra arbitrária, é o mesmo raciocínio comportamental que já expliquei acima aplicado à forma como eu escrevo sobre emagrecimento.
+
+Um cardápio de dias fixos trata cada pessoa como se ela tivesse o mesmo gatilho, a mesma rotina e o mesmo histórico com comida que qualquer outra. Um protocolo detox promete um atalho que o corpo não reconhece, porque não existe substância nem regime que "limpe" o organismo de forma isolada, isso já é trabalho do fígado e do rim, todo dia. E a comparação de antes e depois é vedada pela própria norma da profissão: ela transforma um processo de saúde em espetáculo visual, o que é o oposto do que eu quero construir com quem me procura.
+
+Se você quer entender o primeiro passo prático, sem esperar uma virada de chave da noite para o dia, eu detalho isso em [como começar uma reeducação alimentar](/emagrecimento/como-comecar-uma-reeducacao-alimentar). E se a dúvida for sobre qual método realmente funciona, sem modismo, escrevi com mais profundidade sobre [quais dietas um nutricionista recomenda](/emagrecimento/quais-dietas-um-nutricionista-recomenda).
+
+Esse critério vale também para quem pensa em fechar acompanhamento comigo: o valor da consulta é informado antes de qualquer coisa, sem desconto por tempo limitado e sem promessa de vaga acabando. Se você quer entender como funciona esse investimento, o texto sobre [vale a pena pagar por um nutricionista para emagrecer](/emagrecimento/vale-a-pena-pagar-nutricionista-emagrecer) trata exatamente disso.
+
+Falo bastante sobre gatilho e rotina neste espaço, mas o mecanismo por trás disso, por que a restrição costuma gerar compulsão, por que a culpa trava mais do que ajuda, é onde entra o hub de [nutrição comportamental](/nutricao-comportamental/). E quando a base é aprender a comer de forma mais consciente, antes ainda de entrar no recorte específico do emagrecimento, o espaço certo é o de [educação alimentar](/educacao-alimentar/).
+
+Todo texto novo que eu publico neste silo passa pelo mesmo filtro antes de ir para o ar.
+
 ## Como eu trabalho o emagrecimento
 
 Meu trabalho parte da sua história e do seu comportamento, não de uma meta na balança. Antes de qualquer plano, entendo a sua rotina, os seus gatilhos e a sua relação com a comida.

@@ -71,6 +71,16 @@ const casos = [
     txt: 'Sou nutricionista comportamental. Não cobro hora extra nem taxa de cancelamento.',
     esperaErro: true,
   },
+  {
+    nome: 'BUG REGRESSAO — "vedados" no PLURAL na sentenca seguinte nega (veda[do]* nao casava com \\b apos o "s")',
+    txt: 'O conteudo usa imagem de antes e depois? Os tres sinais sao vedados pela norma da profissao.',
+    esperaErro: false,
+  },
+  {
+    nome: 'BUG REGRESSAO — "vedada" (feminino) na sentenca seguinte nega',
+    txt: 'Ela promete resultado garantido. Essa pratica e vedada pelo codigo de etica.',
+    esperaErro: false,
+  },
 ];
 
 let falhas = 0;

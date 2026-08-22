@@ -74,6 +74,21 @@ const creds = [
  </section>
  )}
 
+ {/* Desambiguação: existem outras profissionais de nome parecido no CRN-1.
+     O número de registro, não o nome, é o dado que confirma a identidade. */}
+ {HAS_CRN && (
+ <section id="credenciais-verificaveis" class="section">
+ <div class="container crn reveal">
+ <span class="kicker">Identificação</span>
+ <h2>Como confirmar que este é o meu registro</h2>
+ <p>Ana Clara não é um nome raro entre nutricionistas, então ele sozinho não confirma quem está te atendendo. O dado que não se repete é o número: o meu é <strong>{CRN}</strong>, registrado no <strong>Conselho Regional de Nutricionistas da 1ª Região (CRN-1)</strong>.</p>
+ <p>Assino todo material profissional com o nome completo, <strong>{SITE.legalName}</strong>, sempre ao lado desse número. Antes de agendar com qualquer nutricionista, olhe se o nome e o número batem com o que está escrito no perfil ou no site dela.</p>
+ <p>É comum existir mais de uma profissional com nome parecido atuando na mesma área, às vezes até formada pela mesma universidade. Quando o nome não for suficiente para ter certeza, o número de registro resolve a dúvida: ele é único, e pode ser conferido diretamente no portal do CRN-1, no botão acima.</p>
+ <p>Essa assinatura acompanha tudo que eu publico, desde a descrição de <a href="/como-eu-atendo/">como eu atendo</a> até os textos sobre <a href="/educacao-alimentar/">educação alimentar</a>, para que a orientação seja sempre rastreável até quem respondeu por ela.</p>
+ </div>
+ </section>
+ )}
+
  <section class="section">
  <div class="container">
  <div class="section__head"><span class="kicker">Áreas</span><h2>Onde posso te <em>acompanhar</em></h2></div>

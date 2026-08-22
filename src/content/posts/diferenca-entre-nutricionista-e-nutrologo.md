@@ -19,6 +19,12 @@ faqs:
     a: "Sim. Por ser médico, o nutrólogo pode prescrever medicamentos. O nutricionista não prescreve medicamentos, sua atuação é nutricional."
   - q: "Posso consultar os dois?"
     a: "Sim. Em muitos casos os cuidados se complementam: o médico cuida da parte clínica e o nutricionista cuida da alimentação no dia a dia."
+references:
+  - label: "Lei nº 8.234/1991"
+    detail: "Regulamenta a profissão de nutricionista e define avaliação nutricional, plano alimentar individualizado e educação alimentar como atividades da profissão. A norma já passou dos trinta anos e segue em vigor sem mudança nesse ponto."
+    url: "https://www.planalto.gov.br/ccivil_03/leis/1989_1994/l8234.htm"
+  - label: "Resolução CFN nº 600/2018"
+    detail: "Conselho Federal de Nutricionistas. Define as áreas de atuação do nutricionista, entre elas a nutrição clínica. A resolução tem mais de cinco anos e segue sendo a referência do conselho para essas áreas."
 ---
 
 "Nutricionista" e "nutrólogo" são palavras parecidas, têm apenas algumas letras de diferença e lidam com o mesmo assunto: a sua alimentação. Não é à toa que tanta gente confunde os dois.
@@ -144,6 +150,28 @@ Independentemente de quem você procurar, vale um cuidado simples e importante: 
 A consulta a esses registros é pública e ajuda a garantir que você está sendo atendido por alguém habilitado. É um direito seu e um sinal de transparência do profissional.
 
 Um bom profissional não se incomoda em ser verificado. Pelo contrário: costuma deixar o registro visível justamente para passar segurança a quem o procura.
+
+<section id="o-trio-de-profissionais">
+<h2>O trio: nutricionista, nutrólogo e endocrinologista, quem faz o quê</h2>
+<p>Tem um terceiro nome que costuma aparecer nessa dúvida, e ele confunde tanto quanto os dois primeiros: o <strong>endocrinologista</strong>. A lógica para entender esse terceiro profissional é a mesma que já apareceu aqui: cada um responde por um tipo de ato, definido por lei ou por norma do próprio conselho, e não por um grau de competência maior ou menor que o outro. O ato do nutricionista, por exemplo, está descrito na <strong>Lei nº 8.234/1991</strong>, norma que já passou dos trinta anos e segue valendo sem mudança no que caracteriza avaliação, plano alimentar e educação alimentar como atividade da profissão.</p>
+<p>O endocrinologista é médico, formado em Medicina, com registro no <strong>CRM</strong> e especialização em Endocrinologia e Metabologia. O trabalho dele é diagnosticar e conduzir clinicamente doenças do sistema endócrino, entre elas alterações de tireoide, diabetes e outras condições metabólicas. Ele aparece com tanta frequência nas buscas sobre peso porque várias dessas condições influenciam o metabolismo e o peso corporal, e diagnosticar uma condição desse tipo é ato médico, não nutricional.</p>
+<p>Colocando os três lado a lado, o quadro fica mais claro.</p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr><th>Aspecto</th><th>Nutricionista</th><th>Nutrólogo</th><th>Endocrinologista</th></tr>
+</thead>
+<tbody>
+<tr><td>Registro</td><td>CRN</td><td>CRM</td><td>CRM</td></tr>
+<tr><td>Diagnóstico de doença</td><td>Não</td><td>Sim, na Nutrologia</td><td>Sim, nas condições endócrinas e metabólicas</td></tr>
+<tr><td>Conduta médica quando indicada</td><td>Não</td><td>Sim</td><td>Sim</td></tr>
+<tr><td>Plano alimentar e acompanhamento no dia a dia</td><td>Sim, é o foco principal</td><td>Pode orientar, não é o foco</td><td>Não é o foco</td></tr>
+</tbody>
+</table>
+</div>
+<p>Existe uma sobreposição real entre os três, e ela é legítima. Uma pessoa com alteração de tireoide ou de glicemia se beneficia do diagnóstico e da conduta do endocrinologista, e também do nutricionista, que traduz esse quadro em alimentação possível de sustentar no dia a dia. É aí que entra a <a href="/educacao-alimentar/">educação alimentar</a>: não é sobre substituir a conduta médica, é sobre a pessoa entender o próprio prato o suficiente para segurar a mudança depois que a consulta termina.</p>
+<p>O mesmo cuidado de conferir registro profissional que vale para o nutricionista e o nutrólogo vale para o endocrinologista: registro ativo no CRM, público e consultável. Quando o caso pede os três, a integração entre o nutricionista e o médico, seja o nutrólogo ou o endocrinologista, costuma ser o cenário mais completo, sem que um seja mais importante que o outro. Esse é o tipo de cuidado que <a href="/como-eu-atendo/">descrevo em detalhe aqui</a>: como funciona esse trabalho lado a lado, na prática.</p>
+</section>
 
 ## Conclusão
 

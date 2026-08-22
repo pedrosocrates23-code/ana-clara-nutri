@@ -28,6 +28,8 @@ spokes:
   - "Como conciliar dieta e vida social sem travar o treino"
 ---
 
+**Ana Clara Andrade Santos, CRN-1 nº 19825**, orienta a **nutrição esportiva** pelo horário de treino e pela rotina real de quem treina, nunca por marca de suplemento, com atendimento presencial em **Goiânia**, no beLIV, e por telenutrição para o Brasil inteiro.
+
 ## O que é nutrição esportiva
 
 A nutrição esportiva é a área que adapta a alimentação às demandas de quem pratica atividade física, do treino recreativo ao esporte mais sério.
@@ -48,6 +50,8 @@ Cada objetivo pede ajustes diferentes. Alguns pontos que costumamos trabalhar:
 - **Composição corporal**, ajustes alinhados ao seu objetivo, sempre com saúde.
 - **Rotina e praticidade**, encaixar a alimentação na sua agenda de treinos e trabalho.
 
+Se você treina de manhã ou à noite, o [pré e o pós-treino](/nutricao-esportiva/pre-e-pos-treino-o-que-comer) pedem atenção diferente, e a quantidade certa de [proteína ao longo do dia](/nutricao-esportiva/proteina-e-treino) muda conforme o seu volume de treino, não existe uma regra igual para todo mundo.
+
 ## Como eu trabalho a nutrição esportiva
 
 Eu uno a nutrição esportiva à abordagem comportamental. Não adianta um plano perfeito no papel que não cabe na sua vida.
@@ -59,6 +63,8 @@ Mais do que entregar um plano e sumir, faço acompanhamento: ajustamos a aliment
 Quando o assunto é suplementação, oriento de forma técnica e individualizada, sempre falando de **tipos** de nutrientes e suas funções, sem indicar ou fazer propaganda de marcas.
 
 Também levo em conta a sua modalidade, a frequência dos treinos e os seus horários. Uma pessoa que corre de manhã tem necessidades diferentes de quem treina musculação à noite e o plano respeita isso.
+
+Quem está em **Goiânia** e quer entender como esse acompanhamento funciona na prática, incluindo o que muda entre quem compete e quem só quer sustentar um treino regular, encontra mais detalhes em [nutrição esportiva em Goiânia](/nutricao-esportiva/nutricionista-esportivo-em-goiania).
 
 ## Mitos que atrapalham
 
@@ -77,3 +83,5 @@ Também levo em conta a sua modalidade, a frequência dos treinos e os seus hor�
 Não importa o nível. Seja você iniciante ou avançada, a ideia é alinhar o que você come ao que você faz, de forma sustentável.
 
 Também atendo quem está voltando a treinar depois de um tempo parada e quer fazer isso com orientação, evitando exageros e desgaste ligados a uma alimentação inadequada.
+
+Se o seu momento pede um olhar mais amplo sobre a sua rotina, sem se limitar ao treino, conheça como funciona o [atendimento nutricional em Goiânia](/nutricionista-em-goiania/) de forma geral.

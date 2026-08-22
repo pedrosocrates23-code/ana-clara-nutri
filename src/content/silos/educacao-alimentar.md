@@ -28,9 +28,11 @@ spokes:
 
 ## O que é educação alimentar
 
-Educação alimentar é o processo de aprender a fazer escolhas alimentares conscientes no dia a dia. Em vez de seguir um cardápio fechado, você desenvolve conhecimento e autonomia para decidir.
+Existe uma definição oficial para isso no Brasil. O **Marco de Referência de Educação Alimentar e Nutricional para as Políticas Públicas**, publicado pelo governo federal em **2012**, descreve o termo como um processo construído por diálogo e problematização, não por prescrição de cardápio. O documento tem mais de dez anos, mas essa ideia central segue sendo a base usada pelo campo da nutrição no Brasil até hoje: entender o porquê antes de simplesmente seguir uma lista.
 
-É a diferença entre receber um peixe e aprender a pescar. A dieta te dá uma lista pronta; a educação alimentar te dá ferramentas para a vida toda.
+É por isso que eu separo dois termos que costumam ser tratados como sinônimos. Reeducação alimentar é o processo de trocar hábitos específicos, corrigir um padrão que parou de funcionar. Educação alimentar é mais amplo: é a capacidade de tomar essa decisão sozinha, sem depender de mim ou de qualquer outra pessoa, em qualquer situação nova que aparecer depois.
+
+Na prática, para você, isso significa uma coisa simples: em vez de receber um cardápio fechado, você desenvolve conhecimento e autonomia para decidir. É a diferença entre receber um peixe e aprender a pescar. A dieta te dá uma lista pronta; a educação alimentar te dá ferramentas para a vida toda.
 
 Tudo com base em ciência e adaptado à sua realidade, sua rotina, seu orçamento e suas preferências.
 
@@ -53,6 +55,8 @@ Há ainda um ganho silencioso: menos ansiedade. Quem entende a própria alimenta
 - **Montar o prato**, equilibrar grupos de alimentos de forma simples.
 - **Escolher fora de casa**, decidir bem em restaurantes, eventos e na correria.
 - **Entender porções**, sem precisar pesar tudo para sempre.
+
+Duas dessas frentes já viraram conteúdo completo aqui no site, se você quiser se aprofundar antes da consulta. Uma é sobre [como melhorar a alimentação em casa](/educacao-alimentar/como-melhorar-a-alimentacao-em-casa), passo a passo pela rotina da cozinha. A outra explica [como eu avalio a alimentação](/educacao-alimentar/como-um-nutricionista-avalia-alimentacao) na prática, o que eu olho numa consulta e por quê.
 
 ## Como eu trabalho a educação alimentar
 
@@ -77,3 +81,5 @@ Tudo isso sem terrorismo nutricional e sem demonizar alimentos. Educação alime
 É para quem está cansada de seguir dietas sem entender nada e quer, finalmente, aprender a se alimentar com autonomia.
 
 Também é para quem quer melhorar a alimentação da rotina, comer com mais qualidade, sem virar refém de regras e para quem deseja construir uma base sólida que dure a vida toda.
+
+Se a sua prioridade agora é emagrecer com um plano estruturado, vale conhecer a página de [emagrecimento](/emagrecimento/), onde eu explico como esse processo funciona na prática. Se o que pesa mais é a relação com a comida, aquela fome que não tem hora certa ou a culpa depois de comer, o espaço certo para começar é [nutrição comportamental](/nutricao-comportamental/).

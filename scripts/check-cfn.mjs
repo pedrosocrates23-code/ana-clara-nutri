@@ -57,7 +57,7 @@ const ERROS = [
 // resultado") é justamente o que o Código exige: então olhamos o que vem antes do match.
 // `proib\w*`/`pro[íi]b\w*` cobre tanto "proibido/proibida" quanto a forma verbal
 // "proíbe/proíbem", que a versão anterior (só "proibid") não capturava.
-const NEGACAO_ANTES = /\b(sem|n[ãa]o|nunca|jamais|nem|nenhum|nenhuma|nada de|livre de|veda[do]*|proibid|pro[íi]b)\w*\b[^.;:]{0,60}$/i;
+const NEGACAO_ANTES = /\b(sem|n[ãa]o|nunca|jamais|nem|nenhum|nenhuma|nada de|livre de|veda|proibid|pro[íi]b)\w*\b[^.;:]{0,60}$/i;
 
 // Negação posposta, DUAS formas legítimas de transparência:
 // (1) na MESMA sentença: 'o título "nutricionista comportamental" NÃO existe'.
@@ -68,11 +68,11 @@ const NEGACAO_ANTES = /\b(sem|n[ãa]o|nunca|jamais|nem|nenhum|nenhuma|nada de|li
 // Na sentença seguinte só aceitamos o vocabulário FORTE e específico de vedação
 // (veda/proíbe/inexiste) — não "não/nunca/sem", que são comuns demais como
 // abertura de frase e negariam violação real por coincidência duas frases depois.
-const NEGACAO_MESMA_SENTENCA = /\b(n[ãa]o|nunca|jamais|inexist|veda[do]*|pro[íi]b)\w*\b/i;
+const NEGACAO_MESMA_SENTENCA = /\b(n[ãa]o|nunca|jamais|inexist|veda|pro[íi]b)\w*\b/i;
 // Vocabulário FORTE: específico o bastante para não aparecer por coincidência
 // numa frase seguinte que fala de outra coisa (ver NEGACAO_ABERTURA abaixo, que
 // é mais permissivo e por isso mais restrito em quando pode ser usado).
-const NEGACAO_SENTENCA_SEGUINTE_FORTE = /\b(veda[do]*|pro[íi]b\w*|inexist\w*)\b/i;
+const NEGACAO_SENTENCA_SEGUINTE_FORTE = /\b(veda\w*|pro[íi]b\w*|inexist\w*)\b/i;
 // "Pergunta? Não, ..." é o padrão de FAQ (resposta direta a uma pergunta) e só
 // vale quando a sentença do match terminou em interrogação — sem essa condição,
 // um "Não" solto na frase seguinte pode negar outra coisa (ver teste de controle

@@ -11,8 +11,8 @@ faqs:
     a: "Não. Não é uma dieta, e sim uma abordagem. Em vez de uma lista de proibições, o foco é entender e transformar a sua relação com a comida."
   - q: "Preciso ter compulsão para fazer esse tipo de acompanhamento?"
     a: "Não. A abordagem serve para qualquer pessoa que queira uma relação mais saudável e consciente com a alimentação, com ou sem questões emocionais envolvidas."
-  - q: "A Ana é \"nutricionista comportamental\" ou \"especialista\" na área?"
-    a: "Não, e é importante explicar por quê: \"especialista\" é um título formal do CFN, e a nutrição comportamental não está no rol de especialidades reconhecidas pelo conselho. Ou seja, o título \"nutricionista comportamental\" não existe oficialmente, e nenhum profissional pode usá-lo. Sou nutricionista, com experiência em nutrição clínica, e conduzo o atendimento com uma abordagem centrada no comportamento alimentar e na sua autonomia."
+  - q: "Por que a Ana não usa o título \"nutricionista comportamental\"?"
+    a: "Porque esse título não existe oficialmente. \"Especialista\" é uma categoria formal do CFN, concedida a quem está inscrito numa especialidade do rol vigente, e a nutrição comportamental não faz parte dessa lista. Sou nutricionista, com CRN ativo e experiência em nutrição clínica, e conduzo o atendimento com uma abordagem centrada no comportamento alimentar e na autonomia de quem me procura."
   - q: "Funciona no atendimento online?"
     a: "Sim. A abordagem comportamental funciona muito bem por telenutrição, já que se baseia em conversa e acompanhamento."
   - q: "Em quanto tempo vejo mudança?"
@@ -51,6 +51,16 @@ Não se trata de força de vontade. Trata-se de entender o contexto e construir 
 **Comida sem culpa.** Comer também é prazer e cultura. A meta é equilíbrio, não punição.
 
 **Base científica.** Cada estratégia parte de evidência, adaptada à sua realidade e à sua rotina.
+
+## Por que não existe "nutricionista comportamental" como título
+
+Se você chegou até aqui buscando por "nutricionista comportamental", faz sentido, mas esse termo não é um título profissional: é apenas a forma que melhor descreve esse jeito de olhar para a alimentação, e essa diferença importa para quem está escolhendo quem vai acompanhar.
+
+A **Resolução CFN nº 856/2026**, que traz o Código de Ética e Conduta do Nutricionista, reserva o rótulo "especialista" para quem está inscrito numa das especialidades reconhecidas pelo conselho. Essa lista vem da **Resolução CFN nº 689/2021**; já se passaram cinco anos desde a publicação, e ela segue sendo o rol vigente, sem revisão que tenha incluído a nutrição comportamental. Na prática: nenhuma nutricionista, eu incluída, pode se apresentar como "nutricionista comportamental" ou "especialista em comportamento alimentar" como título pessoal.
+
+O que existe, e o que eu ofereço, é uma **área de atuação**: um jeito de conduzir a consulta que dá tanto peso ao hábito e à emoção quanto ao nutriente. Sou nutricionista, com CRN ativo, e escolhi trabalhar com essa abordagem porque é a que faz mais sentido diante da comida real das pessoas, não da comida ideal dos cardápios prontos.
+
+Essa forma de trabalhar aparece em situações bem concretas, como a [compulsão alimentar](/nutricao-comportamental/compulsao-alimentar-como-parar) ou quando [a dieta simplesmente não pega](/nutricao-comportamental/por-que-nao-consigo-seguir-a-dieta), duas das perguntas que mais chegam até mim. Quando o que está em jogo é outro tipo de mudança, no peso ou na rotina alimentar de casa, os hubs de [emagrecimento](/emagrecimento/) e [educação alimentar](/educacao-alimentar/) também trazem esse olhar.
 
 ## Como eu trabalho a nutrição comportamental
 

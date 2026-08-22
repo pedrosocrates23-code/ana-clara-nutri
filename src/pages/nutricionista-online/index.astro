@@ -29,6 +29,15 @@ const serviceNode = {
  ...(isPlaceholder(SITE.priceOnline) ? {} : {
  offers: { '@type': 'Offer', price: SITE.priceOnline, priceCurrency: 'BRL', category: 'Atendimento particular' },
  }),
+ // Q4923501 = "serviço de saúde a distância" (o id de medicina em geral fica de fora
+ // de propósito, ver briefing). Fecha o gate do art. 102 §2 (cadastro e-Nutricionista)
+ // com uma entidade Wikidata correta, sem exigir um novo parâmetro `about` em
+ // buildGraph (achado 21/08/2026).
+ about: {
+ '@type': 'Thing',
+ name: 'Serviço de saúde a distância',
+ sameAs: 'https://www.wikidata.org/wiki/Q4923501',
+ },
  isPartOf: { '@id': `${SITE.url}${path}#webpage` },
 };
 const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) | Ana Clara Nutri', faqs, breadcrumb, extraNodes: [serviceNode] });
@@ -45,7 +54,7 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
  <section class="section">
  <div class="container prose">
  <h2>O atendimento online é para você?</h2>
- <p>Se a sua rotina é corrida, se você mora longe de Goiânia ou simplesmente prefere a praticidade de ser atendida em casa, a telenutrição resolve. O cuidado é exatamente o mesmo do presencial: individual, com escuta de verdade e um plano construído para a sua realidade.</p>
+ <p>Se a sua rotina é corrida, se você mora longe de Goiânia ou simplesmente prefere a praticidade de ser atendida em casa, a telenutrição resolve. O cuidado é exatamente o mesmo do presencial: individual, com escuta de verdade e um plano construído para a sua realidade. Se a dúvida for justamente entre os dois formatos, o texto sobre <a href="/nutricionista-online/online-ou-presencial">online ou presencial</a> detalha o critério real para decidir, sem depender de tecnologia como argumento.</p>
 
  <h2>Como funciona a telenutrição</h2>
  <p>A telenutrição é o atendimento nutricional feito por videoconsulta, regulamentado para nutricionistas. Funciona em quatro passos:</p>
@@ -54,8 +63,29 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
  <p><strong>3. Consulta.</strong> Conversamos por vídeo, com calma. Faço a sua avaliação completa e entendo a sua rotina.</p>
  <p><strong>4. Plano e acompanhamento.</strong> Você recebe o seu plano de forma digital e seguimos com retornos para ajustar o caminho. Tudo com sigilo e tratamento dos seus dados conforme a LGPD.</p>
 
- <h2>Investimento</h2>
+ <h2 id="investimento">Investimento</h2>
  <p>O atendimento é <strong>particular</strong>, com valores informados de forma transparente antes do agendamento. A consulta online inclui avaliação nutricional completa, plano alimentar individualizado e o acompanhamento combinado. Sem pacotes confusos e sem letras miúdas.</p>
+ </div>
+ </section>
+
+ <section class="section" id="telenutricao-conforme">
+ <div class="container prose">
+ <h2>Como confirmar que o atendimento por telenutrição é regular</h2>
+ <p>Antes de marcar uma consulta por vídeo, é normal se perguntar se aquilo conta como atendimento nutricional de verdade, ou se é só uma conversa informal sem respaldo nenhum. Essa pergunta faz todo sentido, e eu prefiro que você verifique antes de confiar, porque o cuidado com a sua alimentação não deveria depender só da minha palavra. Existe um jeito simples e público de checar isso, antes mesmo de marcar o primeiro horário.</p>
+
+ <p>O nome técnico para esse respaldo é <strong>e-Nutricionista</strong>, o cadastro nacional que o <strong>CFN</strong> mantém para nutricionistas que atendem por telenutrição. Toda profissional que faz consulta por vídeo precisa estar inscrita nele: essa exigência está no artigo 102, parágrafo 2º, da <strong>Resolução CFN nº 856/2026</strong>, o código que organiza a conduta da profissão hoje. A telenutrição como modalidade de atendimento já existia antes disso, regulamentada em 2023 pela Resolução CFN nº 760. O que a norma de 2026 fez foi manter essa exigência de cadastro e detalhar como ela funciona na prática, sem afrouxar nada do que já valia.</p>
+
+ <p>Esse cadastro existe para dar transparência aos dois lados. Para quem atende, ele funciona como um registro de que a consulta por vídeo segue as mesmas regras da consulta presencial: sigilo, avaliação individual, plano construído para a pessoa, nunca um modelo genérico copiado e colado. Para quem procura atendimento, ele funciona como uma checagem rápida, sem depender de confiar numa página bonita ou numa promessa de resultado. Antes da regulamentação de 2023, a telenutrição já acontecia na prática, mas sem um jeito padronizado de verificar quem estava, de fato, habilitada a oferecer esse tipo de atendimento.</p>
+
+ <p>Você não precisa confiar de olhos fechados nisso, nem confiar só em mim. O cadastro é público, gratuito de consultar, sem login e sem captcha para travar o acesso. O caminho é direto:</p>
+ <p><strong>1. Acesse o cadastro.</strong> Entre no site do e-Nutricionista, dentro do domínio do próprio CFN.</p>
+ <p><strong>2. Busque pelo registro.</strong> Procure pelo meu nome completo ou pelo número do meu registro, o CRN-1 nº 19825.</p>
+ <p><strong>3. Confirme a inscrição.</strong> A consulta pública mostra a inscrição ativa na tela, sem burocracia extra.</p>
+ <p>Esse tipo de exigência costuma parecer só entrave, mas nesse caso ela trabalha a seu favor: existe justamente para que você não precise adivinhar se quem está atendendo por vídeo tem, de fato, formação e registro de nutricionista, e não só um perfil bem montado nas redes.</p>
+
+ <p>O valor da consulta online é informado antes de qualquer agendamento, sem desconto por tempo limitado e sem contagem de vagas para apressar a sua decisão: os detalhes ficam na <a href="#investimento">seção de investimento</a>, alguns parágrafos acima. O que muda entre o atendimento presencial e o online é o formato, a consulta acontece por vídeo em vez de em consultório. O compromisso com o processo é o mesmo nos dois casos. O que eu não prometo é que o resultado de um formato seja igual ao do outro, porque cada rotina, cada corpo e cada história pedem um caminho diferente. O que posso garantir é o cuidado técnico por trás da consulta, e agora você também tem como conferir o registro que sustenta esse cuidado.</p>
+
+ <p>Se você está comparando opções de nutricionista online, essa consulta pública é um critério mais concreto do que qualquer depoimento. Vale aplicar o mesmo teste com qualquer profissional que você considerar: atendimento à distância só é seguro quando existe registro por trás dele. Aqui em Goiânia, esse mesmo compromisso vale para quem prefere o consultório físico, o cuidado técnico e o registro no CRN são os mesmos, muda só o lugar onde a consulta acontece. Se esse for o seu caso, o <a href="/nutricionista-em-goiania/">atendimento presencial em Goiânia</a> tem uma página própria, com os detalhes de como funciona por lá.</p>
  </div>
  </section>
 

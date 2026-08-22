@@ -138,6 +138,15 @@ Não existe pacote único. O começo costuma pedir retornos mais próximos, porq
 
 O objetivo do acompanhamento é a sua autonomia, e não a sua dependência de mim. Você pode e deve perguntar sobre ritmo e frequência já na primeira conversa. Se quiser entender antes como é o atendimento presencial na cidade, a página sobre [nutricionista em Goiânia](/nutricionista-em-goiania) explica o formato.
 
+<section id="atendimento-esportivo-em-goiania">
+<h3>Atendimento esportivo em Goiânia: onde é, para quem é e como marcar</h3>
+<p>Quem busca esse tipo de acompanhamento perto de casa já treina na cidade, na maioria das vezes, e só quer parar de rolar perfil atrás de perfil até achar alguém confiável. Se essa é a sua situação, o caminho é direto.</p>
+<p>Não é preciso ter um objetivo raro nem competir profissionalmente para esse atendimento fazer sentido. O critério é mais simples: um treino que já é rotina e uma alimentação que talvez não acompanhe esse ritmo.</p>
+<p>O atendimento presencial fica no <strong>beLIV Espaço de Saúde e Bem-Estar</strong>, na Avenida dos Ipês, em Goiânia. Ele costuma ser a escolha de quem já treina com regularidade na cidade, seja corrida, musculação ou outro esporte, e prefere sentar frente a frente já na primeira consulta. Quem mora em outro município ou não consegue encaixar deslocamento no dia segue com a telenutrição descrita acima, com a mesma profundidade de avaliação.</p>
+<p>Marcar é simples. Uma mensagem pelo WhatsApp contando seu treino e sua rotina já dá início à conversa. Não existe fila anunciada nem prazo apertado para decidir, isso aqui não é escassez fabricada, é só o formato real do agendamento.</p>
+<p>Informar o valor da consulta antes de qualquer agendamento é dever profissional, previsto no Código de Ética da categoria, não um gesto de cortesia. Os detalhes de investimento ficam reunidos na página de <a href="/nutricionista-em-goiania/#investimento">nutricionista em Goiânia</a>, ao lado das demais informações práticas sobre o atendimento presencial no beLIV.</p>
+</section>
+
 ## Suplemento resolve? O que dá para dizer fora de uma consulta
 
 Essa é a parte em que eu vou te decepcionar um pouco, e por um bom motivo.

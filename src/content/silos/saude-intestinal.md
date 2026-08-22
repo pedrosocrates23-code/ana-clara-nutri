@@ -42,13 +42,15 @@ Muita gente convive anos com desconfortos achando que "é normal". Não precisa 
 
 ## O que pode ser trabalhado
 
-- **Fibras**, presentes em frutas, vegetais, grãos e leguminosas, importantes para o funcionamento intestinal.
-- **Microbiota**, a comunidade de microrganismos que habita o intestino e responde ao que você come.
-- **Hidratação**, fundamental para o trânsito intestinal.
+Prefiro organizar o cuidado por mecanismo, não por sintoma isolado. É a diferença entre entender por que o intestino reage e apenas caçar o alimento culpado da vez.
+
+- **Fibra solúvel e insolúvel**, presentes em frutas, vegetais, grãos e leguminosas, com funções diferentes no trânsito intestinal. Eu detalho essa diferença, com exemplos de alimentos, no conteúdo sobre [alimentos ricos em fibras](/saude-intestinal/alimentos-ricos-em-fibras).
+- **Microbiota**, a comunidade de microrganismos que habita o intestino e responde ao que você come. Explico como ela funciona no dia a dia em [microbiota intestinal: o que é e como cuidar](/saude-intestinal/microbiota-intestinal-o-que-e-e-como-cuidar).
+- **Hidratação**, fundamental para o trânsito intestinal, já que fibra sem água tende a piorar o desconforto em vez de aliviar.
 - **Regularidade e rotina alimentar**, horários e mastigação também influenciam.
 - **Identificação de incômodos**, observar alimentos que parecem desencadear desconforto, com critério.
 
-Repare que nada disso é sobre uma dieta da moda ou um alimento "milagroso". O cuidado com o intestino é construído no conjunto: variedade, fibras vindas de alimentos de verdade, água e uma rotina alimentar mais organizada. É menos sobre proibir e mais sobre incluir o que faz bem.
+Repare que nada disso passa por uma marca de suplemento ou por um produto específico. O cuidado com o intestino é sobre o tipo de nutriente, fibra solúvel, fibra insolúvel, probiótico como categoria, e não sobre qual rótulo comprar. Essa é uma diferença que eu levo a sério: o cuidado é construído no conjunto, com alimentos de verdade, água e uma rotina mais organizada, é menos sobre proibir e mais sobre incluir o que faz bem.
 
 ## Como eu trabalho a saúde intestinal
 
@@ -62,6 +64,8 @@ Trabalho sempre dentro dos limites da nutrição: quando há sinais que pedem in
 
 Por isso, evito modismos e restrições da moda. Cortar grupos inteiros de alimentos por conta própria pode trazer mais prejuízo do que benefício. Cada ajuste tem um porquê e é feito com critério.
 
+O intestino também não trabalha isolado do resto do corpo. Em alguns casos que atendo em [nutrição clínica](/nutricao-clinica/), como SOP e alterações inflamatórias, o cuidado com o intestino entra como parte do conjunto, nunca como promessa isolada de resolver a condição de base.
+
 ## Sinais de que a alimentação merece atenção
 
 Alguns incômodos do dia a dia costumam ter relação com a alimentação e a rotina:
@@ -72,6 +76,8 @@ Alguns incômodos do dia a dia costumam ter relação com a alimentação e a ro
 - Desconforto após algumas refeições
 
 Nenhum desses sinais deve ser ignorado nem autodiagnosticado. A alimentação pode ajudar bastante no bem-estar, mas sintomas persistentes ou intensos sempre merecem avaliação médica para investigar a causa. Cuidar da alimentação é um ótimo ponto de partida, desde que dentro dos limites do que a nutrição pode fazer.
+
+Se o intestino preso ou irregular é o incômodo que mais pesa na sua rotina, detalho o que costuma ajudar em [intestino preso: o que a alimentação pode fazer](/saude-intestinal/intestino-preso-o-que-a-alimentacao-pode-fazer).
 
 ## Para quem é
 

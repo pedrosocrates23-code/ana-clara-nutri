@@ -96,6 +96,16 @@ A vitamina D vem principalmente da exposição solar, e a alimentação contribu
 
 O manejo costuma envolver o médico, a rotina de sol e, quando indicado, suplementação avaliada caso a caso. Cabe à nutrição cuidar das fontes alimentares e do contexto geral, sem transformar isso numa promessa.
 
+<section id="indice-de-exames">
+<h2>Onde cada exame é respondido em detalhe</h2>
+<p>Este texto reúne o quadro geral que aparece com mais frequência depois de uma consulta médica. Cada exame específico também tem um artigo próprio, que aprofunda o que ele mede, o que costuma alterá-lo e como a alimentação entra nesse manejo, sem prometer normalizar nenhum número.</p>
+<ol>
+<li><strong>Colesterol e triglicerídeos.</strong> O artigo sobre <a href="/nutricao-clinica/colesterol-alto-o-que-a-alimentacao-pode-ajudar">colesterol alto e o que a alimentação pode ajudar</a> detalha o tipo de gordura que predomina no prato, a fibra e a frequência dos ultraprocessados envolvidos nesse manejo.</li>
+<li><strong>Síndrome dos ovários policísticos.</strong> O artigo sobre <a href="/nutricao-clinica/alimentacao-e-sop-por-onde-comecar">alimentação e SOP, por onde começar</a> aborda a relação entre a alimentação e essa condição hormonal.</li>
+</ol>
+<p>Novos exames entram nesta lista conforme os artigos correspondentes forem publicados. Para o panorama do silo inteiro, o ponto de partida continua sendo o <a href="/nutricao-clinica/">hub de nutrição clínica</a>.</p>
+</section>
+
 <aside class="cta-artigo" aria-label="Falar com a nutricionista">
 <p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>

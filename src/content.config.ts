@@ -44,6 +44,9 @@ const posts = defineCollection({
  silo: z.string(), // slug do silo OU 'blog'
  siloLabel: z.string(),
  datePublished: z.string(),
+ // Data da última revisão de conteúdo real (não é igual a datePublished por
+ // padrão). Opcional para não quebrar os posts que ainda não foram revisados.
+ dateModified: z.string().optional(),
  medical: z.boolean().default(false),
  // Imagem de capa (hero + card). Caminho a partir de /public (ex: "/blog/slug.webp").
  // CFN 856/2026 art. 69 §2º: NUNCA imagem de resultado, antes/depois, composição

@@ -1,0 +1,65 @@
+Baseline do gate de conformidade CFN — nutrianaclara.com.br
+Data de execução: 2026-08-21 (data-base do plano; ver planejamento-2026-08/ para o cronograma completo)
+Comando: npm run build && npm run check:cfn
+Commit-base: 609ede3 (feat: fundacao de agosto)
+
+Contexto: até esta rodada, o gate nunca havia sido rodado por ninguém antes de recomendar
+publicação (TEC-01, diagnóstico de 21/08/2026). A primeira execução real devolveu exit 1
+com 20 erros e 14 avisos. Onze dos vinte erros eram falso positivo do próprio checker
+(corrigido com fixture de teste em scripts/check-cfn.test.mjs, 13 casos, incluindo 2
+controles negativos). Os nove erros restantes exigiram edição de conteúdo real: o artigo
+sobre nutrição esportiva se autotitulava "Nutricionista Esportivo" (vedado pelo art. 24 §2º)
+e foi reenquadrado para descrever a área "Nutrição Esportiva"; uma frase em
+microbiota-intestinal usava "resultado garantido" como exemplo de sinal de alerta e foi
+reescrita sem a expressão vedada.
+
+Estado desta baseline: EXIT 0, 0 erro(s), 14 aviso(s) em 41 páginas.
+
+Os 14 avisos são todos AVISO (não bloqueiam), revisados manualmente em 21/08/2026 e
+confirmados como uso legítimo:
+- "milagre" (10 ocorrências): sempre em frases negativas do tipo "sem promessas
+  milagrosas" ou explicando o que o Código veda.
+- "cura" (3 ocorrências): sempre "sem cura conhecida" (fato médico sobre SOP) ou "não
+  promete cura".
+- "especialista" (2 ocorrências, mesma página): dentro do FAQ que explica que "nutricionista
+  comportamental" e "especialista" não são títulos que a Ana usa, por não constarem no rol
+  do CFN — é o texto que EXPLICA a vedação, não uma autotitulação.
+
+Saída completa do comando, nesta execução:
+
+> ana-clara-nutri@0.1.0 check:cfn
+> node scripts/check-cfn.mjs
+
+AVISO /blog/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /emagrecimento/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /nutricao-clinica/alimentacao-e-sop-por-onde-comecar/
+      art. 69: Menção a "cura": confirmar que não promete cura: "cura"
+AVISO /nutricao-clinica/alimentacao-e-sop-por-onde-comecar/
+      art. 69: Menção a "cura": confirmar que não promete cura: "cura"
+AVISO /nutricao-clinica/exames-alterados-quando-procurar-nutricionista/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /nutricao-clinica/
+      art. 69: Menção a "cura": confirmar que não promete cura: "cura"
+AVISO /nutricao-clinica/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /nutricao-comportamental/compulsao-alimentar-como-parar/
+      art. 69: Menção a "cura": confirmar que não promete cura: "cura"
+AVISO /nutricao-comportamental/
+      art. 24, §2º: A palavra "especialista" aparece: confirmar que não é auto-atribuição de título: "especialista"
+AVISO /nutricao-comportamental/
+      art. 24, §2º: A palavra "especialista" aparece: confirmar que não é auto-atribuição de título: "especialista"
+AVISO /nutricao-comportamental/por-que-nao-consigo-seguir-a-dieta/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /saude-intestinal/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /saude-intestinal/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+AVISO /sobre/
+      art. 69, §6º: Menção a "milagre": confirmar que é para negá-lo: "milagr"
+
+check:cfn: 0 erro(s), 14 aviso(s) em 41 páginas.
+
+Critério de aceite (item 8 da fundação de agosto): satisfeito. Este log é o marco datado
+exigido antes do primeiro deploy de conteúdo de setembro.

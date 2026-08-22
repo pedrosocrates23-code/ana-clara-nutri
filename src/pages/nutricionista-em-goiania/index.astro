@@ -19,16 +19,26 @@ const faqs = [
 ];
 const path = '/nutricionista-em-goiania/';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Atendimento Presencial', href: path }];
-// Preço ainda não informado (isPlaceholder): omitir o nó Offer inteiro é o padrão
-// já usado para CRN/sameAs/geo em shared.ts — um Offer com "{VALOR_PRESENCIAL}"
-// literal no JSON-LD é pior do que nenhum Offer (EOK-10/TEC-04, achado 21/08/2026).
-const offerNode = isPlaceholder(SITE.pricePresencial) ? null : {
+// Preços ainda não informados (isPlaceholder): omitir os nós Offer é o padrão
+// já usado para CRN/sameAs/geo em shared.ts. Um Offer com "{VALOR_PRESENCIAL}"
+// literal no JSON-LD é pior do que nenhum Offer (achado 21/08/2026). Os dois nós
+// aparecem sozinhos assim que SITE.pricePresencial e SITE.priceOnline forem preenchidos,
+// sem precisar tocar em nenhuma página.
+const precosDefinidos = !isPlaceholder(SITE.pricePresencial) && !isPlaceholder(SITE.priceOnline);
+const offerPresencial = isPlaceholder(SITE.pricePresencial) ? null : {
  '@type': 'Offer',
- '@id': `${SITE.url}${path}#offer`,
+ '@id': `${SITE.url}${path}#offer-presencial`,
  itemOffered: { '@id': SCHEMA_IDS.business },
- price: SITE.pricePresencial, priceCurrency: 'BRL', category: 'Atendimento particular',
+ price: SITE.pricePresencial, priceCurrency: 'BRL', category: 'Atendimento particular presencial',
 };
-const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade Santos', mainEntity: 'business', faqs, breadcrumb, extraNodes: offerNode ? [offerNode] : [] });
+const offerOnline = isPlaceholder(SITE.priceOnline) ? null : {
+ '@type': 'Offer',
+ '@id': `${SITE.url}${path}#offer-online`,
+ itemOffered: { '@id': SCHEMA_IDS.business },
+ price: SITE.priceOnline, priceCurrency: 'BRL', category: 'Atendimento particular por telenutrição',
+};
+const extraNodes = [offerPresencial, offerOnline].filter(Boolean);
+const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade Santos', mainEntity: 'business', faqs, breadcrumb, extraNodes });
 ---
 <BaseLayout
  title="Nutricionista em Goiânia | Ana Clara Andrade Santos"
@@ -41,6 +51,12 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
 
  <section class="section">
  <div class="container prose">
+ <h2 id="escopo-e-modalidade">Atendimento particular, presencial ou por telenutrição</h2>
+ <p><strong>Ana Clara Andrade Santos, CRN-1 nº 19825</strong>, atende em <strong>Goiânia</strong> de duas formas: presencial no {SITE.venue} e por telenutrição para qualquer cidade do Brasil, sempre em <strong>atendimento particular</strong>, com avaliação inicial, plano construído junto com você e retornos combinados para ajustar o caminho.</p>
+ <p>Se você chegou até aqui buscando uma nutricionista perto de você, o endereço presencial é sempre o mesmo: não tenho consultório em mais de um ponto da cidade nem reviso horários em endereços variados. O {SITE.venue} é o único local de atendimento presencial, o que facilita achar o mapa certo e chegar sem se perder.</p>
+ <p>Não existe uma terceira opção escondida atrás dessas duas, nem um caminho mais completo que o outro. O que muda entre o presencial e a telenutrição é o formato do encontro, pela tela ou no consultório dentro do {SITE.venue}. O processo é o mesmo nos dois casos: eu escuto a sua rotina, o seu histórico e o que você já tentou antes, construo um plano alimentar que cabe na sua vida real, e seguimos com retornos combinados para ajustar o que não estiver funcionando. Quem escolhe o presencial costuma valorizar o encontro físico, sem tela no meio da conversa. Quem escolhe a telenutrição geralmente mora fora de Goiânia, viaja com frequência, ou prefere manter o acompanhamento de onde estiver, sem abrir mão da mesma atenção.</p>
+ <p>O passo a passo completo, da primeira consulta aos retornos, está descrito em <a href="/como-eu-atendo/">como eu atendo</a>. Se a telenutrição faz mais sentido para a sua rotina, a página de <a href="/nutricionista-online/">atendimento por telenutrição</a> explica como funciona a consulta à distância. Os valores de cada formato estão logo abaixo, em <a href="#investimento">investimento</a>.</p>
+
  <h2>Onde fica o atendimento presencial</h2>
  <p>Atendo presencialmente em Goiânia, no <strong>{SITE.venue}</strong>, um espaço de saúde e bem-estar em um ponto de fácil acesso, pensado para receber você com tranquilidade.</p>
  <ul>
@@ -55,10 +71,20 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
  <p><strong>1. Agendamento.</strong> Você reserva o seu horário pelo site ou WhatsApp.</p>
  <p><strong>2. Primeira consulta.</strong> No {SITE.venue}, faço uma avaliação completa e uma conversa de escuta sobre a sua rotina, o seu histórico e os seus objetivos.</p>
  <p><strong>3. Acompanhamento.</strong> Construímos o seu plano e seguimos com retornos para ajustar o caminho ao longo do tempo, sempre respeitando o seu ritmo.</p>
- <p>Para a primeira consulta, leve seus exames recentes, se tiver, e a lista de medicamentos ou suplementos que você usa. O mais importante você já tem: a sua história.</p>
+ <p>Para a primeira consulta, leve seus exames recentes, se tiver, e a lista de medicamentos ou suplementos que você usa. O mais importante você já tem: a sua história. Se quiser saber com mais detalhe o que perguntamos, o que sai desse primeiro encontro e por que não começamos pela balança, o texto sobre <a href="/nutricionista-em-goiania/primeira-consulta">como é a primeira consulta presencial</a> cobre isso ponto a ponto.</p>
 
- <h2>Investimento</h2>
- <p>O atendimento é <strong>particular</strong> e inclui avaliação nutricional completa, plano alimentar individualizado e o acompanhamento combinado. Valores informados com transparência, sem surpresas.</p>
+ <h2 id="investimento">Investimento</h2>
+ <p>O atendimento é <strong>particular</strong>, presencial no {SITE.venue} ou por telenutrição, e inclui avaliação nutricional completa, plano alimentar individualizado e os retornos combinados dentro do acompanhamento. Informar o valor do meu trabalho antes do agendamento não é cortesia, é dever profissional: você decide com a informação toda em mãos, não depois de já ter marcado um horário.</p>
+ {precosDefinidos ? (
+ <ul>
+ <li><strong>Consulta presencial:</strong> R$ {SITE.pricePresencial}, no {SITE.venue}, em Goiânia. Inclui a avaliação inicial e a devolutiva do plano alimentar.</li>
+ <li><strong>Consulta por telenutrição:</strong> R$ {SITE.priceOnline}, por videochamada, para qualquer cidade do Brasil. Segue o mesmo processo de avaliação e plano do atendimento presencial.</li>
+ </ul>
+ ) : (
+ <p>O valor de cada formato, presencial e telenutrição, é informado de forma direta assim que você entra em contato, antes de qualquer agendamento. Você pergunta pelo WhatsApp ou pelo telefone e recebe o número de imediato, sem depender de uma primeira consulta para saber quanto custa.</p>
+ )}
+ <p>O valor combinado na primeira consulta é o valor mantido ao longo de todo o acompanhamento, sem cobrança extra pelos retornos já previstos no plano. Não existe uma versão mais barata dependendo de quando você agenda, nem um valor maior escondido atrás de uma primeira ligação: o número informado é o número final para aquele formato de atendimento. Também não trabalho com pacote fechado de sessões vendido de uma vez; cada retorno é combinado conforme o seu caso avança, no seu ritmo.</p>
+ <p>Se surgir alguma dúvida sobre o que está incluído em cada formato antes de decidir, o caminho mais rápido é perguntar direto pelo <a href={WHATSAPP_URL} target="_blank" rel="noopener">WhatsApp</a>.</p>
 
  <h2>Atendimento em Goiânia e região</h2>
  <p>O {SITE.venue} fica em Goiânia, com fácil acesso para quem vem de diferentes regiões da cidade e também de Aparecida de Goiânia. O objetivo é tornar esse cuidado simples de encaixar na sua rotina, com horários flexíveis e um espaço acolhedor.</p>

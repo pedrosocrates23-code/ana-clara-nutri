@@ -38,15 +38,19 @@ Em outras palavras, a nutrição clínica não promete milagres nem substitui re
 
 ## Condições que podem se beneficiar do acompanhamento
 
-A alimentação tem papel relevante no manejo de várias condições. Entre elas:
+Você provavelmente chegou até aqui de um jeito bem específico: saiu de uma consulta com um número circulado no exame e não sabe muito bem o que fazer com ele à mesa. É esse número, mais do que o nome de uma doença, que costuma abrir a porta da nutrição clínica. Por isso organizo esta página pelo que trouxe você aqui, o resultado que chamou atenção, não por um rótulo de diagnóstico que talvez nem se aplique ainda ao seu caso.
 
-- **Diabetes e resistência à insulina**, organização das refeições e das fontes de carboidrato.
-- **Colesterol e triglicerídeos alterados**, ajustes alimentares de apoio.
-- **Hipertensão**, atenção ao sódio e ao padrão alimentar.
-- **Saúde renal**, adequação conforme orientação médica.
-- **Saúde da mulher (ex.: SOP)**, alimentação como parte do cuidado.
+**Glicemia ou hemoglobina glicada fora da faixa.** É um dos pedidos mais comuns que recebo. O trabalho começa pela organização das refeições e das fontes de carboidrato ao longo do dia, sempre em conjunto com o seu médico.
 
-Em todos os casos, as orientações são individualizadas e alinhadas ao seu tratamento.
+**Colesterol e triglicerídeos alterados.** Se foi esse o número que chamou sua atenção, escrevi um artigo específico sobre [o que a alimentação pode ajudar quando o colesterol vem alto](/nutricao-clinica/colesterol-alto-o-que-a-alimentacao-pode-ajudar), com o que costuma mudar no prato e o que continua sendo papel do seu médico.
+
+**Qualquer exame alterado, de forma geral.** Às vezes o resultado nem é o que você esperava, e a dúvida é mais simples: e agora, o que eu faço com isso? Este outro texto trata exatamente [o momento entre receber o exame alterado e procurar um nutricionista](/nutricao-clinica/exames-alterados-quando-procurar-nutricionista).
+
+**Exame hormonal alterado, no contexto da SOP.** Quando o resultado aponta para resistência à insulina ou hormônios androgênicos fora da faixa, dentro do quadro de síndrome dos ovários policísticos, a alimentação tem um papel de apoio no eixo metabólico e hormonal. Detalhei [por onde começar com a alimentação na SOP](/nutricao-clinica/alimentacao-e-sop-por-onde-comecar) em outro artigo.
+
+**Hipertensão e saúde renal** também entram nesse cuidado, com atenção ao sódio, ao padrão alimentar e às adequações que a sua equipe médica indicar.
+
+Em todos os casos, as orientações são individualizadas e alinhadas ao seu tratamento. E se o que te incomoda é mais a digestão do dia a dia do que um número específico de exame, o ponto de entrada costuma ser outro: vale conhecer o [cuidado com a saúde intestinal](/saude-intestinal/).
 
 Vale reforçar: a presença de uma condição de saúde não significa uma vida de privações. Na maioria das vezes, é possível adaptar a alimentação mantendo prazer e variedade, o que muda é o "como", não necessariamente o "quê". A ideia é facilitar a sua vida, não complicá-la com mais regras.
 
@@ -75,3 +79,5 @@ Também faz parte do meu papel acompanhar e ajustar. Condições de saúde mudam
 E é para quem busca prevenção e qualidade de vida, ajustando a alimentação antes que pequenos sinais virem problemas maiores.
 
 Se você recebeu um diagnóstico recente e se sente perdida sobre o que pode ou não comer, esse acompanhamento existe justamente para te dar clareza e segurança.
+
+O atendimento acontece por telenutrição, de qualquer lugar do Brasil, e também presencial para quem está em [Goiânia e prefere sentar comigo pessoalmente](/nutricionista-em-goiania/).

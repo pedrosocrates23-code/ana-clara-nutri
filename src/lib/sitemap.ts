@@ -13,13 +13,17 @@ export interface SitemapGroup {
 }
 
 // Páginas institucionais e de conversão. Não incluem hubs de silo nem artigos.
+// /nutricionista-online e /nutricionista-em-goiania NÃO entram aqui: são hubs de
+// serviço com posts-filho (silo: "nutricionista-online"/"nutricionista-em-goiania"
+// no frontmatter), então ganham grupo próprio abaixo, no mesmo padrão do blog —
+// senão os spokes desses dois silos ficam fora de todo sitemap (nenhum <loc>
+// gerado para eles, achado 22/08/2026: getSitemapGroups só varre a collection
+// `silos`, e essas duas páginas são .astro hand-authored, não fazem parte dela).
 const PAGINAS: SitemapEntry[] = [
  { path: '/' },
  { path: '/sobre' },
  { path: '/contato' },
  { path: '/receitas' },
- { path: '/nutricionista-online' },
- { path: '/nutricionista-em-goiania' },
  { path: '/politica-de-privacidade' },
  { path: '/termos-e-aviso-de-ia' },
 ];
@@ -55,6 +59,20 @@ export async function getSitemapGroups(): Promise<SitemapGroup[]> {
  entries: [{ path: '/blog' }, ...postsDoSilo('blog')],
  };
 
+ // Os dois hubs de serviço (páginas .astro, fora da collection `silos`) seguem o
+ // mesmo padrão do blog: o hub entra como primeira entrada, seguido dos posts
+ // cujo frontmatter declara esse silo.
+ const grupoGoiania: SitemapGroup = {
+ id: 'silo-nutricionista-em-goiania',
+ label: 'Atendimento Presencial',
+ entries: [{ path: '/nutricionista-em-goiania' }, ...postsDoSilo('nutricionista-em-goiania')],
+ };
+ const grupoOnline: SitemapGroup = {
+ id: 'silo-nutricionista-online',
+ label: 'Atendimento Online',
+ entries: [{ path: '/nutricionista-online' }, ...postsDoSilo('nutricionista-online')],
+ };
+
  // Ordem dos silos: a mesma da navegação (SILOS), com fallback para o `order`
  // do frontmatter caso algum silo não esteja listado lá.
  const ordemNav = SILOS.map((s) => s.href.replace(/\//g, ''));
@@ -77,6 +95,8 @@ export async function getSitemapGroups(): Promise<SitemapGroup[]> {
  return [
  { id: 'paginas', label: 'Páginas principais', entries: PAGINAS },
  grupoBlog,
+ grupoGoiania,
+ grupoOnline,
  ...gruposSilo,
  ];
 }

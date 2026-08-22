@@ -7,6 +7,7 @@ path: "/nutricao-comportamental/nutricionista-sem-dieta-restritiva"
 silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-15"
+dateModified: "2026-09-22"
 medical: true
 image: "/blog/nutricionista-sem-dieta-restritiva.webp"
 imageAlt: "Variedade de frutas e vegetais coloridos sobre a mesa"
@@ -182,6 +183,20 @@ Essa é a pergunta que trava a decisão de agendar, e ela é justa. Se não é u
 - **Orientação individualizada e ajustável:** ela existe, é sua, e muda conforme a sua resposta.
 - **A leitura dos seus gatilhos:** saber qual situação dispara o quê, na sua vida e não em uma média.
 - **Autonomia, ao longo do tempo:** escolher sem depender de um plano externo.
+
+<h3 id="o-que-voce-leva-da-consulta">O que você leva da consulta, se não é uma folha de dieta</h3>
+
+Vou ser concreta, porque a pergunta é justa e a lista aqui em cima ainda soa abstrata quando lida de fora. Ao final da primeira consulta, você sai com três coisas, e as três existem porque foram construídas com você, não porque vieram prontas de uma tabela.
+
+A primeira é o **registro do seu padrão**. Não um padrão genérico de livro de nutrição: o seu, com os horários, os dias e as situações que apareceram na sua fala. Se a conversa mostrou que a fome maior chega depois de uma noite mal dormida, fica anotado assim, com esse nome, para ser retomado no retorno.
+
+A segunda é o **critério de decisão**. Não é uma regra fixa do tipo "coma isso, evite aquilo". É uma forma de escolher que você consegue aplicar sozinha: no restaurante, na casa de alguém, num dia que fugiu do previsto. Esse critério nasce da conversa, não de uma tabela de calorias, e é ele que continua funcionando quando eu não estou por perto.
+
+A terceira é o **combinado para o retorno**: uma ou duas mudanças específicas para observar até a próxima consulta, não uma lista inteira de tarefas. É pouco, de propósito. Dá para sustentar, e sustentar é o que interessa.
+
+Nenhuma dessas três coisas promete um resultado nem um prazo, porque descrevem um método, não um desfecho. O retorno existe para revisar o que funcionou e ajustar o que não funcionou, com você, de novo.
+
+Se você quer ver o processo inteiro, da primeira consulta aos ajustes de retorno, descrevi o passo a passo em [como eu atendo](/como-eu-atendo/). E se esse jeito de trabalhar faz sentido para o seu caso, os outros temas da [nutrição comportamental](/nutricao-comportamental/) estão reunidos ali.
 
 ### Por que o entregável é o processo, não o documento
 
