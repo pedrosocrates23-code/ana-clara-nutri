@@ -7,6 +7,11 @@ import { WHATSAPP_URL } from '../lib/site';
 // Formulário de agendamento removido do hero em 23/08/2026 (cobria a foto);
 // no lugar, dois CTAs diretos (23/08/2026): clay (design system) para
 // agendamento e outline branco, exclusivo deste hero, para WhatsApp.
+// Mobile (< 760px, 23/08/2026): sem foto, fundo no mesmo verde pastel claro
+// que PageHero.astro usa no resto do site (--paper -> --sage-50), com o
+// mesmo tratamento de texto escuro dessas páginas (kicker/em em --sage-600,
+// título em --ink, sub em --ink-soft). Espaço entre o menu (72px, fixo) e a
+// etiqueta "Nutricionista": exatamente 40px.
 ---
 <section class="hero" aria-label="Apresentação">
   <div class="hero__bg"></div>
@@ -54,15 +59,31 @@ import { WHATSAPP_URL } from '../lib/site';
 
   /* Button.astro é outro componente: o CSS com escopo daqui não alcança o
      <a> que ele renderiza, então essa cor precisa do escape hatch :global.
-     Outline branco é exclusivo deste hero (fundo de foto escura); o
-     .btn--outline padrão do design system usa sage, feito para fundo claro. */
-  :global(.hero__btn-outline) {
-    background: transparent !important;
-    color: #fff !important;
-    border-color: rgba(255, 255, 255, .78) !important;
+     Outline branco só serve para o hero com foto (desktop, ver media query
+     abaixo) — no mobile sem foto o próprio .btn--outline do design system
+     (sage sobre fundo claro) já funciona sem nenhum override daqui. */
+  @media (min-width: 760px) {
+    :global(.hero__btn-outline) {
+      background: transparent !important;
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, .78) !important;
+    }
+    :global(.hero__btn-outline:hover) {
+      border-color: #fff !important;
+      background: rgba(255, 255, 255, .1) !important;
+    }
   }
-  :global(.hero__btn-outline:hover) {
-    border-color: #fff !important;
-    background: rgba(255, 255, 255, .1) !important;
+
+  /* Mobile: sem foto, fundo no verde pastel padrão do site (mesmo do
+     PageHero.astro), texto escuro (mesmo tratamento das páginas internas).
+     40px exatos entre o fim do menu fixo (--header-h: 72px) e a etiqueta. */
+  @media (max-width: 759px) {
+    .hero__bg { background: linear-gradient(180deg, var(--paper) 0%, var(--sage-50) 100%); }
+    .hero__inner { padding-top: calc(var(--header-h) + 40px); }
+    .hero__content { color: var(--ink); }
+    .hero__kicker { color: var(--sage-600); }
+    .hero__title { color: var(--ink); }
+    .hero__title em { color: var(--sage-600); }
+    .hero__sub { color: var(--ink-soft); }
   }
 </style>

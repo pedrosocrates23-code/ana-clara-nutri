@@ -1,5 +1,9 @@
 ---
 // Seção de agendamento do rodapé (faixa verde + intro + FormCard).
+// Mobile (< 760px, 23/08/2026): sem o formulário completo aqui (já existe
+// um no hero via os 2 CTAs e em /contato) — no lugar, um botão só para
+// /contato. Desktop mantém o FormCard como sempre.
+import Button from './Button.astro';
 import FormCard from './FormCard.astro';
 import { ADDRESS_LINE } from '../lib/site';
 ---
@@ -17,7 +21,10 @@ import { ADDRESS_LINE } from '../lib/site';
 
       <p class="agendar__addr">Atendimento presencial: {ADDRESS_LINE}</p>
     </div>
-    <div class="reveal"><FormCard idPrefix="rodape" secao="Home — seção Agendar (rodapé)" /></div>
+    <div class="reveal agendar__form-desktop"><FormCard idPrefix="rodape" secao="Home — seção Agendar (rodapé)" /></div>
+    <div class="reveal agendar__cta-mobile">
+      <Button href="/contato" variant="clay">Agendar consulta</Button>
+    </div>
   </div>
 </section>
 
@@ -28,6 +35,15 @@ import { ADDRESS_LINE } from '../lib/site';
   }
   .agendar__grid { display: grid; gap: 32px; }
   @media (min-width: 860px) { .agendar__grid { grid-template-columns: .85fr 1.15fr; align-items: center; } }
+
+  /* Mesmo corte de 860px que já muda o grid acima: abaixo dele, o form
+     completo vira 1 botão; a partir dele, o botão some e o FormCard volta. */
+  .agendar__cta-mobile { display: block; }
+  .agendar__form-desktop { display: none; }
+  @media (min-width: 860px) {
+    .agendar__cta-mobile { display: none; }
+    .agendar__form-desktop { display: block; }
+  }
   .agendar__intro h2 { color: #fff; margin: 10px 0 0; }
   .kicker--light { color: var(--sage-200); }
   .agendar__intro p { color: rgba(255, 255, 255, .9); margin: 14px 0 18px; max-width: 380px; }
