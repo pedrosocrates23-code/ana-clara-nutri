@@ -1,9 +1,12 @@
 ---
+import Button from './Button.astro';
+import { WHATSAPP_URL } from '../lib/site';
 // Hero com foto (banner substituído em 23/08/2026): foto editorial da Ana com
 // fundo verde escuro sólido do lado esquerdo, onde o texto se apoia sem
 // precisar de overlay escuro por cima (removido a pedido — ver histórico).
 // Formulário de agendamento removido do hero em 23/08/2026 (cobria a foto);
-// a agenda continua acessível pelo botão "Agendar" do menu e por /contato.
+// no lugar, dois CTAs diretos (23/08/2026): clay (design system) para
+// agendamento e outline branco, exclusivo deste hero, para WhatsApp.
 ---
 <section class="hero" aria-label="Apresentação">
   <div class="hero__bg"></div>
@@ -15,6 +18,10 @@
         Atendimento presencial em Goiânia e online por telenutrição para todo o Brasil.
         Um cuidado próximo, baseado em evidências e sem dietas restritivas.
       </p>
+      <div class="hero__actions">
+        <Button href="/contato" variant="clay">Agendar consulta</Button>
+        <Button href={WHATSAPP_URL} variant="outline" target="_blank" rel="noopener" class="hero__btn-outline">Falar no WhatsApp</Button>
+      </div>
     </div>
   </div>
 </section>
@@ -37,9 +44,25 @@
     padding-block: clamp(96px, 13vh, 150px) clamp(40px, 7vh, 80px);
   }
 
-  .hero__content { color: #fff; max-width: 560px; }
+  .hero__content { color: #fff; max-width: 540px; }
   .hero__kicker { color: var(--sage-100); }
   .hero__title { color: #fff; font-weight: 300; font-size: clamp(2rem, 5vw, 3.4rem); margin: 12px 0 0; }
   .hero__title em { font-style: italic; color: var(--sage-200); }
   .hero__sub { color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.5vw, 1.12rem); margin: 16px 0 0; max-width: 480px; }
+
+  .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 28px; }
+
+  /* Button.astro é outro componente: o CSS com escopo daqui não alcança o
+     <a> que ele renderiza, então essa cor precisa do escape hatch :global.
+     Outline branco é exclusivo deste hero (fundo de foto escura); o
+     .btn--outline padrão do design system usa sage, feito para fundo claro. */
+  :global(.hero__btn-outline) {
+    background: transparent !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, .78) !important;
+  }
+  :global(.hero__btn-outline:hover) {
+    border-color: #fff !important;
+    background: rgba(255, 255, 255, .1) !important;
+  }
 </style>
