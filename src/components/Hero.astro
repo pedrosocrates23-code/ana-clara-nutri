@@ -1,11 +1,12 @@
 ---
 import FormCard from './FormCard.astro';
-// Hero verde (sem foto: a foto da Ana fica na página /sobre, otimizada p/ entidade).
+// Hero com foto (banner substituído em 23/08/2026): foto editorial da Ana com
+// fundo verde escuro sólido do lado esquerdo, onde o texto se apoia sem
+// precisar de overlay escuro por cima (removido a pedido — ver histórico).
 // Primeira dobra com o formulário de agendamento à direita.
 ---
 <section class="hero" aria-label="Apresentação">
   <div class="hero__bg"></div>
-  <div class="hero__overlay"></div>
   <div class="container hero__inner">
     <div class="hero__content">
       <p class="kicker hero__kicker">Nutricionista</p>
@@ -26,14 +27,14 @@ import FormCard from './FormCard.astro';
   .hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
   .hero__bg {
     position: absolute; inset: 0;
-    background:
-      radial-gradient(120% 90% at 80% 15%, var(--sage-300) 0%, rgba(143,185,155,0) 55%),
-      linear-gradient(160deg, var(--sage-600) 0%, var(--sage-800) 100%);
-  }
-  /* overlay leve para o contraste do texto sobre o verde */
-  .hero__overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(34,49,38,.30) 0%, rgba(34,49,38,.10) 40%, rgba(34,49,38,.40) 100%);
+    /* Cor sólida como base instantânea (evita flash branco antes da imagem
+       carregar) por trás da foto. Sem overlay escuro por cima: o próprio
+       fundo verde da foto já sustenta o contraste do texto à esquerda. */
+    background-color: var(--sage-800);
+    background-image: url('/hero-home.webp');
+    background-size: cover;
+    background-position: 78% center;
+    background-repeat: no-repeat;
   }
   .hero__inner {
     position: relative; z-index: 2; width: 100%;
