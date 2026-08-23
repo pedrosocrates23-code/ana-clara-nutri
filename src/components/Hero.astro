@@ -1,9 +1,9 @@
 ---
-import FormCard from './FormCard.astro';
 // Hero com foto (banner substituído em 23/08/2026): foto editorial da Ana com
 // fundo verde escuro sólido do lado esquerdo, onde o texto se apoia sem
 // precisar de overlay escuro por cima (removido a pedido — ver histórico).
-// Primeira dobra com o formulário de agendamento à direita.
+// Formulário de agendamento removido do hero em 23/08/2026 (cobria a foto);
+// a agenda continua acessível pelo botão "Agendar" do menu e por /contato.
 ---
 <section class="hero" aria-label="Apresentação">
   <div class="hero__bg"></div>
@@ -15,10 +15,6 @@ import FormCard from './FormCard.astro';
         Atendimento presencial em Goiânia e online por telenutrição para todo o Brasil.
         Um cuidado próximo, baseado em evidências e sem dietas restritivas.
       </p>
-    </div>
-
-    <div class="hero__form">
-      <FormCard idPrefix="hero" title="Agende sua consulta" secao="Home — hero (topo)" />
     </div>
   </div>
 </section>
@@ -39,10 +35,6 @@ import FormCard from './FormCard.astro';
   .hero__inner {
     position: relative; z-index: 2; width: 100%;
     padding-block: clamp(96px, 13vh, 150px) clamp(40px, 7vh, 80px);
-    display: grid; gap: 36px;
-  }
-  @media (min-width: 760px) {
-    .hero__inner { grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; }
   }
 
   .hero__content { color: #fff; max-width: 560px; }
@@ -50,6 +42,4 @@ import FormCard from './FormCard.astro';
   .hero__title { color: #fff; font-weight: 300; font-size: clamp(2rem, 5vw, 3.4rem); margin: 12px 0 0; }
   .hero__title em { font-style: italic; color: var(--sage-200); }
   .hero__sub { color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.5vw, 1.12rem); margin: 16px 0 0; max-width: 480px; }
-
-  .hero__form { width: 100%; }
 </style>
