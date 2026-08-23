@@ -90,10 +90,12 @@ import { WHATSAPP_URL } from '../lib/site';
      Texto permanece claro (herda as regras da base acima): fundo escuro
      de novo, diferente da 1ª versão mobile (verde pastel + texto escuro).
      40px exatos entre o fim do menu fixo (--header-h: 72px) e a etiqueta.
-     Form completo reaparece abaixo dos 2 botões. */
+     Os 2 botões saem (o form completo, que aparece no lugar deles, já
+     tem o próprio CTA de envio — os dois juntos ficavam redundantes). */
   @media (max-width: 759px) {
     .hero__bg { background: #354a3b; }
     .hero__inner { padding-top: calc(var(--header-h) + 40px); }
+    .hero__actions { display: none; }
     .hero__form-mobile { display: block; margin-top: 28px; }
   }
 </style>
