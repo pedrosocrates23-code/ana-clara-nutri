@@ -2,7 +2,8 @@
    BASE · reset, tipografia, utilitários (mobile-first)
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
   margin: 0;
@@ -13,169 +14,194 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
+html.nav-open { overflow: hidden; }
 
 img, picture, svg, video { max-width: 100%; display: block; height: auto; }
 a { color: inherit; text-decoration: none; }
-a:hover { text-decoration: underline; }
 
-h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.1; letter-spacing: -.015em; margin: 0 0 .4em; }
-h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 300; }
-h2 { font-size: clamp(1.6rem, 3.4vw, 2.4rem); font-weight: 300; }
-h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; margin: 0 0 .45em; text-wrap: balance; }
+h1 { font-size: clamp(2.3rem, 5.6vw, 4.1rem); font-weight: 300; }
+h2 { font-size: clamp(1.85rem, 3.8vw, 2.9rem); font-weight: 300; }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.2; }
 h2 em, h1 em { font-style: italic; color: var(--sage-600); }
 
-p { margin: 0 0 1rem; max-width: var(--maxw-prose); }
-.prose p, .prose li { color: var(--ink-soft); }
+p { margin: 0 0 1rem; max-width: var(--maxw-prose); text-wrap: pretty; }
 strong { color: var(--ink); font-weight: 600; }
 
-/* ---- Kicker (mono label) ---- */
+/* ---- Kicker (rótulo mono) ---- */
 .kicker {
-  font-family: var(--mono); font-size: .69rem; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: .7rem; font-weight: 500;
   letter-spacing: .18em; text-transform: uppercase; color: var(--sage-600);
 }
+.kicker::before { content: ''; width: 22px; height: 1px; background: currentColor; opacity: .6; }
+.kicker--plain::before { display: none; }
 
-/* ---- Layout helpers ---- */
-.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 20px; }
-.section { padding-block: clamp(48px, 8vw, 88px); }
+/* ---- Layout ---- */
+.container { width: 100%; max-width: calc(var(--maxw) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: clamp(64px, 9vw, 120px); }
+.section--tight { padding-block: clamp(44px, 6vw, 72px); }
 .section--alt { background: var(--paper-2); }
-.section__head { max-width: 640px; margin-bottom: clamp(24px, 4vw, 44px); }
+.section--sand { background: var(--sand-50); }
+.section--dark { background: var(--forest-ink); color: var(--sand-100); }
+.section--dark h2, .section--dark h3 { color: #fff; }
+.section--dark h2 em { color: var(--sage-200); }
+.section--dark .kicker { color: var(--sage-200); }
+.section--dark p { color: rgba(233, 224, 208, .86); }
+.section__head { max-width: 660px; margin-bottom: clamp(32px, 5vw, 56px); }
+.section__head > p { color: var(--ink-soft); font-size: clamp(1rem, 1.4vw, 1.1rem); }
+.section__head--center { margin-inline: auto; text-align: center; }
+.section__head--center > p { margin-inline: auto; }
+.section__head--split { max-width: none; display: grid; gap: 18px; align-items: end; }
+@media (min-width: 900px) { .section__head--split { grid-template-columns: 1.1fr .9fr; } .section__head--split > p { margin: 0; } }
 
-/* ---- Grid ---- */
-.grid { display: grid; gap: 18px; }
+.grid { display: grid; gap: 20px; }
 @media (min-width: 720px) {
   .grid--2 { grid-template-columns: repeat(2, 1fr); }
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* ---- Card base ---- */
 .card {
   background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg);
-  padding: 24px; box-shadow: var(--shadow-sm);
-  transition: transform .22s ease, box-shadow .22s ease;
+  padding: 28px; box-shadow: var(--shadow-sm);
+  transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
 }
-.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card h2, .card h3 { margin-top: 0; }
+
+/* ---- Imagem editorial (moldura + leve zoom no hover do pai) ---- */
+.media { position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--sand-100); }
+.media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+a:hover .media img, .media:hover img { transform: scale(1.035); }
 
 /* ---- Tabela mobile-safe: SÓ a tabela rola, nunca a página ---- */
 .table-wrap {
   width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--line); border-radius: var(--r-md); margin: 1.25rem 0;
+  border: 1px solid var(--line); border-radius: var(--r-md); margin: 1.75rem 0; background: #fff;
 }
 .table-wrap table { width: 100%; min-width: 480px; border-collapse: collapse; }
-.table-wrap th, .table-wrap td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: .95rem; }
-.table-wrap thead th { background: var(--sage-50); color: var(--sage-700); font-family: var(--sans); }
+.table-wrap th, .table-wrap td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); font-size: .95rem; vertical-align: top; }
+.table-wrap tr:last-child td { border-bottom: 0; }
+.table-wrap thead th { background: var(--sage-50); color: var(--sage-700); font-family: var(--sans); font-weight: 600; }
 
-/* ---- Faixa de confiança ---- */
-.trust { display: flex; flex-wrap: wrap; gap: 14px 32px; justify-content: center;
-  font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+/* ---- Selos de confiança ---- */
+.trust { display: flex; flex-wrap: wrap; gap: 10px 28px;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
 .trust span { display: inline-flex; align-items: center; gap: 8px; }
+.trust svg { width: 14px; height: 14px; color: var(--sage-500); flex: none; }
 
 /* ---- Acessibilidade ---- */
-:where(a, button, input, [tabindex]):focus-visible {
-  outline: 2px solid var(--sage-500); outline-offset: 2px; border-radius: 6px;
+:where(a, button, input, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--sage-500); outline-offset: 3px; border-radius: 6px;
 }
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
+.skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--sage-900); color: #fff; padding: 10px 16px; border-radius: 8px; }
+.skip:focus { top: 12px; }
 
-/* ---- Prose (markdown renderizado: hubs e artigos) ---- */
-.prose { max-width: var(--maxw-prose); }
+/* ============================================================
+   PROSE · markdown renderizado (hubs e artigos)
+   Ritmo vertical pensado para leitura longa: 1.08rem / 1.78, parágrafos com
+   respiro de 1.25em, H2 com 2.6em acima (separa o assunto) e 0.6em abaixo
+   (cola no texto que introduz).
+   ============================================================ */
+.prose { max-width: var(--maxw-prose); font-size: clamp(1.02rem, 1.2vw, 1.09rem); line-height: 1.78; }
 .prose > * { max-width: 100%; }
-.prose h2 { margin-top: 2em; }
-.prose h3 { margin-top: 1.6em; }
-.prose p, .prose li { color: var(--ink-soft); }
-.prose ul, .prose ol { padding-left: 1.2em; margin: 0 0 1rem; }
-.prose li { margin-bottom: .4em; }
-.prose a { color: var(--sage-700); text-decoration: underline; }
+.prose > :first-child { margin-top: 0; }
+.prose p { margin: 0 0 1.25em; }
+.prose p, .prose li { color: #3F453C; }
+.prose h2 { font-size: clamp(1.6rem, 3vw, 2.15rem); font-weight: 400; margin: 2.6em 0 .6em; scroll-margin-top: calc(var(--header-h) + 20px); }
+.prose h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 650; letter-spacing: -.01em; margin: 2em 0 .5em; color: var(--ink); }
+.prose h2 + h3 { margin-top: 1em; }
+.prose ul, .prose ol { padding-left: 1.3em; margin: 0 0 1.4em; }
+.prose li { margin-bottom: .55em; padding-left: .2em; }
+.prose li::marker { color: var(--sage-500); }
+.prose ol li::marker { font-family: var(--mono); font-size: .85em; }
+.prose a { color: var(--sage-700); text-decoration: underline; text-decoration-color: var(--sage-300); text-underline-offset: 3px; text-decoration-thickness: 1.5px; transition: text-decoration-color .2s; }
+.prose a:hover { text-decoration-color: var(--sage-700); }
 .prose strong { color: var(--ink); }
-.prose blockquote { border-left: 3px solid var(--sage-300); margin: 1.2rem 0; padding: .2rem 0 .2rem 1rem; color: var(--ink-soft); font-style: italic; }
-
-/* ---- Reveal on scroll (respeita reduced-motion) ---- */
-/* Reveal on scroll.
-   NUNCA usar em conteúdo above-the-fold: o elemento nasce com opacity 0 e só
-   aparece quando o JS roda e o IntersectionObserver dispara. O hero estava assim
-   e o LCP era medido no fade-in, não na renderização: 4,4s no 4G lento contra
-   0,9s de FCP. Reveal é para o que está ABAIXO da dobra. */
-@media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.75,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
+.prose blockquote {
+  margin: 2em 0; padding: 1.1em 1.4em; border-left: 3px solid var(--sage-400);
+  background: var(--sage-50); border-radius: 0 var(--r-md) var(--r-md) 0;
+  color: var(--ink-soft); font-size: .96em;
 }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose hr { border: 0; height: 1px; background: var(--line); margin: 3em 0; }
+.prose img { border-radius: var(--r-md); margin: 2em 0; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.75em 0; font-size: .95rem; display: block; overflow-x: auto; }
+.prose th, .prose td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.prose thead th { background: var(--sage-50); color: var(--sage-700); }
+/* Lead do artigo: o 1º parágrafo em negrito (convenção do repo) vira abertura maior */
+.prose > p:first-child { font-size: 1.12em; color: var(--ink); }
 
-/* Sentinela do header (ver BaseLayout): 24px no topo, fora do fluxo.
-   Enquanto ela estiver visível o header é transparente; ao sair, vira sólido.
-   Substitui o antigo listener de scroll, que causava forced reflow. */
-[data-topo] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 24px;
-  pointer-events: none;
-}
-
-/* ============================================================================
-   CTA de artigo (.cta-artigo) — card verde-fundo, injetado no corpo por
-   scripts/inject-cta.py (antes do 2º H2 e do H2 do meio). O 3º CTA (fim) é a
-   seção .cta-final do ArticlePage. Global: o markup vem do markdown.
-   Fontes do site (Newsreader/mono), cores dos tokens, WCAG AA.
+/* ============================================================
+   CTA de artigo (.cta-artigo): card escuro injetado no corpo por
+   scripts/inject-cta.py. Global: o markup vem do markdown.
    CFN 856/2026: sem promessa, sem prazo/valores, sem oferta/escassez.
-   ============================================================================ */
+   ============================================================ */
 .cta-artigo {
-  background: #3C5240;
-  border-radius: 20px;
-  padding: 34px 34px 32px;
-  margin: 44px 0;
+  position: relative; overflow: hidden;
+  background: radial-gradient(120% 140% at 100% 0%, #3E5641 0%, #223126 55%, #1A261D 100%);
+  border-radius: var(--r-lg);
+  padding: clamp(28px, 4vw, 40px);
+  margin: 3em 0;
   color: #F4F3EC;
-  box-shadow: 0 12px 36px rgba(47, 66, 51, 0.22);
+  box-shadow: 0 18px 50px -20px rgba(26, 38, 29, .55);
+}
+.cta-artigo::after {
+  content: ''; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%;
+  border: 1px solid rgba(187, 208, 182, .18); pointer-events: none;
 }
 .prose .cta-artigo__eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  margin: 0 0 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage-200); margin: 0 0 14px;
 }
 .prose .cta-artigo__titulo {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(23px, 3.4vw, 30px);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 0 0 12px;
-  color: #FFFFFF;
+  font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 3.4vw, 32px);
+  line-height: 1.15; letter-spacing: -0.015em; margin: 0 0 12px; color: #FFFFFF;
 }
-.prose .cta-artigo__titulo em { font-style: italic; color: #FFFFFF; }
-.prose .cta-artigo__texto {
-  font-size: 15.5px;
-  line-height: 1.6;
-  color: #FFFFFF;
-  max-width: 480px;
-  margin: 0 0 24px;
-}
+.prose .cta-artigo__titulo em { font-style: italic; color: var(--sage-200); }
+.prose .cta-artigo__texto { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.88); max-width: 500px; margin: 0 0 26px; }
 .cta-artigo__acao { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
 .cta-artigo__btn {
-  display: inline-block; text-decoration: none;
-  font-family: var(--sans); font-size: 15px; font-weight: 600;
-  color: var(--ink); background: #92BC94;
-  padding: 14px 30px; border-radius: 999px;
-  transition: background .2s ease, transform .2s ease;
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  font-family: var(--sans); font-size: 15px; font-weight: 650;
+  color: var(--forest-ink); background: #fff;
+  padding: 15px 26px; border-radius: 999px;
+  transition: background .25s ease, transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
 }
-.cta-artigo__btn:hover { background: #7FAD82; transform: translateY(-1px); text-decoration: none; }
+.cta-artigo__btn::before {
+  content: ''; width: 18px; height: 18px; flex: none; background: #1FA855;
+  -webkit-mask: var(--wa-icon) center / contain no-repeat; mask: var(--wa-icon) center / contain no-repeat;
+}
+.cta-artigo__btn:hover { background: var(--sage-50); transform: translateY(-2px); box-shadow: 0 12px 28px -12px rgba(0,0,0,.5); }
 .cta-artigo__btn:focus-visible { outline: 2px solid var(--sage-200); outline-offset: 3px; }
-/* vence a regra .prose a (underline) que estava sublinhando o botão dentro do artigo */
-.prose .cta-artigo__btn, .prose .cta-artigo__btn:hover { text-decoration: none; }
-.cta-artigo__link {
-  font-family: var(--sans); font-size: 14.5px; font-weight: 600;
-  color: #F4F3EC; text-decoration: underline; text-underline-offset: 3px;
-}
+.prose .cta-artigo__btn, .prose .cta-artigo__btn:hover { text-decoration: none; color: var(--forest-ink); }
+.cta-artigo__link { font-family: var(--sans); font-size: 14.5px; font-weight: 600; color: #F4F3EC; text-decoration: underline; text-underline-offset: 3px; }
+.prose .cta-artigo__link { color: #F4F3EC; text-decoration-color: rgba(255,255,255,.4); }
 .cta-artigo__link:hover { color: #fff; }
-
 @media (max-width: 560px) {
-  .cta-artigo { padding: 26px 22px; }
   .cta-artigo__acao { gap: 12px; }
-  .cta-artigo__btn { width: 100%; text-align: center; }
+  .cta-artigo__btn { width: 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) { .cta-artigo__btn { transition: none; } }
+
+/* Ícone do WhatsApp como máscara (reutilizado em botões e no CTA do artigo) */
+:root {
+  --wa-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm4.52 11.99c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.65 4.2 3.72.59.25 1.05.4 1.4.52.59.18 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   MOTION · estados iniciais só existem com JS de motion ativo
+   (html.js-motion, ver src/scripts/motion.ts). Sem JS ou com
+   reduced-motion, tudo aparece no estado final.
+   ============================================================ */
+.reveal { }
+[data-split-line] { display: block; }
+
+/* Barra de progresso de leitura (artigos) */
+.read-progress { position: fixed; inset: 0 0 auto; height: 3px; z-index: 70; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--sage-400), var(--clay-400)); pointer-events: none; }

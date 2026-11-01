@@ -8,6 +8,8 @@ silo: "nutricao-clinica"
 siloLabel: "Nutrição Clínica"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/exames-alterados-quando-procurar-nutricionista.webp"
+imageAlt: "Envelope branco fechado ao lado de uma tigela de legumes, copo de água e óculos de leitura"
 faqs:
   - q: "Exame alterado: eu procuro o médico ou o nutricionista primeiro?"
     a: "O médico primeiro, sempre. É ele quem investiga a causa, fecha o diagnóstico e decide se cabe medicamento. O nutricionista entra depois ou junto, para transformar a orientação alimentar em uma rotina que você consiga manter. Se você já foi ao médico e saiu com o pedido de melhorar a alimentação, esse é exatamente o momento de procurar o acompanhamento nutricional."

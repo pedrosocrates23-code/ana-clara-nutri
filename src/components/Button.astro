@@ -1,29 +1,49 @@
 ---
+// Botão do design system. `whatsapp` = CTA principal do site (conversão é só WhatsApp):
+// abre em nova aba e leva `data-wa-secao` para a medição (src/scripts/site.ts).
 interface Props {
   href: string;
-  variant?: 'primary' | 'clay' | 'sage' | 'outline' | 'ghost';
-  size?: 'md' | 'sm';
+  variant?: 'primary' | 'clay' | 'sage' | 'outline' | 'ghost' | 'whatsapp' | 'light' | 'outline-light';
+  size?: 'md' | 'sm' | 'lg';
   class?: string;
   target?: string;
   rel?: string;
+  /** Seção de origem do clique (evento GA4 whatsapp_click) */
+  secao?: string;
+  magnetic?: boolean;
 }
-const { href, variant = 'primary', size = 'md', class: cls = '', target, rel } = Astro.props;
+const { href, variant = 'primary', size = 'md', class: cls = '', target, rel, secao, magnetic = false } = Astro.props;
+const isWa = href.includes('wa.me/');
 ---
-<a href={href} target={target} rel={rel} class:list={['btn', `btn--${variant}`, size === 'sm' && 'btn--sm', cls]}>
-  <slot />
+<a
+  href={href}
+  target={target ?? (isWa ? '_blank' : undefined)}
+  rel={rel ?? (isWa ? 'noopener' : undefined)}
+  data-wa-secao={secao}
+  data-magnetic={magnetic ? '0.25' : undefined}
+  class:list={['btn', `btn--${variant}`, size !== 'md' && `btn--${size}`, cls]}
+>
+  {(variant === 'whatsapp' || (isWa && variant !== 'outline-light' && variant !== 'outline')) && <span class="btn__wa" aria-hidden="true"></span>}
+  <span class="btn__label"><slot /></span>
+  {!isWa && variant !== 'ghost' && <span class="btn__arrow" aria-hidden="true">→</span>}
 </a>
 
 <style>
   .btn {
-    font-family: var(--sans); font-weight: 600; font-size: .9rem;
-    padding: 12px 22px; border-radius: 999px; border: 1px solid transparent;
-    cursor: pointer; display: inline-flex; align-items: center; gap: 9px;
-    line-height: 1; text-decoration: none; transition: transform .16s ease, background .16s ease, border-color .16s ease;
-    position: relative; overflow: hidden;
+    font-family: var(--sans); font-weight: 650; font-size: .95rem; letter-spacing: -.005em;
+    padding: 14px 24px; border-radius: 999px; border: 1px solid transparent;
+    cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    line-height: 1; text-decoration: none; white-space: nowrap;
+    transition: background .25s ease, border-color .25s ease, color .25s ease, box-shadow .4s var(--ease-out);
+    position: relative; will-change: transform;
   }
-  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn:hover { text-decoration: none; }
   .btn:active { transform: translateY(1px) scale(.985); }
-  .btn--sm { padding: 8px 15px; font-size: .8rem; }
+  .btn--sm { padding: 10px 17px; font-size: .85rem; }
+  .btn--lg { padding: 18px 30px; font-size: 1.02rem; }
+  .btn__arrow { display: inline-block; transition: transform .4s var(--ease-out); }
+  .btn:hover .btn__arrow { transform: translateX(4px); }
+  .btn__wa { width: 18px; height: 18px; flex: none; background: currentColor; -webkit-mask: var(--wa-icon) center / contain no-repeat; mask: var(--wa-icon) center / contain no-repeat; }
 
   .btn--primary { background: var(--sage-700); color: #fff; }
   .btn--primary:hover { background: var(--sage-800); }
@@ -31,8 +51,19 @@ const { href, variant = 'primary', size = 'md', class: cls = '', target, rel } =
   .btn--clay:hover { background: var(--clay-700); }
   .btn--sage { background: var(--sage-400); color: var(--sage-900); }
   .btn--sage:hover { background: var(--sage-300); }
-  .btn--outline { background: transparent; color: var(--sage-700); border-color: var(--line-strong); }
-  .btn--outline:hover { border-color: var(--sage-500); background: var(--sage-50); }
-  .btn--ghost { background: transparent; color: var(--ink-soft); }
-  .btn--ghost:hover { background: var(--sand-50); }
+  /* CTA principal. Verde-floresta da marca (não o verde do WhatsApp: branco sobre #25D366
+     dá 1.98:1 e reprova no WCAG). O ícone já diz para onde o clique leva. */
+  .btn--whatsapp { background: var(--sage-800); color: #fff; box-shadow: 0 10px 30px -14px rgba(34, 49, 38, .8); }
+  .btn--whatsapp:hover { background: var(--forest-ink); box-shadow: 0 16px 36px -14px rgba(34, 49, 38, .9); }
+  .btn--light { background: #fff; color: var(--forest-ink); }
+  .btn--light:hover { background: var(--sage-50); box-shadow: 0 14px 34px -14px rgba(0, 0, 0, .55); }
+  .btn--outline { background: transparent; color: var(--sage-800); border-color: var(--line-strong); }
+  .btn--outline:hover { border-color: var(--sage-600); background: var(--sage-50); }
+  .btn--outline-light { background: rgba(255,255,255,.04); color: #fff; border-color: rgba(255,255,255,.42); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .btn--outline-light:hover { border-color: #fff; background: rgba(255,255,255,.12); }
+  .btn--ghost { background: transparent; color: var(--sage-700); padding-inline: 4px; }
+  .btn--ghost:hover { color: var(--sage-900); }
+
+  @media (max-width: 480px) { .btn--lg { padding: 17px 24px; } }
+  @media (prefers-reduced-motion: reduce) { .btn, .btn__arrow { transition: none; } }
 </style>

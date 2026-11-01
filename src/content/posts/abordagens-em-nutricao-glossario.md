@@ -8,6 +8,8 @@ silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
 datePublished: "2026-09-08"
 medical: true
+image: "/blog/abordagens-em-nutricao-glossario.webp"
+imageAlt: "Caderno aberto em branco sobre mesa de madeira, cercado de tigelas com lentilha, frutas vermelhas, castanhas, folhas verdes e abacate"
 faqs:
   - q: "O que é abordagem não prescritiva em nutrição?"
     a: "É um jeito de conduzir o acompanhamento em que a orientação nasce da conversa com a pessoa, e não de um cardápio fechado imposto de fora. O termo descreve um método de trabalho, não um título profissional: não existe especialidade chamada assim reconhecida pelo Conselho Federal de Nutricionistas."

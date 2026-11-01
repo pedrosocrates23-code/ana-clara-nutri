@@ -8,6 +8,8 @@ silo: "como-eu-atendo"
 siloLabel: "Como eu atendo"
 datePublished: "2026-09-22"
 medical: true
+image: "/blog/o-que-nao-atendo.webp"
+imageAlt: "Porta aberta para um jardim iluminado, com aparador e vaso de planta ao lado"
 faqs:
   - q: "A Ana Clara atende qualquer pessoa que procurar?"
     a: "Não. O atendimento é voltado a pessoa adulta, em consulta individual e particular. Cada caso passa por uma avaliação que confirma se ele está dentro do que a nutrição pode resolver, antes de qualquer plano ser desenhado."

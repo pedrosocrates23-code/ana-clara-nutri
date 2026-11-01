@@ -9,7 +9,7 @@ siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-23"
 medical: true
 image: "/blog/quando-um-problema-alimentar-e-grave.webp"
-imageAlt: "Mãos segurando uma xícara de chá, num momento de acolhimento"
+imageAlt: "Poltrona vazia junto a uma janela ampla, com mesinha e copo de água, em luz suave"
 faqs:
   - q: "Como sei se meu problema com a comida é grave?"
     a: "Não existe um número mágico de sinais que \"prove\" gravidade, e tentar se encaixar numa lista sozinha não ajuda. O que costuma indicar que vale procurar avaliação é o conjunto, quando o comportamento se repete por semanas, causa sofrimento intenso e passa a prejudicar sua rotina, seu humor e sua saúde."

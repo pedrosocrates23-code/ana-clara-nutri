@@ -9,7 +9,7 @@ siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-13"
 medical: true
 image: "/blog/compulsao-alimentar-como-parar.webp"
-imageAlt: "Mulher em momento calmo na cozinha, sem julgamento sobre comida"
+imageAlt: "Cozinha ao entardecer com uma tigela de sopa quente na mesa, vela acesa e manta dobrada na cadeira"
 faqs:
   - q: "Compulsão alimentar é falta de força de vontade?"
     a: "Não. A compulsão alimentar é um comportamento com disparadores, muito ligado a emoções e a padrões de restrição, e não uma questão de caráter. A SPDM descreve o quadro como um distúrbio neurobiológico e psicológico reconhecido, que pede avaliação profissional. Tratar como falha moral só aumenta a culpa, que é uma das engrenagens que mantêm o ciclo."

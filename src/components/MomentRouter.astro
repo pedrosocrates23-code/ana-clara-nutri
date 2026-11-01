@@ -1,0 +1,135 @@
+---
+// "Qual é o seu momento?" — roteador de dores da home.
+// A pessoa escolhe a frase que descreve o que sente (vocabulário de busca real, não título
+// técnico) e recebe: a área de atuação, dois textos para ler agora e um WhatsApp com a
+// mensagem já escrita com aquela dor. Reconhecer-se numa frase reduz o esforço de explicar
+// o próprio caso, que é a maior barreira do primeiro contato.
+//
+// Sem JS: as abas viram links para a área (todas funcionam) e o 1º painel fica visível.
+// Com JS: abas acessíveis (role=tablist, setas do teclado), painel trocado sem recarregar.
+import { getCollection } from 'astro:content';
+import Picture from './Picture.astro';
+import Button from './Button.astro';
+import { waLink } from '../lib/site';
+
+const posts = await getCollection('posts');
+const porPath = new Map(posts.map((p) => [p.data.path, p.data]));
+
+const MOMENTOS = [
+  { id: 'ansiedade', chip: 'Como por ansiedade', area: 'Nutrição Comportamental', href: '/nutricao-comportamental/', img: 'silo-nutricao-comportamental',
+    texto: 'Comer para aliviar um dia pesado não é falta de força de vontade. Olhamos para o que dispara esse comer e construímos outras saídas, sem proibição e sem culpa.',
+    leituras: ['/nutricao-comportamental/compulsao-alimentar-como-parar', '/nutricao-comportamental/vontade-de-doce-a-noite'],
+    msg: 'Olá, Ana Clara! Vim pelo site: sinto que como por ansiedade e queria entender como funciona o acompanhamento.' },
+  { id: 'dieta', chip: 'Não consigo manter uma dieta', area: 'Emagrecimento e Reeducação', href: '/emagrecimento/', img: 'silo-emagrecimento',
+    texto: 'Se toda dieta acaba do mesmo jeito, o problema costuma estar no plano, não em você. O caminho aqui é reorganizar a rotina em vez de seguir mais uma lista.',
+    leituras: ['/nutricao-comportamental/por-que-nao-consigo-seguir-a-dieta', '/emagrecimento/como-comecar-uma-reeducacao-alimentar'],
+    msg: 'Olá, Ana Clara! Vim pelo site: já tentei várias dietas e não consigo manter. Queria entender como é o seu acompanhamento.' },
+  { id: 'fome', chip: 'Sinto fome o tempo todo', area: 'Nutrição Comportamental', href: '/nutricao-comportamental/', img: 'pg-receitas',
+    texto: 'Fome constante tem causa: refeição pequena demais, intervalo longo, sono curto, pouca fibra ou proteína. A consulta investiga qual delas é a sua.',
+    leituras: ['/nutricao-comportamental/por-que-sinto-fome-o-tempo-todo', '/emagrecimento/como-pouco-e-nao-emagreco'],
+    msg: 'Olá, Ana Clara! Vim pelo site: sinto fome o tempo todo e queria entender o que pode estar acontecendo.' },
+  { id: 'exames', chip: 'Meus exames vieram alterados', area: 'Nutrição Clínica', href: '/nutricao-clinica/', img: 'silo-nutricao-clinica',
+    texto: 'Colesterol, glicemia ou ferritina fora da faixa pedem ajuste no dia a dia. A alimentação entra como aliada do cuidado com a sua equipe de saúde.',
+    leituras: ['/nutricao-clinica/exames-alterados-quando-procurar-nutricionista', '/nutricao-clinica/glicemia-de-jejum-alterada-o-que-comer'],
+    msg: 'Olá, Ana Clara! Vim pelo site: meus exames vieram alterados e queria entender como a alimentação pode ajudar.' },
+  { id: 'intestino', chip: 'Meu intestino não funciona bem', area: 'Saúde Intestinal', href: '/saude-intestinal/', img: 'silo-saude-intestinal',
+    texto: 'Intestino preso, estufamento e desconforto costumam responder a mudanças de fibra, água e regularidade, ajustadas ao que você tolera.',
+    leituras: ['/saude-intestinal/intestino-preso-o-que-a-alimentacao-pode-fazer', '/saude-intestinal/alimentos-ricos-em-fibras'],
+    msg: 'Olá, Ana Clara! Vim pelo site: meu intestino não funciona bem e queria entender como a alimentação pode ajudar.' },
+  { id: 'treino', chip: 'Quero comer melhor para treinar', area: 'Nutrição Esportiva', href: '/nutricao-esportiva/', img: 'silo-nutricao-esportiva',
+    texto: 'O que comer antes e depois do treino depende do horário, da modalidade e da sua rotina. Sem cardápio pronto, com estratégia para o seu objetivo.',
+    leituras: ['/nutricao-esportiva/pre-e-pos-treino-o-que-comer', '/nutricao-esportiva/proteina-e-treino'],
+    msg: 'Olá, Ana Clara! Vim pelo site: treino e quero ajustar a minha alimentação para o meu objetivo.' },
+].map((m) => ({ ...m, leituras: m.leituras.map((p) => ({ href: p, title: porPath.get(p)?.title })).filter((l) => l.title) }));
+---
+<div class="router" data-router data-wa-secao="Home · seu momento">
+  <div class="router__chips" role="tablist" aria-label="Escolha o que mais combina com você">
+    {MOMENTOS.map((m, i) => (
+      <a href={m.href} role="tab" id={`tab-${m.id}`} class="chip" aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`painel-${m.id}`} tabindex={i === 0 ? 0 : -1} data-tab={m.id}>{m.chip}</a>
+    ))}
+  </div>
+
+  <div class="router__panels">
+    {MOMENTOS.map((m, i) => (
+      <div class="panel" role="tabpanel" id={`painel-${m.id}`} aria-labelledby={`tab-${m.id}`} hidden={i !== 0} data-panel={m.id}>
+        <div class="panel__media media"><Picture name={m.img} alt="" sizes="(min-width: 900px) 40vw, 100vw" /></div>
+        <div class="panel__body">
+          <span class="kicker">{m.area}</span>
+          <p class="panel__text">{m.texto}</p>
+          {m.leituras.length > 0 && (
+            <div class="panel__reads">
+              <span class="panel__reads-label">Para ler agora</span>
+              <ul>{m.leituras.map((l) => <li><a href={l.href}>{l.title}</a></li>)}</ul>
+            </div>
+          )}
+          <div class="panel__actions">
+            <Button href={waLink(m.msg)} variant="whatsapp" secao={`Home · seu momento · ${m.id}`}>Conversar sobre isso</Button>
+            <Button href={m.href} variant="ghost">Ver a área →</Button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-router]').forEach((root) => {
+    const tabs = [...root.querySelectorAll<HTMLAnchorElement>('[data-tab]')];
+    const select = (tab: HTMLAnchorElement, focus = false) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        const panel = root.querySelector<HTMLElement>(`[data-panel="${t.dataset.tab}"]`);
+        if (panel) panel.hidden = !on;
+        if (on && panel) {
+          panel.classList.remove('is-in');
+          void panel.offsetWidth; // reinicia a transição de entrada
+          panel.classList.add('is-in');
+        }
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', (e) => { e.preventDefault(); select(tab); });
+      tab.addEventListener('keydown', (e) => {
+        const k = e.key;
+        if (k !== 'ArrowRight' && k !== 'ArrowLeft' && k !== 'Home' && k !== 'End') return;
+        e.preventDefault();
+        const next = k === 'Home' ? 0 : k === 'End' ? tabs.length - 1 : (i + (k === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        select(tabs[next], true);
+      });
+    });
+  });
+</script>
+
+<style>
+  .router { display: grid; gap: 28px; }
+  .router__chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip {
+    padding: 12px 18px; border-radius: 999px; border: 1px solid var(--line-strong); background: #fff;
+    font-size: .95rem; font-weight: 550; color: var(--ink); text-decoration: none; cursor: pointer;
+    transition: background .25s, color .25s, border-color .25s, transform .35s var(--ease-out);
+  }
+  .chip:hover { border-color: var(--sage-500); transform: translateY(-2px); }
+  .chip[aria-selected='true'] { background: var(--sage-800); border-color: var(--sage-800); color: #fff; }
+
+  .panel { display: grid; gap: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-md); }
+  @media (min-width: 900px) { .panel { grid-template-columns: .95fr 1.05fr; min-height: 420px; } }
+  .panel[hidden] { display: none; }
+  .panel.is-in { animation: panel-in .8s var(--ease-out) both; }
+  .panel.is-in .panel__media :global(img) { animation: panel-img 1.2s var(--ease-out) both; }
+  @keyframes panel-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes panel-img { from { transform: scale(1.08); } to { transform: scale(1); } }
+  .panel__media { border-radius: 0; aspect-ratio: 16 / 10; }
+  @media (min-width: 900px) { .panel__media { aspect-ratio: auto; height: 100%; } }
+  .panel__body { padding: clamp(26px, 4vw, 48px); display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+  .panel__text { font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.7rem); line-height: 1.32; letter-spacing: -.01em; color: var(--ink); margin: 0; }
+  .panel__reads-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
+  .panel__reads ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 2px; }
+  .panel__reads a { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--sage-800); font-weight: 550; text-decoration: none; transition: color .2s, padding .35s var(--ease-out); }
+  .panel__reads a::before { content: '↗'; color: var(--sage-500); }
+  .panel__reads a:hover { color: var(--ink); padding-left: 6px; }
+  .panel__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 6px; }
+  @media (prefers-reduced-motion: reduce) { .panel.is-in, .panel.is-in .panel__media :global(img) { animation: none; } }
+</style>

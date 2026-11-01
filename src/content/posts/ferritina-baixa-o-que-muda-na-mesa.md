@@ -8,6 +8,8 @@ silo: "nutricao-clinica"
 siloLabel: "Nutrição Clínica"
 datePublished: "2026-09-08"
 medical: true
+image: "/blog/ferritina-baixa-o-que-muda-na-mesa.webp"
+imageAlt: "Alimentos fonte de ferro: feijão, lentilha, folhas verde-escuras, carne na frigideira de ferro e sementes de abóbora, com laranja e limão"
 faqs:
   - q: "Ferritina baixa é a mesma coisa que anemia?"
     a: "Não necessariamente. A ferritina baixa mostra que o estoque de ferro do corpo diminuiu, e isso costuma aparecer antes de qualquer outro índice do hemograma se alterar. A anemia é um estágio posterior, quando a queda de ferro já afeta o transporte de oxigênio no sangue. São etapas relacionadas, mas não são sinônimos, e a leitura de qual delas se aplica ao seu caso é do seu médico."

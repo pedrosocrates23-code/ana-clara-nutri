@@ -9,7 +9,7 @@ siloLabel: "Emagrecimento e Reeducação Alimentar"
 datePublished: "2026-07-10"
 medical: false
 image: "/blog/como-comecar-uma-reeducacao-alimentar.webp"
-imageAlt: "Mesa com alimentos variados e saudáveis, organizados de forma editorial"
+imageAlt: "Cesta de palha cheia de verduras, legumes e frutas recém-chegada sobre a bancada da cozinha"
 faqs:
   - q: "Quanto tempo leva uma reeducação alimentar?"
     a: "Não há um prazo fixo, porque é um processo contínuo de mudança de hábitos. Mais importante que a velocidade é a consistência."

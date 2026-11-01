@@ -8,6 +8,8 @@ silo: "educacao-alimentar"
 siloLabel: "Educação Alimentar"
 datePublished: "2026-09-22"
 medical: true
+image: "/blog/especialidade-em-nutricao-o-que-o-cfn-reconhece.webp"
+imageAlt: "Fileira de livros de capa dura sem título numa prateleira de madeira com planta e fruteira"
 faqs:
   - q: "O que significa quando um nutricionista diz que é especialista?"
     a: "Significa que existe um registro formal disso. Especialista, no sentido que o Conselho Federal de Nutricionistas reconhece, é quem concluiu uma pós-graduação numa das áreas do rol oficial e obteve o título junto ao conselho regional. Não é um adjetivo livre: é um registro que pode ser conferido."

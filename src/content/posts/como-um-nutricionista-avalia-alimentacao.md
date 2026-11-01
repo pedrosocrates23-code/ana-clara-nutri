@@ -9,7 +9,7 @@ siloLabel: "Educação Alimentar"
 datePublished: "2026-07-23"
 medical: true
 image: "/blog/como-um-nutricionista-avalia-alimentacao.webp"
-imageAlt: "Caderno de anotações ao lado de alimentos frescos, sobre a mesa"
+imageAlt: "Caderno de registro alimentar em branco cercado por pratos com as refeições de um dia: café da manhã, almoço, lanche e jantar"
 faqs:
   - q: "Como um nutricionista avalia a minha alimentação?"
     a: "Por um método. A profissional reúne a sua história alimentar, a sua rotina, o sono, a relação com a comida e o histórico de saúde e, quando pertinente, solicita exames, tudo antes de orientar qualquer coisa."

@@ -3,9 +3,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Faq from '../../components/Faq.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
-import Button from '../../components/Button.astro';
+import FactStrip from '../../components/FactStrip.astro';
 import AreasGrid from '../../components/AreasGrid.astro';
-import { SITE, isPlaceholder } from '../../lib/site';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, isPlaceholder, waLink, WA_MSG } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
 
 const faqs = [
@@ -49,16 +50,25 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
  <PageHero kicker="Telenutrição · todo o Brasil"
  title="Nutricionista online: atendimento por telenutrição para todo o Brasil"
  sub="Onde você estiver, um acompanhamento próximo, baseado em evidências e sem dietas restritivas."
- cta={{ label: 'Agendar consulta online', href: '/contato' }} breadcrumb={breadcrumb} />
+ cta={{ label: 'Agendar consulta online', waMsg: WA_MSG.online, secao: 'Online · topo' }}
+ secondary={{ label: 'Ver como funciona', href: '#como-funciona' }}
+ breadcrumb={breadcrumb} image="pg-online" imageAlt="Mesa de madeira clara junto à janela com notebook fechado, xícara de chá, caderno em branco e fruteira" />
+
+ <FactStrip items={[
+  { t: 'Por videochamada', d: 'Em horário agendado, com link enviado antes' },
+  { t: 'Todo o Brasil', d: 'Qualquer cidade, sem deslocamento' },
+  { t: 'Plano digital', d: 'Orientações enviadas após a consulta' },
+  { t: 'Particular', d: 'Sem convênio, valor informado antes' },
+ ]} />
 
  <section class="section">
  <div class="container prose">
  <h2>O atendimento online é para você?</h2>
  <p>Se a sua rotina é corrida, se você mora longe de Goiânia ou simplesmente prefere a praticidade de ser atendida em casa, a telenutrição resolve. O cuidado é exatamente o mesmo do presencial: individual, com escuta de verdade e um plano construído para a sua realidade. Se a dúvida for justamente entre os dois formatos, o texto sobre <a href="/nutricionista-online/online-ou-presencial">online ou presencial</a> detalha o critério real para decidir, sem depender de tecnologia como argumento.</p>
 
- <h2>Como funciona a telenutrição</h2>
+ <h2 id="como-funciona">Como funciona a telenutrição</h2>
  <p>A telenutrição é o atendimento nutricional feito por videoconsulta, regulamentado para nutricionistas. Funciona em quatro passos:</p>
- <p><strong>1. Agendamento.</strong> Você escolhe o horário e recebe o link da consulta.</p>
+ <p><strong>1. Agendamento.</strong> Você chama no <a href={waLink(WA_MSG.online)} target="_blank" rel="noopener" data-wa-secao="Online · passo 1">WhatsApp</a>, escolhe o horário e recebe o link da consulta.</p>
  <p><strong>2. Consentimento.</strong> Antes da primeira consulta, você assina um termo de consentimento (TCLE), com todas as informações sobre como o atendimento online funciona.</p>
  <p><strong>3. Consulta.</strong> Conversamos por vídeo, com calma. Faço a sua avaliação completa e entendo a sua rotina.</p>
  <p><strong>4. Plano e acompanhamento.</strong> Você recebe o seu plano de forma digital e seguimos com retornos para ajustar o caminho. Tudo com sigilo e tratamento dos seus dados conforme a LGPD.</p>
@@ -98,17 +108,13 @@ const graph = buildGraph({ path, title: 'Nutricionista Online (Telenutrição) |
 
  <Faq items={faqs} />
 
- <section class="section cta-final">
- <div class="container reveal">
- <h2>Pronta para começar?</h2>
- <p>Agende a sua consulta e cuide da sua alimentação de onde estiver.</p>
- <Button href="/contato" variant="clay">Agendar consulta online</Button>
- <div class="aw"><AuthorBox /></div>
- </div>
+ <section class="section section--tight">
+ <div class="container"><div class="aw"><AuthorBox /></div></div>
  </section>
+
+ <CtaBand title="Pronta para <em>começar</em>?" text="Agende a sua consulta pelo WhatsApp e cuide da sua alimentação de onde estiver. Atendimento particular, por telenutrição, para todo o Brasil." secao="Online · faixa final" image="pg-online" />
 </BaseLayout>
 
 <style>
- .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
- .aw { max-width: var(--maxw-prose); margin: 8px auto 0; text-align: left; }
+ .aw { max-width: var(--maxw-prose); }
 </style>

@@ -8,6 +8,8 @@ silo: "saude-intestinal"
 siloLabel: "Saúde Intestinal"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/microbiota-intestinal-o-que-e-e-como-cuidar.webp"
+imageAlt: "Muitas tigelas pequenas com frutas, feijões, grãos, castanhas, sementes e legumes de várias cores, e um pote de kefir"
 faqs:
   - q: "Microbiota intestinal e flora intestinal são a mesma coisa?"
     a: "São. Flora intestinal é o nome antigo, herdado de uma época em que se acreditava que aqueles microrganismos eram plantas microscópicas. Hoje se usa microbiota intestinal, que é o conjunto de bactérias, fungos e outros microrganismos que vivem no intestino. Se você aprendeu flora na escola e continua buscando por essa palavra, você não está errada, é só o nome anterior da mesma coisa."

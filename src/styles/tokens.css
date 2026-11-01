@@ -1,5 +1,5 @@
 /* ============================================================
-   ANA CLARA NUTRI · Design Tokens (portado do Design Book v1.0)
+   ANA CLARA NUTRI · Design Tokens (Design Book v1.0 + redesign nov/2026)
    ============================================================ */
 :root {
   /* ---- Neutrals / paper ---- */
@@ -25,6 +25,7 @@
   --sage-700: #3E5641;  /* forest */
   --sage-800: #2F4233;
   --sage-900: #223126;
+  --forest-ink: #1A261D; /* fundo das faixas escuras (hero, CTA final, rodapé) */
 
   /* ---- Clay accent (≤10% da tela) ---- */
   --clay-200: #EBC9B6;
@@ -42,10 +43,14 @@
   /* ---- Ink ---- */
   --ink: #232722;
   --ink-soft: #5C6157;
-  /* Usado em labels de formulário, kickers e notas: precisa passar no WCAG AA (4.5:1).
-     O antigo #8B9086 dava só 3.27:1 no branco e reprovava no Lighthouse.
-     Este passa nos dois fundos do site: 5.33:1 no #fff e 4.61:1 no --sand-50. */
+  /* Precisa passar no WCAG AA (4.5:1): 5.33:1 no #fff e 4.61:1 no --sand-50. */
   --ink-faint: #676D62;
+
+  /* ---- Vidro do header (padrão D-Sci, na paleta sage) ---- */
+  --glass-bg: rgba(26, 38, 29, 0.38);
+  --glass-bg-strong: rgba(26, 38, 29, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-shine: inset 0 1px 0 rgba(255, 255, 255, 0.14);
 
   /* ---- Type ---- */
   --serif: "Newsreader Variable", Georgia, serif;
@@ -58,8 +63,14 @@
   --shadow-md: 0 4px 14px rgba(46,40,30,.06), 0 14px 40px rgba(46,40,30,.07);
   --shadow-lg: 0 10px 30px rgba(46,40,30,.08), 0 30px 80px rgba(46,40,30,.10);
 
+  /* ---- Motion (editorial-motion: entrada expo.out, layout expo.inOut) ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
+
   /* ---- Layout ---- */
-  --maxw: 1100px;
-  --maxw-prose: 720px;
-  --header-h: 72px;
+  --maxw: 1180px;
+  --maxw-prose: 700px;
+  --gutter: 20px;
+  --header-h: 76px;
 }
+@media (min-width: 720px) { :root { --gutter: 32px; } }

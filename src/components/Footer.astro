@@ -2,11 +2,15 @@
 import { SITE, NAV, SILOS, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, MAPS_LINK, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
 const year = 2026;
 ---
-<footer class="site-footer">
-  <div class="container cols">
-    <div class="col">
-      <div class="brand"><em>Ana&nbsp;Clara</em> <b>Nutri</b></div>
-      <p class="muted">Nutrição com abordagem comportamental e educacional. Atendimento particular, online e presencial em Goiânia.</p>
+<footer class="site-footer" data-wa-secao="Rodapé">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <div class="brand"><img src="/logo-aca.png" alt="" width="44" height="44" loading="lazy" /><span><em>Ana&nbsp;Clara</em> <b>Nutri</b></span></div>
+      <p class="muted">Nutrição com abordagem comportamental e educacional. Atendimento particular, online para todo o Brasil e presencial em Goiânia.</p>
+      <a class="footer-wa" href={WHATSAPP_URL} target="_blank" rel="noopener" data-wa-secao="Rodapé · botão">
+        <span class="wa-ico" aria-hidden="true"></span>
+        <span><b>Agendar pelo WhatsApp</b><small>{SITE.phone}</small></span>
+      </a>
     </div>
 
     <nav class="col" aria-label="Navegação">
@@ -18,14 +22,14 @@ const year = 2026;
     <nav class="col" aria-label="Áreas de atuação">
       <h2 class="col__title">Áreas de atuação</h2>
       {SILOS.map((s) => <a href={s.href}>{s.label}</a>)}
+      <a href="/como-eu-atendo/">Como eu atendo</a>
     </nav>
 
     <div class="col">
       <h2 class="col__title">Contato</h2>
-      <address class="muted contact">
+      <address class="contact">
         <span>{SITE.legalName}{HAS_CRN && <><br />{CRN}</>}</span>
         <a href={MAPS_LINK} target="_blank" rel="noopener">{SITE.venue}, {ADDRESS_LINE}</a>
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener">WhatsApp: {SITE.phone}</a>
         <a href={TEL_URL}>Telefone: {SITE.phone}</a>
       </address>
       <div class="legal">
@@ -35,28 +39,44 @@ const year = 2026;
     </div>
   </div>
 
+  <div class="container footer-word" aria-hidden="true">Ana Clara <em>Nutri</em></div>
+
   <div class="container bottom">
     <span>© {year} {SITE.legalName}{CRN_SUFIXO}</span>
-    <span class="muted">Atendimento exclusivamente particular.</span>
+    <span>Atendimento exclusivamente particular.</span>
   </div>
 </footer>
 
 <style>
-  .site-footer { background: var(--sage-900); color: var(--sand-100); padding-block: 48px 24px; }
-  .cols { display: grid; gap: 28px; }
-  @media (min-width: 720px) { .cols { grid-template-columns: 1.4fr 1fr 1.2fr 1.4fr; } }
-  .brand { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 10px; }
+  .site-footer { background: var(--forest-ink); color: var(--sand-100); padding-block: clamp(56px, 8vw, 96px) 28px; overflow: hidden; }
+  .footer-top { display: grid; gap: 40px; }
+  @media (min-width: 900px) { .footer-top { grid-template-columns: 1.5fr 1fr 1.1fr 1.3fr; gap: 32px; } }
+  .brand { display: flex; align-items: center; gap: 12px; font-family: var(--serif); font-size: 1.5rem; margin-bottom: 14px; color: #fff; }
+  .brand img { border-radius: 12px; background: #fff; padding: 2px; }
   .brand em { font-style: italic; } .brand b { font-weight: 400; }
-  .col__title { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-300); margin: 0 0 12px; }
-  .col a { display: block; color: var(--sand-100); font-size: .9rem; padding: 4px 0; text-decoration: none; }
-  .col a:hover { color: #fff; text-decoration: underline; }
-  .muted { color: var(--sage-200); font-size: .88rem; line-height: 1.7; }
-  .contact { font-style: normal; display: block; }
-  .contact span { display: block; margin-bottom: 6px; }
-  .contact a { color: var(--sand-100); font-size: .88rem; }
-  .legal { margin-top: 14px; }
-  .legal a { font-size: .82rem; color: var(--sage-300); }
+  .muted { color: var(--sage-200); font-size: .92rem; line-height: 1.7; max-width: 340px; }
+  .footer-wa {
+    display: inline-flex; align-items: center; gap: 12px; margin-top: 10px; padding: 12px 20px 12px 16px; border-radius: 999px;
+    background: var(--sage-200); color: var(--forest-ink); text-decoration: none; transition: background .25s, transform .4s var(--ease-out);
+  }
+  .footer-wa:hover { background: #fff; transform: translateY(-2px); }
+  .footer-wa span:last-child { display: grid; line-height: 1.25; }
+  .footer-wa b { font-weight: 650; font-size: .95rem; }
+  .footer-wa small { font-size: .78rem; opacity: .8; }
+  .wa-ico { width: 22px; height: 22px; flex: none; background: currentColor; -webkit-mask: var(--wa-icon) center / contain no-repeat; mask: var(--wa-icon) center / contain no-repeat; }
+  .col__title { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-300); margin: 0 0 14px; font-weight: 500; }
+  .col a { display: block; color: var(--sand-100); font-size: .93rem; padding: 5px 0; text-decoration: none; transition: color .2s, transform .35s var(--ease-out); }
+  .col a:hover { color: #fff; transform: translateX(3px); }
+  .contact { font-style: normal; display: block; font-size: .9rem; color: var(--sage-200); line-height: 1.6; }
+  .contact span { display: block; margin-bottom: 8px; color: var(--sand-100); }
+  .legal { margin-top: 16px; border-top: 1px solid rgba(255,255,255,.1); padding-top: 12px; }
+  .legal a { font-size: .84rem; color: var(--sage-300); }
+  .footer-word {
+    margin-top: clamp(48px, 7vw, 80px); font-family: var(--serif); font-weight: 300; line-height: .9; letter-spacing: -.04em;
+    font-size: clamp(3.4rem, 13vw, 11.5rem); color: rgba(187, 208, 182, .14); white-space: nowrap; user-select: none;
+  }
+  .footer-word em { font-style: italic; }
   .bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
-    margin-top: 32px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1);
+    margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1);
     font-family: var(--mono); font-size: .72rem; color: var(--sage-300); }
 </style>

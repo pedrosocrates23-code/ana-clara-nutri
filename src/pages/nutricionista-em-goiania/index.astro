@@ -3,16 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Faq from '../../components/Faq.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
-import Button from '../../components/Button.astro';
+import FactStrip from '../../components/FactStrip.astro';
 import MapEmbed from '../../components/MapEmbed.astro';
 import AreasGrid from '../../components/AreasGrid.astro';
-import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, isPlaceholder } from '../../lib/site';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, isPlaceholder, waLink, WA_MSG } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
 
 const faqs = [
  { q: 'Onde fica o atendimento presencial?', a: `No ${SITE.venue}, na ${SITE.address.street}, em Goiânia - GO (CEP ${SITE.address.postalCode}), em um ponto de fácil acesso.` },
  { q: 'Qual o valor da consulta?', a: 'O atendimento é particular; o valor é informado de forma transparente antes do agendamento.' },
- { q: 'Quais os horários de atendimento?', a: 'O agendamento é feito pelo site ou WhatsApp, em horários combinados.' },
+ { q: 'Quais os horários de atendimento?', a: 'O agendamento é feito pelo WhatsApp, em horários combinados.' },
  { q: 'Atende quais regiões?', a: 'Goiânia e região, incluindo Aparecida de Goiânia.' },
  { q: 'Atende por convênio?', a: 'Não. O atendimento é exclusivamente particular.' },
  { q: 'Também faz atendimento online?', a: 'Sim. Se preferir a praticidade, há a opção de consulta online por telenutrição para todo o Brasil.' },
@@ -47,7 +48,16 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
  <PageHero kicker="Presencial · Goiânia"
  title="Nutricionista em Goiânia, atendimento presencial"
  sub="Consultório acolhedor em Goiânia, com um cuidado próximo e baseado em evidências."
- cta={{ label: 'Agendar consulta', href: '/contato' }} breadcrumb={breadcrumb} />
+ cta={{ label: 'Agendar consulta presencial', waMsg: WA_MSG.presencial, secao: 'Goiânia · topo' }}
+ secondary={{ label: 'Ver no mapa', href: '#onde-fica' }}
+ breadcrumb={breadcrumb} image="pg-presencial" imageAlt="Sala de atendimento clara com duas poltronas de linho, mesa redonda com jarra de água e plantas" />
+
+ <FactStrip items={[
+  { t: 'beLIV', d: 'Espaço de Saúde e Bem-Estar, Av. dos Ipês' },
+  { t: 'Goiânia e região', d: 'Inclusive Aparecida de Goiânia' },
+  { t: 'Particular', d: 'Sem convênio, valor informado antes' },
+  { t: 'Pelo WhatsApp', d: 'Agendamento direto com a Ana' },
+ ]} />
 
  <section class="section">
  <div class="container prose">
@@ -57,7 +67,7 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
  <p>Não existe uma terceira opção escondida atrás dessas duas, nem um caminho mais completo que o outro. O que muda entre o presencial e a telenutrição é o formato do encontro, pela tela ou no consultório dentro do {SITE.venue}. O processo é o mesmo nos dois casos: eu escuto a sua rotina, o seu histórico e o que você já tentou antes, construo um plano alimentar que cabe na sua vida real, e seguimos com retornos combinados para ajustar o que não estiver funcionando. Quem escolhe o presencial costuma valorizar o encontro físico, sem tela no meio da conversa. Quem escolhe a telenutrição geralmente mora fora de Goiânia, viaja com frequência, ou prefere manter o acompanhamento de onde estiver, sem abrir mão da mesma atenção.</p>
  <p>O passo a passo completo, da primeira consulta aos retornos, está descrito em <a href="/como-eu-atendo/">como eu atendo</a>. Se a telenutrição faz mais sentido para a sua rotina, a página de <a href="/nutricionista-online/">atendimento por telenutrição</a> explica como funciona a consulta à distância. Os valores de cada formato estão logo abaixo, em <a href="#investimento">investimento</a>.</p>
 
- <h2>Onde fica o atendimento presencial</h2>
+ <h2 id="onde-fica">Onde fica o atendimento presencial</h2>
  <p>Atendo presencialmente em Goiânia, no <strong>{SITE.venue}</strong>, um espaço de saúde e bem-estar em um ponto de fácil acesso, pensado para receber você com tranquilidade.</p>
  <ul>
  <li><strong>Local:</strong> {SITE.venue}</li>
@@ -68,7 +78,7 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
  <MapEmbed title="Mapa do beLIV Espaço de Saúde e Bem-Estar, local de atendimento em Goiânia" />
 
  <h2>Como funciona o atendimento presencial</h2>
- <p><strong>1. Agendamento.</strong> Você reserva o seu horário pelo site ou WhatsApp.</p>
+ <p><strong>1. Agendamento.</strong> Você reserva o seu horário pelo <a href={waLink(WA_MSG.presencial)} target="_blank" rel="noopener" data-wa-secao="Goiânia · passo 1">WhatsApp</a>.</p>
  <p><strong>2. Primeira consulta.</strong> No {SITE.venue}, faço uma avaliação completa e uma conversa de escuta sobre a sua rotina, o seu histórico e os seus objetivos.</p>
  <p><strong>3. Acompanhamento.</strong> Construímos o seu plano e seguimos com retornos para ajustar o caminho ao longo do tempo, sempre respeitando o seu ritmo.</p>
  <p>Para a primeira consulta, leve seus exames recentes, se tiver, e a lista de medicamentos ou suplementos que você usa. O mais importante você já tem: a sua história. Se quiser saber com mais detalhe o que perguntamos, o que sai desse primeiro encontro e por que não começamos pela balança, o texto sobre <a href="/nutricionista-em-goiania/primeira-consulta">como é a primeira consulta presencial</a> cobre isso ponto a ponto.</p>
@@ -101,18 +111,14 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
 
  <Faq items={faqs} />
 
- <section class="section cta-final">
- <div class="container reveal">
- <h2>Vamos começar?</h2>
- <p>Se está em Goiânia ou região, agende a sua consulta presencial.</p>
- <Button href="/contato" variant="clay">Agendar consulta</Button>
- <div class="aw"><AuthorBox /></div>
- </div>
+ <section class="section section--tight">
+ <div class="container"><div class="aw"><AuthorBox /></div></div>
  </section>
+
+ <CtaBand title="Vamos <em>começar</em>?" text="Se está em Goiânia ou região, agende a sua consulta presencial pelo WhatsApp. Prefere à distância? A telenutrição atende todo o Brasil." secao="Goiânia · faixa final" image="pg-presencial" />
 </BaseLayout>
 
 <style>
  .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 18px; }
- .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
- .aw { max-width: var(--maxw-prose); margin: 8px auto 0; text-align: left; }
+ .aw { max-width: var(--maxw-prose); }
 </style>

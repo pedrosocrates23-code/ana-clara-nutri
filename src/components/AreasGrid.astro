@@ -1,21 +1,29 @@
 ---
 import { SILOS } from '../lib/site';
+import Picture from './Picture.astro';
 
 interface Props {
   // Silos a omitir (ex.: a própria página). Valores = href do silo.
   exclude?: readonly string[];
+  /** h2 da seção que contém o grid; os cards usam h3 */
+  headingLevel?: 'h3' | 'h2';
 }
-const { exclude = [] } = Astro.props;
+const { exclude = [], headingLevel = 'h3' } = Astro.props;
 const areas = SILOS.filter((s) => !exclude.includes(s.href));
+const H = headingLevel;
 ---
 
 <div class="areas-grid">
-  {areas.map((s) => (
-    <a class="area-card reveal" href={s.href}>
+  {areas.map((s, i) => (
+    <a class="area-card" href={s.href} data-reveal>
+      <div class="area-card__media media">
+        <Picture name={s.img} alt="" sizes="(min-width: 940px) 33vw, (min-width: 640px) 50vw, 100vw" />
+        <span class="area-card__num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+      </div>
       <div class="area-card__body">
-        <h3>{s.label}</h3>
+        <H class="area-card__title">{s.label}</H>
         <p>{s.intro}</p>
-        <span class="area-card__more">Saiba mais →</span>
+        <span class="area-card__more">Conhecer a área <span aria-hidden="true">→</span></span>
       </div>
     </a>
   ))}
@@ -29,13 +37,21 @@ const areas = SILOS.filter((s) => !exclude.includes(s.href));
   .area-card {
     display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line);
     border-radius: var(--r-lg); overflow: hidden; color: inherit; text-decoration: none;
-    box-shadow: var(--shadow-sm); transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: var(--shadow-sm); transition: transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .3s;
   }
-  .area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); text-decoration: none; }
-  .area-card__body { display: flex; flex-direction: column; gap: 8px; padding: 24px; flex: 1; }
-  .area-card__body h3 { margin: 0; font-size: 1.2rem; }
-  .area-card__body p { color: var(--ink-soft); font-size: .92rem; margin: 0; }
-  .area-card__more { margin-top: auto; padding-top: 6px; color: var(--sage-700); font-weight: 600; font-size: .9rem; }
+  .area-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--sage-200); }
+  .area-card__media { aspect-ratio: 3 / 2; border-radius: 0; }
+  .area-card__num {
+    position: absolute; left: 16px; top: 14px; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em;
+    color: #fff; background: rgba(26, 38, 29, .55); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+    padding: 5px 10px; border-radius: 999px;
+  }
+  .area-card__body { display: flex; flex-direction: column; gap: 8px; padding: 22px 24px 24px; flex: 1; }
+  .area-card__title { margin: 0; font-family: var(--serif); font-size: 1.45rem; font-weight: 400; line-height: 1.15; letter-spacing: -.015em; }
+  .area-card__body p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
+  .area-card__more { margin-top: auto; padding-top: 10px; color: var(--sage-700); font-weight: 650; font-size: .92rem; }
+  .area-card__more span { display: inline-block; transition: transform .4s var(--ease-out); }
+  .area-card:hover .area-card__more span { transform: translateX(5px); }
 
   @media (prefers-reduced-motion: reduce) {
     .area-card { transition: none; }

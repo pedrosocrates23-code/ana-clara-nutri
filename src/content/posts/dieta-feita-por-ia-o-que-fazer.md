@@ -8,6 +8,8 @@ silo: "emagrecimento"
 siloLabel: "Emagrecimento e Reeducação Alimentar"
 datePublished: "2026-09-15"
 medical: true
+image: "/blog/dieta-feita-por-ia-o-que-fazer.webp"
+imageAlt: "Folha impressa com uma grade de cardápio vazia ao lado de uma tigela colorida de comida caseira"
 faqs:
   - q: "Posso seguir a dieta que uma IA me deu?"
     a: "Não sem antes olhar alguns pontos com cuidado. Um plano gerado por inteligência artificial pode servir como ponto de partida, mas não substitui uma avaliação individual. Antes de seguir, verifique se ele tem calorias plausíveis, variedade de grupos alimentares, nenhum corte radical sem explicação e nenhuma menção a substância ou medicamento sem orientação médica."

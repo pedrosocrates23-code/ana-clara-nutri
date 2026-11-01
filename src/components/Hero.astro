@@ -1,101 +1,110 @@
 ---
+// Hero da home (redesign 01/11/2026).
+// Foto: still life editorial gerado pelo Codex e ampliado 2x no Magnific (3832px), SEM pessoa:
+// o CFN 856/2026 art. 38 veda IA generativa simulando pessoa real; a foto real da Ana fica
+// na seção "Sobre". O lado esquerdo da foto é parede verde escura, onde o texto se apoia.
+// É <img> com srcset (não background-image): o navegador escolhe a largura certa e o
+// preload em <head> antecipa o LCP.
+//
+// Conversão: dois botões de WhatsApp, um por formato. Escolher entre duas opções concretas
+// pesa menos do que decidir "agendar ou não" (micro-compromisso), e a mensagem já chega
+// pré-preenchida com o formato.
 import Button from './Button.astro';
-import FormCard from './FormCard.astro';
-import { WHATSAPP_URL } from '../lib/site';
-// Hero com foto (banner substituído em 23/08/2026): foto editorial da Ana com
-// fundo verde escuro sólido do lado esquerdo, onde o texto se apoia sem
-// precisar de overlay escuro por cima (removido a pedido — ver histórico).
-// Formulário de agendamento removido do hero (desktop) em 23/08/2026 (cobria
-// a foto); no lugar, dois CTAs diretos: clay (design system) para
-// agendamento e outline branco, exclusivo deste hero, para WhatsApp.
-// Mobile (< 760px, 23/08/2026): sem foto, fundo sólido #354a3b (cor
-// específica pedida para esta seção, não é um token do design system).
-// Texto claro (igual ao desktop, o mobile não tem mais fundo claro).
-// 40px exatos entre o fim do menu fixo (--header-h: 72px) e a etiqueta.
-// Formulário completo (FormCard) reaparece só no mobile, abaixo dos 2
-// CTAs, preenchendo o espaço que sobrava vazio; no desktop continua fora,
-// porque lá ele cobriria a foto.
+import { HAS_CRN, CRN, waLink, WA_MSG } from '../lib/site';
+import { heroSources } from '../lib/hero';
+const { desk, mob } = heroSources();
 ---
-<section class="hero" aria-label="Apresentação">
-  <div class="hero__bg"></div>
+<section class="hero" aria-label="Apresentação" data-wa-secao="Home · hero">
+  <div class="hero__media">
+    {desk && (
+      <picture>
+        {mob && <source media="(max-width: 760px)" srcset={mob.srcset} sizes={mob.sizes} width={mob.width} height={mob.height} type="image/webp" />}
+        <img class="hero__img" src={desk.src} srcset={desk.srcset} sizes={desk.sizes} width={desk.width} height={desk.height}
+          alt="Mesa de pedra com tigelas de cerâmica artesanal com folhas verdes, grão-de-bico, figos e tomates, jarra de água e guardanapo de linho diante de uma parede verde-escura"
+          loading="eager" decoding="sync" fetchpriority="high" />
+      </picture>
+    )}
+  </div>
+  <div class="hero__shade" aria-hidden="true"></div>
+
   <div class="container hero__inner">
     <div class="hero__content">
-      <p class="kicker hero__kicker">Nutricionista</p>
-      <h1 class="hero__title">Nutrição com abordagem<br /><em>comportamental e educacional</em></h1>
+      <p class="kicker hero__kicker">Nutricionista{HAS_CRN ? ` · ${CRN}` : ''}</p>
+      <h1 class="hero__title">
+        <span class="hero__line">Nutrição com abordagem</span>
+        <span class="hero__line"><em>comportamental e educacional</em></span>
+      </h1>
       <p class="hero__sub">
         Atendimento presencial em Goiânia e online por telenutrição para todo o Brasil.
         Um cuidado próximo, baseado em evidências e sem dietas restritivas.
       </p>
+
+      <p class="hero__ask">Como você prefere ser atendida?</p>
       <div class="hero__actions">
-        <Button href="/contato" variant="clay">Agendar consulta</Button>
-        <Button href={WHATSAPP_URL} variant="outline" target="_blank" rel="noopener" class="hero__btn-outline">Falar no WhatsApp</Button>
+        <Button href={waLink(WA_MSG.online)} variant="light" size="lg" secao="Home · hero · online" magnetic>Consulta online</Button>
+        <Button href={waLink(WA_MSG.presencial)} variant="outline-light" size="lg" secao="Home · hero · presencial">Presencial em Goiânia</Button>
       </div>
-      <div class="hero__form-mobile">
-        <FormCard idPrefix="hero-m" title="Agende sua consulta" secao="Home — hero (topo, mobile)" />
-      </div>
+
+      <ul class="hero__trust" role="list">
+        <li>Formada pela UFG</li>
+        <li>Atendimento particular</li>
+        <li>Agendamento direto com a Ana</li>
+      </ul>
     </div>
   </div>
+
+  <a href="#sobre" class="hero__scroll" aria-label="Rolar para conhecer a Ana Clara"><span></span></a>
 </section>
 
 <style>
-  .hero { position: relative; min-height: 88vh; display: flex; align-items: center; overflow: hidden; }
-  .hero__bg {
-    position: absolute; inset: 0;
-    /* Cor sólida como base instantânea (evita flash branco antes da imagem
-       carregar) por trás da foto. Sem overlay escuro por cima: o próprio
-       fundo verde da foto já sustenta o contraste do texto à esquerda. */
-    background-color: var(--sage-800);
-    background-image: url('/hero-home.webp');
-    background-size: cover;
-    background-position: 78% center;
-    background-repeat: no-repeat;
+  .hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    min-height: min(100svh, 940px); display: flex; align-items: center;
+    background: var(--forest-ink); color: #fff;
   }
-  .hero__inner {
-    position: relative; z-index: 2; width: 100%;
-    padding-block: clamp(96px, 13vh, 150px) clamp(40px, 7vh, 80px);
+  .hero__media { position: absolute; inset: 0; z-index: -2; }
+  .hero__media :global(.hero__img) {
+    width: 100%; height: 100%; object-fit: cover; object-position: 72% center;
+    animation: hero-in 2.4s var(--ease-out) both;
   }
-
-  .hero__content { color: #fff; max-width: 540px; }
-  .hero__kicker { color: var(--sage-100); }
-  .hero__title { color: #fff; font-weight: 300; font-size: clamp(2rem, 5vw, 3.4rem); margin: 12px 0 0; }
+  @keyframes hero-in { from { transform: scale(1.07); } to { transform: scale(1); } }
+  /* Sombra só onde o texto pousa: a parede da foto já é escura, o degradê garante 4.5:1
+     no texto mesmo em telas estreitas, onde a foto é recortada e a comida chega perto do texto. */
+  .hero__shade {
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(20, 30, 23, .82) 0%, rgba(20, 30, 23, .55) 38%, rgba(20, 30, 23, 0) 62%),
+      linear-gradient(0deg, rgba(20, 30, 23, .55) 0%, rgba(20, 30, 23, 0) 28%);
+  }
+  .hero__inner { width: 100%; padding-block: calc(var(--header-h) + 48px) 96px; }
+  .hero__content { max-width: 620px; }
+  .hero__kicker { color: var(--sage-200); }
+  .hero__title { color: #fff; font-weight: 300; font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.02; margin: 20px 0 0; letter-spacing: -.03em; }
+  .hero__line { display: block; animation: line-up 1.1s var(--ease-out) both; }
+  .hero__line + .hero__line { animation-delay: .08s; }
   .hero__title em { font-style: italic; color: var(--sage-200); }
-  .hero__sub { color: rgba(255,255,255,.92); font-size: clamp(1rem, 1.5vw, 1.12rem); margin: 16px 0 0; max-width: 480px; }
+  @keyframes line-up { from { transform: translateY(18px); } to { transform: none; } }
+  .hero__sub { color: rgba(255, 255, 255, .88); font-size: clamp(1.02rem, 1.5vw, 1.18rem); margin: 22px 0 0; max-width: 500px; line-height: 1.6; }
+  .hero__ask { margin: 34px 0 12px; font-family: var(--mono); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-200); }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .hero__trust { list-style: none; padding: 0; margin: 34px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .88rem; color: rgba(255, 255, 255, .78); }
+  .hero__trust li { display: inline-flex; align-items: center; gap: 8px; }
+  .hero__trust li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage-300); }
 
-  .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 28px; }
+  .hero__scroll { position: absolute; left: 50%; bottom: 26px; translate: -50% 0; width: 26px; height: 42px; border: 1.5px solid rgba(255,255,255,.5); border-radius: 14px; }
+  .hero__scroll span { position: absolute; left: 50%; top: 8px; width: 3px; height: 8px; margin-left: -1.5px; border-radius: 2px; background: #fff; animation: scroll-dot 2s var(--ease-out) infinite; }
+  @keyframes scroll-dot { 0% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
 
-  /* Form completo só existe visualmente no mobile (media query abaixo);
-     no desktop fica fora de fluxo para não reservar espaço nem cobrir a foto. */
-  .hero__form-mobile { display: none; }
-
-  /* Button.astro é outro componente: o CSS com escopo daqui não alcança o
-     <a> que ele renderiza, então essa cor precisa do escape hatch :global.
-     Outline branco só serve para o hero com foto (desktop, ver media query
-     abaixo) — no mobile sem foto o próprio .btn--outline do design system
-     (sage sobre fundo claro) já funciona sem nenhum override daqui. */
-  @media (min-width: 760px) {
-    :global(.hero__btn-outline) {
-      background: transparent !important;
-      color: #fff !important;
-      border-color: rgba(255, 255, 255, .78) !important;
-    }
-    :global(.hero__btn-outline:hover) {
-      border-color: #fff !important;
-      background: rgba(255, 255, 255, .1) !important;
-    }
+  @media (max-width: 760px) {
+    .hero { align-items: flex-end; min-height: 100svh; }
+    .hero__media :global(.hero__img) { object-position: center 40%; }
+    .hero__shade { background: linear-gradient(0deg, rgba(20, 30, 23, .94) 0%, rgba(20, 30, 23, .82) 48%, rgba(20, 30, 23, .35) 78%, rgba(20, 30, 23, .2) 100%); }
+    .hero__inner { padding-block: calc(var(--header-h) + 140px) 40px; }
+    .hero__actions { display: grid; }
+    .hero__actions :global(.btn) { width: 100%; }
+    .hero__scroll { display: none; }
   }
-
-  /* Mobile: sem foto, fundo sólido #354a3b (cor específica pedida, entre
-     --sage-700 e --sage-800 do design system mas não igual a nenhum dos
-     dois — por isso hardcoded aqui, não um var(--token)).
-     Texto permanece claro (herda as regras da base acima): fundo escuro
-     de novo, diferente da 1ª versão mobile (verde pastel + texto escuro).
-     40px exatos entre o fim do menu fixo (--header-h: 72px) e a etiqueta.
-     Os 2 botões saem (o form completo, que aparece no lugar deles, já
-     tem o próprio CTA de envio — os dois juntos ficavam redundantes). */
-  @media (max-width: 759px) {
-    .hero__bg { background: #354a3b; }
-    .hero__inner { padding-top: calc(var(--header-h) + 40px); }
-    .hero__actions { display: none; }
-    .hero__form-mobile { display: block; margin-top: 28px; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__media :global(.hero__img), .hero__line, .hero__scroll span { animation: none; }
   }
 </style>

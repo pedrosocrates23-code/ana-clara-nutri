@@ -8,6 +8,8 @@ silo: "nutricao-esportiva"
 siloLabel: "Nutrição Esportiva"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/pre-e-pos-treino-o-que-comer.webp"
+imageAlt: "Tábua com banana, aveia e mel de um lado e tigela de arroz, ovos e verduras do outro, com garrafa de água"
 faqs:
   - q: "O que comer antes do treino, de forma geral?"
     a: "A base costuma ser carboidrato, que é o combustível mais rápido para o músculo, junto com pouca gordura e pouca fibra, para não pesar. Fruta, pão, tapioca e raízes cozidas cumprem esse papel. Quanto mais perto do treino, mais simples e menor deve ser a refeição. A escolha exata depende do seu horário, da intensidade e do que o seu estômago aceita."

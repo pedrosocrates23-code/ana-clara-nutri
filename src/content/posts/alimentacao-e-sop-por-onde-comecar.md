@@ -8,6 +8,8 @@ silo: "nutricao-clinica"
 siloLabel: "Nutrição Clínica"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/alimentacao-e-sop-por-onde-comecar.webp"
+imageAlt: "Mesa de café da manhã com torradas com abacate e ovo, tigela de frutas vermelhas, xícara de chá e vaso de flores cor-de-rosa"
 faqs:
   - q: "O que é a síndrome dos ovários policísticos (SOP)?"
     a: "É uma condição hormonal comum em mulheres em idade reprodutiva, que costuma aparecer como ciclo menstrual irregular, sinais de hormônios masculinos mais altos, como pelos e acne, e um aspecto característico dos ovários no ultrassom. A Organização Mundial da Saúde descreve a SOP como frequentemente subdiagnosticada. Quem fecha o diagnóstico é o médico, ginecologista ou endocrinologista, depois de descartar outras causas."

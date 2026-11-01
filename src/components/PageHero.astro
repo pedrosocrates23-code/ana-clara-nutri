@@ -1,42 +1,86 @@
 ---
+// Abertura das páginas internas: texto à esquerda, foto editorial à direita.
+// Sem reveal: é above-the-fold e o h1/foto são o LCP das páginas internas.
+// A foto entra com fetchpriority=high; o texto nunca nasce escondido.
 import Button from './Button.astro';
+import Picture from './Picture.astro';
+import { waLink } from '../lib/site';
 interface Props {
   kicker?: string;
   title: string;
   sub?: string;
-  cta?: { label: string; href: string };
+  /** CTA principal (WhatsApp por padrão). href omitido = WhatsApp com `waMsg`. */
+  cta?: { label: string; href?: string; waMsg?: string; secao?: string };
+  secondary?: { label: string; href: string };
   breadcrumb?: { name: string; href: string }[];
+  image?: string;
+  imageAlt?: string;
+  /** recorte da foto (object-position) */
+  imagePosition?: string;
+  /** foto em retrato (ex.: retrato real da Ana) */
+  portrait?: boolean;
 }
-const { kicker, title, sub, cta, breadcrumb } = Astro.props;
+const { kicker, title, sub, cta, secondary, breadcrumb, image, imageAlt = '', imagePosition, portrait = false } = Astro.props;
+const ctaHref = cta ? (cta.href ?? waLink(cta.waMsg)) : '';
 ---
-<section class="page-hero">
-  <div class="container">
-    {breadcrumb && (
-      <nav class="crumbs" aria-label="Você está em">
-        {breadcrumb.map((b, i) => (
-          <>{i > 0 && <span class="sep">›</span>}<a href={b.href}>{b.name}</a></>
-        ))}
-      </nav>
-    )}
-    {/* Sem .reveal: este bloco é above-the-fold e é o elemento de LCP das
-        páginas internas. Com reveal, o LCP só era pintado depois do JS (4,1s). */}
-    <div>
+<section class:list={['page-hero', { 'page-hero--img': image, 'page-hero--portrait': portrait }]}>
+  <div class="container page-hero__grid">
+    <div class="page-hero__text">
+      {breadcrumb && (
+        <nav class="crumbs" aria-label="Você está em">
+          {breadcrumb.map((b, i) => (
+            <>{i > 0 && <span class="sep" aria-hidden="true">/</span>}{i < breadcrumb.length - 1 ? <a href={b.href}>{b.name}</a> : <span aria-current="page">{b.name}</span>}</>
+          ))}
+        </nav>
+      )}
       {kicker && <span class="kicker">{kicker}</span>}
       <h1 set:html={title} />
       {sub && <p class="page-hero__sub">{sub}</p>}
-      {cta && <Button href={cta.href} variant="clay">{cta.label}</Button>}
+      {(cta || secondary) && (
+        <div class="page-hero__actions">
+          {cta && <Button href={ctaHref} variant="whatsapp" size="lg" secao={cta.secao ?? 'Topo da página'} magnetic>{cta.label}</Button>}
+          {secondary && <Button href={secondary.href} variant="ghost">{secondary.label} →</Button>}
+        </div>
+      )}
+      <slot />
     </div>
+    {image && (
+      <div class="page-hero__media media">
+        <Picture name={image} alt={imageAlt} loading="eager" fetchpriority="high" position={imagePosition}
+          sizes={portrait ? '(min-width: 980px) 420px, 90vw' : '(min-width: 980px) 46vw, 100vw'} />
+      </div>
+    )}
   </div>
 </section>
 
 <style>
-  .page-hero { background: linear-gradient(180deg, var(--paper) 0%, var(--sage-50) 100%);
-    padding-block: clamp(36px, 7vw, 72px); border-bottom: 1px solid var(--line); }
-  .crumbs { font-family: var(--mono); font-size: .72rem; color: var(--ink-faint); margin-bottom: 14px; }
+  .page-hero {
+    position: relative;
+    background:
+      radial-gradient(80% 90% at 100% 0%, rgba(187, 208, 182, .38) 0%, rgba(187, 208, 182, 0) 60%),
+      linear-gradient(180deg, var(--paper) 0%, var(--sand-50) 100%);
+    padding-block: calc(var(--header-h) + clamp(28px, 6vw, 64px)) clamp(48px, 7vw, 88px);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .page-hero__grid { display: grid; gap: clamp(32px, 5vw, 64px); align-items: center; }
+  @media (min-width: 980px) {
+    .page-hero--img .page-hero__grid { grid-template-columns: 1.05fr .95fr; }
+    .page-hero--portrait .page-hero__grid { grid-template-columns: 1.3fr .7fr; }
+  }
+  .crumbs { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; color: var(--ink-faint); margin-bottom: 22px; display: flex; flex-wrap: wrap; gap: 4px; }
   .crumbs a { color: var(--ink-faint); text-decoration: none; }
-  .crumbs a:hover { color: var(--sage-700); }
-  .crumbs .sep { margin: 0 6px; }
-  .page-hero h1 { max-width: 720px; }
+  .crumbs a:hover { color: var(--sage-700); text-decoration: underline; }
+  .crumbs .sep { margin: 0 6px; opacity: .5; }
+  .page-hero h1 { max-width: 760px; margin-top: 16px; }
   .page-hero h1 :global(em) { font-style: italic; color: var(--sage-600); }
-  .page-hero__sub { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--ink-soft); max-width: 560px; margin: 14px 0 24px; }
+  .page-hero__sub { font-size: clamp(1.05rem, 1.6vw, 1.22rem); color: var(--ink-soft); max-width: 560px; margin: 18px 0 0; line-height: 1.6; }
+  .page-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 30px; }
+
+  .page-hero__media { aspect-ratio: 4 / 3; border-radius: var(--r-xl); box-shadow: var(--shadow-lg); }
+  .page-hero__media :global(img) { animation: hero-settle 1.8s var(--ease-out) both; }
+  .page-hero--portrait .page-hero__media { aspect-ratio: 4 / 5; max-width: 420px; justify-self: center; width: 100%; }
+  @media (min-width: 980px) { .page-hero--img:not(.page-hero--portrait) .page-hero__media { aspect-ratio: 5 / 4.4; } }
+  @keyframes hero-settle { from { transform: scale(1.06); } to { transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) { .page-hero__media :global(img) { animation: none; } }
 </style>

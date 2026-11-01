@@ -8,6 +8,8 @@ silo: "nutricionista-em-goiania"
 siloLabel: "Atendimento Presencial"
 datePublished: "2026-09-08"
 medical: true
+image: "/blog/primeira-consulta.webp"
+imageAlt: "Canto de recepção com poltrona de linho, mesinha redonda com jarra de água, copo e caderno"
 faqs:
   - q: "Preciso fazer exame antes da primeira consulta?"
     a: "Não é obrigatório. Se você já tiver exames recentes, principalmente dos últimos seis meses, vale trazer, porque eles ajudam a entender o seu quadro com mais precisão. Se não tiver nenhum, a consulta acontece normalmente, e eu posso indicar quais exames fazem sentido pedir ao seu médico, dependendo do que a conversa revelar."

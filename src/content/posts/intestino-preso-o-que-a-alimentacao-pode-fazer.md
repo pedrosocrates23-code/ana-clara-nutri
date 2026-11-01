@@ -8,6 +8,8 @@ silo: "saude-intestinal"
 siloLabel: "Saúde Intestinal"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/intestino-preso-o-que-a-alimentacao-pode-fazer.webp"
+imageAlt: "Jarra e copo de água, tigela com mamão, ameixa-preta, aveia e linhaça e folhas verdes numa mesa ensolarada"
 faqs:
   - q: "Preciso evacuar todos os dias para o intestino estar saudável?"
     a: "Não. A faixa considerada normal é larga, e vai de três vezes ao dia a três vezes por semana. Se o seu ritmo é estável, as fezes saem sem esforço grande e você não fica com sensação de que sobrou algo dentro, provavelmente é só o seu ritmo. O que chama atenção é a mudança de ritmo, e nunca o número isolado."

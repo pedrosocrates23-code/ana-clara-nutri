@@ -21,7 +21,7 @@ interface Props {
   description: string;
   path?: string;
   graph?: object;          // @graph JSON-LD da página (buildGraph)
-  overHero?: boolean;      // header transparente sobre hero full-bleed
+  overHero?: boolean;      // header claro sobre hero escuro full-bleed (home)
   ogImage?: string;
 }
 const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage } = Astro.props;
@@ -30,7 +30,7 @@ const fullTitle = title.includes(SITE.name) ? title : `${title}`;
 // '/og-default.jpg' nunca existiu em public/ (404 em produção nas 15 páginas
 // sem ogImage próprio, TEC-06, achado 21/08/2026) — a foto editorial da Ana já
 // usada no hero é o fallback real.
-const img = ogImage ?? '/ana-clara-nutricionista.webp';
+const img = ogImage ?? '/img/hero-home-1280.webp';
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -60,47 +60,24 @@ const img = ogImage ?? '/ana-clara-nutricionista.webp';
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
   )}
 
+  <meta name="theme-color" content="#1A261D" />
+  <slot name="head" />
+
   <!-- Google tag (gtag.js) + Microsoft Clarity -->
   <Analytics />
 </head>
 <body>
-  <!-- Sentinela do header: ver o script abaixo. Não ocupa espaço nem é lido por leitores de tela. -->
-  <div data-topo aria-hidden="true"></div>
-  <Header overHero={overHero} />
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <Header tone={overHero ? 'image' : 'light'} />
   <main id="conteudo">
     <slot />
   </main>
   <Footer />
   <WhatsappFloat />
 
-  <!-- Header sólido ao rolar + reveal on scroll (ilhas mínimas) -->
+  <!-- Header ao rolar, menu do celular, medição do WhatsApp e motion (GSAP sob demanda) -->
   <script>
-    // O header fica sólido quando a sentinela do topo sai da viewport.
-    //
-    // A versão anterior usava um listener de scroll lendo window.scrollY. Ler
-    // geometria durante o scroll obriga o navegador a recalcular o layout
-    // (forced reflow, ~37ms no Lighthouse). O IntersectionObserver entrega a
-    // mesma informação de forma assíncrona, sem tocar no layout.
-    const header = document.querySelector('[data-header]');
-    const topo = document.querySelector('[data-topo]');
-
-    if (header && topo) {
-      new IntersectionObserver(
-        ([entry]) => header.classList.toggle('is-solid', !entry.isIntersecting),
-        { threshold: 0 },
-      ).observe(topo);
-    }
-
-    if (matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        }
-      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-    } else {
-      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
-    }
+    import '../scripts/site.ts';
   </script>
 </body>
 </html>

@@ -4,10 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Faq from '../components/Faq.astro';
 import Button from '../components/Button.astro';
-import ContactForm from '../components/ContactForm.astro';
 import AreasGrid from '../components/AreasGrid.astro';
-import { HAS_CRN, CRN, CRN_PARENTESES, FOTO_ANA, TEM_FOTO, FOTO_ANA_TEXTOS } from '../lib/site';
+import MomentRouter from '../components/MomentRouter.astro';
+import PostCard from '../components/PostCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Picture from '../components/Picture.astro';
+import { HAS_CRN, CRN, CRN_PARENTESES, FOTO_ANA_TEXTOS, waLink, WA_MSG } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
+import { heroSources } from '../lib/hero';
 
 // Últimas 3 postagens do blog (atualiza a cada build/publicação, sempre as mais recentes)
 const latestPosts = (await getCollection('posts'))
@@ -20,6 +24,7 @@ const faqs = [
  { q: 'A consulta é particular?', a: 'Sim, o atendimento é exclusivamente particular. Os valores são informados de forma transparente antes do agendamento.' },
  { q: 'Como é a primeira consulta?', a: 'É um momento de escuta e avaliação. Entendo o seu histórico, a sua rotina e os seus objetivos para construir um plano junto com você.' },
  { q: 'Para quais objetivos a Ana atende?', a: 'Nutrição comportamental, educação alimentar, reeducação alimentar, nutrição esportiva, clínica, saúde intestinal e alimentação vegetariana/vegana. No momento, não atende gestantes e crianças.' },
+ { q: 'Como faço para agendar?', a: 'Pelo WhatsApp. Você escolhe online ou presencial, e a própria Ana responde com os horários disponíveis e o valor da consulta antes de qualquer agendamento.' },
 ];
 
 const graph = buildGraph({
@@ -28,207 +33,242 @@ const graph = buildGraph({
 });
 
 const passos = [
- { n: '1', t: 'Agendamento', d: 'Você escolhe online ou presencial e reserva o melhor horário pelo site ou WhatsApp.' },
- { n: '2', t: 'Primeira consulta', d: 'Um encontro de escuta e avaliação. Entendo sua rotina e seu histórico antes de qualquer plano.' },
- { n: '3', t: 'Acompanhamento', d: 'Construímos juntas um caminho possível, com ajustes ao longo do tempo. No online, por telenutrição com consentimento.' },
+ { n: '01', t: 'Você chama no WhatsApp', d: 'Escolhe online ou presencial e recebe os horários e o valor da consulta antes de decidir qualquer coisa.' },
+ { n: '02', t: 'Primeira consulta', d: 'Um encontro de escuta e avaliação. Entendo sua rotina e seu histórico antes de qualquer plano.' },
+ { n: '03', t: 'Plano construído junto', d: 'Nada de cardápio copiado de outra pessoa: o plano parte do que cabe na sua vida real.' },
+ { n: '04', t: 'Acompanhamento', d: 'Retornos combinados para ajustar o caminho ao longo do tempo. No online, por telenutrição com consentimento.' },
 ];
+
+const principios = ['Sem dieta restritiva', 'Sem julgamento', 'Baseada em evidências', 'Sem atalhos', 'Cuidado individual', 'Autonomia na sua alimentação'];
+
+// Preload da foto do hero (LCP): as mesmas fontes do <picture> do Hero, separadas por media.
+const { desk, mob } = heroSources();
 ---
 <BaseLayout
  title="Ana Clara Nutri | Nutricionista em Goiânia e Online"
  description="Nutrição com abordagem comportamental e educacional. Atendimento presencial em Goiânia e online (telenutrição) para todo o Brasil. Agende sua consulta."
  path="/" overHero graph={graph}>
+ {mob && <link slot="head" rel="preload" as="image" type="image/webp" media="(max-width: 760px)" imagesrcset={mob.srcset} imagesizes={mob.sizes} fetchpriority="high" />}
+ {desk && <link slot="head" rel="preload" as="image" type="image/webp" media="(min-width: 761px)" imagesrcset={desk.srcset} imagesizes={desk.sizes} fetchpriority="high" />}
 
  <Hero />
 
- <!-- Faixa de confiança -->
- <section class="section section--alt">
- <div class="container">
- <div class="trust reveal">
- {HAS_CRN && <span>✓ {CRN} ativo</span>}
- <span>✓ Baseada em evidências</span>
- <span>✓ Sem dietas restritivas</span>
- <span>✓ Online e presencial</span>
+ <!-- Princípios em faixa contínua -->
+ <div class="marquee" aria-label="Princípios do atendimento">
+  <div class="marquee__track">
+   {[0, 1].map((k) => (
+    <ul class="marquee__list" aria-hidden={k === 1 ? 'true' : undefined} role="list">
+     {principios.map((p) => <li>{p}</li>)}
+    </ul>
+   ))}
+  </div>
  </div>
- </div>
+
+ <!-- Sobre: quem é a Ana (foto real) -->
+ <section class="section" id="sobre">
+  <div class="container sobre">
+   <div class="sobre__photo" data-reveal-img>
+    <Picture name="ana-clara-retrato" alt={FOTO_ANA_TEXTOS.alt} sizes="(min-width: 900px) 440px, 86vw" class="sobre__img" />
+    <div class="sobre__badge" aria-hidden="true">
+     <span class="sobre__badge-n">4+</span>
+     <span>anos em nutrição clínica</span>
+    </div>
+   </div>
+   <div class="sobre__text">
+    <span class="kicker">Prazer, sou a Ana</span>
+    <h2>Comida é também <em>relação, rotina e história</em></h2>
+    <p class="sobre__lead">Sou nutricionista{CRN_PARENTESES}, formada pela UFG, e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
+    <p>Meu trabalho parte de uma ideia simples: quando a gente entende a sua relação com a comida, a mudança fica leve e dura mais.</p>
+    <ul class="sobre__creds" role="list">
+     {HAS_CRN && <li><strong>{CRN}</strong><span>Registro ativo</span></li>}
+     <li><strong>UFG</strong><span>Universidade Federal de Goiás</span></li>
+     <li><strong>Hospitalar e ambulatorial</strong><span>Onde construí a minha prática</span></li>
+    </ul>
+    <div class="sobre__actions">
+     <Button href="/sobre" variant="outline">Conheça minha história</Button>
+    </div>
+   </div>
+  </div>
  </section>
 
- <!-- Sobre (3ª dobra: quem é a Ana, logo após a confiança) -->
- <section class="section">
- <div class="container sobre-grid">
- <div class="reveal sobre">
- <span class="kicker">Sobre</span>
- <h2>Prazer, sou a <em>Ana Clara</em></h2>
- <p>Sou nutricionista{CRN_PARENTESES} e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
- <p>Meu trabalho parte de uma ideia simples: comida é também relação, rotina e história. Quando a gente entende isso, a mudança fica leve e dura mais.</p>
- <Button href="/sobre" variant="outline" size="sm">Conheça minha história →</Button>
- </div>
- <div class:list={['sobre-photo', 'reveal', { 'sobre-photo--vazia': !TEM_FOTO }]}>
- {TEM_FOTO ? (
- <>
- <img
- class="sobre-photo__img"
- src={FOTO_ANA}
- alt={FOTO_ANA_TEXTOS.alt}
- title={FOTO_ANA_TEXTOS.title}
- aria-describedby="foto-ana-desc"
- width="854" height="922"
- loading="lazy" decoding="async"
- />
- <p id="foto-ana-desc" class="sr-only">{FOTO_ANA_TEXTOS.descricao}</p>
- </>
- ) : (
- <span class="sobre-photo__hint">Foto · Ana Clara</span>
- )}
- </div>
- </div>
+ <!-- Roteador de dores -->
+ <section class="section section--sand">
+  <div class="container">
+   <div class="section__head section__head--split">
+    <div>
+     <span class="kicker">Seu momento</span>
+     <h2>O que trouxe você <em>até aqui?</em></h2>
+    </div>
+    <p>Escolha a frase que mais parece com você. Mostro como o acompanhamento olha para isso, o que vale ler agora e um atalho para conversar sobre o seu caso.</p>
+   </div>
+   <MomentRouter />
+  </div>
  </section>
 
- <!-- Modalidades -->
+ <!-- Formatos de atendimento -->
  <section class="section" id="atendimento">
- <div class="container">
- <div class="section__head">
- <span class="kicker">Atendimento</span>
- <h2>Dois jeitos de cuidar da sua <em>alimentação</em></h2>
- <p>Você escolhe a forma que combina com a sua rotina. O cuidado é o mesmo nas duas: individual, próximo e construído com você.</p>
- </div>
- <div class="grid grid--2">
- <article class="card reveal">
- <span class="kicker">Online · Brasil</span>
- <h3>Atendimento online</h3>
- <p>Consultas por telenutrição para qualquer cidade do Brasil. Prático, sem deslocamento e com o mesmo acompanhamento de perto.</p>
- <Button href="/nutricionista-online/" variant="outline" size="sm">Ver atendimento online →</Button>
- </article>
- <article class="card reveal">
- <span class="kicker">Presencial · Goiânia</span>
- <h3>Atendimento presencial em Goiânia</h3>
- <p>Consultório acolhedor para quem prefere o encontro pessoalmente, com horários flexíveis.</p>
- <Button href="/nutricionista-em-goiania/" variant="outline" size="sm">Ver atendimento presencial →</Button>
- </article>
- </div>
- </div>
+  <div class="container">
+   <div class="section__head section__head--center">
+    <span class="kicker">Atendimento</span>
+    <h2>Dois jeitos de cuidar da sua <em>alimentação</em></h2>
+    <p>O cuidado é o mesmo nas duas: individual, próximo e construído com você. Muda só onde a conversa acontece.</p>
+   </div>
+   <div class="formatos">
+    <article class="formato" data-reveal>
+     <a href="/nutricionista-online/" class="formato__media media" tabindex="-1" aria-hidden="true"><Picture name="pg-online" alt="" sizes="(min-width: 900px) 50vw, 100vw" /></a>
+     <div class="formato__body">
+      <span class="kicker kicker--plain">Online · todo o Brasil</span>
+      <h3><a href="/nutricionista-online/">Atendimento online</a></h3>
+      <p>Consultas por telenutrição para qualquer cidade do Brasil. Sem deslocamento e com o mesmo acompanhamento de perto.</p>
+      <div class="formato__actions">
+       <Button href={waLink(WA_MSG.online)} variant="whatsapp" secao="Home · formatos · online">Agendar online</Button>
+       <Button href="/nutricionista-online/" variant="ghost">Como funciona →</Button>
+      </div>
+     </div>
+    </article>
+    <article class="formato" data-reveal>
+     <a href="/nutricionista-em-goiania/" class="formato__media media" tabindex="-1" aria-hidden="true"><Picture name="pg-presencial" alt="" sizes="(min-width: 900px) 50vw, 100vw" /></a>
+     <div class="formato__body">
+      <span class="kicker kicker--plain">Presencial · Goiânia</span>
+      <h3><a href="/nutricionista-em-goiania/">Atendimento presencial em Goiânia</a></h3>
+      <p>No beLIV Espaço de Saúde e Bem-Estar, para quem prefere o encontro pessoalmente, sem tela no meio da conversa.</p>
+      <div class="formato__actions">
+       <Button href={waLink(WA_MSG.presencial)} variant="whatsapp" secao="Home · formatos · presencial">Agendar presencial</Button>
+       <Button href="/nutricionista-em-goiania/" variant="ghost">Onde fica →</Button>
+      </div>
+     </div>
+    </article>
+   </div>
+  </div>
  </section>
 
  <!-- Áreas de atuação (silos) -->
  <section class="section section--alt">
- <div class="container">
- <div class="section__head">
- <span class="kicker">Áreas de atuação</span>
- <h2>Em que posso te <em>acompanhar</em></h2>
- <p>Cada pessoa tem uma história com a comida. Trabalho diferentes frentes da nutrição sempre pela mesma lente: comportamento e educação alimentar.</p>
- </div>
- <AreasGrid />
- </div>
+  <div class="container">
+   <div class="section__head section__head--split">
+    <div>
+     <span class="kicker">Áreas de atuação</span>
+     <h2>Em que posso te <em>acompanhar</em></h2>
+    </div>
+    <p>Cada pessoa tem uma história com a comida. Trabalho diferentes frentes da nutrição sempre pela mesma lente: comportamento e educação alimentar.</p>
+   </div>
+   <AreasGrid />
+  </div>
  </section>
 
  <!-- Como funciona -->
- <section class="section">
- <div class="container">
- <div class="section__head">
- <span class="kicker">Como funciona</span>
- <h2>Do primeiro contato ao <em>acompanhamento</em></h2>
- </div>
- <div class="grid grid--3">
- {passos.map((p) => (
- <article class="card reveal">
- <div class="step">{p.n}</div>
- <h3>{p.t}</h3>
- <p>{p.d}</p>
- </article>
- ))}
- </div>
- </div>
+ <section class="section section--dark passos-sec">
+  <div class="container passos-wrap">
+   <div class="section__head">
+    <span class="kicker">Como funciona</span>
+    <h2>Do primeiro “oi” ao <em>acompanhamento</em></h2>
+    <p>Sem formulário, sem fila de triagem: você fala direto com a nutricionista que vai te atender.</p>
+    <Button href={waLink()} variant="light" secao="Home · como funciona" magnetic>Começar pelo WhatsApp</Button>
+   </div>
+   <div class="passos-box" data-steps>
+   <span class="passos__line" aria-hidden="true"><span data-draw="y"></span></span>
+   <ol class="passos" role="list">
+    {passos.map((p) => (
+     <li class="passo" data-step>
+      <span class="passo__n">{p.n}</span>
+      <div>
+       <h3>{p.t}</h3>
+       <p>{p.d}</p>
+      </div>
+     </li>
+    ))}
+   </ol>
+   </div>
+  </div>
  </section>
 
  <Faq items={faqs} />
 
- <!-- Últimas postagens do blog (rotativo: sempre as 3 mais recentes) -->
+ <!-- Últimas postagens do blog (sempre as 3 mais recentes) -->
  {latestPosts.length > 0 && (
- <section class="section">
- <div class="container">
- <div class="section__head"><span class="kicker">Do blog</span><h2>Últimos <em>conteúdos</em></h2></div>
- <div class="posts">
- {latestPosts.map((p) => (
- <a class="post" href={p.data.path}>
- <span class="kicker">{p.data.siloLabel}</span>
- <h3>{p.data.title}</h3>
- <p>{p.data.description}</p>
- <span class="post__more">Ler artigo →</span>
- </a>
- ))}
- </div>
- <p class="blog-all"><a href="/blog">Ver todos os artigos →</a></p>
- </div>
- </section>
+  <section class="section section--alt">
+   <div class="container">
+    <div class="section__head section__head--split">
+     <div>
+      <span class="kicker">Do blog</span>
+      <h2>Para ler com <em>calma</em></h2>
+     </div>
+     <p>Textos sobre alimentação, comportamento e saúde, em linguagem simples e baseada em evidências. <a class="link" href="/blog">Ver todos os artigos →</a></p>
+    </div>
+    <div class="posts">
+     {latestPosts.map((p) => <PostCard post={p} />)}
+    </div>
+   </div>
+  </section>
  )}
 
- <!-- Formulário de agendamento (última seção) -->
- <ContactForm />
+ <CtaBand secao="Home · faixa final" />
 </BaseLayout>
 
 <style>
- .areas { display: grid; gap: 10px; }
- @media (min-width: 600px) { .areas { grid-template-columns: 1fr 1fr; } }
- @media (min-width: 960px) { .areas { grid-template-columns: 1fr 1fr 1fr; } }
- .area {
- display: flex; justify-content: space-between; align-items: center; gap: 12px;
- background: #fff; border: 1px solid var(--line); border-radius: var(--r-md);
- padding: 16px 18px; font-weight: 600; color: var(--ink); text-decoration: none;
- transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+ /* ---------- Marquee de princípios (CSS puro, pausa no hover e em reduced-motion) ---------- */
+ .marquee { background: var(--sage-200); color: var(--forest-ink); overflow: hidden; padding: 18px 0; border-bottom: 1px solid var(--sage-300); }
+ .marquee__track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+ .marquee:hover .marquee__track { animation-play-state: paused; }
+ .marquee__list { display: flex; list-style: none; margin: 0; padding: 0; }
+ .marquee__list li { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.5rem); font-style: italic; white-space: nowrap; }
+ .marquee__list li::after { content: '✦'; font-style: normal; font-size: .7em; color: var(--sage-600); }
+ @keyframes marquee { to { transform: translateX(-50%); } }
+ @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+ /* ---------- Sobre ---------- */
+ .sobre { display: grid; gap: clamp(40px, 6vw, 88px); align-items: center; }
+ @media (min-width: 900px) { .sobre { grid-template-columns: .85fr 1.15fr; } }
+ .sobre__photo { position: relative; max-width: 440px; width: 100%; margin-inline: auto; border-radius: 220px 220px var(--r-xl) var(--r-xl); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: var(--shadow-lg); }
+ .sobre__photo :global(.sobre__img) { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+ .sobre__badge {
+  position: absolute; right: 14px; bottom: 14px; display: grid; gap: 2px; padding: 14px 18px; border-radius: var(--r-md);
+  background: rgba(250, 248, 243, .9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: var(--ink); font-size: .8rem; line-height: 1.3; max-width: 160px;
  }
- .area:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); border-color: var(--sage-300); text-decoration: none; }
- .area span { color: var(--sage-500); }
- .step { width: 38px; height: 38px; border-radius: 50%; background: var(--sage-100); color: var(--sage-700);
- font-family: var(--serif); font-size: 1.2rem; display: grid; place-items: center; margin-bottom: 12px; }
- .sobre { max-width: var(--maxw-prose); }
- /* Sobre em 2 colunas: texto à esquerda, foto orgânica à direita */
- .sobre-grid { display: grid; gap: 32px; align-items: center; }
- @media (min-width: 860px) { .sobre-grid { grid-template-columns: 1.05fr .95fr; } }
- .sobre-photo {
- position: relative; width: 100%; max-width: 420px; aspect-ratio: 4 / 5; margin-inline: auto;
- /* formato orgânico (blob) */
- border-radius: 46% 54% 57% 43% / 50% 44% 56% 50%;
- display: grid; place-items: center;
+ .sobre__badge-n { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--sage-700); }
+ .sobre__text h2 { margin-top: 16px; }
+ .sobre__lead { font-size: clamp(1.05rem, 1.5vw, 1.18rem); color: var(--ink); }
+ .sobre__text p { color: var(--ink-soft); }
+ .sobre__creds { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+ .sobre__creds li { display: flex; justify-content: space-between; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+ .sobre__creds strong { font-weight: 600; }
+ .sobre__creds span { color: var(--ink-faint); font-size: .9rem; text-align: right; }
+ .sobre__actions { margin-top: 28px; }
+
+ /* ---------- Formatos ---------- */
+ .formatos { display: grid; gap: 24px; }
+ @media (min-width: 900px) { .formatos { grid-template-columns: 1fr 1fr; } }
+ .formato { background: #fff; border: 1px solid var(--line); border-radius: var(--r-xl); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); }
+ .formato__media { aspect-ratio: 16 / 10; border-radius: 0; display: block; }
+ .formato__body { padding: clamp(24px, 3.4vw, 38px); display: flex; flex-direction: column; gap: 12px; flex: 1; }
+ .formato h3 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); font-weight: 400; margin: 0; }
+ .formato h3 a { text-decoration: none; }
+ .formato h3 a:hover { color: var(--sage-700); }
+ .formato p { color: var(--ink-soft); margin: 0; }
+ .formato__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: auto; padding-top: 12px; }
+
+ /* ---------- Passos ---------- */
+ .passos-wrap { display: grid; gap: clamp(40px, 6vw, 96px); }
+ @media (min-width: 960px) { .passos-wrap { grid-template-columns: .9fr 1.1fr; align-items: start; } .passos-wrap .section__head { position: sticky; top: calc(var(--header-h) + 40px); } }
+ .passos-sec .section__head :global(.btn) { margin-top: 12px; }
+ .passos-box { position: relative; }
+ .passos { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+ .passos__line { position: absolute; left: 27px; top: 28px; bottom: 28px; width: 1px; background: rgba(255,255,255,.14); }
+ .passos__line span { display: block; width: 100%; height: 100%; background: var(--sage-300); transform-origin: top; }
+ .passo { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 22px; padding: 22px 24px 22px 0; }
+ .passo__n {
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1;
+  font-family: var(--mono); font-size: .85rem; color: var(--forest-ink); background: var(--sage-200);
+  transition: background .5s var(--ease-out), transform .6s var(--ease-out);
  }
- /* Sem foto (ver TEM_FOTO): sage sólido com o rótulo no centro. Com foto, o
-    sage sairia como uma borda esverdeada em volta do recorte do blob. */
- .sobre-photo--vazia {
- background-color: var(--sage-400);
- box-shadow: var(--shadow-lg);
- }
- /* A foto É o blob: o recorte vai nela, não num container por cima. */
- .sobre-photo__img {
- position: relative; z-index: 1; /* sempre à frente da moldura decorativa */
- width: 100%; height: 100%;
- object-fit: cover; object-position: center top;
- display: block;
- border-radius: inherit;
- box-shadow: var(--shadow-lg);
- }
- /* moldura sage ATRÁS, só o que escapa do blob aparece (profundidade orgânica) */
- .sobre-photo::before {
- content: ''; position: absolute; inset: -14px -10px -10px -14px; z-index: 0;
- background: var(--sage-200);
- border-radius: 54% 46% 43% 57% / 44% 56% 44% 56%;
- opacity: .6;
- }
- .sobre-photo__hint {
- font-family: var(--mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
- color: var(--sage-900); background: rgba(250,248,243,.78); padding: 6px 12px; border-radius: 999px;
- }
- .posts { display: grid; gap: 18px; }
+ .passo h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin: 10px 0 6px; }
+ .passo p { margin: 0; }
+ :global(.js-motion) .passo:not(.is-lit) { opacity: .35; }
+ :global(.js-motion) .passo { transition: opacity .8s var(--ease-out); }
+ :global(.js-motion) .passo:not(.is-lit) .passo__n { background: rgba(255,255,255,.12); color: #fff; transform: scale(.88); }
+
+ /* ---------- Blog ---------- */
+ .posts { display: grid; gap: 22px; }
  @media (min-width: 720px) { .posts { grid-template-columns: repeat(3, 1fr); } }
- .post {
- display: flex; flex-direction: column; gap: 6px; background: #fff; border: 1px solid var(--line);
- border-radius: var(--r-lg); padding: 22px; color: inherit; text-decoration: none;
- transition: transform .2s ease, box-shadow .2s ease;
- }
- .post:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); text-decoration: none; }
- .post h3 { margin: 4px 0; font-size: 1.2rem; }
- .post p { color: var(--ink-soft); font-size: .92rem; }
- .post__more { color: var(--sage-700); font-weight: 600; font-size: .9rem; margin-top: auto; }
- .blog-all { margin-top: 22px; }
- .blog-all a { color: var(--sage-700); font-weight: 600; }
- .cta-final { text-align: center; }
- .cta-final h2 { margin-bottom: .2em; }
- .cta-final p { margin-inline: auto; }
+ .link { color: var(--sage-700); font-weight: 650; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--sage-300); }
 </style>

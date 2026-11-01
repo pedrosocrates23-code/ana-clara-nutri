@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-14"
 medical: true
 image: "/blog/nutricionista-online-vale-a-pena.webp"
-imageAlt: "Pessoa em videochamada de consulta pelo laptop, em casa"
+imageAlt: "Notebook fechado na mesa da cozinha ao lado de uma tigela de salada e uma xícara de chá"
 faqs:
   - q: "Nutricionista online vale a pena mesmo, ou é melhor ir presencial?"
     a: "Depende do que você procura e do seu contexto. As etapas do atendimento são as mesmas e a telenutrição é regulamentada. Ao mesmo tempo, o Conselho Federal de Nutricionistas mantém o presencial como padrão de referência. Se a distância ou a rotina são o que impedem a continuidade, o online costuma ser o que torna o cuidado possível."

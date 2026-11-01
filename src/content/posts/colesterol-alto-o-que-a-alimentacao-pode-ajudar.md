@@ -8,6 +8,8 @@ silo: "nutricao-clinica"
 siloLabel: "Nutrição Clínica"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/colesterol-alto-o-que-a-alimentacao-pode-ajudar.webp"
+imageAlt: "Azeite em galheteiro de vidro, nozes, aveia, abacate, filé de salmão, folhas verdes e limão sobre pedra e linho"
 faqs:
   - q: "Quem tem colesterol alto precisa parar de comer ovo?"
     a: "Na maioria dos casos, não. Por décadas o ovo foi tratado como vilão por causa do colesterol da gema, e a pesquisa foi mostrando que o colesterol vindo do alimento pesa menos do que se imaginava para a maior parte das pessoas. O que costuma importar mais é o acompanhamento do ovo e o padrão da semana inteira. Existem exceções individuais, e quem define isso é o profissional que acompanha você."

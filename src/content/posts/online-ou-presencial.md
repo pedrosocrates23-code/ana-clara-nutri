@@ -8,6 +8,8 @@ silo: "nutricionista-online"
 siloLabel: "Atendimento Online"
 datePublished: "2026-09-15"
 medical: true
+image: "/blog/online-ou-presencial.webp"
+imageAlt: "Mesa de madeira com um notebook fechado e uma xícara de um lado e uma poltrona vazia do outro, sob luz natural"
 faqs:
   - q: "Nutricionista online ou presencial, qual é melhor?"
     a: "Não existe uma resposta melhor para todo mundo. As duas modalidades seguem o mesmo processo clínico e a mesma regulamentação, e a escolha depende do que o seu caso pede: se há algo na avaliação física que pesa de verdade, se você tem um espaço privado disponível em casa e se a sua rotina sustenta melhor um encontro por vídeo ou um deslocamento até o consultório."

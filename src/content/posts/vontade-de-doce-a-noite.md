@@ -8,6 +8,8 @@ silo: "nutricao-comportamental"
 siloLabel: "Nutrição Comportamental"
 datePublished: "2026-09-15"
 medical: true
+image: "/blog/vontade-de-doce-a-noite.webp"
+imageAlt: "Mesinha ao lado do sofá com tigela de morangos e um quadrado de chocolate amargo, sob a luz de um abajur à noite"
 faqs:
   - q: "Vontade de doce à noite, todos os dias, é normal?"
     a: "É um padrão comum, e na maioria das vezes tem explicação concreta: o que você comeu ao longo do dia, quanto dormiu e o que o fim do dia representa na sua rotina. Não é sinal de falha pessoal. Vale entender a causa em vez de só tentar resistir todo dia de novo."

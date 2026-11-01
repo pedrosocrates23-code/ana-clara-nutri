@@ -96,10 +96,24 @@ export const ADDRESS_LINE =
 // em vez de cair no meio da avenida.
 const MAPS_QUERY = `${SITE.venue}, ${ADDRESS_LINE}`;
 
-// Mensagem pré-preenchida do WhatsApp (encurta o caminho até o agendamento).
+// Conversão do site = WhatsApp (decisão de 01/11/2026: o formulário saiu).
+// Cada ponto de contato manda uma mensagem pré-preenchida própria: a Ana abre a
+// conversa já sabendo de onde a pessoa veio, e a pessoa não encara um campo vazio.
 const WHATSAPP_MSG = 'Olá, Ana Clara! Vim pelo site e gostaria de agendar uma consulta.';
 
-export const WHATSAPP_URL = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
+/** Link do WhatsApp com mensagem pré-preenchida. */
+export const waLink = (msg: string = WHATSAPP_MSG) =>
+ `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`;
+
+export const WHATSAPP_URL = waLink();
+
+/** Mensagens por formato de atendimento (seletor online/presencial). */
+export const WA_MSG = {
+ online: 'Olá, Ana Clara! Vim pelo site e gostaria de agendar uma consulta online (telenutrição).',
+ presencial: 'Olá, Ana Clara! Vim pelo site e gostaria de agendar uma consulta presencial em Goiânia.',
+ duvida: 'Olá, Ana Clara! Vim pelo site e queria tirar uma dúvida antes de agendar.',
+ valores: 'Olá, Ana Clara! Vim pelo site e gostaria de saber os valores da consulta.',
+} as const;
 export const TEL_URL = `tel:${SITE.phoneE164}`;
 
 // Google Maps sem chave de API: embed por query do local + link para abrir o app.
@@ -123,11 +137,11 @@ export const NAV = [
 ] as const;
 
 // Áreas de atuação (silos), usado na home e no footer.
-export const SILOS = [
- { label: 'Nutrição Comportamental', href: '/nutricao-comportamental/', intro: 'Entenda a sua relação com a comida e construa hábitos que duram.' },
- { label: 'Educação Alimentar', href: '/educacao-alimentar/', intro: 'Aprenda a fazer escolhas com autonomia, sem dietas restritivas.' },
- { label: 'Emagrecimento e Reeducação', href: '/emagrecimento/', intro: 'Reorganize a alimentação pelo comportamento, no seu tempo e sem culpa.' },
- { label: 'Nutrição Esportiva', href: '/nutricao-esportiva/', intro: 'Alimentação alinhada ao seu treino, à sua rotina e ao seu objetivo.' },
- { label: 'Nutrição Clínica', href: '/nutricao-clinica/', intro: 'A alimentação como aliada do seu cuidado, junto à sua equipe de saúde.' },
- { label: 'Saúde Intestinal', href: '/saude-intestinal/', intro: 'Alimentação para o bem-estar digestivo e mais disposição no dia a dia.' },
-] as const;
+export const SILOS: readonly { label: string; href: string; intro: string; img: string }[] = [
+ { label: 'Nutrição Comportamental', href: '/nutricao-comportamental/', intro: 'Entenda a sua relação com a comida e construa hábitos que duram.', img: 'silo-nutricao-comportamental' },
+ { label: 'Educação Alimentar', href: '/educacao-alimentar/', intro: 'Aprenda a fazer escolhas com autonomia, sem dietas restritivas.', img: 'silo-educacao-alimentar' },
+ { label: 'Emagrecimento e Reeducação', href: '/emagrecimento/', intro: 'Reorganize a alimentação pelo comportamento, no seu tempo e sem culpa.', img: 'silo-emagrecimento' },
+ { label: 'Nutrição Esportiva', href: '/nutricao-esportiva/', intro: 'Alimentação alinhada ao seu treino, à sua rotina e ao seu objetivo.', img: 'silo-nutricao-esportiva' },
+ { label: 'Nutrição Clínica', href: '/nutricao-clinica/', intro: 'A alimentação como aliada do seu cuidado, junto à sua equipe de saúde.', img: 'silo-nutricao-clinica' },
+ { label: 'Saúde Intestinal', href: '/saude-intestinal/', intro: 'Alimentação para o bem-estar digestivo e mais disposição no dia a dia.', img: 'silo-saude-intestinal' },
+];

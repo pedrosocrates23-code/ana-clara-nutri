@@ -8,6 +8,8 @@ silo: "saude-intestinal"
 siloLabel: "Saúde Intestinal"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/alimentos-ricos-em-fibras.webp"
+imageAlt: "Tigelas de cerâmica com aveia, grão-de-bico, lentilha, feijão-preto, chia, brócolis, peras, maçãs e batata-doce"
 faqs:
   - q: "Quais alimentos têm mais fibra no dia a dia?"
     a: "Os campeões da mesa brasileira são os feijões e as outras leguminosas, como grão de bico, lentilha e ervilha. Depois vêm os cereais integrais, as frutas comidas com casca ou com bagaço, as verduras e os legumes, e o grupo das castanhas e sementes. Nenhum deles é exótico nem caro. A maior parte já passa pela sua cozinha em alguma refeição da semana."

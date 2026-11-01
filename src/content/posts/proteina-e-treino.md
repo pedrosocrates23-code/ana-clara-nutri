@@ -8,6 +8,8 @@ silo: "nutricao-esportiva"
 siloLabel: "Nutrição Esportiva"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/proteina-e-treino.webp"
+imageAlt: "Alimentos ricos em proteína sobre a mesa: ovos, frango grelhado, peixe, feijão, lentilha, iogurte, tofu e ricota"
 faqs:
   - q: "Quanta proteína eu preciso por dia?"
     a: "Não existe um número igual para todo mundo, e desconfie de quem te dá um sem te conhecer. A quantidade varia conforme o seu peso, o tipo e o volume de treino, o seu objetivo e a sua condição de saúde. É exatamente essa conta que se faz numa consulta, com os seus dados na mesa. O que serve para qualquer pessoa é o passo anterior: garantir uma fonte de proteína em cada refeição do dia."

@@ -1,0 +1,37 @@
+---
+// Imagem responsiva a partir do manifesto gerado por scripts/build-images.mjs.
+// width/height reais no <img> (CLS zero), srcset com todas as larguras geradas e
+// `sizes` informado por quem usa (é o layout que sabe quanto a imagem ocupa).
+// Nome fora do manifesto: não renderiza nada (nunca uma imagem quebrada).
+import manifest from '../data/images.json';
+
+interface Props {
+  name: string;
+  alt: string;
+  sizes?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  /** object-position do recorte (ex.: '70% center') */
+  position?: string;
+}
+const { name, alt, sizes = '100vw', loading = 'lazy', fetchpriority, class: cls, position } = Astro.props;
+const entry = (manifest as Record<string, { width: number; height: number; widths: number[] }>)[name];
+const srcset = entry?.widths.map((w) => `/img/${name}-${w}.webp ${w}w`).join(', ');
+const fallback = entry ? `/img/${name}-${entry.widths.find((w) => w >= 1000) ?? entry.widths.at(-1)}.webp` : '';
+---
+{entry && (
+  <img
+    src={fallback}
+    srcset={srcset}
+    sizes={sizes}
+    alt={alt}
+    width={entry.width}
+    height={entry.height}
+    loading={loading}
+    decoding={loading === 'eager' ? 'sync' : 'async'}
+    fetchpriority={fetchpriority}
+    class={cls}
+    style={position ? `object-position:${position}` : undefined}
+  />
+)}

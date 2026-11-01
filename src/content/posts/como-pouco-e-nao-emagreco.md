@@ -8,6 +8,8 @@ silo: "emagrecimento"
 siloLabel: "Emagrecimento e Reeducação Alimentar"
 datePublished: "2026-09-15"
 medical: true
+image: "/blog/como-pouco-e-nao-emagreco.webp"
+imageAlt: "Prato pequeno com poucas folhas e um copo vazio sobre uma mesa grande de madeira"
 faqs:
   - q: "Por que eu como pouco e não emagreço?"
     a: "Na maioria dos casos, não existe uma causa única. O que costuma acontecer é a soma de dois mecanismos comportamentais: o subrelato alimentar, que é subestimar sem perceber quanto se come de fato, e o ciclo de restringir de dia e compensar à noite. Juntos, esses dois padrões fazem a sensação de 'comer pouco' e a quantidade real comida se afastarem bastante."

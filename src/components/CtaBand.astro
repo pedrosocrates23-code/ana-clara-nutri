@@ -1,0 +1,49 @@
+---
+// Faixa de fechamento das páginas: fundo escuro com foto, pergunta curta e os dois
+// caminhos de agendamento pelo WhatsApp. CFN 856/2026: sem promessa, sem prazo, sem
+// escassez ("vagas limitadas" e afins não entram).
+import Picture from './Picture.astro';
+import Button from './Button.astro';
+import { waLink, WA_MSG } from '../lib/site';
+interface Props {
+  title?: string;
+  text?: string;
+  secao?: string;
+  image?: string;
+}
+const {
+  title = 'Vamos conversar sobre a <em>sua alimentação</em>?',
+  text = 'Agendamento direto pelo WhatsApp, com a própria Ana. Atendimento particular, online para todo o Brasil ou presencial em Goiânia.',
+  secao = 'Faixa final',
+  image = 'pg-agendar',
+} = Astro.props;
+---
+<section class="ctaband" data-wa-secao={secao}>
+  <div class="ctaband__bg" aria-hidden="true"><Picture name={image} alt="" sizes="100vw" class="ctaband__img" /></div>
+  <div class="container ctaband__inner" data-reveal>
+    <span class="kicker">Agendamento</span>
+    <h2 set:html={title} />
+    <p>{text}</p>
+    <div class="ctaband__actions">
+      <Button href={waLink(WA_MSG.online)} variant="light" size="lg" secao={`${secao} · online`} magnetic>Consulta online</Button>
+      <Button href={waLink(WA_MSG.presencial)} variant="outline-light" size="lg" secao={`${secao} · presencial`}>Presencial em Goiânia</Button>
+    </div>
+    <p class="ctaband__note">Prefere perguntar antes? <a href={waLink(WA_MSG.duvida)} data-wa-secao={`${secao} · dúvida`}>Mande sua dúvida</a>, sem compromisso de agendar.</p>
+  </div>
+</section>
+
+<style>
+  .ctaband { position: relative; isolation: isolate; overflow: hidden; background: var(--forest-ink); color: #fff; padding-block: clamp(80px, 11vw, 150px); }
+  .ctaband__bg { position: absolute; inset: 0; z-index: -2; }
+  .ctaband__bg :global(.ctaband__img) { width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+  .ctaband::after { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(90% 120% at 0% 100%, rgba(26, 38, 29, .96) 0%, rgba(26, 38, 29, .7) 55%, rgba(26, 38, 29, .55) 100%); }
+  .ctaband__inner { max-width: calc(820px + 2 * var(--gutter)); }
+  .ctaband .kicker { color: var(--sage-200); }
+  .ctaband h2 { color: #fff; font-size: clamp(2.1rem, 5vw, 3.6rem); margin: 18px 0 0; }
+  .ctaband h2 :global(em) { color: var(--sage-200); font-style: italic; }
+  .ctaband p { color: rgba(255,255,255,.86); font-size: clamp(1rem, 1.5vw, 1.15rem); margin: 18px 0 0; max-width: 560px; }
+  .ctaband__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .ctaband .ctaband__note { font-size: .92rem; color: rgba(255,255,255,.7); margin-top: 22px; }
+  .ctaband__note a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 560px) { .ctaband__actions { display: grid; } .ctaband__actions :global(.btn) { width: 100%; } }
+</style>

@@ -1,0 +1,23 @@
+---
+// Faixa de fatos rápidos logo abaixo do topo: responde em 3 segundos as dúvidas que
+// fazem a pessoa sair da página antes de ler (onde, como, quanto, convênio).
+interface Props { items: { t: string; d: string }[] }
+const { items } = Astro.props;
+---
+<div class="facts">
+  <ul class="container facts__list" role="list">
+    {items.map((f) => (
+      <li><strong>{f.t}</strong><span>{f.d}</span></li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .facts { background: #fff; border-bottom: 1px solid var(--line); }
+  .facts__list { list-style: none; margin-block: 0; display: grid; grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 900px) { .facts__list { grid-template-columns: repeat(4, 1fr); } }
+  .facts__list li { display: grid; gap: 4px; padding: 22px 18px 22px 0; }
+  @media (min-width: 900px) { .facts__list li + li { border-left: 1px solid var(--line); padding-left: 24px; } }
+  .facts strong { font-family: var(--serif); font-weight: 400; font-size: 1.2rem; line-height: 1.2; }
+  .facts span { color: var(--ink-faint); font-size: .86rem; }
+</style>

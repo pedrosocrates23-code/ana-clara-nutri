@@ -1,20 +1,27 @@
 ---
-import { SITE, CRN_SUFIXO } from '../lib/site';
+import { SITE, CRN_SUFIXO, FOTO_ANA } from '../lib/site';
+import manifest from '../data/images.json';
+const temRetrato = Boolean((manifest as Record<string, unknown>)['ana-clara-retrato']);
 ---
 <aside class="author">
-  <img src="/logo-aca.png" alt="" width="48" height="48" class="author__img" />
+  {temRetrato
+    ? <img src="/img/ana-clara-retrato-480.webp" alt="" width="64" height="64" class="author__img" loading="lazy" />
+    : <img src={FOTO_ANA} alt="" width="64" height="64" class="author__img" loading="lazy" />}
   <div>
+    <p class="author__kicker">Quem escreve</p>
     <p class="author__name">{SITE.legalName}</p>
-    <p class="author__meta">Nutricionista{CRN_SUFIXO} · abordagem comportamental e educacional</p>
+    <p class="author__meta">Nutricionista{CRN_SUFIXO}, formada pela UFG · abordagem comportamental e educacional</p>
     <a class="author__link" href="/sobre">Conheça meu trabalho →</a>
   </div>
 </aside>
 
 <style>
-  .author { display: flex; gap: 14px; align-items: center; background: var(--paper-2);
-    border: 1px solid var(--line); border-radius: var(--r-lg); padding: 18px 20px; margin-top: 36px; }
-  .author__img { border-radius: 50%; background: #fff; flex: 0 0 48px; }
-  .author__name { font-family: var(--serif); font-size: 1.1rem; margin: 0; }
-  .author__meta { font-size: .85rem; color: var(--ink-soft); margin: 2px 0 6px; }
-  .author__link { font-size: .85rem; font-weight: 600; color: var(--sage-700); }
+  .author { display: flex; gap: 18px; align-items: center; background: #fff;
+    border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 24px; margin-top: 48px; box-shadow: var(--shadow-sm); }
+  .author__img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: center 18%; flex: 0 0 64px; }
+  .author__kicker { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 4px; }
+  .author__name { font-family: var(--serif); font-size: 1.25rem; margin: 0; line-height: 1.2; }
+  .author__meta { font-size: .86rem; color: var(--ink-soft); margin: 4px 0 8px; }
+  .author__link { font-size: .88rem; font-weight: 650; color: var(--sage-700); text-decoration: none; }
+  .author__link:hover { text-decoration: underline; }
 </style>

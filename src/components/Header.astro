@@ -1,91 +1,218 @@
 ---
-import Button from './Button.astro';
-import { NAV, SITE } from '../lib/site';
-interface Props { overHero?: boolean }
-const { overHero = false } = Astro.props;
-const current = Astro.url.pathname;
+/**
+ * Header no padrão do projeto D-Sci (d-sci-consulting-site/src/components/Header.astro),
+ * na paleta da Ana Clara: logo à esquerda e barra de "vidro" flutuante à direita
+ * (blur + saturação, borda de luz). Ao rolar, a logo sai e o item "Início" entra na barra.
+ *
+ * Celular/tablet (até 1080px): menu de 3 painéis (links grandes, cartão de agendamento pelo
+ * WhatsApp e rodapé), que entram pela direita com GSAP (src/scripts/menu.ts) e voltam pelo
+ * mesmo caminho ao fechar.
+ *
+ * tone="image": header claro sobre foto escura (home). tone="light": sobre fundo claro.
+ */
+import { NAV, SITE, CRN, HAS_CRN, waLink, WA_MSG, HAS_INSTAGRAM } from '../lib/site';
+
+interface Props { tone?: 'image' | 'light' }
+const { tone = 'light' } = Astro.props;
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const norm = (h: string) => h.replace(/\/+$/, '') || '/';
+const isCurrent = (href: string) => {
+  const h = norm(href);
+  return h === '/' ? current === '/' : current === h || current.startsWith(`${h}/`);
+};
+const links = NAV.filter((i) => i.href !== '/');
+const waHeader = waLink();
 ---
-<header class:list={['site-header', overHero && 'over-hero']} data-header>
- <div class="container bar">
- <a href="/" class="brand" aria-label={`${SITE.name}, início`}>
- <img src="/logo-aca.png" alt="" width="36" height="36" class="brand__mark" />
- <span class="brand__wm"><em>Ana&nbsp;Clara</em> <b>Nutri</b></span>
- </a>
+<header class:list={['site-header', `site-header--${tone}`]} data-header>
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label={`${SITE.name}, início`}>
+      <img src="/logo-aca.png" alt="" width="38" height="38" class="logo__mark" />
+      <span class="logo__wm"><em>Ana&nbsp;Clara</em> <b>Nutri</b></span>
+    </a>
 
- <nav class="nav" aria-label="Navegação principal">
- {NAV.map((item) => (
- <a href={item.href}
- class:list={['nav__link', current === item.href && 'is-active']}
- aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
- ))}
- </nav>
+    <nav class="glassbar" aria-label="Navegação principal">
+      <a href="/" class="glassbar__home" tabindex="-1"><span>Início</span></a>
+      {links.map((item) => (
+        <a href={item.href} class:list={['glassbar__link', { 'is-active': isCurrent(item.href) }]} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+          {item.label}
+        </a>
+      ))}
+      <span class="magnet-zone">
+        <a href={waHeader} class="glassbar__cta" target="_blank" rel="noopener" data-magnetic data-wa-secao="Header">
+          <span class="wa-ico" aria-hidden="true"></span>Agendar
+        </a>
+      </span>
+    </nav>
 
- <div class="cta"><Button href="/contato" variant="clay" size="sm">Agendar</Button></div>
-
- <button class="burger" aria-label="Abrir menu" aria-expanded="false" data-burger>
- <span></span><span></span><span></span>
- </button>
- </div>
-
- <nav class="mobile-nav" data-mobile-nav aria-label="Menu">
- {NAV.map((item) => <a href={item.href} class="mobile-nav__link">{item.label}</a>)}
- <Button href="/contato" variant="clay">Agendar consulta</Button>
- </nav>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu" data-burger>
+      <span class="burger__bar" data-bar></span>
+      <span class="burger__bar" data-bar></span>
+      <span class="burger__bar" data-bar></span>
+    </button>
+  </div>
 </header>
 
-<script>
- const burger = document.querySelector('[data-burger]');
- const menu = document.querySelector('[data-mobile-nav]');
- burger?.addEventListener('click', () => {
- const open = menu?.classList.toggle('open');
- burger.setAttribute('aria-expanded', String(!!open));
- });
-</script>
+<!-- Menu do celular/tablet: 3 painéis empilhados -->
+<div class="mnav" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" data-mnav hidden>
+  <div class="mnav__backdrop" data-mnav-backdrop></div>
+  <div class="mnav__stack">
+    <nav class="mnav__panel mnav__panel--links" aria-label="Menu" data-mnav-panel>
+      <ul>
+        {NAV.map((item) => (
+          <li><a href={item.href} data-mnav-link class:list={{ 'is-active': isCurrent(item.href) }} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="mnav__panel mnav__panel--cta" data-mnav-panel>
+      <p class="mnav__cta-title">Vamos conversar sobre a sua alimentação?</p>
+      <p class="mnav__cta-text">Agendamento direto pelo WhatsApp. Online para todo o Brasil ou presencial em Goiânia.</p>
+      <div class="mnav__cta-row">
+        <a class="mnav__cta-btn" href={waLink(WA_MSG.online)} target="_blank" rel="noopener" data-wa-secao="Menu celular · online">Online</a>
+        <a class="mnav__cta-btn" href={waLink(WA_MSG.presencial)} target="_blank" rel="noopener" data-wa-secao="Menu celular · presencial">Presencial</a>
+      </div>
+    </div>
+    <div class="mnav__panel mnav__panel--foot" data-mnav-panel>
+      <span>{HAS_CRN ? CRN : 'Nutricionista'} · Goiânia e online</span>
+      <span class="mnav__foot-links">
+        {HAS_INSTAGRAM && <a href={SITE.social.instagram} rel="me noopener" target="_blank">Instagram</a>}
+        <a href="/contato">Contato</a>
+        <a href="/politica-de-privacidade">Privacidade</a>
+      </span>
+    </div>
+  </div>
+</div>
 
 <style>
- .site-header {
- position: sticky; top: 0; z-index: 50;
- background: var(--paper); border-bottom: 1px solid var(--line);
- transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
- }
- /* sobre o hero full-bleed: transparente até rolar */
- .site-header.over-hero { position: fixed; left: 0; right: 0; background: transparent; border-color: transparent; }
- .site-header.over-hero :global(.brand__wm),
- .site-header.over-hero .nav__link { color: #fff; }
- .site-header.over-hero.is-solid {
- position: fixed; background: var(--paper); border-color: var(--line); box-shadow: var(--shadow-sm);
- }
- .site-header.over-hero.is-solid :global(.brand__wm),
- .site-header.over-hero.is-solid .nav__link { color: var(--ink); }
- .site-header.is-solid { box-shadow: var(--shadow-sm); }
+  .site-header { position: fixed; inset: 0 0 auto; z-index: 60; padding: 16px 0; pointer-events: none; }
+  .site-header__inner {
+    width: min(var(--maxw), 100% - 2 * var(--gutter)); margin-inline: auto; height: 48px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .site-header__logo, .glassbar, .burger { pointer-events: auto; }
 
- .bar { display: flex; align-items: center; gap: 18px; height: var(--header-h); }
- .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
- .brand__mark { border-radius: 8px; }
- .brand__wm { font-family: var(--serif); font-size: 1.25rem; line-height: 1; color: var(--ink); }
- .brand__wm em { font-style: italic; }
- .brand__wm b { font-weight: 400; }
+  /* ---------- Logo ---------- */
+  .site-header__logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: opacity .3s, visibility .3s; }
+  .logo__mark { border-radius: 10px; background: rgba(255,255,255,.92); padding: 2px; }
+  .logo__wm { font-family: var(--serif); font-size: 1.32rem; line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
+  .logo__wm em { font-style: italic; }
+  .logo__wm b { font-weight: 400; }
+  .site-header--image .logo__wm { color: #fff; }
+  .site-header--light .logo__wm { color: var(--ink); }
+  .is-scrolled .site-header__logo { opacity: 0; visibility: hidden; }
 
- .nav { display: none; gap: 4px; margin-left: auto; }
- .nav__link { font-size: .9rem; font-weight: 500; color: var(--ink-soft); padding: 8px 10px; border-radius: 8px; text-decoration: none; }
- .nav__link:hover { background: var(--sage-50); color: var(--sage-700); text-decoration: none; }
- .nav__link.is-active { color: var(--sage-700); }
- .cta { display: none; }
+  /* ---------- Barra de vidro (desktop) ---------- */
+  .glassbar {
+    display: flex; align-items: center; gap: 2px; margin-left: auto;
+    padding: 6px 6px 6px 8px;
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(22px) saturate(170%);
+    backdrop-filter: blur(22px) saturate(170%);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: var(--glass-shine), 0 12px 40px -18px rgba(26, 38, 29, .6);
+    font-family: var(--sans);
+    transition: background .3s;
+  }
+  .site-header--light .glassbar, .is-scrolled .glassbar { background: var(--glass-bg-strong); }
+  .glassbar a { text-decoration: none; }
+  .glassbar__link, .glassbar__home span {
+    display: inline-flex; align-items: center; padding: 9px 13px; border-radius: 8px;
+    font-size: 14.5px; font-weight: 500; letter-spacing: -.005em; color: rgba(255, 255, 255, .86); white-space: nowrap;
+    transition: color .18s, background .18s;
+  }
+  .glassbar__link:hover { color: #fff; background: rgba(255, 255, 255, .12); }
+  .glassbar__link.is-active { color: #fff; background: rgba(255, 255, 255, .14); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12); }
+  .glassbar__home {
+    display: grid; grid-template-columns: 0fr; overflow: hidden; opacity: 0; visibility: hidden; margin-right: -2px;
+    transition: grid-template-columns .45s var(--ease-out), opacity .2s, visibility 0s linear .45s, margin .45s var(--ease-out);
+  }
+  .glassbar__home span { min-width: 0; color: #fff; }
+  .is-scrolled .glassbar__home {
+    grid-template-columns: 1fr; opacity: 1; visibility: visible; margin-right: 0;
+    transition: grid-template-columns .45s var(--ease-out), opacity .3s .12s, visibility 0s, margin .45s var(--ease-out);
+  }
+  .glassbar__home:hover span { background: rgba(255, 255, 255, .12); }
+  .magnet-zone { display: inline-flex; padding: 0 0 0 6px; }
+  .glassbar__cta {
+    display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 8px;
+    font-size: 14.5px; font-weight: 650; letter-spacing: -.005em; white-space: nowrap;
+    color: var(--forest-ink); background: var(--sage-200);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45); will-change: transform;
+    transition: background .2s, box-shadow .3s;
+  }
+  .glassbar__cta:hover { background: #fff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 8px 24px -10px rgba(187, 208, 182, .9); }
+  .wa-ico { width: 16px; height: 16px; flex: none; background: currentColor; -webkit-mask: var(--wa-icon) center / contain no-repeat; mask: var(--wa-icon) center / contain no-repeat; }
 
- .burger { margin-left: auto; display: inline-flex; flex-direction: column; gap: 5px; background: none; border: 0; padding: 8px; cursor: pointer; }
- .burger span { width: 22px; height: 2px; background: currentColor; border-radius: 2px; }
- .over-hero .burger { color: #fff; }
- .over-hero.is-solid .burger { color: var(--ink); }
+  /* ---------- Hambúrguer ---------- */
+  .burger, .mnav { display: none; }
 
- .mobile-nav { display: none; flex-direction: column; gap: 6px; padding: 12px 20px 20px; background: var(--paper); border-bottom: 1px solid var(--line); }
- .mobile-nav.open { display: flex; }
- .mobile-nav__link { padding: 10px; border-radius: 8px; color: var(--ink); font-weight: 500; }
- .mobile-nav__link:hover { background: var(--sage-50); text-decoration: none; }
+  @media (max-width: 1080px) {
+    .site-header { padding: 12px 0; transition: padding .35s var(--ease-out); }
+    .site-header__inner { width: calc(100% - 32px); transition: width .35s var(--ease-out); }
+    .is-scrolled .site-header__logo { opacity: 1; visibility: visible; }
+    .site-header::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: rgba(26, 38, 29, .72); -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid rgba(255, 255, 255, .1); opacity: 0; transition: opacity .3s;
+    }
+    .site-header--light::before { background: rgba(250, 248, 243, .86); border-bottom-color: var(--line); }
+    .is-scrolled::before, .site-header--light::before { opacity: 1; }
+    .is-scrolled.site-header--light .logo__wm { color: var(--ink); }
+    .is-open::before { opacity: 0; }
+    .site-header.is-open { padding-top: 32px; }
+    .site-header.is-open .site-header__inner { width: calc(100% - 64px); }
+    .glassbar { display: none; }
 
- @media (min-width: 960px) {
- .nav { display: flex; }
- .cta { display: block; }
- .burger { display: none; }
- .mobile-nav { display: none !important; }
- }
+    .burger {
+      position: relative; display: grid; place-content: center; gap: 4.4px; width: 46px; height: 44px; border-radius: 12px; cursor: pointer;
+      background: rgba(255, 255, 255, .12); border: 1px solid var(--glass-border); color: #fff;
+      -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); transition: background .3s, color .3s;
+    }
+    .site-header--light .burger { background: var(--sage-800); }
+    .burger__bar { display: block; width: 20px; height: 1.6px; background: currentColor; border-radius: 2px; }
+    .is-open .burger { background: var(--sage-800); color: #fff; border-color: transparent; }
+
+    /* ---------- Painéis ---------- */
+    .mnav { display: block; position: fixed; inset: 0; z-index: 55; }
+    .mnav[hidden] { display: none; }
+    .mnav__backdrop { position: absolute; inset: 0; background: rgba(26, 38, 29, .6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+    .mnav__stack {
+      position: absolute; top: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); left: 12px;
+      display: grid; grid-template-rows: 1fr auto auto; gap: 8px; pointer-events: none;
+    }
+    .mnav__panel { pointer-events: auto; border-radius: var(--r-lg); will-change: transform; }
+    .mnav__panel--links { background: var(--paper); padding: 92px 22px 18px; overflow-y: auto; }
+    .mnav__panel--links ul { list-style: none; display: grid; margin: 0; padding: 0; }
+    .mnav__panel--links li + li { border-top: 1px solid var(--line); }
+    .mnav__panel--links a {
+      display: block; padding: 12px 0; text-decoration: none;
+      font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 6.4vw, 2.1rem); letter-spacing: -.025em; line-height: 1.15;
+      color: var(--ink); transition: color .2s;
+    }
+    .mnav__panel--links a:hover, .mnav__panel--links a.is-active { color: var(--sage-600); font-style: italic; }
+
+    .mnav__panel--cta { display: grid; gap: 8px; padding: 20px 22px 22px; background: var(--sage-200); color: var(--forest-ink); }
+    .mnav__cta-title { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; letter-spacing: -.015em; margin: 0; }
+    .mnav__cta-text { font-size: .95rem; color: var(--sage-900); margin: 0; }
+    .mnav__cta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .mnav__cta-btn {
+      display: inline-flex; justify-content: center; align-items: center; padding: 13px 12px; border-radius: 999px;
+      background: var(--forest-ink); color: #fff; font-weight: 650; font-size: .95rem; text-decoration: none;
+    }
+    .mnav__panel--foot {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 14px 22px;
+      background: var(--forest-ink); color: var(--sand-100); font-size: .82rem;
+    }
+    .mnav__foot-links { display: flex; gap: 16px; }
+    .mnav__foot-links a { color: #fff; text-decoration: none; }
+    .mnav__foot-links a:hover { text-decoration: underline; }
+  }
+  /* Celular: o painel claro passa por baixo da logo, que fica escura com o menu aberto */
+  @media (max-width: 640px) {
+    .is-open .logo__wm { color: var(--ink) !important; }
+  }
+  /* Tablet: o menu vira uma coluna à direita */
+  @media (min-width: 641px) and (max-width: 1080px) {
+    .mnav__stack { left: auto; width: min(460px, calc(100% - 32px)); }
+  }
 </style>

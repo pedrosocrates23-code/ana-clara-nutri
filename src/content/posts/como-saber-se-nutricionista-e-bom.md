@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-12"
 medical: true
 image: "/blog/como-saber-se-nutricionista-e-bom.webp"
-imageAlt: "Nutricionista conversando com paciente durante consulta"
+imageAlt: "Escrivaninha organizada com fruteira de maçãs, jarra de água, caderno fechado e caneta, com um quadro em branco na parede"
 faqs:
   - q: "Como eu verifico se um nutricionista tem registro?"
     a: "Todo nutricionista habilitado tem um número de inscrição no Conselho Regional de Nutricionistas (CRN), que costuma aparecer no site ou no perfil dele. Você confere esse número na consulta de cadastro do conselho da região, buscando por nome, número de inscrição, sobrenome ou CPF. Se a situação aparecer como inativa, o profissional não está apto a exercer."

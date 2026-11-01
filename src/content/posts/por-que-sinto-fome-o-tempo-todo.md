@@ -9,7 +9,7 @@ siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-23"
 medical: true
 image: "/blog/por-que-sinto-fome-o-tempo-todo.webp"
-imageAlt: "Tigela de aveia com frutas no café da manhã, sobre a mesa"
+imageAlt: "Geladeira aberta à noite com alimentos frescos em potes de vidro, iluminando a cozinha escura"
 faqs:
   - q: "Por que sinto fome o tempo todo?"
     a: "Sentir fome constante costuma ter causas concretas: sono insuficiente, refeições pobres em proteína e fibra, excesso de ultraprocessados, oscilações da glicose no sangue e, com muita frequência, dietas restritivas que aumentam os sinais de fome. Raramente é falta de força de vontade. Entender qual é a sua causa é o que permite reorganizar a alimentação com um nutricionista."

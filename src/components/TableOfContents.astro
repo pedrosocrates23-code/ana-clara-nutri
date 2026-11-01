@@ -1,12 +1,6 @@
 ---
-interface Heading {
-  depth: number;
-  slug: string;
-  text: string;
-}
-interface Props {
-  headings: Heading[];
-}
+interface Heading { depth: number; slug: string; text: string }
+interface Props { headings: Heading[] }
 
 const { headings } = Astro.props;
 // Só H2 no sumário: sucinto, sem subitens de H3.
@@ -14,36 +8,49 @@ const items = headings.filter((h) => h.depth === 2);
 ---
 
 {items.length > 0 && (
-  <nav class="toc" aria-label="Sumário do artigo">
-    <ul class="toc__list">
+  <nav class="toc" aria-label="Sumário do artigo" data-toc>
+    <p class="toc__title">Neste artigo</p>
+    <ol class="toc__list">
       {items.map((h) => (
-        <li class="toc__item">
-          <a href={`#${h.slug}`}>{h.text}</a>
-        </li>
+        <li class="toc__item"><a href={`#${h.slug}`} data-toc-link={h.slug}>{h.text}</a></li>
       ))}
-    </ul>
+    </ol>
   </nav>
 )}
 
+<script>
+  // Destaca no sumário a seção que está sendo lida (IntersectionObserver, sem ler scroll).
+  const toc = document.querySelector('[data-toc]');
+  if (toc && 'IntersectionObserver' in window) {
+    const links = new Map([...toc.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')].map((a) => [a.dataset.tocLink!, a]));
+    const alvos = [...links.keys()].map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    let atual = '';
+    const marcar = (id: string) => {
+      if (id === atual) return;
+      atual = id;
+      links.forEach((a, k) => a.classList.toggle('is-current', k === id));
+    };
+    const io = new IntersectionObserver((entries) => {
+      const visiveis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visiveis[0]) marcar(visiveis[0].target.id);
+    }, { rootMargin: '-20% 0px -65% 0px' });
+    alvos.forEach((el) => io.observe(el));
+  }
+</script>
+
 <style>
-  .toc__list {
-    list-style: disc;
-    margin: 0;
-    padding-left: 1.1em;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+  .toc { border-left: 1px solid var(--line); padding-left: 18px; }
+  .toc__title { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-faint); margin: 0 0 14px; }
+  .toc__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; counter-reset: toc; max-height: calc(100vh - 380px); overflow-y: auto; }
   .toc__item a {
-    font-size: .92rem;
-    line-height: 1.4;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    position: relative; display: block; padding: 6px 0; font-size: .9rem; line-height: 1.4; color: var(--ink-soft); text-decoration: none;
+    transition: color .25s;
   }
-  .toc__item a:hover,
-  .toc__item a:focus-visible {
-    color: var(--sage-700);
+  .toc__item a::before {
+    content: ''; position: absolute; left: -19px; top: 8px; bottom: 8px; width: 2px; background: var(--sage-600);
+    transform: scaleY(0); transition: transform .4s var(--ease-out);
   }
+  .toc__item a:hover { color: var(--ink); }
+  .toc__item a.is-current { color: var(--sage-800); font-weight: 600; }
+  .toc__item a.is-current::before { transform: scaleY(1); }
 </style>

@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Button from '../../components/Button.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { waLink } from '../../lib/site';
 import { buildGraph } from '../../lib/schema/shared';
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Receitas', href: '/receitas/' }];
 const graph = buildGraph({ path: '/receitas/', title: 'Receitas | Ana Clara Nutri', type: 'CollectionPage', breadcrumb });
@@ -11,17 +13,27 @@ const graph = buildGraph({ path: '/receitas/', title: 'Receitas | Ana Clara Nutr
  description="Receitas práticas e equilibradas para o dia a dia, com ingredientes acessíveis e sem complicação."
  path="/receitas/" graph={graph}>
  <PageHero kicker="Conteúdo" title="Receitas para o dia a dia"
- sub="Ideias práticas para comer bem sem complicar a rotina, com ingredientes acessíveis." breadcrumb={breadcrumb} />
+ sub="Ideias práticas para comer bem sem complicar a rotina, com ingredientes acessíveis." breadcrumb={breadcrumb}
+ image="pg-receitas" imageAlt="Bancada de cozinha vista de cima com tábua de legumes picados, tigela de grãos, azeite, limões e ervas frescas" />
 
  <section class="section">
- <div class="container">
+ <div class="container embreve">
+ <span class="kicker">Em preparação</span>
  <p class="lead">Estou preparando uma seção de receitas com carinho, práticas, equilibradas e fáceis de encaixar na sua rotina. Em breve, novas receitas por aqui.</p>
- <p>Enquanto isso, que tal um acompanhamento individual para uma alimentação que faça sentido para você?</p>
- <Button href="/contato" variant="clay">Agendar consulta</Button>
+ <p>Enquanto isso, o blog tem textos que já ajudam a organizar a cozinha do dia a dia.</p>
+ <div class="embreve__actions">
+ <Button href="/educacao-alimentar/como-melhorar-a-alimentacao-em-casa" variant="outline">Como melhorar a alimentação em casa</Button>
+ <Button href={waLink('Olá, Ana Clara! Vim pela página de receitas e gostaria de entender como funciona o acompanhamento.')} variant="whatsapp" secao="Receitas · em breve">Conversar com a Ana</Button>
+ </div>
  </div>
  </section>
+
+ <CtaBand secao="Receitas · faixa final" image="pg-receitas" />
 </BaseLayout>
 
 <style>
- .lead { font-size: 1.1rem; color: var(--ink-soft); max-width: var(--maxw-prose); }
+ .embreve { max-width: calc(760px + 2 * var(--gutter)); }
+ .lead { font-family: var(--serif); font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.3; color: var(--ink); max-width: none; margin-top: 16px; }
+ .embreve p:not(.lead) { color: var(--ink-soft); }
+ .embreve__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
 </style>

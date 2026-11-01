@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-23"
 medical: true
 image: "/blog/quais-problemas-um-nutricionista-resolve.webp"
-imageAlt: "Variedade de alimentos integrais, grãos e legumes sobre a mesa"
+imageAlt: "Tigelas de cerâmica enfileiradas sobre linho, cada uma com um alimento diferente, vistas de cima"
 faqs:
   - q: "O nutricionista só serve para quem quer emagrecer?"
     a: "Não. O nutricionista cuida da alimentação em situações como colesterol e glicemia alterados, compulsão e comer emocional, desconforto intestinal e alimentação para quem treina. Em muitos desses casos, peso nem é o assunto principal."

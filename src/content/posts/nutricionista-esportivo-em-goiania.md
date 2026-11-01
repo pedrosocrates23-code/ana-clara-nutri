@@ -8,6 +8,8 @@ silo: "nutricao-esportiva"
 siloLabel: "Nutrição Esportiva"
 datePublished: "2026-08-11"
 medical: true
+image: "/blog/nutricionista-esportivo-em-goiania.webp"
+imageAlt: "Banco de praça com bolsa de treino, garrafa de água, banana e marmita de arroz com frango sob ipês-amarelos ao entardecer"
 faqs:
   - q: "Preciso ser atleta para procurar acompanhamento de nutrição esportiva em Goiânia?"
     a: "Não. A maior parte de quem busca esse acompanhamento treina três ou quatro vezes por semana, trabalha o dia inteiro e não compete com ninguém. O critério não é o nível da sua performance, e sim a existência de um treino regular que a sua alimentação precisa sustentar. Treino frequente muda o que o corpo pede, independentemente de você ter medalha."

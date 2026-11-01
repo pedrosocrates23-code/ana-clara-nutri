@@ -10,7 +10,7 @@ datePublished: "2026-07-15"
 dateModified: "2026-09-22"
 medical: true
 image: "/blog/nutricionista-sem-dieta-restritiva.webp"
-imageAlt: "Variedade de frutas e vegetais coloridos sobre a mesa"
+imageAlt: "Mesa farta com salada, legumes assados, grãos, frutas e uma fatia de bolo em louças artesanais"
 faqs:
   - q: "Nutricionista que não passa dieta restritiva ajuda a emagrecer?"
     a: "O foco do acompanhamento com abordagem comportamental é a sua relação com a comida e a construção de hábitos que você consiga sustentar, não um número na balança dentro de um prazo. Mudanças de peso podem acontecer ao longo do processo, mas não são prometidas nem garantidas, e nenhuma nutricionista pode prometer isso: o Código de Ética da profissão proíbe. O objetivo declarado é a sua autonomia."

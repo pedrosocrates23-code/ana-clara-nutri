@@ -8,6 +8,8 @@ silo: "educacao-alimentar"
 siloLabel: "Educação Alimentar"
 datePublished: "2026-09-15"
 medical: true
+image: "/blog/como-saber-em-quem-confiar-em-nutricao.webp"
+imageAlt: "Lupa sobre uma folha em branco ao lado de uma tigela de frutas e uma xícara de chá"
 faqs:
   - q: "Como eu confirmo se um nutricionista tem registro ativo?"
     a: "Você confirma na consulta pública do Conselho Regional de Nutricionistas da região onde esse profissional atua, buscando por nome, CPF ou número de inscrição. O retorno mostra a situação do registro, e só quando ela aparece como ativa o profissional está apto a exercer."

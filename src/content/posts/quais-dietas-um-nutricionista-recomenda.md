@@ -9,7 +9,7 @@ siloLabel: "Emagrecimento e Reeducação Alimentar"
 datePublished: "2026-07-23"
 medical: false
 image: "/blog/quais-dietas-um-nutricionista-recomenda.webp"
-imageAlt: "Prato colorido e equilibrado com legumes variados"
+imageAlt: "Pilha de livros de capa lisa ao lado de um prato equilibrado com salmão, grãos e legumes"
 faqs:
   - q: "Qual dieta o nutricionista recomenda para emagrecer?"
     a: "Um nutricionista não recomenda uma dieta única igual para todo mundo. Ele avalia a sua saúde, o seu histórico, a sua rotina e as suas preferências e, a partir disso, monta um plano alimentar individual, que ajusta ao longo do acompanhamento. A dieta certa é a que nasce da sua avaliação, não a que está na moda."

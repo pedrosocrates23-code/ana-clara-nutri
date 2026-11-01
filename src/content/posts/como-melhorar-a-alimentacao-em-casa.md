@@ -9,7 +9,7 @@ siloLabel: "Educação Alimentar"
 datePublished: "2026-07-23"
 medical: false
 image: "/blog/como-melhorar-a-alimentacao-em-casa.webp"
-imageAlt: "Preparo de ingredientes frescos numa cozinha em casa"
+imageAlt: "Panela de sopa no fogão, legumes picados na tábua, tigela de arroz e vasos de ervas na janela da cozinha"
 faqs:
   - q: "Como melhorar a alimentação em casa sem fazer dieta?"
     a: "Comece pelo ambiente e pelo hábito, não por uma lista de regras. Planeje as compras da semana, deixe a comida de verdade lavada e à vista, e estruture refeições que você monta conforme o dia. É educação alimentar: construir hábito e autonomia, sem cardápio fechado."

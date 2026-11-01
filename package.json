@@ -8,7 +8,8 @@
     "build": "astro build",
     "check:cfn": "node scripts/check-cfn.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "images": "node scripts/build-images.mjs"
   },
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.1.0",

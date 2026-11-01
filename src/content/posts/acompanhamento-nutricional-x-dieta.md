@@ -8,6 +8,8 @@ silo: "educacao-alimentar"
 siloLabel: "Educação Alimentar"
 datePublished: "2026-09-22"
 medical: false
+image: "/blog/acompanhamento-nutricional-x-dieta.webp"
+imageAlt: "Caminho de pedras atravessando uma horta com ervas e hortaliças sob a luz da manhã"
 faqs:
   - q: "Acompanhamento nutricional é a mesma coisa que dieta?"
     a: "Não. Dieta costuma ser um documento fechado, entregue uma vez. Acompanhamento nutricional é um processo contínuo, com consultas de retorno, ajuste e ensino ao longo do tempo."

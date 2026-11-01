@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-11"
 medical: false
 image: "/blog/diferenca-entre-nutricionista-e-nutrologo.webp"
-imageAlt: "Consultório médico com mesa de atendimento"
+imageAlt: "Tigela de alimentos frescos ao lado de uma pasta de couro verde com um estetoscópio sobre a mesa"
 faqs:
   - q: "Nutrólogo é a mesma coisa que nutricionista?"
     a: "Não. O nutrólogo é médico (CRM) com especialização em Nutrologia; o nutricionista é formado em Nutrição (CRN). São profissões diferentes, com atribuições diferentes."

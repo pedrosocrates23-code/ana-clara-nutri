@@ -8,6 +8,8 @@ silo: "nutricao-clinica"
 siloLabel: "Nutrição Clínica"
 datePublished: "2026-08-22"
 medical: true
+image: "/blog/glicemia-de-jejum-alterada-o-que-comer.webp"
+imageAlt: "Prato de café da manhã com ovos, pão integral, queijo, tomates e rúcula, tigela de frutas vermelhas e caneca de café"
 faqs:
   - q: "Glicemia de jejum 105 já é diabetes?"
     a: "Não. Um valor de glicemia de jejum entre 100 e 125 mg/dL entra na faixa que costuma ser chamada de glicemia de jejum alterada, e não é, sozinho, um diagnóstico de diabetes. O diagnóstico depende de mais critérios, de repetição do exame e da avaliação do médico que pediu o exame. O número acende um alerta, quem fecha o quadro é a consulta médica."

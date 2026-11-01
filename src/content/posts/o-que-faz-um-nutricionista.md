@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-23"
 medical: false
 image: "/blog/o-que-faz-um-nutricionista.webp"
-imageAlt: "Nutricionista fazendo anotações durante uma consulta"
+imageAlt: "Sala clara com mesa de madeira, fruteira, caderno aberto e cadeiras estofadas"
 faqs:
   - q: "O que um nutricionista faz, afinal?"
     a: "Cuida da sua alimentação por meio de quatro trabalhos que se somam: avaliação nutricional, plano alimentar individualizado, educação alimentar para você ganhar autonomia e acompanhamento da evolução com retornos e ajustes. É o profissional graduado em Nutrição e registrado no CRN."

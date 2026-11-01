@@ -9,7 +9,7 @@ siloLabel: "Emagrecimento e Reeducação Alimentar"
 datePublished: "2026-07-18"
 medical: true
 image: "/blog/vale-a-pena-pagar-nutricionista-emagrecer.webp"
-imageAlt: "Nutricionista apresentando refeição saudável durante consulta"
+imageAlt: "Prateleira de cozinha com potes de grãos, cesta de hortaliças, utensílios de madeira e um livro de capa lisa"
 faqs:
   - q: "Afinal, vale a pena pagar nutricionista para emagrecer?"
     a: "Vale a pena quando o que você procura é acompanhamento: avaliação individual, plano ajustado à sua rotina real e retornos que corrigem a rota ao longo do tempo. Pode não valer se você quer apenas um cardápio pontual, porque cardápio existe de graça e é bem parecido com o pago. A diferença está em quem responde quando o papel encontra a sua vida e não funciona."

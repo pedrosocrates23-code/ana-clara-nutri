@@ -9,7 +9,7 @@ siloLabel: "Blog"
 datePublished: "2026-07-23"
 medical: false
 image: "/blog/quando-procurar-um-nutricionista.webp"
-imageAlt: "Mulher pensativa com um café, junto à janela com luz da manhã"
+imageAlt: "Calendário de parede em branco ao fundo de uma fruteira e uma xícara sobre a mesa ensolarada"
 faqs:
   - q: "Quando é a hora certa de procurar um nutricionista?"
     a: "A hora costuma ser quando a alimentação vira fonte de dúvida, desconforto ou frustração, e não só quando você quer emagrecer. Um exame alterado, cansaço, desconforto intestinal, uma relação difícil com a comida ou o cansaço de dietas que não duram já são motivos suficientes. Você não precisa esperar um problema grande para começar a cuidar."

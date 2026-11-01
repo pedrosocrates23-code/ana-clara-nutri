@@ -9,7 +9,7 @@ siloLabel: "Nutrição Comportamental"
 datePublished: "2026-07-17"
 medical: true
 image: "/blog/psicologo-ou-nutricionista-ansiedade.webp"
-imageAlt: "Pessoa tomando chá em momento tranquilo"
+imageAlt: "Duas poltronas de linho voltadas uma para a outra, com mesinha de madeira, xícara de chá e fruteira"
 faqs:
   - q: "Comer por ansiedade é falta de força de vontade?"
     a: "Não. Comer por ansiedade é um comportamento com gatilhos, ligado ao jeito como você lida com as emoções e, muitas vezes, a um histórico de restrição alimentar. Isso não é questão de caráter. Tratar como fraqueza moral só aumenta a culpa, e a culpa faz parte do que mantém o ciclo girando."

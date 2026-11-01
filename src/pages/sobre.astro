@@ -4,7 +4,8 @@ import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
 import Button from '../components/Button.astro';
 import AreasGrid from '../components/AreasGrid.astro';
-import { SITE, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, HAS_CRN, CRN, CRN_SUFIXO, FOTO_ANA_TEXTOS } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
 
 const faqs = [
@@ -29,18 +30,22 @@ const creds = [
  description={`Ana Clara Andrade Santos, nutricionista formada pela UFG${CRN_SUFIXO}, com mais de 4 anos de experiência em nutrição clínica hospitalar e ambulatorial. Atendimento particular em Goiânia e online.`}
  path="/sobre" graph={graph}>
  <PageHero kicker={HAS_CRN ? `Nutricionista · ${CRN}` : 'Nutricionista'} title="Ana Clara Andrade Santos"
- sub="Formada pela Universidade Federal de Goiás, com mais de quatro anos de experiência em nutrição clínica. Atendimento particular, presencial em Goiânia e online para todo o Brasil." breadcrumb={breadcrumb} />
+ sub="Formada pela Universidade Federal de Goiás, com mais de quatro anos de experiência em nutrição clínica. Atendimento particular, presencial em Goiânia e online para todo o Brasil." breadcrumb={breadcrumb}
+ cta={{ label: 'Conversar com a Ana', waMsg: 'Olá, Ana Clara! Li sobre você no site e gostaria de agendar uma consulta.', secao: 'Sobre · topo' }}
+ image="ana-clara-retrato" imageAlt={FOTO_ANA_TEXTOS.alt} portrait imagePosition="center 15%" />
 
- <section class="section section--alt">
+ <section class="section section--tight section--alt">
  <div class="container">
- <ul class="creds reveal">
+ <ul class="creds" data-reveal>
  {creds.map((c) => <li><strong>{c.n}</strong><span>{c.d}</span></li>)}
  </ul>
  </div>
  </section>
 
  <section class="section">
- <div class="container prose reveal">
+ <div class="container quem">
+ <div class="quem__media media" data-reveal-img><img src="/img/pg-sobre-1080.webp" srcset="/img/pg-sobre-768.webp 768w, /img/pg-sobre-1080.webp 1080w, /img/pg-sobre-1536.webp 1536w" sizes="(min-width: 960px) 38vw, 100vw" width="1536" height="1024" alt="" loading="lazy" decoding="async" /></div>
+ <div class="prose">
  <h2>Quem sou</h2>
  <p>Sou nutricionista formada pela <strong>Universidade Federal de Goiás (UFG)</strong>, com mais de quatro anos de experiência na área de <strong>nutrição clínica</strong>, atuando nos contextos hospitalar e ambulatorial.</p>
  <p>Foi nesses anos, acompanhando pessoas em momentos muito diferentes da vida, que a minha forma de atender tomou o formato que tem hoje.</p>
@@ -58,6 +63,7 @@ const creds = [
  <p>Meu compromisso é caminhar ao seu lado na construção de mudanças <strong>reais, sustentáveis e possíveis</strong>. Não do que funciona na teoria, mas do que cabe na sua vida.</p>
  <p>O objetivo final é que você conquiste mais saúde, mais qualidade de vida e, principalmente, <strong>autonomia na sua alimentação</strong>: que você aprenda a fazer as próprias escolhas, e não dependa de mim para sempre.</p>
  </div>
+ </div>
  </section>
 
  {/* Bloco de verificação do registro: só existe quando temos o número real do CRN.
@@ -69,7 +75,7 @@ const creds = [
  <h2>Verifique meu registro</h2>
  <p>Sou inscrita no Conselho Regional de Nutricionistas, <strong>{CRN}</strong>. O CRN-1 abrange Goiás, Distrito Federal, Tocantins e Mato Grosso.</p>
  <p>Você pode (e deve) verificar o registro de qualquer nutricionista antes de iniciar um acompanhamento. A consulta é pública e gratuita.</p>
- <Button href="https://novoportal.crn1.org.br/servicos-online-outros/" variant="outline" size="sm">Verificar registro no CRN-1 →</Button>
+ <Button href="https://novoportal.crn1.org.br/servicos-online-outros/" variant="outline" size="sm" target="_blank" rel="noopener">Verificar registro no CRN-1</Button>
  </div>
  </section>
  )}
@@ -99,24 +105,20 @@ const creds = [
 
  <Faq items={faqs} />
 
- <section class="section cta-final">
- <div class="container reveal">
- <h2>Vamos conversar?</h2>
- <p>Quando se sentir pronta, é só agendar. O primeiro passo pode ser agora.</p>
- <Button href="/contato" variant="clay">Agendar consulta</Button>
- </div>
- </section>
+ <CtaBand title="Vamos <em>conversar</em>?" text="Quando se sentir pronta, é só chamar no WhatsApp. O primeiro passo pode ser agora, online ou presencial em Goiânia." secao="Sobre · faixa final" image="pg-sobre" />
 </BaseLayout>
 
 <style>
+ .quem { display: grid; gap: clamp(32px, 5vw, 72px); align-items: start; }
+ @media (min-width: 960px) { .quem { grid-template-columns: .75fr 1.25fr; } .quem__media { position: sticky; top: calc(var(--header-h) + 32px); } }
+ .quem__media { aspect-ratio: 4 / 5; border-radius: var(--r-xl); }
  .creds { display: grid; gap: 12px; list-style: none; padding: 0; margin: 0; }
  @media (min-width: 640px) { .creds { grid-template-columns: 1fr 1fr; } }
  @media (min-width: 960px) { .creds { grid-template-columns: repeat(4, 1fr); } }
  .creds li { display: flex; flex-direction: column; gap: 4px; background: #fff;
  border: 1px solid var(--line); border-radius: var(--r-md); padding: 16px 18px; }
- .creds strong { color: var(--ink); font-size: 1.05rem; line-height: 1.25; }
+ .creds strong { color: var(--ink); font-family: var(--serif); font-weight: 400; font-size: 1.3rem; line-height: 1.2; }
  .creds span { color: var(--ink-faint); font-size: .85rem; }
  .crn { max-width: var(--maxw-prose); }
  .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 18px; }
- .cta-final { text-align: center; } .cta-final p { margin-inline: auto; }
 </style>
