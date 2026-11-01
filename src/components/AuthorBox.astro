@@ -5,7 +5,7 @@ const temRetrato = Boolean((manifest as Record<string, unknown>)['ana-clara-retr
 ---
 <aside class="author">
   {temRetrato
-    ? <img src="/img/ana-clara-retrato-480.webp" alt="" width="64" height="64" class="author__img" loading="lazy" />
+    ? <img src="/img/ana-clara-retrato-160.webp" srcset="/img/ana-clara-retrato-160.webp 160w, /img/ana-clara-retrato-320.webp 320w" sizes="64px" alt="" width="64" height="64" class="author__img" loading="lazy" decoding="async" />
     : <img src={FOTO_ANA} alt="" width="64" height="64" class="author__img" loading="lazy" />}
   <div>
     <p class="author__kicker">Quem escreve</p>

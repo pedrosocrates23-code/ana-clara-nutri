@@ -42,4 +42,44 @@ document.addEventListener('click', (e) => {
   c?.('event', 'whatsapp_click');
 });
 
+// Imagens adiadas (Picture.astro, loading="lazy"): o <img> vem em <noscript> e só é injetado
+// perto da tela, depois da 1ª interação ou de ~1 s após o load. Assim nenhuma foto abaixo da
+// dobra disputa banda com a foto principal (LCP). O wrapper é display:contents (não tem caixa),
+// então quem é observado é o elemento pai (a moldura .media, que já reserva o espaço).
+const adiadas = [...document.querySelectorAll<HTMLElement>('[data-dimg]')];
+if (adiadas.length) {
+  const injetar = (w: HTMLElement) => {
+    const ns = w.querySelector('noscript');
+    if (!ns) return;
+    w.classList.add('is-injected');
+    w.insertAdjacentHTML('beforeend', ns.textContent ?? '');
+    ns.remove();
+    const img = w.querySelector('img');
+    const pronto = () => w.classList.add('is-loaded');
+    if (!img || img.complete) requestAnimationFrame(pronto);
+    else { img.addEventListener('load', pronto, { once: true }); img.addEventListener('error', pronto, { once: true }); }
+  };
+  let iniciou = false;
+  const iniciar = () => {
+    if (iniciou) return;
+    iniciou = true;
+    if (!('IntersectionObserver' in window)) { adiadas.forEach(injetar); return; }
+    const alvo = new Map(adiadas.map((w) => [w.parentElement ?? w, w]));
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        const w = alvo.get(e.target as HTMLElement);
+        if (w) injetar(w);
+        io.unobserve(e.target);
+      }
+    }, { rootMargin: '900px 0px' });
+    alvo.forEach((_, el) => io.observe(el));
+  };
+  const evs = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+  evs.forEach((t) => addEventListener(t, iniciar, { once: true, passive: true }));
+  const depois = () => setTimeout(iniciar, 1000);
+  if (document.readyState === 'complete') depois();
+  else addEventListener('load', depois, { once: true });
+}
+
 bootMotion();

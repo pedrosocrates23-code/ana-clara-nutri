@@ -259,13 +259,14 @@ const { desk, mob } = heroSources();
  .passo__n {
   width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; position: relative; z-index: 1;
   font-family: var(--mono); font-size: .85rem; color: var(--forest-ink); background: var(--sage-200);
-  transition: background .5s var(--ease-out), transform .6s var(--ease-out);
+  transition: transform .7s var(--ease-out), box-shadow .9s var(--ease-out);
  }
  .passo h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); margin: 10px 0 6px; }
  .passo p { margin: 0; }
- :global(.js-motion) .passo:not(.is-lit) { opacity: .35; }
- :global(.js-motion) .passo { transition: opacity .8s var(--ease-out); }
- :global(.js-motion) .passo:not(.is-lit) .passo__n { background: rgba(255,255,255,.12); color: #fff; transform: scale(.88); }
+ /* O passo "acende" só no número, por escala e anel. Cor de fundo e de texto NÃO mudam:
+    uma transição de cor passava por tons intermediários sem contraste (WCAG AA). */
+ :global(.js-motion) .passo:not(.is-lit) .passo__n { transform: scale(.82); box-shadow: 0 0 0 0 rgba(187, 208, 182, 0); }
+ :global(.js-motion) .passo.is-lit .passo__n { box-shadow: 0 0 0 8px rgba(187, 208, 182, .14); }
 
  /* ---------- Blog ---------- */
  .posts { display: grid; gap: 22px; }

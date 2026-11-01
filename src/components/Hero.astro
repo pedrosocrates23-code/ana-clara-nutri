@@ -95,11 +95,17 @@ const { desk, mob } = heroSources();
   .hero__scroll span { position: absolute; left: 50%; top: 8px; width: 3px; height: 8px; margin-left: -1.5px; border-radius: 2px; background: #fff; animation: scroll-dot 2s var(--ease-out) infinite; }
   @keyframes scroll-dot { 0% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
 
+  /* Celular: a foto (recorte quadrado) ocupa só o topo; abaixo dela o hero continua no verde
+     da parede (--forest-ink), onde o texto se apoia. O degradê funde a foto nesse verde. */
   @media (max-width: 760px) {
     .hero { align-items: flex-end; min-height: 100svh; }
-    .hero__media :global(.hero__img) { object-position: center 40%; }
-    .hero__shade { background: linear-gradient(0deg, rgba(20, 30, 23, .94) 0%, rgba(20, 30, 23, .82) 48%, rgba(20, 30, 23, .35) 78%, rgba(20, 30, 23, .2) 100%); }
-    .hero__inner { padding-block: calc(var(--header-h) + 140px) 40px; }
+    .hero__media { inset: 0 0 auto 0; height: min(64svh, 560px); }
+    .hero__media :global(.hero__img) { object-position: center 45%; }
+    .hero__shade {
+      inset: 0 0 auto 0; height: min(64svh, 560px);
+      background: linear-gradient(180deg, rgba(26, 38, 29, .35) 0%, rgba(26, 38, 29, 0) 22%, rgba(26, 38, 29, .55) 62%, #1A261D 100%);
+    }
+    .hero__inner { padding-block: calc(min(64svh, 560px) - 150px) 40px; }
     .hero__actions { display: grid; }
     .hero__actions :global(.btn) { width: 100%; }
     .hero__scroll { display: none; }

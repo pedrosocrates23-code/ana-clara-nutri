@@ -9,7 +9,8 @@
     "check:cfn": "node scripts/check-cfn.mjs",
     "preview": "astro preview",
     "astro": "astro",
-    "images": "node scripts/build-images.mjs"
+    "images": "node scripts/build-images.mjs",
+    "lighthouse": "node scripts/lighthouse.mjs"
   },
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.1.0",

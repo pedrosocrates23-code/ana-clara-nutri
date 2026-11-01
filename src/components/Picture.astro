@@ -3,6 +3,12 @@
 // width/height reais no <img> (CLS zero), srcset com todas as larguras geradas e
 // `sizes` informado por quem usa (é o layout que sabe quanto a imagem ocupa).
 // Nome fora do manifesto: não renderiza nada (nunca uma imagem quebrada).
+//
+// loading="lazy" (padrão) = imagem ADIADA: o <img> vem dentro de <noscript> e o
+// src/scripts/site.ts o injeta perto da tela, só depois da 1ª interação ou ~1 s após o load.
+// Motivo: o Chrome baixa imagens lazy até ~1250 px abaixo da dobra logo no carregamento, e
+// elas disputavam banda com a foto principal (LCP). Sem JS, o <noscript> mostra a imagem.
+// O wrapper é display:contents, então seletores como `.media img` continuam valendo.
 import manifest from '../data/images.json';
 
 interface Props {
@@ -19,19 +25,17 @@ const { name, alt, sizes = '100vw', loading = 'lazy', fetchpriority, class: cls,
 const entry = (manifest as Record<string, { width: number; height: number; widths: number[] }>)[name];
 const srcset = entry?.widths.map((w) => `/img/${name}-${w}.webp ${w}w`).join(', ');
 const fallback = entry ? `/img/${name}-${entry.widths.find((w) => w >= 1000) ?? entry.widths.at(-1)}.webp` : '';
+const adiada = loading === 'lazy';
 ---
-{entry && (
-  <img
-    src={fallback}
-    srcset={srcset}
-    sizes={sizes}
-    alt={alt}
-    width={entry.width}
-    height={entry.height}
-    loading={loading}
-    decoding={loading === 'eager' ? 'sync' : 'async'}
-    fetchpriority={fetchpriority}
-    class={cls}
-    style={position ? `object-position:${position}` : undefined}
-  />
+{entry && !adiada && (
+  <img src={fallback} srcset={srcset} sizes={sizes} alt={alt} width={entry.width} height={entry.height}
+    loading="eager" decoding="sync" fetchpriority={fetchpriority} class={cls}
+    style={position ? `object-position:${position}` : undefined} />
+)}
+{entry && adiada && (
+  <span class="dimg" data-dimg>
+    <noscript><img src={fallback} srcset={srcset} sizes={sizes} alt={alt} width={entry.width} height={entry.height}
+      loading="lazy" decoding="async" class={cls}
+      style={position ? `object-position:${position}` : undefined} /></noscript>
+  </span>
 )}

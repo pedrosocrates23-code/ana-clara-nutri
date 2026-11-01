@@ -3,39 +3,49 @@
 // de sessão). Ambos só entram na build de produção: em dev, os acessos do
 // localhost virariam sessões reais nos relatórios.
 //
-// is:inline é obrigatório: sem ele o Astro empacota o script e os snippets
-// deixam de funcionar como os fornecedores esperam. E o corpo vai por set:html,
-// não por define:vars, porque define:vars embrulha tudo numa IIFE e gtag()
-// deixaria de ser global, quebrando eventos disparados por outros scripts.
+// Carregamento (01/11/2026, PageSpeed):
+// - GA4: a fila `gtag()` existe desde o início (eventos como whatsapp_click nunca se perdem),
+//   mas o gtag.js (~178 KB) só é buscado na 1ª interação ou 3 s depois do load, o que vier
+//   antes. Antes ele disputava banda com a foto principal e empurrava o LCP no 4G. A fila é
+//   enviada quando o script chega: toda visita que interage ou fica 3 s é contada.
+// - Clarity: só na primeira interação (rolar, tocar, clicar, tecla). Ele grava cookies de
+//   terceiros (CLID, MUID...), que derrubavam Boas Práticas; e uma visita sem nenhuma
+//   interação não gera gravação útil de qualquer forma.
+//
+// is:inline é obrigatório (o Astro não pode empacotar estes snippets), e o corpo vai por
+// set:html, não por define:vars: define:vars embrulha numa IIFE e gtag() deixaria de ser global.
 import { GA_ID, CLARITY_ID } from '../lib/site';
 
 const prod = import.meta.env.PROD;
 const temGa = prod && GA_ID !== '';
 const temClarity = prod && CLARITY_ID !== '';
 
-const gtagInit = `
+const init = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '${GA_ID}');
-`;
-
-const clarityInit = `
-    (function(c,l,a,r,i,t,y){
+  ${temGa ? `gtag('js', new Date()); gtag('config', '${GA_ID}');` : ''}
+  (function () {
+    function add(src) { var s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); }
+    ${temGa ? `
+    var gaFeito = false;
+    function ga() { if (gaFeito) return; gaFeito = true; add('https://www.googletagmanager.com/gtag/js?id=${GA_ID}'); }
+    function gaDepois() { setTimeout(ga, 3000); }
+    if (document.readyState === 'complete') gaDepois(); else addEventListener('load', gaDepois, { once: true });
+    ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (e) { addEventListener(e, ga, { once: true, passive: true }); });` : ''}
+    ${temClarity ? `
+    var clFeito = false, evs = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+    function cl() {
+      if (clFeito) return; clFeito = true;
+      evs.forEach(function (e) { removeEventListener(e, cl); });
+      (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "${CLARITY_ID}");
+      })(window, document, "clarity", "script", "${CLARITY_ID}");
+      ${temGa ? 'ga();' : ''}
+    }
+    evs.forEach(function (e) { addEventListener(e, cl, { once: true, passive: true }); });` : ''}
+  })();
 `;
 ---
-{temGa && (
-  <>
-    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-    <script is:inline set:html={gtagInit}></script>
-  </>
-)}
-
-{temClarity && (
-  <script is:inline type="text/javascript" set:html={clarityInit}></script>
-)}
+{(temGa || temClarity) && <script is:inline set:html={init}></script>}

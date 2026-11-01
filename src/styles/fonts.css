@@ -17,18 +17,21 @@
  * adiciona bytes.
  */
 
+/* 01/11/2026: arquivos recortados (scripts/subset-fonts.py) só com os pesos que o CSS usa
+   (Hanken 400-650, Newsreader 300-400) e os caracteres do português: 89 KB -> 56 KB, que
+   deixaram de disputar banda com a foto principal (LCP) no 4G. */
 @font-face {
   font-family: 'Hanken Grotesk Variable';
   font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url('@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 400 650;
+  src: url('../assets/fonts/hanken-grotesk-400-650.woff2') format('woff2-variations');
 }
 
 @font-face {
   font-family: 'Newsreader Variable';
   font-style: normal;
   font-display: swap;
-  font-weight: 200 800;
-  src: url('@fontsource-variable/newsreader/files/newsreader-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 300 400;
+  src: url('../assets/fonts/newsreader-300-400.woff2') format('woff2-variations');
 }

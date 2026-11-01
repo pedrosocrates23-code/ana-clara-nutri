@@ -10,3 +10,6 @@ dist/
 
 # logs
 npm-debug.log*
+
+# relatórios locais
+qa/

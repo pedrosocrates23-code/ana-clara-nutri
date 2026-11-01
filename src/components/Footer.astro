@@ -39,7 +39,9 @@ const year = 2026;
     </div>
   </div>
 
-  <div class="container footer-word" aria-hidden="true">Ana Clara <em>Nutri</em></div>
+  <!-- Marca d'água decorativa: o texto vem do CSS (::before/::after), não do DOM, para não
+       entrar na leitura de tela nem na checagem de contraste (é ornamento, não conteúdo). -->
+  <div class="container footer-word" aria-hidden="true"></div>
 
   <div class="container bottom">
     <span>© {year} {SITE.legalName}{CRN_SUFIXO}</span>
@@ -75,7 +77,8 @@ const year = 2026;
     margin-top: clamp(48px, 7vw, 80px); font-family: var(--serif); font-weight: 300; line-height: .9; letter-spacing: -.04em;
     font-size: clamp(3.4rem, 13vw, 11.5rem); color: rgba(187, 208, 182, .14); white-space: nowrap; user-select: none;
   }
-  .footer-word em { font-style: italic; }
+  .footer-word::before { content: 'Ana Clara '; }
+  .footer-word::after { content: 'Nutri'; font-style: italic; }
   .bottom { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between;
     margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1);
     font-family: var(--mono); font-size: .72rem; color: var(--sage-300); }

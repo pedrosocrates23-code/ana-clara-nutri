@@ -84,7 +84,10 @@ const waHeader = waLink();
 
 <style>
   .site-header { position: fixed; inset: 0 0 auto; z-index: 60; padding: 16px 0; pointer-events: none; }
+  /* position + z-index: o fundo do header no celular (::before, posicionado) era pintado POR
+     CIMA da logo (elemento não posicionado), que sumia nas páginas claras e ao rolar. */
   .site-header__inner {
+    position: relative; z-index: 1;
     width: min(var(--maxw), 100% - 2 * var(--gutter)); margin-inline: auto; height: 48px;
     display: flex; align-items: center; justify-content: space-between; gap: 24px;
   }
