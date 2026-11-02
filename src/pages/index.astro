@@ -54,11 +54,15 @@ const { desk, mob } = heroSources();
  <Hero />
 
  <!-- Princípios em faixa contínua -->
- <div class="marquee" aria-label="Princípios do atendimento">
-  <div class="marquee__track">
-   {[0, 1].map((k) => (
-    <ul class="marquee__list" aria-hidden={k === 1 ? 'true' : undefined} role="list">
-     {principios.map((p) => <li>{p}</li>)}
+ <!-- Cada metade da trilha repete os princípios 4x (~6.500 px), sempre mais larga que a tela:
+      o loop -50% fica sem emenda nem vazio até em monitor ultrawide ou com zoom reduzido.
+      Leitor de tela ouve a lista uma vez só (sr-only); a trilha animada é decorativa. -->
+ <div class="marquee">
+  <ul class="sr-only" aria-label="Princípios do atendimento">{principios.map((p) => <li>{p}</li>)}</ul>
+  <div class="marquee__track" aria-hidden="true">
+   {[0, 1].map(() => (
+    <ul class="marquee__list" role="list">
+     {[...principios, ...principios, ...principios, ...principios].map((p) => <li>{p}</li>)}
     </ul>
    ))}
   </div>
@@ -208,7 +212,7 @@ const { desk, mob } = heroSources();
 <style>
  /* ---------- Marquee de princípios (CSS puro, pausa no hover e em reduced-motion) ---------- */
  .marquee { background: var(--sage-200); color: var(--forest-ink); overflow: hidden; padding: 18px 0; border-bottom: 1px solid var(--sage-300); }
- .marquee__track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+ .marquee__track { display: flex; width: max-content; animation: marquee 152s linear infinite; will-change: transform; }
  .marquee:hover .marquee__track { animation-play-state: paused; }
  .marquee__list { display: flex; list-style: none; margin: 0; padding: 0; }
  .marquee__list li { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font-family: var(--serif); font-size: clamp(1.15rem, 2vw, 1.5rem); font-style: italic; white-space: nowrap; }
