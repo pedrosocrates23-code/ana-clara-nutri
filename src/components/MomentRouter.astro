@@ -64,7 +64,7 @@ const MOMENTOS = [
           )}
           <div class="panel__actions">
             <Button href={waLink(m.msg)} variant="whatsapp" secao={`Home · seu momento · ${m.id}`}>Conversar sobre isso</Button>
-            <Button href={m.href} variant="ghost">Ver a área →</Button>
+            <Button href={m.href} variant="ghost">Ver a área</Button>
           </div>
         </div>
       </div>
@@ -128,7 +128,6 @@ const MOMENTOS = [
   .panel__reads-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); }
   .panel__reads ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 2px; }
   .panel__reads a { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--sage-800); font-weight: 550; text-decoration: none; transition: color .2s, padding .35s var(--ease-out); }
-  .panel__reads a::before { content: '↗'; color: var(--sage-500); }
   .panel__reads a:hover { color: var(--ink); padding-left: 6px; }
   .panel__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 6px; }
   @media (prefers-reduced-motion: reduce) { .panel.is-in, .panel.is-in .panel__media :global(img) { animation: none; } }

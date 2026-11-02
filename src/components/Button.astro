@@ -25,7 +25,6 @@ const isWa = href.includes('wa.me/');
 >
   {(variant === 'whatsapp' || (isWa && variant !== 'outline-light' && variant !== 'outline')) && <span class="btn__wa" aria-hidden="true"></span>}
   <span class="btn__label"><slot /></span>
-  {!isWa && variant !== 'ghost' && <span class="btn__arrow" aria-hidden="true">→</span>}
 </a>
 
 <style>
@@ -41,8 +40,6 @@ const isWa = href.includes('wa.me/');
   .btn:active { transform: translateY(1px) scale(.985); }
   .btn--sm { padding: 10px 17px; font-size: .85rem; }
   .btn--lg { padding: 18px 30px; font-size: 1.02rem; }
-  .btn__arrow { display: inline-block; transition: transform .4s var(--ease-out); }
-  .btn:hover .btn__arrow { transform: translateX(4px); }
   .btn__wa { width: 18px; height: 18px; flex: none; background: currentColor; -webkit-mask: var(--wa-icon) center / contain no-repeat; mask: var(--wa-icon) center / contain no-repeat; }
 
   .btn--primary { background: var(--sage-700); color: #fff; }
@@ -65,5 +62,5 @@ const isWa = href.includes('wa.me/');
   .btn--ghost:hover { color: var(--sage-900); }
 
   @media (max-width: 480px) { .btn--lg { padding: 17px 24px; } }
-  @media (prefers-reduced-motion: reduce) { .btn, .btn__arrow { transition: none; } }
+  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 </style>

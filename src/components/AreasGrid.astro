@@ -23,7 +23,7 @@ const H = headingLevel;
       <div class="area-card__body">
         <H class="area-card__title">{s.label}</H>
         <p>{s.intro}</p>
-        <span class="area-card__more">Conhecer a área <span aria-hidden="true">→</span></span>
+        <span class="area-card__more">Conhecer a área</span>
       </div>
     </a>
   ))}
@@ -50,8 +50,6 @@ const H = headingLevel;
   .area-card__title { margin: 0; font-family: var(--serif); font-size: 1.45rem; font-weight: 400; line-height: 1.15; letter-spacing: -.015em; }
   .area-card__body p { color: var(--ink-soft); font-size: .95rem; margin: 0; }
   .area-card__more { margin-top: auto; padding-top: 10px; color: var(--sage-700); font-weight: 650; font-size: .92rem; }
-  .area-card__more span { display: inline-block; transition: transform .4s var(--ease-out); }
-  .area-card:hover .area-card__more span { transform: translateX(5px); }
 
   @media (prefers-reduced-motion: reduce) {
     .area-card { transition: none; }

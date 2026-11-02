@@ -36,8 +36,6 @@ strong { color: var(--ink); font-weight: 600; }
   font-family: var(--mono); font-size: .7rem; font-weight: 500;
   letter-spacing: .18em; text-transform: uppercase; color: var(--sage-600);
 }
-.kicker::before { content: ''; width: 22px; height: 1px; background: currentColor; opacity: .6; }
-.kicker--plain::before { display: none; }
 
 /* ---- Layout ---- */
 .container { width: 100%; max-width: calc(var(--maxw) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }

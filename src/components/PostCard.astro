@@ -23,7 +23,7 @@ const H = heading;
     <p>{d.description}</p>
     <div class="pcard__foot">
       <time datetime={d.datePublished}>{formatarDataPt(d.datePublished)}</time>
-      <span class="pcard__more">Ler artigo <span aria-hidden="true">→</span></span>
+      <span class="pcard__more">Ler artigo</span>
     </div>
   </div>
 </a>
@@ -43,8 +43,6 @@ const H = heading;
   .pcard__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
   .pcard__foot time { color: var(--ink-faint); font-size: .82rem; }
   .pcard__more { color: var(--sage-700); font-weight: 650; font-size: .88rem; white-space: nowrap; }
-  .pcard__more span { display: inline-block; transition: transform .4s var(--ease-out); }
-  .pcard:hover .pcard__more span { transform: translateX(4px); }
 
   @media (min-width: 980px) {
     .pcard--featured { flex-direction: row; grid-column: 1 / -1; }

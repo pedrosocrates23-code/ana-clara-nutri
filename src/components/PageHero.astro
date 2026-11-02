@@ -39,7 +39,7 @@ const ctaHref = cta ? (cta.href ?? waLink(cta.waMsg)) : '';
       {(cta || secondary) && (
         <div class="page-hero__actions">
           {cta && <Button href={ctaHref} variant="whatsapp" size="lg" secao={cta.secao ?? 'Topo da página'} magnetic>{cta.label}</Button>}
-          {secondary && <Button href={secondary.href} variant="ghost">{secondary.label} →</Button>}
+          {secondary && <Button href={secondary.href} variant="ghost">{secondary.label}</Button>}
         </div>
       )}
       <slot />

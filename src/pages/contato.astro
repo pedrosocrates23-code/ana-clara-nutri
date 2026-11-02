@@ -40,7 +40,7 @@ const opcoes = [
       <span class="opcao__t">{o.t}</span>
       <span class="opcao__d">{o.d}</span>
       <span class="opcao__msg">“{o.msg}”</span>
-      <span class="opcao__go">Abrir conversa <span aria-hidden="true">→</span></span>
+      <span class="opcao__go">Abrir conversa</span>
      </a>
     ))}
    </div>
@@ -100,8 +100,6 @@ const opcoes = [
  .opcao--destaque .opcao__msg { background: rgba(255,255,255,.08); color: rgba(255,255,255,.88); }
  .opcao__go { margin-top: 10px; font-weight: 650; color: var(--sage-700); }
  .opcao--destaque .opcao__go { color: var(--sage-200); }
- .opcao__go span { display: inline-block; transition: transform .4s var(--ease-out); }
- .opcao:hover .opcao__go span { transform: translateX(5px); }
  .contato-alt { margin-top: 26px; color: var(--ink-soft); font-size: .95rem; max-width: none; }
  .contato-alt a { color: var(--sage-700); font-weight: 600; }
  .depois { display: grid; gap: 0; }
