@@ -6,11 +6,12 @@
 // É <img> com srcset (não background-image): o navegador escolhe a largura certa e o
 // preload em <head> antecipa o LCP.
 //
-// Conversão: dois botões de WhatsApp, um por formato. Escolher entre duas opções concretas
-// pesa menos do que decidir "agendar ou não" (micro-compromisso), e a mensagem já chega
-// pré-preenchida com o formato.
+// Dois botões, um por formato, levando à página de silo correspondente
+// (/nutricionista-online/ e /nutricionista-em-goiania/). Escolher entre duas opções concretas
+// pesa menos do que decidir "agendar ou não" (micro-compromisso); o WhatsApp fica nos CTAs
+// dentro de cada silo.
 import Button from './Button.astro';
-import { HAS_CRN, CRN, waLink, WA_MSG } from '../lib/site';
+import { HAS_CRN, CRN } from '../lib/site';
 import { heroSources } from '../lib/hero';
 const { desk, mob } = heroSources();
 ---
@@ -41,8 +42,8 @@ const { desk, mob } = heroSources();
 
       <p class="hero__ask">Como você prefere ser atendida?</p>
       <div class="hero__actions">
-        <Button href={waLink(WA_MSG.online)} variant="light" size="lg" secao="Home · hero · online" magnetic>Consulta online</Button>
-        <Button href={waLink(WA_MSG.presencial)} variant="outline-light" size="lg" secao="Home · hero · presencial">Presencial em Goiânia</Button>
+        <Button href="/nutricionista-online/" variant="light" size="lg" magnetic>Consulta online</Button>
+        <Button href="/nutricionista-em-goiania/" variant="outline-light" size="lg">Presencial em Goiânia</Button>
       </div>
 
       <ul class="hero__trust" role="list">
