@@ -39,15 +39,6 @@ Você conta a sua rotina alimentar de cabeça e ela parece pequena. Um café da 
 
 Isso não é raro, e não é sinal de que o seu corpo funciona diferente de todo mundo. É, na maioria das vezes, um padrão que tem nome, que se explica e que dá para trabalhar sem virar mais uma dieta.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se a sua conta não está fechando, vale olhar para o seu dia a dia de verdade. Me chama no WhatsApp e conta como tem sido a sua rotina.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## A conta que não fecha na cabeça
 
 Quase toda pessoa que me procura com essa queixa já fez a mesma operação mental: somou o que lembra ter comido e concluiu que a quantidade era pequena. E, na cabeça dela, a conta está certa.
@@ -63,6 +54,15 @@ Comer pouco, para a maioria das pessoas, é uma sensação, não uma medição. 
 Duas pessoas podem comer praticamente a mesma coisa e descrever isso de formas bem diferentes. Uma vai chamar de "comi bastante", a outra de "comi pouco hoje", e nenhuma das duas está mentindo. A percepção de quantidade é subjetiva, e é justamente por isso que ela costuma falhar como termômetro sozinha.
 
 Imagine um dia comum: café da manhã rápido, quase sem fome ainda, almoço num prato que parece moderado, jantar leve porque "já é noite e não dá para comer muito". Cada refeição, isolada, parece pequena. O que fica de fora dessa descrição é tudo que aconteceu entre elas, e é justamente esse intervalo que costuma carregar a diferença.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se a sua conta não está fechando, vale olhar para o seu dia a dia de verdade. Me chama no WhatsApp e conta como tem sido a sua rotina.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que é subrelato alimentar
 

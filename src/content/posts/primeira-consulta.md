@@ -38,15 +38,6 @@ references:
 
 A **primeira consulta** com a nutricionista **Ana Clara Andrade Santos (CRN-1 nº 19825)** no **beLIV, em Goiânia**, é uma conversa estruturada sobre a sua rotina, o seu histórico e o seu objetivo, não uma sessão de pesagem ou medição corporal. Ela dura em torno de uma hora e serve para entender o seu caso antes de qualquer plano.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se você já sabe que quer marcar, me chame no WhatsApp e eu te explico como funciona o agendamento.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20a%20primeira%20consulta%20e%20gostaria%20de%20agendar%20a%20minha." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 Se você já procurou "como é a primeira consulta com nutricionista" antes de marcar a sua, sei o que estava buscando. Não era uma lista de regras. Era saber se ia ser confortável.
 
 Muita gente adia esse primeiro passo por causa de um medo bem específico: chegar, subir numa balança, ouvir um número e sentir que a consulta já começou te julgando. Esse medo tem motivo. Boa parte do que se descreve por aí sobre consulta com nutricionista começa exatamente assim, com pesagem e medição logo na porta, num modelo que trata avaliação corporal como o primeiro ponto da conversa.
@@ -70,6 +61,15 @@ Se você não tiver nenhum exame recente, não é um problema. A consulta aconte
 Também não precisa chegar com um roteiro decorado do que dizer. Tem gente que passa a semana anterior ensaiando frases, tentando adivinhar o que eu vou perguntar, com medo de "errar a resposta". Não existe resposta errada aqui. Se você chegar e só conseguir dizer "estou cansada e não sei mais o que comer", isso já é o suficiente para começarmos. A minha parte é organizar o que você trouxer, não cobrar que você já chegue organizada.
 
 Se estiver tomando algum medicamento contínuo, vale mencionar mesmo que pareça não ter relação com alimentação. Alguns remédios alteram apetite, digestão ou absorção de nutrientes, e essa informação muda o meu raciocínio sobre o seu caso desde o início.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se você já sabe que quer marcar, me chame no WhatsApp e eu te explico como funciona o agendamento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20a%20primeira%20consulta%20e%20gostaria%20de%20agendar%20a%20minha." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Como começa a conversa
 

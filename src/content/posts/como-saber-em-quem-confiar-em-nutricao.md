@@ -45,15 +45,6 @@ Você pesquisa uma dúvida de nutrição e recebe respostas diferentes, cada uma
 
 Antes de aceitar qualquer orientação, dá para aplicar um filtro simples. Ele não exige que você vire especialista em nada, só que saiba onde olhar.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se depois de aplicar esses critérios você quiser conversar comigo, me chama no WhatsApp e a gente vê se faz sentido para o seu caso.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O problema: nutrição é o assunto mais opinado e menos verificado da internet
 
 Nutrição tem uma característica rara entre os assuntos de saúde: qualquer pessoa se sente à vontade para opinar, porque todo mundo come. Essa familiaridade cria a ilusão de que dá para avaliar quem fala sobre o tema do mesmo jeito que se avalia uma receita de bolo.
@@ -63,6 +54,15 @@ Só que comer todo dia não equivale a entender fisiologia, bioquímica de nutri
 Quando eu procurei essa mesma dúvida, "como saber se uma informação de nutrição é confiável", boa parte do que apareceu no topo veio de portais institucionais ou de páginas de fora do Brasil, não de quem atende paciente todos os dias. Isso não é acusação contra ninguém. É só um retrato de como a busca por esse tema costuma entregar informação genérica, quando o que resolve a sua dúvida é saber quem está falando e com que credencial.
 
 O problema não é a falta de conteúdo, é o excesso sem filtro. Duas pessoas podem defender posições opostas com a mesma convicção, e a diferença entre elas raramente aparece no tom da fala. Aparece em coisas mais discretas: se existe registro por trás do nome, se o texto assume os próprios limites e se alguma parte do conteúdo tenta te vender algo além de informação. E o primeiro filtro que existe é público, gratuito e não depende de você entender nada de nutrição para aplicar.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se depois de aplicar esses critérios você quiser conversar comigo, me chama no WhatsApp e a gente vê se faz sentido para o seu caso.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O primeiro filtro é o registro profissional
 

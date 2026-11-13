@@ -90,6 +90,15 @@ Tem gente que corre bem depois de comer pão com requeijão. Tem gente que sente
 
 Se você já testou a mesma coisa cinco vezes e passou mal nas cinco, isso não é coincidência nem frescura. É informação sobre a sua tolerância individual, e ela vale mais do que qualquer recomendação genérica. A explicação está no tempo de esvaziamento do estômago, não na sua disposição.
 
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
+
 ## O que comer antes do treino tem duas funções, e só duas
 
 A primeira função é ter energia disponível. A segunda é não passar mal. Todo o resto é detalhe, e eu digo isso com tranquilidade.

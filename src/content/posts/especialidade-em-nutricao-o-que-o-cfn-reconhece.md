@@ -40,15 +40,6 @@ references:
 
 Especialidade em nutrição tem definição legal, não é um jeito de se apresentar. A **Resolução CFN nº 689/2021** fecha o rol de títulos que o Conselho Federal de Nutricionistas reconhece como especialidade, e o **art. 24, §2º** da Resolução CFN nº 856/2026 veda usar um rótulo fora desse rol como título pessoal. Esta página explica o que entra nesse rol, o que fica de fora, e como conferir o registro de **Ana Clara Andrade Santos**, CRN-1 nº 19825, em Goiânia.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se depois de ler isso você quiser entender como isso aparece no meu atendimento, me chama no WhatsApp e conversamos.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que é especialidade em nutrição para o CFN
 
 Se você já leu um site de nutricionista e viu termos como "especialista em emagrecimento" ou "nutricionista clínica", pode ter presumido que isso é um título oficial, igual a um diploma, mas isso não é verdade na maioria dos casos. Eu entendo por que essa leitura é natural: em outras profissões da saúde, especialidade costuma ser sinônimo de "estudou mais nisso". Mas na nutrição, o Conselho Federal de Nutricionistas trata especialidade como categoria fechada, com regras próprias para quem pode usar o termo.
@@ -60,6 +51,15 @@ Fora desse processo, o termo especialista aplicado a uma pessoa não tem respald
 Esse processo costuma envolver duas etapas: concluir uma pós-graduação reconhecida pelo conselho na área pretendida, e apresentar a documentação que comprova essa formação junto ao conselho regional onde o profissional está registrado. Só depois de analisada e aprovada essa documentação é que o título de especialista passa a existir formalmente, com número próprio, exatamente como o registro profissional básico. Antes disso, não existe um meio termo chamado "quase especialista" ou "especialista informal".
 
 A razão de a regra ser rígida assim não é burocracia pela burocracia. É proteção de quem contrata o serviço. Se qualquer pessoa pudesse se chamar de especialista por conta própria, o termo perderia o valor de servir como informação confiável, e quem procura atendimento perderia justamente o critério que deveria orientar a escolha. A norma existe para que a palavra especialista continue significando algo verificável, não uma escolha de marketing.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se depois de ler isso você quiser entender como isso aparece no meu atendimento, me chama no WhatsApp e conversamos.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## A resolução que define o rol de especialidades reconhecidas
 

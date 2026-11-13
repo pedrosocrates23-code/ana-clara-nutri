@@ -43,6 +43,14 @@ Um **plano alimentar gerado por inteligência artificial** não é uma prescriç
 
 Você não fez nada de errado ao perguntar para uma inteligência artificial o que comer. A pergunta é honesta, e a resposta chega rápido, organizada, com números redondos. O que eu quero te mostrar aqui não é por que isso está errado. É o que você já consegue enxergar sozinha, com o plano na tela, antes de decidir o próximo passo.
 
+## Por que você não precisa escolher entre proibir e confiar cegamente
+
+A maior parte do que se fala sobre plano alimentar de IA cai em dois extremos. De um lado, quem ensina a escrever o pedido certo para a inteligência artificial, como se o resultado dependesse só da pergunta feita. Do outro, quem trata qualquer plano de IA como perigoso por definição, sem olhar o que está escrito nele.
+
+Nenhum dos dois lados resolve o problema que você tem agora: um documento na tela e a dúvida sobre seguir ou não. Existe um caminho no meio, e é o que interessa de verdade.
+
+Você não precisa jogar o plano fora nem seguir sem questionar. Dá para ler o que está escrito com um critério simples, o mesmo que eu uso quando avalio qualquer plano alimentar que chega até mim, inclusive quando a pessoa traz algo que já tentou sozinha antes da consulta.
+
 <aside class="cta-artigo" aria-label="Falar com a nutricionista">
 <p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
@@ -51,14 +59,6 @@ Você não fez nada de errado ao perguntar para uma inteligência artificial o q
 <a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20plano%20alimentar%20de%20uma%20IA%20e%20queria%20entender%20melhor%20se%20posso%20seguir." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
-
-## Por que você não precisa escolher entre proibir e confiar cegamente
-
-A maior parte do que se fala sobre plano alimentar de IA cai em dois extremos. De um lado, quem ensina a escrever o pedido certo para a inteligência artificial, como se o resultado dependesse só da pergunta feita. Do outro, quem trata qualquer plano de IA como perigoso por definição, sem olhar o que está escrito nele.
-
-Nenhum dos dois lados resolve o problema que você tem agora: um documento na tela e a dúvida sobre seguir ou não. Existe um caminho no meio, e é o que interessa de verdade.
-
-Você não precisa jogar o plano fora nem seguir sem questionar. Dá para ler o que está escrito com um critério simples, o mesmo que eu uso quando avalio qualquer plano alimentar que chega até mim, inclusive quando a pessoa traz algo que já tentou sozinha antes da consulta.
 
 ## Troque a pergunta "que dieta eu sigo" por "o que esse plano está me pedindo"
 

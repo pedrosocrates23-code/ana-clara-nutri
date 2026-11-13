@@ -66,6 +66,15 @@ O diagnóstico da SOP é médico, feito por ginecologista ou endocrinologista. A
 
 Eu não diagnostico SOP, e nenhum nutricionista diagnostica. E se você chegou aqui sem diagnóstico fechado, com suspeita a partir do que leu na internet? Então o seu primeiro passo não é mudar o prato. É marcar a consulta médica. O que você faz com a sua alimentação vem depois disso, e vai fazer muito mais sentido com o quadro nomeado.
 
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
+
 ## Por que "é só emagrecer" é a frase mais repetida e a menos útil
 
 Você provavelmente já ouviu isso de mais de uma pessoa. Talvez de um médico, de uma amiga, de alguém da família que quis ajudar. E você saiu de todas essas conversas com a mesma sensação de que a solução era simples e você é que não estava dando conta.

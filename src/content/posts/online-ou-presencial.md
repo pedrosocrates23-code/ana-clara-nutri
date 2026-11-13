@@ -40,15 +40,6 @@ references:
 
 **Online ou presencial** não é uma pergunta sobre tecnologia. **Ana Clara Andrade Santos, CRN-1 nº 19825**, atende os dois formatos em **Goiânia** e por telenutrição com o mesmo processo clínico, e o critério que decide entre eles é o seu caso, não a sua preferência por vídeo ou por consultório.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se ainda está em dúvida entre online e presencial, me conta o seu caso e eu te ajudo a decidir qual formato faz mais sentido agora.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Estou%20em%20d%C3%BAvida%20entre%20consulta%20online%20ou%20presencial%20e%20queria%20entender%20qual%20faz%20mais%20sentido%20para%20o%20meu%20caso.">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## A pergunta errada: online ou presencial não é sobre tecnologia
 
 Toda vez que alguém me pergunta se atendo online ou presencial, a próxima frase costuma ser sobre a plataforma da videochamada, sobre a internet de casa ou sobre não gostar de câmera. Entendo o motivo. É a forma mais fácil de colocar a dúvida em palavras.
@@ -58,6 +49,15 @@ Só que essa não é a pergunta que decide nada. A tecnologia hoje é confiável
 Prefiro te dar os critérios reais e deixar você decidir com informação, em vez de empurrar um formato como se fosse superior ao outro. Nenhum dos dois é a versão menor. São dois caminhos para o mesmo cuidado.
 
 Repare em como a maioria dos resultados de busca sobre esse tema compara tecnologia, praticidade e preço, como se a decisão fosse comercial. Ela não é. É clínica e é sobre rotina. Um comparativo de recursos da plataforma de vídeo não te diz nada sobre se o seu caso pede um sinal físico observado de perto, se você tem onde falar com privacidade em casa, ou se o seu retorno se sustenta melhor por vídeo ou por deslocamento. É esse recorte que eu quero te trazer aqui, e não mais uma lista de vantagens genéricas de cada formato.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se ainda está em dúvida entre online e presencial, me conta o seu caso e eu te ajudo a decidir qual formato faz mais sentido agora.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Estou%20em%20d%C3%BAvida%20entre%20consulta%20online%20ou%20presencial%20e%20queria%20entender%20qual%20faz%20mais%20sentido%20para%20o%20meu%20caso.">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que não muda entre os dois formatos
 

@@ -42,15 +42,6 @@ Talvez a preocupação real nem seja o número. Talvez seja o tapete de cabelo n
 
 As duas coisas fazem sentido juntas, e vou explicar o porquê. Antes, preciso separar o que é ajuste de prato do que é decisão médica, porque misturar as duas custa tempo e, às vezes, atrasa uma investigação que devia começar mais cedo.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se você já tem o exame de ferritina em mãos e quer entender o que muda na sua alimentação, me conte pelo WhatsApp.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20exame%20com%20ferritina%20baixa%20e%20queria%20entender%20o%20que%20muda%20na%20minha%20alimenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que é a ferritina e por que ela apareceu baixa no exame
 
 A ferritina é a proteína que guarda o ferro dentro do corpo, como um estoque de reserva. Quando ela vem baixa, o exame está mostrando que esse estoque diminuiu, mesmo que o resto do hemograma ainda pareça normal.
@@ -60,6 +51,15 @@ A ferritina é a proteína que guarda o ferro dentro do corpo, como um estoque d
 O ferro entra pela alimentação, mas sai do corpo por vários caminhos ao mesmo tempo: menstruação, perdas digestivas, absorção intestinal reduzida, entre outros. O exame não diz sozinho qual desses caminhos está em jogo no seu caso. Essa parte cabe à investigação do seu médico.
 
 Há um detalhe técnico que vale conhecer, porque explica por que dois exames de ferritina nem sempre significam a mesma coisa. A ferritina também sobe em quadros de inflamação ou infecção, mesmo quando o estoque de ferro está baixo por trás disso. Na literatura em nutrição, isso é chamado de reação de fase aguda. Na prática, um resultado isolado de ferritina, sem outros marcadores junto, pode não contar a história inteira, e é por isso que o seu médico costuma olhar o conjunto do hemograma, não um número sozinho.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se você já tem o exame de ferritina em mãos e quer entender o que muda na sua alimentação, me conte pelo WhatsApp.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20exame%20com%20ferritina%20baixa%20e%20queria%20entender%20o%20que%20muda%20na%20minha%20alimenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Ferritina baixa nem sempre é a mesma coisa que anemia
 

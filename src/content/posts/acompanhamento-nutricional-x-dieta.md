@@ -34,15 +34,6 @@ references:
 
 **Acompanhamento nutricional** e dieta não são a mesma coisa: dieta costuma ser um papel entregue uma vez, enquanto o acompanhamento é um processo contínuo, com retorno e ajuste, do qual plano alimentar e cardápio são apenas dois dos produtos, não o serviço inteiro. Eu sou **Ana Clara**, nutricionista **CRN-1 nº 19825**, e atendo em Goiânia e por telenutrição.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se você já recebeu um papel pronto que não durou nem duas semanas, vale entender por que o formato de acompanhamento costuma resolver isso na raiz.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%21%20Vi%20o%20artigo%20sobre%20acompanhamento%20nutricional%20e%20queria%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que muda quando o critério deixa de ser "qual dieta" e vira "que tipo de acompanhamento"
 
 Eu entendo a confusão. As pessoas chegam até mim procurando "uma dieta boa" e acabam descobrindo que o que realmente resolve o problema tem outro nome. Ninguém explicou essa diferença antes, então o vocabulário que sobrou foi o mais familiar: dieta.
@@ -54,6 +45,15 @@ O problema é que comparar "qual dieta é melhor" é comparar a coisa errada. Di
 Essa troca de critério parece sutil no papel, mas na prática é o que separa um atendimento que você abandona em três semanas de um que continua fazendo sentido seis meses depois. Vale a pena entender os termos com precisão antes de escolher.
 
 Isso não é reclamação sobre vocabulário por implicância. É prático. Se você contrata pensando em dieta e recebe acompanhamento, estranha o tanto de conversa nas primeiras consultas. Se você contrata pensando em acompanhamento e recebe uma dieta pronta, sente falta de alguém revisando o plano quando a rotina muda. Nomear certo evita as duas frustrações.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se você já recebeu um papel pronto que não durou nem duas semanas, vale entender por que o formato de acompanhamento costuma resolver isso na raiz.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%21%20Vi%20o%20artigo%20sobre%20acompanhamento%20nutricional%20e%20queria%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Dieta pronta, plano alimentar e cardápio: três palavras que as pessoas trocam entre si
 

@@ -70,6 +70,15 @@ Quando ficou possível ler o material genético direto da amostra, um mundo inte
 
 De lá para cá, o volume de estudos cresceu rápido. O volume de produtos vendidos com a palavra microbiota no rótulo cresceu mais rápido ainda. Guarde essa diferença de velocidade, porque ela explica boa parte da confusão que te trouxe até aqui.
 
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
+
 ## O que a microbiota faz no seu corpo todo dia
 
 Aqui está o que a pesquisa descreve com mais segurança. É menos espetacular que o rótulo da farmácia, e é bem mais interessante.

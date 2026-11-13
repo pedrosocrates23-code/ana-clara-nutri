@@ -38,15 +38,6 @@ references:
 
 A **glicemia de jejum** entre **100 e 125 mg/dL** ainda não é diagnóstico de diabetes, é a faixa que costuma ser chamada de glicemia de jejum alterada. A nutricionista **Ana Clara (CRN-1 nº 19825)**, em Goiânia, explica o que muda no prato nesse intervalo e qual é o próximo passo com o médico.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se a glicemia veio alterada no seu último exame e você não sabe por onde começar no prato, dá pra conversar sobre isso com calma.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20minha%20glicemia%20de%20jejum%20veio%20alterada%20e%20queria%20entender%20melhor%20o%20que%20mudar%20na%20alimenta%C3%A7%C3%A3o" target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que significa uma glicemia de jejum entre 100 e 125
 
 Você tirou sangue em jejum, o laudo chegou por e-mail ou pelo aplicativo do laboratório, e no meio dos números um deles vem com uma seta ou uma cor diferente. Glicemia de jejum: 108. Você procura no Google o que isso significa e cai numa lista de proibições, sem ninguém explicar o que é esse número antes de mandar você cortar tudo.
@@ -60,6 +51,15 @@ Repare que descrevi três faixas, não duas. Existe um espaço entre "normal" e 
 Alterada significa que o valor está fora da faixa de referência, e que vale a pena investigar. Diagnóstico é uma conclusão clínica, que depende de mais de uma medida, às vezes de outros exames complementares e sempre do raciocínio do médico que está olhando o seu caso inteiro, não só um número isolado.
 
 Essa distinção importa porque muda o que faz sentido fazer agora. Diagnóstico pede conduta médica. Alteração nessa faixa intermediária pede atenção e, com frequência, é exatamente o momento em que o ajuste na alimentação tem mais efeito, porque ainda há espaço de manobra antes que o quadro avance.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se a glicemia veio alterada no seu último exame e você não sabe por onde começar no prato, dá pra conversar sobre isso com calma.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20minha%20glicemia%20de%20jejum%20veio%20alterada%20e%20queria%20entender%20melhor%20o%20que%20mudar%20na%20alimenta%C3%A7%C3%A3o" target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## O que está acontecendo no corpo quando esse número sobe
 

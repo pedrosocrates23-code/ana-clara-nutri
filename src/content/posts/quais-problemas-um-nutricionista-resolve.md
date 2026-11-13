@@ -53,6 +53,15 @@ Repare na lista a seguir. Metade dela não tem relação direta com a balança.
 
 Comece pela dor que soou familiar.
 
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
+
 ## Exames alterados: colesterol, glicemia e pressão
 
 Você faz um check-up de rotina e o resultado vem com alguma coisa fora da faixa. O colesterol subiu.

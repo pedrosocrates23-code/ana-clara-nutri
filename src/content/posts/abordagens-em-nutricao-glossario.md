@@ -37,15 +37,6 @@ references:
 
 **Abordagem não prescritiva** e comer intuitivo são os dois termos que o próprio resultado de busca entrega quando alguém procura por um rótulo que, no Brasil, não existe: nutricionista comportamental não é um título reconhecido pelo Conselho Federal de Nutricionistas. Este glossário define, um a um, os termos reais por trás dessa busca, com **Ana Clara Andrade Santos**, nutricionista **CRN-1 nº 19825 em Goiânia** e por telenutrição.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se um desses termos descreve o que você procura, me conte pelo WhatsApp e a gente vê se faz sentido para o seu caso.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20gloss%C3%A1rio%20de%20abordagens%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20o%20acompanhamento." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## Por que este glossário existe
 
 Quando alguém digita esses termos de busca, entre eles "nutricionista comportamental", que não é um título reconhecido por nenhum conselho, e "nutricionista especialista em compulsão", o mecanismo de busca costuma responder com um resumo que repete exatamente esse rótulo, porque é o termo que mais gente digita. O problema é que esse rótulo, como título pessoal, não corresponde a nada reconhecido pela profissão no Brasil.
@@ -55,6 +46,15 @@ Essa confusão tem um efeito prático na vida de quem está procurando ajuda. A 
 O que existe de verdade por trás dessa busca é um conjunto de termos técnicos, cada um com um significado próprio: abordagem não prescritiva, comer intuitivo, mindfulness alimentar, flexibilidade alimentar. Nenhum deles é uma especialidade. Cada um descreve uma peça de como um acompanhamento pode funcionar.
 
 Esta página organiza essas peças, uma por uma, com a definição de cada termo separada de qualquer coisa que soe como currículo ou título. Cada seção abaixo trata de um único conceito, explica de onde ele vem e como aparece dentro de um acompanhamento real, sem prometer resultado nem colar o nome do termo como etiqueta pessoal de ninguém. É um mapa do vocabulário, não um cartão de visita.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se um desses termos descreve o que você procura, me conte pelo WhatsApp e a gente vê se faz sentido para o seu caso.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20gloss%C3%A1rio%20de%20abordagens%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20o%20acompanhamento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Abordagem não prescritiva
 

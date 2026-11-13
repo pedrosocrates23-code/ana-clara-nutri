@@ -38,15 +38,6 @@ references:
 
 **Vontade de doce à noite**, repetida todo dia, quase nunca nasce no sofá. Ela vem de três lugares: como o dia de comida foi montado, quanto você dormiu e o que aquele horário representa na rotina. Eu sou **Ana Clara Andrade Santos, CRN-1 nº 19825**, nutricionista, atendo em **Goiânia** e por telenutrição, e é esse mecanismo que eu destrincho aqui, sem prometer que ele desaparece da noite para o dia.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se essa vontade de doce à noite se repete todo dia na sua rotina, dá para entender o porquê. Me conte pelo WhatsApp como tem sido o seu dia a dia.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Sinto%20vontade%20de%20doce%20todo%20dia%20%C3%A0%20noite%20e%20queria%20entender%20melhor%20o%20porqu%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que acontece entre o jantar e o sofá
 
 O jantar termina, a louça vai para a pia, e alguns minutos depois já bate aquela vontade. Não é fome de prato, é vontade de outra coisa, geralmente doce. Você acabou de comer, então a lógica diz que não devia fazer sentido, e é exatamente essa contradição que costuma gerar a culpa: "eu não tenho limite", "eu estraguei o dia de novo".
@@ -56,6 +47,15 @@ Eu quero tirar essa frase da mesa antes de qualquer outra coisa. O que acontece 
 Esse padrão se repete porque as causas se repetem. Se o dia foi corrido, se o sono da noite anterior foi curto, se o sofá é o único momento seu do dia inteiro, a vontade de doce tende a aparecer de novo amanhã, na mesma hora, com a mesma intensidade. Entender isso já muda o jeito de lidar com ela.
 
 Muita gente descreve esse momento como um "desligar", quase automático, entre guardar a louça e já estar com a mão no armário. É justamente esse caráter automático que confunde: parece impulso, mas na maior parte das vezes é resposta a alguma coisa que já vinha se acumulando desde a manhã. Olhar para a noite isolada, sem olhar para o dia inteiro que a precedeu, é o motivo pelo qual essa vontade costuma parecer misteriosa demais para ter explicação.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se essa vontade de doce à noite se repete todo dia na sua rotina, dá para entender o porquê. Me conte pelo WhatsApp como tem sido o seu dia a dia.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Sinto%20vontade%20de%20doce%20todo%20dia%20%C3%A0%20noite%20e%20queria%20entender%20melhor%20o%20porqu%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que a vontade de doce cresce à noite
 

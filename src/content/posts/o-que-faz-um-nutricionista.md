@@ -71,6 +71,15 @@ A ideia por trás dela é a autonomia: você aprender a fazer as próprias escol
 
 O que muda como você escolhe um profissional está na diferença entre o terceiro ato e o quarto.
 
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Cada história é diferente. Me conte a sua pelo WhatsApp e a gente vê qual a melhor forma de acompanhamento para o seu momento.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20um%20artigo%20no%20seu%20blog%20e%20gostaria%20de%20entender%20qual%20a%20melhor%20forma%20de%20acompanhamento%20para%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
+
 ## Dieta ou acompanhamento: onde está o trabalho de verdade
 
 Se você já saiu de um consultório com uma folha impressa e a sensação de estar sozinha para dar conta dela, você conhece o problema por dentro. A folha é o produto mais visível do trabalho, e a menor parte dele.

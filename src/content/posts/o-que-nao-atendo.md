@@ -38,15 +38,6 @@ references:
 
 O acompanhamento com **Ana Clara Andrade Santos, CRN-1 nº 19825**, em **Goiânia**, tem um recorte declarado: pessoa adulta, demanda individual, atendimento particular, presencial ou por telenutrição. Fora desse recorte, conduta médica e sofrimento psíquico mais amplo seguem para o profissional certo, e esta página explica **o que eu não atendo** e como o encaminhamento acontece.
 
-<aside class="cta-artigo" aria-label="Falar com a nutricionista">
-<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
-<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
-<p class="cta-artigo__texto">Se você não tem certeza se o seu caso está dentro do que eu atendo, me conta pelo WhatsApp antes de agendar.</p>
-<span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20queria%20saber%20se%20o%20meu%20caso%20se%20encaixa." target="_blank" rel="noopener">Falar no WhatsApp</a>
-</span>
-</aside>
-
 ## O que está dentro do meu atendimento
 
 Antes de falar sobre o que fica de fora, vale explicar o que está dentro, porque é esse recorte que organiza tudo o mais. Eu atendo pessoa adulta, em consulta individual, dentro de um acompanhamento nutricional particular. Presencial, no beLIV, em Goiânia, ou por telenutrição, para qualquer lugar do Brasil.
@@ -62,6 +53,15 @@ A telenutrição segue essa mesma lógica de individualização. Regulamentada p
 Na prática, a primeira conversa é onde esse recorte é confirmado dos dois lados. Eu pergunto sobre a sua rotina, o seu histórico de saúde e o que já tentou antes, e é dessa conversa, não de uma ficha padrão preenchida às pressas, que sai a decisão sobre o que cabe numa consulta de nutrição e o que precisa de outro olhar. Se algo que você traz já indicar, ainda na abertura da conversa, que o caso pede outro profissional, eu digo isso na hora, em vez de seguir com uma avaliação que não vai resolver o problema real.
 
 Esse recorte também define quem esse atendimento serve melhor. Ele foi pensado para pessoa adulta que quer entender o porquê de cada orientação, não só recebê-la pronta, e que busca um acompanhamento particular, sem depender de aprovação de terceiros para agendar ou para mudar de rumo no meio do processo.
+
+<aside class="cta-artigo" aria-label="Falar com a nutricionista">
+<p class="cta-artigo__eyebrow">Acompanhamento nutricional</p>
+<p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
+<p class="cta-artigo__texto">Se você não tem certeza se o seu caso está dentro do que eu atendo, me conta pelo WhatsApp antes de agendar.</p>
+<span class="cta-artigo__acao">
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20queria%20saber%20se%20o%20meu%20caso%20se%20encaixa." target="_blank" rel="noopener">Falar no WhatsApp</a>
+</span>
+</aside>
 
 ## Por que essas fronteiras estão declaradas aqui
 
