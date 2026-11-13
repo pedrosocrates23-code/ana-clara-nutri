@@ -63,6 +63,10 @@ const { desk, mob } = heroSources();
     background: var(--forest-ink); color: #fff;
   }
   .hero__media { position: absolute; inset: 0; z-index: -2; }
+  /* O base.css dá height:auto ao <picture>; sem isto o height:100% da foto não tem
+     referência e ela fica na proporção natural, deixando faixa vazia embaixo em telas
+     mais estreitas (ex.: 1661px de largura renderizava 711px de altura num hero de 940px). */
+  .hero__media :global(picture) { width: 100%; height: 100%; }
   .hero__media :global(.hero__img) {
     width: 100%; height: 100%; object-fit: cover; object-position: 72% center;
     animation: hero-in 2.4s var(--ease-out) both;

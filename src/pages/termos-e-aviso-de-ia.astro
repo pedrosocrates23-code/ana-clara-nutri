@@ -3,14 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { SITE, HAS_CRN, CRN_PARENTESES } from '../lib/site';
 import { buildGraph } from '../lib/schema/shared';
-const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Termos e Aviso de IA', href: '/termos-e-aviso-de-ia' }];
-const graph = buildGraph({ path: '/termos-e-aviso-de-ia', title: 'Termos de Uso e Aviso de IA | Ana Clara Nutri', breadcrumb });
+const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Termos de Uso', href: '/termos-e-aviso-de-ia' }];
+const graph = buildGraph({ path: '/termos-e-aviso-de-ia', title: 'Termos de Uso | Ana Clara Nutri', breadcrumb });
 ---
 <BaseLayout
-  title="Termos de Uso e Aviso de IA | Ana Clara Nutri"
+  title="Termos de Uso | Ana Clara Nutri"
   description="Termos de uso do site e aviso sobre o uso de ferramentas de inteligência artificial na produção de conteúdo."
   path="/termos-e-aviso-de-ia" graph={graph}>
-  <PageHero kicker="Legal" title="Termos de Uso e Aviso de IA" breadcrumb={breadcrumb} />
+  <PageHero kicker="Legal" title="Termos de Uso" breadcrumb={breadcrumb} />
 
   <section class="section">
     <div class="container prose">
