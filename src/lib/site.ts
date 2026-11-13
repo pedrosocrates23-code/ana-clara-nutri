@@ -36,9 +36,9 @@ export const SITE = {
  },
  geo: { lat: '{LAT}', lng: '{LNG}' }, // a confirmar
  // phone = exibição; phoneE164 = links tel:/wa.me e schema.org
- phone: '+55 62 99495-9804',
- phoneE164: '+5562994959804',
- whatsapp: '5562994959804',
+ phone: '+55 62 99649-6201',
+ phoneE164: '+5562996496201',
+ whatsapp: '5562996496201',
  // Valores (a preencher), atendimento PARTICULAR
  priceOnline: '{VALOR_ONLINE}',
  pricePresencial: '{VALOR_PRESENCIAL}',

@@ -44,7 +44,7 @@ Isso não é raro, e não é sinal de que o seu corpo funciona diferente de todo
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se a sua conta não está fechando, vale olhar para o seu dia a dia de verdade. Me chama no WhatsApp e conta como tem sido a sua rotina.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -121,7 +121,7 @@ Existe uma diferença entre investigar variação metabólica com avaliação pr
 <p class="cta-artigo__titulo">Dá para entender <em>o seu padrão</em></p>
 <p class="cta-artigo__texto">Cada rotina tem os próprios pontos cegos. Fale comigo pelo WhatsApp e vamos olhar para o seu dia a dia com calma.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Eu%20como%20pouco%20e%20sinto%20que%20n%C3%A3o%20emagre%C3%A7o%2C%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

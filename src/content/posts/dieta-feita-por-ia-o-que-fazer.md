@@ -48,7 +48,7 @@ Você não fez nada de errado ao perguntar para uma inteligência artificial o q
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se o plano que você recebeu levantou alguma dúvida, me manda pelo WhatsApp que a gente olha juntas.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20plano%20alimentar%20de%20uma%20IA%20e%20queria%20entender%20melhor%20se%20posso%20seguir." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20plano%20alimentar%20de%20uma%20IA%20e%20queria%20entender%20melhor%20se%20posso%20seguir." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -106,7 +106,7 @@ Nenhum desses sinais significa que você fez algo errado ao pedir ajuda para uma
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Passou o checklist e ainda ficou em dúvida sobre algum ponto do plano? Me chama no WhatsApp.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Fiz%20o%20checklist%20do%20plano%20que%20uma%20IA%20me%20deu%20e%20ainda%20fiquei%20com%20d%C3%BAvida." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Fiz%20o%20checklist%20do%20plano%20que%20uma%20IA%20me%20deu%20e%20ainda%20fiquei%20com%20d%C3%BAvida." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

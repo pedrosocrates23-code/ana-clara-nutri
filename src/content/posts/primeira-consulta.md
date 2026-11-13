@@ -43,7 +43,7 @@ A **primeira consulta** com a nutricionista **Ana Clara Andrade Santos (CRN-1 n�
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você já sabe que quer marcar, me chame no WhatsApp e eu te explico como funciona o agendamento.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20a%20primeira%20consulta%20e%20gostaria%20de%20agendar%20a%20minha." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20a%20primeira%20consulta%20e%20gostaria%20de%20agendar%20a%20minha." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -130,7 +130,7 @@ Não existe formato superior ao outro. A pergunta que costuma ajudar a decidir �
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Ficou alguma dúvida sobre como funciona a consulta? Me chame no WhatsApp e eu respondo com calma.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20como%20funciona%20a%20primeira%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20como%20funciona%20a%20primeira%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

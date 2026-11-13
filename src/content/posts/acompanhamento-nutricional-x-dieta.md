@@ -39,7 +39,7 @@ references:
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você já recebeu um papel pronto que não durou nem duas semanas, vale entender por que o formato de acompanhamento costuma resolver isso na raiz.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%21%20Vi%20o%20artigo%20sobre%20acompanhamento%20nutricional%20e%20queria%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%21%20Vi%20o%20artigo%20sobre%20acompanhamento%20nutricional%20e%20queria%20entender%20como%20funciona%20o%20atendimento." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

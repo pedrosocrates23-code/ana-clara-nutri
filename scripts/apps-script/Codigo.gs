@@ -87,7 +87,7 @@ function doPost(e) {
 // Configuração: Apps Script → Configurações do projeto → Propriedades do script.
 // Nenhuma delas fica no código, para não vazar segredo no repositório.
 //
-//   WHATSAPP_DESTINO   ex.: +5562994959804  (formato internacional, com +)
+//   WHATSAPP_DESTINO   ex.: +5562996496201  (formato internacional, com +)
 //   CALLMEBOT_APIKEY   chave que o bot do CallMeBot devolve à Ana
 //   EMAIL_DESTINO      e-mail do lead; aceita vários, separados por vírgula
 //

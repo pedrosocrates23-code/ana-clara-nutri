@@ -115,7 +115,7 @@ Apps Script → **Configurações do projeto** → **Propriedades do script**. F
 | Propriedade | Valor |
 |---|---|
 | `EMAIL_DESTINO` | `pedrosocrates27@gmail.com,pedrosocrates23@gmail.com,nutrianaclaraa@gmail.com` (vários, separados por vírgula) |
-| `WHATSAPP_DESTINO` | `+5562994959804` |
+| `WHATSAPP_DESTINO` | `+5562996496201` |
 | `CALLMEBOT_APIKEY` | chave do CallMeBot — **ainda não configurada** |
 
 **Propriedade ausente = canal pulado, sem erro.** Hoje só o e-mail está ligado.

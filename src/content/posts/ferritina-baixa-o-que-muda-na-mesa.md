@@ -47,7 +47,7 @@ As duas coisas fazem sentido juntas, e vou explicar o porquê. Antes, preciso se
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você já tem o exame de ferritina em mãos e quer entender o que muda na sua alimentação, me conte pelo WhatsApp.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20exame%20com%20ferritina%20baixa%20e%20queria%20entender%20o%20que%20muda%20na%20minha%20alimenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Recebi%20um%20exame%20com%20ferritina%20baixa%20e%20queria%20entender%20o%20que%20muda%20na%20minha%20alimenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -149,7 +149,7 @@ Alguns sinais merecem atenção mais rápida, e vale contar ao seu médico se ap
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Cada exame conta uma história diferente. Me mande o seu pelo WhatsApp e conversamos sobre o que faz sentido no seu caso.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Tenho%20um%20exame%20com%20ferritina%20baixa%20e%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Tenho%20um%20exame%20com%20ferritina%20baixa%20e%20gostaria%20de%20entender%20melhor%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

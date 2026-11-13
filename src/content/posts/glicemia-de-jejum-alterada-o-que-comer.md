@@ -43,7 +43,7 @@ A **glicemia de jejum** entre **100 e 125 mg/dL** ainda não é diagnóstico de 
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se a glicemia veio alterada no seu último exame e você não sabe por onde começar no prato, dá pra conversar sobre isso com calma.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20minha%20glicemia%20de%20jejum%20veio%20alterada%20e%20queria%20entender%20melhor%20o%20que%20mudar%20na%20alimenta%C3%A7%C3%A3o" target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20minha%20glicemia%20de%20jejum%20veio%20alterada%20e%20queria%20entender%20melhor%20o%20que%20mudar%20na%20alimenta%C3%A7%C3%A3o" target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -92,7 +92,7 @@ Isso também aparece na forma como a refeição é montada ao longo da semana. U
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Entender o mecanismo já ajuda, mas montar o prato certo para a sua rotina é conversa de consulta.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20queria%20entender%20como%20montar%20meu%20prato%20com%20a%20glicemia%20de%20jejum%20alterada" target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20queria%20entender%20como%20montar%20meu%20prato%20com%20a%20glicemia%20de%20jejum%20alterada" target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

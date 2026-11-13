@@ -45,7 +45,7 @@ Especialidade em nutrição tem definição legal, não é um jeito de se aprese
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se depois de ler isso você quiser entender como isso aparece no meu atendimento, me chama no WhatsApp e conversamos.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -102,7 +102,7 @@ Essa distinção importa porque um profissional sério responde à intenção po
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se o que você procura é entender minha forma de trabalhar, sem depender de rótulo, me chama no WhatsApp e conversamos sobre o seu caso.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20artigo%20sobre%20especialidade%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

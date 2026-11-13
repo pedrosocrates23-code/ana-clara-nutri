@@ -43,7 +43,7 @@ references:
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se essa vontade de doce à noite se repete todo dia na sua rotina, dá para entender o porquê. Me conte pelo WhatsApp como tem sido o seu dia a dia.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Sinto%20vontade%20de%20doce%20todo%20dia%20%C3%A0%20noite%20e%20queria%20entender%20melhor%20o%20porqu%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Sinto%20vontade%20de%20doce%20todo%20dia%20%C3%A0%20noite%20e%20queria%20entender%20melhor%20o%20porqu%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -100,7 +100,7 @@ Essa queda costuma ser sentida como fome, e à noite, depois de um dia inteiro d
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Entender a curva do seu dia, sono, refeições e rotina, é o primeiro passo para reorganizar sem culpa. Vamos conversar no WhatsApp?</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Quero%20entender%20por%20que%20sinto%20tanta%20vontade%20de%20doce%20%C3%A0%20noite%20e%20como%20reorganizar%20minhas%20refei%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Quero%20entender%20por%20que%20sinto%20tanta%20vontade%20de%20doce%20%C3%A0%20noite%20e%20como%20reorganizar%20minhas%20refei%C3%A7%C3%B5es." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

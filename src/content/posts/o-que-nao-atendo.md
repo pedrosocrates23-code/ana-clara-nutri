@@ -43,7 +43,7 @@ O acompanhamento com **Ana Clara Andrade Santos, CRN-1 nº 19825**, em **Goiâni
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você não tem certeza se o seu caso está dentro do que eu atendo, me conta pelo WhatsApp antes de agendar.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20queria%20saber%20se%20o%20meu%20caso%20se%20encaixa." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20queria%20saber%20se%20o%20meu%20caso%20se%20encaixa." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -108,7 +108,7 @@ Outro exemplo ajuda aqui: quando uma pessoa descreve um período extenso de tris
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você já sabe que o seu caso está dentro do que eu atendo, o próximo passo é simples: me chama no WhatsApp.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20a%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20quero%20saber%20mais%20sobre%20como%20agendar%20minha%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20a%20p%C3%A1gina%20sobre%20o%20que%20voc%C3%AA%20n%C3%A3o%20atende%20e%20quero%20saber%20mais%20sobre%20como%20agendar%20minha%20consulta." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

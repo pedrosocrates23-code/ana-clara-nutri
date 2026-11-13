@@ -32,7 +32,7 @@ O acompanhamento nutricional com **Ana Clara Andrade Santos**, **CRN-1 nº 19825
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se você quer entender como esse processo funcionaria no seu caso, me conta pelo WhatsApp.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20%22Como%20eu%20atendo%22%20e%20queria%20entender%20melhor%20o%20processo." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20da%20p%C3%A1gina%20%22Como%20eu%20atendo%22%20e%20queria%20entender%20melhor%20o%20processo." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -81,7 +81,7 @@ Um exemplo prático: se depois da segunda semana uma refeição sugerida no plan
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se ficou alguma dúvida sobre como esse acompanhamento funcionaria no seu caso, escreve pra mim no WhatsApp.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20sobre%20o%20processo%20de%20atendimento%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20sobre%20o%20processo%20de%20atendimento%20e%20tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 

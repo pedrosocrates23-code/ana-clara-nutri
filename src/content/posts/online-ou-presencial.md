@@ -45,7 +45,7 @@ references:
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se ainda está em dúvida entre online e presencial, me conta o seu caso e eu te ajudo a decidir qual formato faz mais sentido agora.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Estou%20em%20d%C3%BAvida%20entre%20consulta%20online%20ou%20presencial%20e%20queria%20entender%20qual%20faz%20mais%20sentido%20para%20o%20meu%20caso.">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Estou%20em%20d%C3%BAvida%20entre%20consulta%20online%20ou%20presencial%20e%20queria%20entender%20qual%20faz%20mais%20sentido%20para%20o%20meu%20caso.">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -120,7 +120,7 @@ Outro exemplo, também sem identificar ninguém: quem viaja a trabalho com frequ
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Me conta se você está em Goiânia ou em outra cidade e eu te ajudo a decidir entre consulta presencial ou online.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20online%20e%20presencial%20e%20queria%20agendar%20uma%20consulta.">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vi%20o%20artigo%20sobre%20online%20e%20presencial%20e%20queria%20agendar%20uma%20consulta.">Falar no WhatsApp</a>
 </span>
 </aside>
 

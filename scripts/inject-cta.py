@@ -10,7 +10,7 @@ from urllib.parse import quote
 BASE = os.path.join(os.path.dirname(__file__), "..", "src", "content", "posts")
 
 # Número real do site (src/lib/site.ts: SITE.whatsapp). Se mudar lá, atualizar aqui.
-WA_NUM = "5562994959804"
+WA_NUM = "5562996496201"
 WA_MSG = "Olá, Ana Clara! Li um artigo no seu blog e gostaria de entender qual a melhor forma de acompanhamento para o meu caso."
 WA_URL = f"https://wa.me/{WA_NUM}?text={quote(WA_MSG)}"
 

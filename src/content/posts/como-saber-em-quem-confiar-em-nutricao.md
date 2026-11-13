@@ -50,7 +50,7 @@ Antes de aceitar qualquer orientação, dá para aplicar um filtro simples. Ele 
 <p class="cta-artigo__titulo">Um cuidado feito <em>para você</em></p>
 <p class="cta-artigo__texto">Se depois de aplicar esses critérios você quiser conversar comigo, me chama no WhatsApp e a gente vê se faz sentido para o seu caso.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Li%20o%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20entender%20melhor%20antes%20de%20agendar." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
@@ -124,7 +124,7 @@ Um detalhe ajuda a testar isso rápido: pergunte se o conteúdo faria sentido se
 <p class="cta-artigo__titulo">Dá para comer bem <em>sem promessa</em></p>
 <p class="cta-artigo__texto">Se você já reparou nesses sinais em outro lugar e quer um caminho diferente, me chama no WhatsApp e conversamos sobre o seu caso.</p>
 <span class="cta-artigo__acao">
-<a class="cta-artigo__btn" href="https://wa.me/5562994959804?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
+<a class="cta-artigo__btn" href="https://wa.me/5562996496201?text=Ol%C3%A1%2C%20Ana%20Clara%21%20Vim%20do%20artigo%20sobre%20como%20saber%20em%20quem%20confiar%20em%20nutri%C3%A7%C3%A3o%20e%20queria%20conversar%20sobre%20o%20meu%20caso." target="_blank" rel="noopener">Falar no WhatsApp</a>
 </span>
 </aside>
 
