@@ -38,12 +38,30 @@ const offerOnline = isPlaceholder(SITE.priceOnline) ? null : {
  itemOffered: { '@id': SCHEMA_IDS.business },
  price: SITE.priceOnline, priceCurrency: 'BRL', category: 'Atendimento particular por telenutrição',
 };
-const extraNodes = [offerPresencial, offerOnline].filter(Boolean);
-const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade Santos', mainEntity: 'business', faqs, breadcrumb, extraNodes });
+// Esta página é o SERVIÇO presencial; o negócio (#business) mora na home e a Pessoa em /sobre.
+// Um @id, uma casa só (entity-ops, 14/11/2026).
+const serviceId = `${SITE.url}${path}#service`;
+const service = {
+ '@type': 'Service',
+ '@id': serviceId,
+ name: 'Consulta com nutricionista em Goiânia (presencial)',
+ serviceType: 'Consulta nutricional presencial',
+ provider: { '@id': SCHEMA_IDS.business },
+ areaServed: [
+ { '@type': 'City', name: 'Goiânia' },
+ { '@type': 'City', name: 'Aparecida de Goiânia' },
+ ],
+ availableChannel: {
+ '@type': 'ServiceChannel',
+ serviceLocation: { '@type': 'Place', name: SITE.venue, address: ADDRESS_LINE },
+ },
+};
+const extraNodes = [service, offerPresencial, offerOnline].filter(Boolean);
+const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara Andrade Santos', mainEntity: { '@id': serviceId }, faqs, breadcrumb, extraNodes });
 ---
 <BaseLayout
  title="Nutricionista em Goiânia | Ana Clara Andrade Santos"
- description="Nutricionista em Goiânia com atendimento presencial e abordagem comportamental. Atendimento particular. Agende sua consulta."
+ description="Nutricionista em Goiânia com consulta presencial no beLIV: emagrecimento, reeducação alimentar, nutrição clínica, esportiva e intestinal. Particular. Agende."
  path={path} graph={graph}>
  <PageHero kicker="Presencial · Goiânia"
  title="Nutricionista em Goiânia, atendimento presencial"

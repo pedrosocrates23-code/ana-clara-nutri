@@ -21,7 +21,7 @@ export function sharedNodes() {
  familyName: 'Andrade Santos',
  jobTitle: SITE.jobTitle,
  description:
- 'Nutricionista formada pela Universidade Federal de Goiás (UFG), com mais de quatro anos de experiência em nutrição clínica nos contextos hospitalar e ambulatorial. Atendimento particular, individualizado e baseado em evidências, online e presencial em Goiânia.',
+ 'Ana Clara Andrade Santos é nutricionista em Goiânia (CRN-1 nº 19825), com atendimento particular presencial no beLIV Espaço de Saúde e Bem-Estar e online por telenutrição para todo o Brasil. Formada pela UFG, tem mais de quatro anos em nutrição clínica hospitalar e ambulatorial e atende emagrecimento e reeducação alimentar, nutrição clínica, esportiva, saúde intestinal e educação alimentar. Conduz todos os acompanhamentos com abordagem comportamental e educacional.',
  url: `${SITE.url}/sobre`,
  ...(TEM_FOTO && { image: `${SITE.url}${FOTO_ANA}` }),
  worksFor: { '@id': ID.business },
@@ -32,9 +32,9 @@ export function sharedNodes() {
  sameAs: 'https://www.wikidata.org/wiki/Q7894375',
  },
  knowsAbout: [
- 'nutrição comportamental', 'educação alimentar', 'reeducação alimentar',
- 'nutrição esportiva', 'nutrição clínica', 'saúde intestinal',
- 'telenutrição',
+ 'emagrecimento', 'reeducação alimentar', 'nutrição clínica',
+ 'nutrição esportiva', 'saúde intestinal', 'educação alimentar',
+ 'nutrição comportamental', 'telenutrição',
  ],
  hasCredential: [
  // O registro no CRN só entra no grafo quando o número real existir: um
@@ -68,7 +68,7 @@ export function sharedNodes() {
  '@id': ID.business,
  name: `${SITE.legalName}, Nutricionista`,
  description:
- 'Atendimento nutricional individual e particular, presencial em Goiânia e online por telenutrição.',
+ 'Nutricionista em Goiânia, presencial e online. Atendimento nutricional individual e particular, presencial no beLIV Espaço de Saúde e Bem-Estar e online por telenutrição para todo o Brasil, em emagrecimento e reeducação alimentar, nutrição clínica, esportiva, saúde intestinal e educação alimentar, com abordagem comportamental e educacional.',
  url: `${SITE.url}/`,
  founder: { '@id': ID.person },
  employee: { '@id': ID.person },
@@ -142,7 +142,8 @@ export type GraphOpts = {
  type?: 'WebPage' | 'ProfilePage' | 'CollectionPage';
  faqs?: FaqItem[];
  breadcrumb?: { name: string; href: string }[];
- mainEntity?: 'person' | 'business';
+ /** 'person' | 'business' = nós compartilhados; { '@id' } = nó próprio da página (ex.: Service). */
+ mainEntity?: 'person' | 'business' | { '@id': string };
  extraNodes?: any[]; // Service, Article, Offer, Recipe, etc.
 };
 
@@ -167,6 +168,7 @@ export function buildGraph(opts: GraphOpts) {
  };
  if (opts.mainEntity === 'person') page.mainEntity = { '@id': ID.person };
  if (opts.mainEntity === 'business') page.mainEntity = { '@id': ID.business };
+ if (typeof opts.mainEntity === 'object') page.mainEntity = { '@id': opts.mainEntity['@id'] };
  nodes.push(page);
 
  if (opts.breadcrumb?.length) {

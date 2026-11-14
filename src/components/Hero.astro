@@ -10,6 +10,11 @@
 // (/nutricionista-online/ e /nutricionista-em-goiania/). Escolher entre duas opções concretas
 // pesa menos do que decidir "agendar ou não" (micro-compromisso); o WhatsApp fica nos CTAs
 // dentro de cada silo.
+//
+// Reposicionamento 14/11/2026 (entity-ops): a identidade é "Nutricionista em Goiânia,
+// presencial e online" (H1 = núcleo canônico, repetido igual no title, no footer e no GBP).
+// "Abordagem comportamental e educacional" é ATRIBUTO: entra só no subtítulo, sempre com essa
+// string exata, e nunca colado a "nutricionista" (título vedado, CFN art. 24 §2º).
 import Button from './Button.astro';
 import { HAS_CRN, CRN } from '../lib/site';
 import { heroSources } from '../lib/hero';
@@ -30,14 +35,15 @@ const { desk, mob } = heroSources();
 
   <div class="container hero__inner">
     <div class="hero__content">
-      <p class="kicker hero__kicker">Nutricionista{HAS_CRN ? ` · ${CRN}` : ''}</p>
+      <p class="kicker hero__kicker">Ana Clara Andrade Santos{HAS_CRN ? ` · ${CRN}` : ''}</p>
       <h1 class="hero__title">
-        <span class="hero__line">Nutrição com abordagem</span>
-        <span class="hero__line"><em>comportamental e educacional</em></span>
+        <span class="hero__line">Nutricionista em Goiânia,</span>
+        <span class="hero__line"><em>presencial e online</em></span>
       </h1>
       <p class="hero__sub">
-        Atendimento presencial em Goiânia e online por telenutrição para todo o Brasil.
-        Um cuidado próximo, baseado em evidências e sem dietas restritivas.
+        Atendimento particular presencial no beLIV, em Goiânia, e online para todo o Brasil, em
+        emagrecimento e reeducação alimentar, nutrição clínica, esportiva e saúde intestinal.
+        Em todas, com abordagem comportamental e educacional, sem dieta restritiva.
       </p>
 
       <p class="hero__ask">Como você prefere ser atendida?</p>

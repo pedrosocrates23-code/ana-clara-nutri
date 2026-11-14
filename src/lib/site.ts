@@ -137,11 +137,12 @@ export const NAV = [
 ] as const;
 
 // Áreas de atuação (silos), usado na home e no footer.
+// Ordem (14/11/2026): demanda geral primeiro; comportamental por último, é o jeito de conduzir, não a identidade.
 export const SILOS: readonly { label: string; href: string; intro: string; img: string }[] = [
- { label: 'Nutrição Comportamental', href: '/nutricao-comportamental/', intro: 'Entenda a sua relação com a comida e construa hábitos que duram.', img: 'silo-nutricao-comportamental' },
- { label: 'Educação Alimentar', href: '/educacao-alimentar/', intro: 'Aprenda a fazer escolhas com autonomia, sem dietas restritivas.', img: 'silo-educacao-alimentar' },
  { label: 'Emagrecimento e Reeducação', href: '/emagrecimento/', intro: 'Reorganize a alimentação pelo comportamento, no seu tempo e sem culpa.', img: 'silo-emagrecimento' },
- { label: 'Nutrição Esportiva', href: '/nutricao-esportiva/', intro: 'Alimentação alinhada ao seu treino, à sua rotina e ao seu objetivo.', img: 'silo-nutricao-esportiva' },
  { label: 'Nutrição Clínica', href: '/nutricao-clinica/', intro: 'A alimentação como aliada do seu cuidado, junto à sua equipe de saúde.', img: 'silo-nutricao-clinica' },
+ { label: 'Nutrição Esportiva', href: '/nutricao-esportiva/', intro: 'Alimentação alinhada ao seu treino, à sua rotina e ao seu objetivo.', img: 'silo-nutricao-esportiva' },
  { label: 'Saúde Intestinal', href: '/saude-intestinal/', intro: 'Alimentação para o bem-estar digestivo e mais disposição no dia a dia.', img: 'silo-saude-intestinal' },
+ { label: 'Educação Alimentar', href: '/educacao-alimentar/', intro: 'Aprenda a fazer escolhas com autonomia, sem dietas restritivas.', img: 'silo-educacao-alimentar' },
+ { label: 'Nutrição Comportamental', href: '/nutricao-comportamental/', intro: 'Entenda a sua relação com a comida e construa hábitos que duram.', img: 'silo-nutricao-comportamental' },
 ];

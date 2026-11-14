@@ -23,13 +23,15 @@ const faqs = [
  { q: 'O que é nutrição comportamental?', a: 'É uma abordagem que olha para a sua relação com a comida, gatilhos, hábitos, emoções e rotina, em vez de focar apenas no prato. O objetivo é construir autonomia, com base em evidências, sem dietas restritivas.' },
  { q: 'A consulta é particular?', a: 'Sim, o atendimento é exclusivamente particular. Os valores são informados de forma transparente antes do agendamento.' },
  { q: 'Como é a primeira consulta?', a: 'É um momento de escuta e avaliação. Entendo o seu histórico, a sua rotina e os seus objetivos para construir um plano junto com você.' },
- { q: 'Para quais objetivos a Ana atende?', a: 'Nutrição comportamental, educação alimentar, reeducação alimentar, nutrição esportiva, clínica, saúde intestinal e alimentação vegetariana/vegana. No momento, não atende gestantes e crianças.' },
+ { q: 'Em quais áreas a Ana atende?', a: 'Emagrecimento e reeducação alimentar, nutrição clínica, nutrição esportiva, saúde intestinal e educação alimentar, presencial em Goiânia ou online. Em todas, com abordagem comportamental e educacional. No momento, não atende gestantes nem crianças.' },
  { q: 'Como faço para agendar?', a: 'Pelo WhatsApp. Você escolhe online ou presencial, e a própria Ana responde com os horários disponíveis e o valor da consulta antes de qualquer agendamento.' },
 ];
 
 const graph = buildGraph({
- path: '/', title: 'Nutrição com abordagem comportamental e educacional',
- mainEntity: 'person', faqs,
+ path: '/', title: 'Nutricionista em Goiânia, presencial e online | Ana Clara Nutri',
+ // A home é a casa do NEGÓCIO (business.url = '/'); a entity home da Pessoa é /sobre
+ // (ProfilePage). Um @id, uma casa só (entity-ops, 14/11/2026).
+ mainEntity: 'business', faqs,
 });
 
 const passos = [
@@ -45,8 +47,8 @@ const principios = ['Sem dieta restritiva', 'Sem julgamento', 'Baseada em evidê
 const { desk, mob } = heroSources();
 ---
 <BaseLayout
- title="Ana Clara Nutri | Nutricionista em Goiânia e Online"
- description="Nutrição com abordagem comportamental e educacional. Atendimento presencial em Goiânia e online (telenutrição) para todo o Brasil. Agende sua consulta."
+ title="Nutricionista em Goiânia, presencial e online | Ana Clara Nutri"
+ description="Nutricionista em Goiânia (CRN-1 nº 19825), presencial e online. Emagrecimento, reeducação, nutrição clínica, esportiva e intestinal. Agende no WhatsApp."
  path="/" overHero graph={graph}>
  {mob && <link slot="head" rel="preload" as="image" type="image/webp" media="(max-width: 760px)" imagesrcset={mob.srcset} imagesizes={mob.sizes} fetchpriority="high" />}
  {desk && <link slot="head" rel="preload" as="image" type="image/webp" media="(min-width: 761px)" imagesrcset={desk.srcset} imagesizes={desk.sizes} fetchpriority="high" />}
@@ -81,8 +83,8 @@ const { desk, mob } = heroSources();
    <div class="sobre__text">
     <span class="kicker">Prazer, sou a Ana</span>
     <h2>Comida é também <em>relação, rotina e história</em></h2>
-    <p class="sobre__lead">Sou nutricionista{CRN_PARENTESES}, formada pela UFG, e atuo com foco na abordagem comportamental e na educação alimentar. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
-    <p>Meu trabalho parte de uma ideia simples: quando a gente entende a sua relação com a comida, a mudança fica leve e dura mais.</p>
+    <p class="sobre__lead">Sou nutricionista em Goiânia{CRN_PARENTESES}, formada pela UFG, e atendo emagrecimento e reeducação alimentar, nutrição clínica, esportiva e saúde intestinal, presencialmente ou online. Acredito em um cuidado sem culpa, sem dietas malucas e sem promessas mágicas.</p>
+    <p>Em qualquer uma dessas áreas, conduzo o acompanhamento com abordagem comportamental e educacional. A ideia é simples: quando a gente entende a sua rotina e a sua relação com a comida, a mudança fica leve e dura mais.</p>
     <ul class="sobre__creds" role="list">
      {HAS_CRN && <li><strong>{CRN}</strong><span>Registro ativo</span></li>}
      <li><strong>UFG</strong><span>Universidade Federal de Goiás</span></li>
@@ -154,7 +156,7 @@ const { desk, mob } = heroSources();
      <span class="kicker">Áreas de atuação</span>
      <h2>Em que posso te <em>acompanhar</em></h2>
     </div>
-    <p>Cada pessoa tem uma história com a comida. Trabalho diferentes frentes da nutrição sempre pela mesma lente: comportamento e educação alimentar.</p>
+    <p>Atendo as principais áreas da nutrição, em Goiânia ou online. O que muda de uma para outra é o objetivo; o jeito de conduzir é o mesmo em todas: abordagem comportamental e educacional.</p>
    </div>
    <AreasGrid />
   </div>
