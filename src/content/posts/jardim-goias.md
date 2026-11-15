@@ -3,7 +3,8 @@ title: "Nutricionista perto do Jardim Goiás"
 metaTitle: "Nutricionista perto do Jardim Goiás | Ana Clara Nutri"
 description: "Nutricionista a cerca de 5 km do Jardim Goiás, em Goiânia (CRN-1 nº 19825). Presencial no beLIV ou online. Particular, valor informado antes de agendar."
 h1: "Nutricionista perto do <em>Jardim Goiás</em>"
-path: "/nutricionista-em-goiania/jardim-goias"
+path: "/nutricionista-em-goiania/regiao-sul/jardim-goias"
+parent: { name: "Região Sul", href: "/nutricionista-em-goiania/regiao-sul" }
 silo: "nutricionista-em-goiania"
 siloLabel: "Atendimento Presencial"
 datePublished: "2026-11-15"
@@ -52,13 +53,13 @@ lp:
     name: "Consulta com nutricionista para quem é do Jardim Goiás"
     serviceType: "Consulta nutricional"
     areaServed:
-      - { tipo: "Place", nome: "Jardim Goiás", sameAs: "https://www.wikidata.org/wiki/Q10305691" }
+      - { tipo: "Place", nome: "Jardim Goiás", sameAs: "https://www.wikidata.org/wiki/Q10305691", dentroDe: "Região Sul de Goiânia" }
       - { tipo: "City", nome: "Goiânia", sameAs: "https://www.wikidata.org/wiki/Q83189" }
 faqs:
   - q: Existe consultório da Ana Clara dentro do Jardim Goiás?
     a: Não. O único endereço presencial é o beLIV Espaço de Saúde e Bem-Estar, na Avenida dos Ipês, no Parque das Laranjeiras, Região Leste de Goiânia. Do Jardim Goiás até lá são cerca de 5,1 km, segundo estimativa do OpenStreetMap.
-  - q: Posso fazer a primeira consulta presencial e os retornos online?
-    a: Pode. O retorno por videochamada segue o mesmo raciocínio do presencial, então dá para alternar conforme a sua semana permitir. Você combina o formato de cada encontro direto comigo pelo WhatsApp.
+  - q: Dá para combinar consultas presenciais e online?
+    a: "Os dois formatos existem: presencial no beLIV e online por videochamada. Como organizar os encontros no seu caso, você combina direto comigo pelo WhatsApp, junto com os horários e o valor."
   - q: Preciso saber exatamente o que quero antes de marcar?
     a: Não. Uma frase sobre o que te incomoda na alimentação já basta para começar, mesmo que seja só a sensação de não saber por onde ir. Organizar o objetivo faz parte da primeira conversa.
   - q: A consulta tem horário antes ou depois do expediente?

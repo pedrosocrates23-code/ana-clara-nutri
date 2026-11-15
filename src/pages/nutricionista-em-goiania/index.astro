@@ -9,6 +9,7 @@ import AreasGrid from '../../components/AreasGrid.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, isPlaceholder, waLink, WA_MSG } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
+import { getCollection } from 'astro:content';
 
 const faqs = [
  { q: 'Onde fica o atendimento presencial?', a: `No ${SITE.venue}, na ${SITE.address.street}, em Goiânia - GO (CEP ${SITE.address.postalCode}), em um ponto de fácil acesso.` },
@@ -19,6 +20,19 @@ const faqs = [
  { q: 'Também faz atendimento online?', a: 'Sim. Se preferir a praticidade, há a opção de consulta online por telenutrição para todo o Brasil.' },
 ];
 const path = '/nutricionista-em-goiania/';
+
+// Silo local: filhas (cidades e regiões) e, abaixo de cada região, as netas (bairros).
+// Sai das próprias páginas (frontmatter), então página nova entra aqui sozinha.
+const lps = (await getCollection('posts')).filter((p) => p.data.silo === 'nutricionista-em-goiania' && p.data.layout === 'lp' && p.data.lp);
+const filhas = lps
+  .filter((p) => !p.data.parent && (p.data.lp!.tipo === 'cidade' || p.data.lp!.tipo === 'regiao'))
+  .map((p) => ({
+    nome: p.data.title.replace(/^Nutricionista (perto (de|do|da)|para quem mora na) /, ''),
+    href: p.data.path, kicker: p.data.lp!.fatos[0],
+    netas: lps.filter((n) => n.data.parent?.href === p.data.path)
+      .map((n) => ({ nome: n.data.title.replace(/^Nutricionista perto (de|do|da) /, ''), href: n.data.path })),
+  }))
+  .sort((a, b) => b.netas.length - a.netas.length || a.nome.localeCompare(b.nome));
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Atendimento Presencial', href: path }];
 // Preços ainda não informados (isPlaceholder): omitir os nós Offer é o padrão
 // já usado para CRN/sameAs/geo em shared.ts. Um Offer com "{VALOR_PRESENCIAL}"
@@ -119,6 +133,31 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
  </div>
  </section>
 
+ {filhas.length > 0 && (
+ <section class="section section--sand" id="para-quem-vem-de">
+ <div class="container">
+ <div class="section__head"><span class="kicker">Para quem vem de</span><h2>De onde você vem até o <em>beLIV</em></h2></div>
+ <p class="vem-intro">O atendimento presencial acontece num endereço só, no Parque das Laranjeiras, Região Leste de Goiânia. Cada página abaixo mostra a distância real e o caminho a partir da sua região ou cidade.</p>
+ <ul class="vem" role="list">
+ {filhas.map((f) => (
+ <li class="vem__item">
+ <a class="vem__main" href={f.href}>
+ <span class="vem__name">{f.nome}</span>
+ <span class="vem__route">{f.kicker.t} · {f.kicker.d}</span>
+ <span class="vem__go">Ver distância e caminho <i aria-hidden="true">→</i></span>
+ </a>
+ {f.netas.length > 0 && (
+ <ul class="vem__netas" role="list" aria-label={`Bairros de ${f.nome}`}>
+ {f.netas.map((n) => <li><a href={n.href}>{n.nome}</a></li>)}
+ </ul>
+ )}
+ </li>
+ ))}
+ </ul>
+ </div>
+ </section>
+ )}
+
  <section class="section section--alt">
  <div class="container">
  <div class="section__head"><span class="kicker">Áreas</span><h2>Em que posso te <em>acompanhar</em></h2></div>
@@ -139,4 +178,20 @@ const graph = buildGraph({ path, title: 'Nutricionista em Goiânia | Ana Clara A
 <style>
  .muted { color: var(--ink-faint); font-size: .85rem; margin-top: 18px; }
  .aw { max-width: var(--maxw-prose); }
+ .vem-intro { color: var(--ink-soft); max-width: 720px; margin: 0 0 24px; }
+ .vem { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+ @media (min-width: 760px) { .vem { grid-template-columns: repeat(2, 1fr); } }
+ .vem__item { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+ .vem__main { display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; text-decoration: none; color: inherit; }
+ .vem__main:hover .vem__name { color: var(--sage-700); }
+ .vem__name { font-family: var(--serif); font-size: 1.4rem; line-height: 1.15; }
+ .vem__route { font-size: .92rem; color: var(--ink-soft); }
+ .vem__item { display: flex; flex-direction: column; }
+ .vem__main { flex: 1; }
+ .vem__go { margin-top: auto; padding-top: 12px; font-weight: 600; font-size: .92rem; color: var(--sage-700); }
+ .vem__go i { font-style: normal; display: inline-block; transition: transform .2s ease; }
+ .vem__main:hover .vem__go i { transform: translateX(3px); }
+ .vem__netas { list-style: none; margin: 0; padding: 14px 24px 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px; background: var(--paper-2); }
+ .vem__netas a { display: inline-block; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--sage-100); background: #fff; color: var(--sage-800); font-size: .86rem; text-decoration: none; }
+ .vem__netas a:hover { border-color: var(--sage-400); }
 </style>

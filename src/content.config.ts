@@ -19,7 +19,8 @@ const references = z
 // Blocos visíveis da LP local (layout: 'lp'). Tudo que decide a conversão fica aqui,
 // visível sem clique (estudo CRO, M02 e checklist CO-CK-064); o aprofundamento é o body.
 const lp = z.object({
- tipo: z.enum(['cidade', 'bairro', 'area']),
+ // 'regiao' = página filha que agrupa bairros (netas) de uma região de Goiânia.
+ tipo: z.enum(['cidade', 'regiao', 'bairro', 'area']),
  kicker: z.string(), // ex.: "Atendimento presencial · 14,5 km de Aparecida"
  sub: z.string(), // subtítulo do hero: como funciona e por que é crível
  heroImage: z.string(), // nome no manifesto de imagens (Picture)
@@ -41,13 +42,28 @@ const lp = z.object({
  }),
  objecoes: z.array(z.object({ q: z.string(), a: z.string() })).min(3).max(4),
  guiaTitulo: z.string(), // texto do resumo do <details>
+ // Só na página de região: os bairros dela (netas). Com `href`, o bairro tem página própria;
+ // sem `href`, aparece só como bairro atendido (com a rota, quando verificada).
+ bairros: z.object({
+ titulo: z.string(),
+ intro: z.string(),
+ itens: z.array(z.object({
+ nome: z.string(),
+ href: z.string().optional(),
+ rota: z.string().optional(), // ex.: "5,1 km · cerca de 7 min sem trânsito"
+ d: z.string().optional(),
+ })).min(1),
+ outros: z.string().optional(), // demais bairros da região, em uma frase
+ fonte: z.string().optional(),
+ }).optional(),
  servico: z.object({
  name: z.string(),
  serviceType: z.string(),
  areaServed: z.array(z.object({
- tipo: z.enum(['City', 'Place']),
+ tipo: z.enum(['City', 'Place', 'AdministrativeArea']),
  nome: z.string(),
  sameAs: z.string().optional(), // Wikidata verificado
+ dentroDe: z.string().optional(), // containedInPlace (ex.: "Região Sul de Goiânia")
  })).min(1),
  }),
 });
@@ -79,6 +95,9 @@ const posts = defineCollection({
  path: z.string(), // URL canônica completa
  silo: z.string(), // slug do silo OU 'blog'
  siloLabel: z.string(),
+ // Página mãe direta quando a página é NETA do silo (ex.: bairro dentro de uma região):
+ // entra no breadcrumb entre o silo e a página. A URL tem então 3 níveis.
+ parent: z.object({ name: z.string(), href: z.string() }).optional(),
  datePublished: z.string(),
  // Data da última revisão de conteúdo real (não é igual a datePublished por
  // padrão). Opcional para não quebrar os posts que ainda não foram revisados.

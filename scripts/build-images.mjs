@@ -27,7 +27,8 @@ const LARGURAS = {
   retrato: [160, 320, 480, 768, 1080, 1536, 2160, 3416],
   // 560/640 = foto do topo no celular de densidade ~1,75 (o perfil do PageSpeed); celulares de
   // densidade 2,6-3 pedem 1080+ pelo mesmo `sizes`.
-  padrao: [480, 560, 640, 768, 1080, 1536],
+  // 2048 só sai de mestre >= 2048 px (as versões 4K do Magnific): foto de topo da LP no desktop retina.
+  padrao: [480, 560, 640, 768, 1080, 1536, 2048],
 };
 // q 80 + effort 6: ponto em que o WebP para de mostrar bloco em degradê de fundo liso
 // (paredes verdes, linho) sem inchar o arquivo.
@@ -57,8 +58,9 @@ for (const f of fontes) {
   // Versões ampliadas (Magnific) substituem o original de mesmo nome quando existirem.
   if (nome === 'hero-home-upscaled') nome = 'hero-home';
   else if (nome === 'hero-home' && fontes.includes('hero-home-upscaled.jpg')) continue;
-  if (nome === 'ana-clara-retrato-4k') nome = 'ana-clara-retrato';
-  else if (nome === 'ana-clara-retrato' && fontes.includes('ana-clara-retrato-4k.jpg')) continue;
+  // Qualquer <nome>-4k.(jpg|png) (Magnific Precision, mestre de 3840 px) substitui <nome>.png.
+  if (nome.endsWith('-4k')) nome = nome.slice(0, -3);
+  else if (fontes.some((x) => parse(x).name === `${nome}-4k`)) continue;
   nomes.set(nome, join(SRC, f));
 }
 

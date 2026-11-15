@@ -62,15 +62,16 @@
     ]
   },
   "aparecida-de-goiania": {
-    "width": 1536,
-    "height": 1024,
+    "width": 2048,
+    "height": 1365,
     "widths": [
       480,
       560,
       640,
       768,
       1080,
-      1536
+      1536,
+      2048
     ]
   },
   "colesterol-alto-o-que-a-alimentacao-pode-ajudar": {
@@ -274,15 +275,16 @@
     ]
   },
   "jardim-goias": {
-    "width": 1536,
-    "height": 1024,
+    "width": 2048,
+    "height": 1365,
     "widths": [
       480,
       560,
       640,
       768,
       1080,
-      1536
+      1536,
+      2048
     ]
   },
   "microbiota-intestinal-o-que-e-e-como-cuidar": {
@@ -562,6 +564,30 @@
     ]
   },
   "quando-um-problema-alimentar-e-grave": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      480,
+      560,
+      640,
+      768,
+      1080,
+      1536
+    ]
+  },
+  "regiao-sul": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      480,
+      560,
+      640,
+      768,
+      1080,
+      1536
+    ]
+  },
+  "setor-bueno": {
     "width": 1536,
     "height": 1024,
     "widths": [

@@ -6,7 +6,8 @@ import LpPage from '../../components/LpPage.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts
-    .filter((p) => p.data.silo !== 'blog')
+    // Só páginas de 2 níveis (/silo/pagina). As netas (/silo/mae/pagina) saem de [sub]/[slug].astro.
+    .filter((p) => p.data.silo !== 'blog' && p.data.path.split('/').filter(Boolean).length === 2)
     .map((entry) => ({ params: { silo: entry.data.silo, slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;

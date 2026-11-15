@@ -60,8 +60,11 @@ export function sharedNodes() {
  },
  ],
  // filter(Boolean) não basta: '{IG}' é uma string truthy e vazaria para o grafo.
- sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.gbp]
- .filter((u) => u && !isPlaceholder(u)),
+ // Sem nenhum perfil preenchido o campo some: "sameAs": [] é ruído no grafo (conversao-ops CO-CK-053).
+ ...(() => {
+ const perfis = [SITE.social.instagram, SITE.social.linkedin, SITE.social.gbp].filter((u) => u && !isPlaceholder(u));
+ return perfis.length ? { sameAs: perfis } : {};
+ })(),
  },
  {
  '@type': ['ProfessionalService', 'LocalBusiness'],

@@ -1,0 +1,22 @@
+---
+// Páginas NETAS do silo: /silo/mae/pagina (ex.: /nutricionista-em-goiania/regiao-sul/jardim-goias).
+// Os parâmetros vêm do `path` canônico do frontmatter, que é a fonte única da URL.
+import { getCollection } from 'astro:content';
+import ArticlePage from '../../../components/ArticlePage.astro';
+import LpPage from '../../../components/LpPage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts
+    .filter((p) => p.data.silo !== 'blog' && p.data.path.split('/').filter(Boolean).length === 3)
+    .map((entry) => {
+      const [silo, sub, slug] = entry.data.path.split('/').filter(Boolean);
+      if (silo !== entry.data.silo) throw new Error(`path ${entry.data.path} não começa pelo silo ${entry.data.silo}`);
+      if (!entry.data.parent) throw new Error(`${entry.id}: página neta precisa de parent (breadcrumb)`);
+      return { params: { silo, sub, slug }, props: { entry } };
+    });
+}
+const { entry } = Astro.props;
+const isLp = entry.data.layout === 'lp' && entry.data.lp;
+---
+{isLp ? <LpPage entry={entry} /> : <ArticlePage entry={entry} />}

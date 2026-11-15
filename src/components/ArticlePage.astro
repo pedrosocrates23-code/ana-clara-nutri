@@ -20,6 +20,8 @@ const siloHref = data.silo === 'blog' ? '/blog' : `/${data.silo}/`;
 const breadcrumb = [
   { name: 'Início', href: '/' },
   { name: data.siloLabel, href: siloHref },
+  // Página neta (3 níveis): a mãe direta entra entre o silo e a página.
+  ...(data.parent ? [{ name: data.parent.name, href: data.parent.href }] : []),
   { name: data.title, href: data.path },
 ];
 
@@ -61,7 +63,7 @@ const waArtigo = waLink(`Olá, Ana Clara! Li o artigo "${data.title}" e queria c
   <header class="art-head">
     <div class="container art-head__inner">
       <nav class="crumbs" aria-label="Você está em">
-        <a href="/">Início</a><span aria-hidden="true">/</span><a href={siloHref}>{data.siloLabel}</a>
+        <a href="/">Início</a><span aria-hidden="true">/</span><a href={siloHref}>{data.siloLabel}</a>{data.parent && (<><span aria-hidden="true">/</span><a href={data.parent.href}>{data.parent.name}</a></>)}
       </nav>
       <h1 set:html={data.h1} />
       <p class="art-head__dek">{data.description}</p>
