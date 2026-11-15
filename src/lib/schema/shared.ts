@@ -45,7 +45,7 @@ export function sharedNodes() {
  identifier: SITE.crn,
  recognizedBy: {
  '@type': 'Organization',
- name: 'Conselho Regional de Nutricionistas - 1ª Região (CRN-1)',
+ name: 'Conselho Regional de Nutrição - 1ª Região (CRN-1)',
  },
  }]),
  {

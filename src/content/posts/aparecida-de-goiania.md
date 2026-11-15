@@ -58,9 +58,9 @@ faqs:
   - q: Você tem consultório em Aparecida de Goiânia?
     a: Não. O atendimento presencial acontece só no beLIV Espaço de Saúde e Bem-Estar, na Avenida dos Ipês, Região Leste de Goiânia, a cerca de 14,5 km do centro de Aparecida. Para quem prefere não se deslocar, a consulta é feita online, por videochamada.
   - q: A consulta online tem o mesmo acompanhamento da presencial?
-    a: 'Sim. Na telenutrição eu sigo o mesmo processo de avaliação e acompanhamento do presencial, com retornos, e a modalidade é regulamentada pelo Conselho Federal de Nutricionistas na Resolução CFN nº 760/2023. Muda só o meio: você precisa de internet e de um lugar reservado para conversar com calma.'
+    a: 'Sim. Na telenutrição eu sigo o mesmo processo de avaliação e acompanhamento do presencial, com retornos, e a modalidade é regulamentada pelo Conselho Federal de Nutrição na Resolução CFN nº 760/2023. Muda só o meio: você precisa de internet e de um lugar reservado para conversar com calma.'
   - q: Como confiro se o seu registro de nutricionista está ativo?
-    a: O meu registro é o CRN-1 nº 19825, no Conselho Regional de Nutricionistas da 1ª Região, que inclui Goiás. Você pode consultar a situação da inscrição junto ao conselho antes de marcar, sem depender só do que eu digo.
+    a: O meu registro é o CRN-1 nº 19825, no Conselho Regional de Nutrição da 1ª Região, que inclui Goiás. Você pode consultar a situação da inscrição junto ao conselho antes de marcar, sem depender só do que eu digo.
   - q: Recebi exames com glicemia ou colesterol alterados. Você pode me ajudar?
     a: Sim, esse acompanhamento faz parte da nutrição clínica. Eu ajusto a alimentação à sua rotina e aos seus exames, sempre ao lado do acompanhamento médico, sem substituí-lo. Se tiver os resultados, leve para a consulta.
   - q: Vou ter que cortar tudo o que eu gosto de comer?
@@ -79,7 +79,7 @@ Faz sentido querer escolher com calma.
 
 ### Registro ativo e verificável
 
-Toda nutricionista precisa de inscrição ativa no Conselho Regional de Nutricionistas, o CRN, órgão que fiscaliza a profissão. Goiás pertence à 1ª Região, por isso o número aparece como CRN-1. O meu registro é o CRN-1 nº 19825. Você pode consultar a situação dele junto ao conselho, sem depender da minha palavra.
+Toda nutricionista precisa de inscrição ativa no Conselho Regional de Nutrição, o CRN, órgão que fiscaliza a profissão. Goiás pertence à 1ª Região, por isso o número aparece como CRN-1. O meu registro é o CRN-1 nº 19825. Você pode consultar a situação dele junto ao conselho, sem depender da minha palavra.
 
 ### Formação e experiência
 
@@ -121,7 +121,7 @@ Mais detalhes sobre o atendimento no beLIV estão na página de [nutricionista e
 
 ### O que é igual nos dois formatos
 
-Telenutrição é a consulta de nutrição feita por videochamada, regulamentada pelo Conselho Federal de Nutricionistas na Resolução CFN nº 760/2023. Nela, eu sigo o mesmo caminho do presencial: escuto a sua história, entendo a rotina, combinamos objetivos e o acompanhamento continua nos retornos.
+Telenutrição é a consulta de nutrição feita por videochamada, regulamentada pelo Conselho Federal de Nutrição na Resolução CFN nº 760/2023. Nela, eu sigo o mesmo caminho do presencial: escuto a sua história, entendo a rotina, combinamos objetivos e o acompanhamento continua nos retornos.
 
 Você fala comigo de onde estiver, o que tira a estrada da equação para quem mora em Aparecida e trabalha em outro canto da região.
 

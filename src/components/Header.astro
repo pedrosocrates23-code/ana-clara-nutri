@@ -10,10 +10,10 @@
  *
  * tone="image": header claro sobre foto escura (home). tone="light": sobre fundo claro.
  */
-import { NAV, SITE, CRN, HAS_CRN, waLink, WA_MSG, HAS_INSTAGRAM } from '../lib/site';
+import { NAV, SITE, CRN, HAS_CRN, waLink, WA_MSG, waMsgDaPagina, HAS_INSTAGRAM } from '../lib/site';
 
-interface Props { tone?: 'image' | 'light' }
-const { tone = 'light' } = Astro.props;
+interface Props { tone?: 'image' | 'light'; waMsg?: string }
+const { tone = 'light', waMsg } = Astro.props;
 const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const norm = (h: string) => h.replace(/\/+$/, '') || '/';
 const isCurrent = (href: string) => {
@@ -21,7 +21,9 @@ const isCurrent = (href: string) => {
   return h === '/' ? current === '/' : current === h || current.startsWith(`${h}/`);
 };
 const links = NAV.filter((i) => i.href !== '/');
-const waHeader = waLink();
+const waHeader = waLink(waMsg);
+const waOnline = waLink(waMsg ? waMsgDaPagina(waMsg, 'online') : WA_MSG.online);
+const waPresencial = waLink(waMsg ? waMsgDaPagina(waMsg, 'presencial') : WA_MSG.presencial);
 ---
 <header class:list={['site-header', `site-header--${tone}`]} data-header>
   <div class="site-header__inner">
@@ -67,8 +69,8 @@ const waHeader = waLink();
       <p class="mnav__cta-title">Vamos conversar sobre a sua alimentação?</p>
       <p class="mnav__cta-text">Agendamento direto pelo WhatsApp. Online para todo o Brasil ou presencial em Goiânia.</p>
       <div class="mnav__cta-row">
-        <a class="mnav__cta-btn" href={waLink(WA_MSG.online)} target="_blank" rel="noopener" data-wa-secao="Menu celular · online">Online</a>
-        <a class="mnav__cta-btn" href={waLink(WA_MSG.presencial)} target="_blank" rel="noopener" data-wa-secao="Menu celular · presencial">Presencial</a>
+        <a class="mnav__cta-btn" href={waOnline} target="_blank" rel="noopener" data-wa-secao="Menu celular · online">Online</a>
+        <a class="mnav__cta-btn" href={waPresencial} target="_blank" rel="noopener" data-wa-secao="Menu celular · presencial">Presencial</a>
       </div>
     </div>
     <div class="mnav__panel mnav__panel--foot" data-mnav-panel>

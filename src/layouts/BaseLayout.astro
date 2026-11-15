@@ -23,8 +23,9 @@ interface Props {
   graph?: object;          // @graph JSON-LD da página (buildGraph)
   overHero?: boolean;      // header claro sobre hero escuro full-bleed (home)
   ogImage?: string;
+  waMsg?: string;          // mensagem do WhatsApp da página (LP): vale para cabeçalho, rodapé e botão flutuante
 }
-const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage } = Astro.props;
+const { title, description, path = Astro.url.pathname, graph, overHero = false, ogImage, waMsg } = Astro.props;
 const canonical = absoluteUrl(path);
 const fullTitle = title.includes(SITE.name) ? title : `${title}`;
 // '/og-default.jpg' nunca existiu em public/ (404 em produção nas 15 páginas
@@ -68,12 +69,12 @@ const img = ogImage ?? '/img/hero-home-1280.webp';
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-  <Header tone={overHero ? 'image' : 'light'} />
+  <Header tone={overHero ? 'image' : 'light'} waMsg={waMsg} />
   <main id="conteudo">
     <slot />
   </main>
-  <Footer />
-  <WhatsappFloat />
+  <Footer waMsg={waMsg} />
+  <WhatsappFloat waMsg={waMsg} />
 
   <!-- Header ao rolar, menu do celular, medição do WhatsApp e motion (GSAP sob demanda) -->
   <script>

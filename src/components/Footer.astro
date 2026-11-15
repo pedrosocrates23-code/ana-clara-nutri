@@ -1,5 +1,8 @@
 ---
-import { SITE, NAV, SILOS, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, MAPS_LINK, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
+import { SITE, NAV, SILOS, ADDRESS_LINE, waLink, TEL_URL, MAPS_LINK, HAS_CRN, CRN, CRN_SUFIXO } from '../lib/site';
+interface Props { waMsg?: string }
+const { waMsg } = Astro.props;
+const waRodape = waLink(waMsg);
 const year = 2026;
 ---
 <footer class="site-footer" data-wa-secao="Rodapé">
@@ -7,7 +10,7 @@ const year = 2026;
     <div class="footer-brand">
       <div class="brand"><img src="/logo-aca.png" alt="" width="44" height="44" loading="lazy" /><span><em>Ana&nbsp;Clara</em> <b>Nutri</b></span></div>
       <p class="muted">Nutricionista em Goiânia, presencial e online. Atendimento particular, presencial no beLIV e online para todo o Brasil, com abordagem comportamental e educacional.</p>
-      <a class="footer-wa" href={WHATSAPP_URL} target="_blank" rel="noopener" data-wa-secao="Rodapé · botão">
+      <a class="footer-wa" href={waRodape} target="_blank" rel="noopener" data-wa-secao="Rodapé · botão">
         <span class="wa-ico" aria-hidden="true"></span>
         <span><b>Agendar pelo WhatsApp</b><small>{SITE.phone}</small></span>
       </a>

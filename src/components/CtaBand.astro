@@ -4,19 +4,25 @@
 // escassez ("vagas limitadas" e afins não entram).
 import Picture from './Picture.astro';
 import Button from './Button.astro';
-import { waLink, WA_MSG } from '../lib/site';
+import { waLink, WA_MSG, waMsgDaPagina } from '../lib/site';
 interface Props {
   title?: string;
   text?: string;
   secao?: string;
   image?: string;
+  waMsg?: string;                         // mensagem da página (LP): os três botões partem dela
+  primeiro?: 'online' | 'presencial';     // qual botão vem primeiro (LP de lugar: presencial)
 }
 const {
   title = 'Vamos conversar sobre a <em>sua alimentação</em>?',
   text = 'Agendamento direto pelo WhatsApp, com a própria Ana. Atendimento particular, online para todo o Brasil ou presencial em Goiânia.',
   secao = 'Faixa final',
   image = 'pg-agendar',
+  waMsg,
+  primeiro = 'online',
 } = Astro.props;
+const msg = (tipo: 'online' | 'presencial' | 'duvida') => (waMsg ? waMsgDaPagina(waMsg, tipo) : WA_MSG[tipo]);
+const presencialPrimeiro = primeiro === 'presencial';
 ---
 <section class="ctaband" data-wa-secao={secao}>
   <div class="ctaband__bg" aria-hidden="true"><Picture name={image} alt="" sizes="100vw" class="ctaband__img" /></div>
@@ -25,10 +31,19 @@ const {
     <h2 set:html={title} />
     <p>{text}</p>
     <div class="ctaband__actions">
-      <Button href={waLink(WA_MSG.online)} variant="light" size="lg" secao={`${secao} · online`} magnetic>Consulta online</Button>
-      <Button href={waLink(WA_MSG.presencial)} variant="outline-light" size="lg" secao={`${secao} · presencial`}>Presencial em Goiânia</Button>
+      {presencialPrimeiro ? (
+        <>
+          <Button href={waLink(msg('presencial'))} variant="light" size="lg" secao={`${secao} · presencial`} magnetic>Presencial em Goiânia</Button>
+          <Button href={waLink(msg('online'))} variant="outline-light" size="lg" secao={`${secao} · online`}>Consulta online</Button>
+        </>
+      ) : (
+        <>
+          <Button href={waLink(msg('online'))} variant="light" size="lg" secao={`${secao} · online`} magnetic>Consulta online</Button>
+          <Button href={waLink(msg('presencial'))} variant="outline-light" size="lg" secao={`${secao} · presencial`}>Presencial em Goiânia</Button>
+        </>
+      )}
     </div>
-    <p class="ctaband__note">Prefere perguntar antes? <a href={waLink(WA_MSG.duvida)} data-wa-secao={`${secao} · dúvida`}>Mande sua dúvida</a>, sem compromisso de agendar.</p>
+    <p class="ctaband__note">Prefere perguntar antes? <a href={waLink(msg('duvida'))} data-wa-secao={`${secao} · dúvida`}>Mande sua dúvida</a>, sem compromisso de agendar.</p>
   </div>
 </section>
 

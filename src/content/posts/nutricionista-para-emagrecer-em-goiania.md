@@ -62,7 +62,7 @@ faqs:
   - q: Quem treina pode fazer o acompanhamento para emagrecer?
     a: Pode. A alimentação é ajustada ao horário, ao tipo de treino e ao seu objetivo, dentro da mesma abordagem comportamental e educacional. Quem não treina também é atendido, e o movimento do dia a dia entra no plano sem cobrança.
   - q: O acompanhamento online funciona para quem quer emagrecer?
-    a: 'Sim, o processo é o mesmo do presencial: a mesma escuta, a mesma investigação da rotina e os mesmos ajustes. A consulta acontece por videochamada, e a telenutrição é regulamentada pelo Conselho Federal de Nutricionistas na Resolução CFN nº 760/2023.'
+    a: 'Sim, o processo é o mesmo do presencial: a mesma escuta, a mesma investigação da rotina e os mesmos ajustes. A consulta acontece por videochamada, e a telenutrição é regulamentada pelo Conselho Federal de Nutrição na Resolução CFN nº 760/2023.'
   - q: Moro em Aparecida de Goiânia ou em Senador Canedo. Consigo ser atendida?
     a: Consegue, de duas formas. Você pode vir ao beLIV, na Av. dos Ipês, Região Leste de Goiânia, a cerca de 14,5 km do centro de Aparecida e 19,7 km de Senador Canedo em rotas sem trânsito, ou fazer o acompanhamento online, por videochamada, sem sair de casa.
   - q: A nutricionista substitui o psicólogo quando eu como por ansiedade?
@@ -185,4 +185,4 @@ O atendimento presencial acontece no beLIV Espaço de Saúde e Bem-Estar, na Ave
 
 Se você mora em outra região da cidade, em Aparecida de Goiânia, em Senador Canedo ou em qualquer cidade do Brasil, a consulta pode ser feita online, por videochamada. Para ter uma referência, o centro de Aparecida fica a cerca de 14,5 km do beLIV pela BR-153, e Senador Canedo a cerca de 19,7 km, em rotas calculadas sem trânsito. Para quem vem de longe ou tem a agenda apertada, o online tira o deslocamento da conta.
 
-A telenutrição é regulamentada pelo Conselho Federal de Nutricionistas, na Resolução CFN nº 760/2023. Para aproveitar bem a consulta online, vale escolher um lugar tranquilo, com conexão estável, onde você consiga falar à vontade sobre a sua rotina. Se tiver exames, deixe os arquivos abertos no celular ou no computador, para mostrar na hora em que o assunto aparecer.
+A telenutrição é regulamentada pelo Conselho Federal de Nutrição, na Resolução CFN nº 760/2023. Para aproveitar bem a consulta online, vale escolher um lugar tranquilo, com conexão estável, onde você consiga falar à vontade sobre a sua rotina. Se tiver exames, deixe os arquivos abertos no celular ou no computador, para mostrar na hora em que o assunto aparecer.

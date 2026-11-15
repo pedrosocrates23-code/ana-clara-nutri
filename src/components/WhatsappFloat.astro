@@ -1,7 +1,8 @@
 ---
-import { WHATSAPP_URL, CRN_SUFIXO } from '../lib/site';
-
-const href = WHATSAPP_URL;
+import { waLink, CRN_SUFIXO } from '../lib/site';
+interface Props { waMsg?: string }
+const { waMsg } = Astro.props;
+const href = waLink(waMsg);
 const delay = 30000; // janela de conversa abre após ~30s na página
 ---
 

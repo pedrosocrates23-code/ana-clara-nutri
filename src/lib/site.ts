@@ -114,6 +114,17 @@ export const WA_MSG = {
  duvida: 'Olá, Ana Clara! Vim pelo site e queria tirar uma dúvida antes de agendar.',
  valores: 'Olá, Ana Clara! Vim pelo site e gostaria de saber os valores da consulta.',
 } as const;
+
+/**
+ * Variações da mensagem de uma página que carrega a origem do contato (LP: "Moro em Aparecida...").
+ * Nas LPs, TODO botão de WhatsApp parte dessa mensagem, para a origem não se perder no cabeçalho,
+ * no rodapé, no botão flutuante e na faixa final (conferência das LPs, 15/11/2026, item 1).
+ */
+export const waMsgDaPagina = (base: string, tipo: 'online' | 'presencial' | 'duvida'): string =>
+ tipo === 'duvida'
+  ? base.replace(/ e queria saber os horários e o valor da consulta\.$/, ' e queria tirar uma dúvida antes de agendar.')
+  : `${base} Prefiro a consulta ${tipo}.`;
+
 export const TEL_URL = `tel:${SITE.phoneE164}`;
 
 // Google Maps sem chave de API: embed por query do local + link para abrir o app.

@@ -80,7 +80,7 @@ const passos = [
   { n: '04', t: 'Acompanhamento', d: 'Retornos combinados para ajustar o que não estiver funcionando, no ritmo do seu caso.' },
 ];
 ---
-<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph} ogImage={data.image}>
+<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph} ogImage={data.image} waMsg={lp.waMsg}>
 
   <!-- 1. Primeira dobra: categoria + local (repete o title), como funciona, CTA e closer -->
   <section class="lp-hero" data-wa-secao={`${lp.secao} · hero`}>
@@ -265,7 +265,8 @@ const passos = [
 
   <CtaBand title="Vamos conversar sobre <em>o seu caso</em>?"
     text="Agendamento direto pelo WhatsApp, com a própria Ana. Presencial no beLIV, em Goiânia, ou online para todo o Brasil."
-    secao={`${lp.secao} · faixa final`} image={lp.heroImage} />
+    secao={`${lp.secao} · faixa final`} image={lp.heroImage}
+    waMsg={lp.waMsg} primeiro={lp.tipo === 'area' ? 'online' : 'presencial'} />
 
   <!-- 7. O guia completo: o texto longo recolhido, ainda no HTML (H2/H3 reais) -->
   <section class="section lp-guide-sec">

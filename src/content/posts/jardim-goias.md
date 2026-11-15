@@ -157,6 +157,6 @@ No presencial, você se desloca até a Região Leste e conversa comigo na mesma 
 
 ### O que fica igual
 
-A conversa segue a mesma ordem: rotina, histórico e tentativas anteriores. O plano nasce da sua realidade nos dois formatos, e os retornos têm o mesmo papel de ajustar o que não funcionou. A telenutrição é regulamentada pela Resolução CFN nº 760/2023, do Conselho Federal de Nutricionistas, com as mesmas exigências de avaliação do atendimento presencial.
+A conversa segue a mesma ordem: rotina, histórico e tentativas anteriores. O plano nasce da sua realidade nos dois formatos, e os retornos têm o mesmo papel de ajustar o que não funcionou. A telenutrição é regulamentada pela Resolução CFN nº 760/2023, do Conselho Federal de Nutrição, com as mesmas exigências de avaliação do atendimento presencial.
 
 Se ainda estiver em dúvida sobre qual formato combina com você, eu comparo os dois com mais calma no texto sobre [como escolher entre online e presencial](/nutricionista-online/online-ou-presencial). Dá para começar num formato e mudar depois. A sua rotina decide.
