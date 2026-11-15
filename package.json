@@ -10,7 +10,10 @@
     "preview": "astro preview",
     "astro": "astro",
     "images": "node scripts/build-images.mjs",
-    "lighthouse": "node scripts/lighthouse.mjs"
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "fila:status": "node scripts/fila-publicacao.mjs --status",
+    "fila:verificar": "node scripts/fila-publicacao.mjs --verificar",
+    "fila:gerar": "node scripts/fila-publicacao.mjs --gerar-api"
   },
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.1.0",

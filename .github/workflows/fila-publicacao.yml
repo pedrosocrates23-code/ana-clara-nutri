@@ -1,0 +1,100 @@
+# Fila de publicação das páginas: roda todo dia às 07:00 de Brasília (10:00 UTC).
+# A cadência (um dia sim, um dia não) vem das datas: scripts/fila-publicacao.mjs --verificar
+# reprova duas páginas agendadas a menos de 2 dias uma da outra.
+#
+# O site é estático. Uma página agendada (datePublished no futuro) só vira rota no primeiro build
+# depois da data. Este workflow descobre quais páginas venceram, confere se já estão no ar e,
+# se alguma ainda não devolve 200, dispara o Deploy Hook da Vercel e espera a página aparecer.
+# O Vercel Cron (api/publicar-fila.js) faz a mesma checagem às 11:30 UTC como reserva.
+#
+# Segredo necessário (Settings > Secrets and variables > Actions):
+#   VERCEL_DEPLOY_HOOK   URL do Deploy Hook da branch main (Vercel > Settings > Git > Deploy Hooks)
+name: Fila de publicação
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  # write só para o passo "Manter o agendamento ativo" (commit vazio a cada 45 dias sem commit).
+  contents: write
+
+concurrency:
+  group: fila-publicacao
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Conferir regras da fila
+        run: node scripts/fila-publicacao.mjs --verificar
+
+      # Últimos 14 dias, não só hoje: se um build falhou, a execução seguinte recupera o atraso.
+      - name: Páginas vencidas
+        id: vencidas
+        run: |
+          node scripts/fila-publicacao.mjs --status
+          PATHS=$(node scripts/fila-publicacao.mjs --vencidos | tr '\n' ' ')
+          echo "paths=$PATHS" >> "$GITHUB_OUTPUT"
+          echo "Vencidas nos últimos 14 dias: ${PATHS:-nenhuma}"
+
+      - name: Disparar build se alguma página vencida não estiver no ar
+        if: steps.vencidas.outputs.paths != ''
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+          PATHS: ${{ steps.vencidas.outputs.paths }}
+        run: |
+          fora=""
+          for p in $PATHS; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://nutrianaclara.com.br$p")
+            echo "$p -> HTTP $code"
+            [ "$code" = "200" ] || fora="$fora $p"
+          done
+          if [ -z "$fora" ]; then
+            echo "Tudo já publicado. Nada a fazer."
+            exit 0
+          fi
+          if [ -z "$HOOK" ]; then
+            echo "::error::Segredo VERCEL_DEPLOY_HOOK ausente. Página(s) vencida(s) fora do ar:$fora"
+            exit 1
+          fi
+          curl -s -X POST "$HOOK" -o /dev/null -w 'Deploy Hook: HTTP %{http_code}\n'
+          for tentativa in $(seq 1 30); do
+            sleep 30
+            pendente=""
+            for p in $fora; do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "https://nutrianaclara.com.br$p")
+              [ "$code" = "200" ] || pendente="$pendente $p"
+            done
+            if [ -z "$pendente" ]; then
+              echo "Publicado:$fora"
+              exit 0
+            fi
+          done
+          echo "::error::Build disparado mas a página não apareceu em 15 minutos:$pendente"
+          exit 1
+
+      # Em repositório público o GitHub desliga o cron depois de 60 dias sem commit, e só commit renova
+      # esse prazo (execução de workflow não conta). Enquanto houver página na fila, a cada 45 dias sem
+      # commit este passo grava um commit vazio. Sem ele, o fim da fila ficaria só com o Vercel Cron.
+      - name: Manter o agendamento ativo
+        if: always()
+        run: |
+          na_fila=$(node scripts/fila-publicacao.mjs --status | head -1 | sed -E 's/.*Na fila: ([0-9]+).*/\1/')
+          dias=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+          echo "Páginas na fila: $na_fila | dias desde o último commit: $dias"
+          if [ "$na_fila" -gt 0 ] && [ "$dias" -ge 45 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit --allow-empty -m "chore(fila): manter o agendamento da fila ativo ($dias dias sem commit)"
+            git push
+          fi

@@ -1,5 +1,6 @@
 ---
-import { render, getCollection } from 'astro:content';
+import { render } from 'astro:content';
+import { getPublishedPosts } from '../lib/publicacao';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Faq from './Faq.astro';
 import AuthorBox from './AuthorBox.astro';
@@ -51,7 +52,7 @@ const minutos = Math.max(1, Math.round(palavras / 200));
 const capa = data.image ? data.image.split('/').pop()!.replace(/\.webp$/, '') : '';
 
 // Relacionados: mesma área primeiro, completa com os mais recentes.
-const todos = (await getCollection('posts')).filter((p) => p.data.path !== data.path)
+const todos = (await getPublishedPosts()).filter((p) => p.data.path !== data.path)
   .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1));
 const relacionados = [...todos.filter((p) => p.data.silo === data.silo), ...todos.filter((p) => p.data.silo !== data.silo)].slice(0, 3);
 

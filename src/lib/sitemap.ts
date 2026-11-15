@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content';
+import { getPublishedPosts } from './publicacao';
 import { absoluteUrl, SILOS } from './site';
 
 export interface SitemapEntry {
@@ -44,7 +45,7 @@ export const latestLastmod = (entries: SitemapEntry[]): string | undefined =>
  * Um grupo por bloco semântico: páginas, blog e cada silo.
  */
 export async function getSitemapGroups(): Promise<SitemapGroup[]> {
- const posts = await getCollection('posts');
+ const posts = await getPublishedPosts();
  const silos = await getCollection('silos');
 
  const postsDoSilo = (siloId: string) =>

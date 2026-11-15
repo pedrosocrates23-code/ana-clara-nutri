@@ -8,12 +8,12 @@
 //
 // Sem JS: as abas viram links para a área (todas funcionam) e o 1º painel fica visível.
 // Com JS: abas acessíveis (role=tablist, setas do teclado), painel trocado sem recarregar.
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../lib/publicacao';
 import Picture from './Picture.astro';
 import Button from './Button.astro';
 import { waLink } from '../lib/site';
 
-const posts = await getCollection('posts');
+const posts = await getPublishedPosts();
 const porPath = new Map(posts.map((p) => [p.data.path, p.data]));
 
 const MOMENTOS = [

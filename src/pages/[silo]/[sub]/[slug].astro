@@ -1,12 +1,12 @@
 ---
 // Páginas NETAS do silo: /silo/mae/pagina (ex.: /nutricionista-em-goiania/regiao-sul/jardim-goias).
 // Os parâmetros vêm do `path` canônico do frontmatter, que é a fonte única da URL.
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../../lib/publicacao';
 import ArticlePage from '../../../components/ArticlePage.astro';
 import LpPage from '../../../components/LpPage.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
+  const posts = await getPublishedPosts();
   return posts
     .filter((p) => p.data.silo !== 'blog' && p.data.path.split('/').filter(Boolean).length === 3)
     .map((entry) => {

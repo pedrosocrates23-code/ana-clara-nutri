@@ -9,7 +9,7 @@ import AreasGrid from '../../components/AreasGrid.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { SITE, ADDRESS_LINE, WHATSAPP_URL, TEL_URL, isPlaceholder, waLink, WA_MSG } from '../../lib/site';
 import { buildGraph, SCHEMA_IDS } from '../../lib/schema/shared';
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../lib/publicacao';
 
 const faqs = [
  { q: 'Onde fica o atendimento presencial?', a: `No ${SITE.venue}, na ${SITE.address.street}, em Goiânia - GO (CEP ${SITE.address.postalCode}), em um ponto de fácil acesso.` },
@@ -23,7 +23,7 @@ const path = '/nutricionista-em-goiania/';
 
 // Silo local: filhas (cidades e regiões) e, abaixo de cada região, as netas (bairros).
 // Sai das próprias páginas (frontmatter), então página nova entra aqui sozinha.
-const lps = (await getCollection('posts')).filter((p) => p.data.silo === 'nutricionista-em-goiania' && p.data.layout === 'lp' && p.data.lp);
+const lps = (await getPublishedPosts()).filter((p) => p.data.silo === 'nutricionista-em-goiania' && p.data.layout === 'lp' && p.data.lp);
 const filhas = lps
   .filter((p) => !p.data.parent && (p.data.lp!.tipo === 'cidade' || p.data.lp!.tipo === 'regiao'))
   .map((p) => ({

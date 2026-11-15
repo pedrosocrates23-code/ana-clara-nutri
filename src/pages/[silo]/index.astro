@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { getPublishedPosts } from '../../lib/publicacao';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Faq from '../../components/Faq.astro';
@@ -21,7 +22,7 @@ const path = `/${entry.id}/`;
 
 // Spokes publicados deste silo. O hub linka para eles: é o que fecha o siloing.
 // Enquanto não houver nenhum publicado, cai no fallback de spokes planejados (texto).
-const publicados = (await getCollection('posts'))
+const publicados = (await getPublishedPosts())
  .filter((p) => p.data.silo === entry.id)
  .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1));
 

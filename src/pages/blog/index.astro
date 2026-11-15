@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../../lib/publicacao';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import PostCard from '../../components/PostCard.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import { buildGraph } from '../../lib/schema/shared';
 
-const posts = (await getCollection('posts')).sort(
+const posts = (await getPublishedPosts()).sort(
  (a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1)
 );
 const breadcrumb = [{ name: 'Início', href: '/' }, { name: 'Blog', href: '/blog' }];

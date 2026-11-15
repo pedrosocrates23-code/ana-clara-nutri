@@ -7,7 +7,7 @@ path: "/nutricionista-em-goiania/regiao-sul/jardim-goias"
 parent: { name: "Região Sul", href: "/nutricionista-em-goiania/regiao-sul" }
 silo: "nutricionista-em-goiania"
 siloLabel: "Atendimento Presencial"
-datePublished: "2026-11-15"
+datePublished: "2026-11-19"
 image: "/blog/jardim-goias.webp"
 imageAlt: "Banco de madeira sob um ipê-amarelo florido num parque, com sacola de lona, garrafa de água e uma tigela de frutas"
 layout: "lp"

@@ -7,7 +7,7 @@ path: "/nutricionista-em-goiania/regiao-sul/setor-bueno"
 silo: "nutricionista-em-goiania"
 siloLabel: "Atendimento Presencial"
 parent: { name: "Região Sul", href: "/nutricionista-em-goiania/regiao-sul" }
-datePublished: "2026-11-15"
+datePublished: "2026-11-21"
 image: "/blog/setor-bueno.webp"
 imageAlt: "Bancada de cozinha clara com duas marmitas de vidro com arroz, feijão, frango grelhado e legumes, tábua com tomate fatiado e alface e vaso de ervas junto à janela"
 layout: "lp"

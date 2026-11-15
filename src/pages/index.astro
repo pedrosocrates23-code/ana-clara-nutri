@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getPublishedPosts } from '../lib/publicacao';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Faq from '../components/Faq.astro';
@@ -14,7 +14,7 @@ import { buildGraph } from '../lib/schema/shared';
 import { heroSources } from '../lib/hero';
 
 // Últimas 3 postagens do blog (atualiza a cada build/publicação, sempre as mais recentes)
-const latestPosts = (await getCollection('posts'))
+const latestPosts = (await getPublishedPosts())
   .sort((a, b) => (a.data.datePublished < b.data.datePublished ? 1 : -1))
   .slice(0, 3);
 
