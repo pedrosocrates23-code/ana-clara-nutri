@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import ArticlePage from '../../components/ArticlePage.astro';
+import LpPage from '../../components/LpPage.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -9,5 +10,7 @@ export async function getStaticPaths() {
     .map((entry) => ({ params: { silo: entry.data.silo, slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;
+// layout 'lp' = página de conversão com intenção local (blocos visíveis + guia recolhido).
+const isLp = entry.data.layout === 'lp' && entry.data.lp;
 ---
-<ArticlePage entry={entry} />
+{isLp ? <LpPage entry={entry} /> : <ArticlePage entry={entry} />}

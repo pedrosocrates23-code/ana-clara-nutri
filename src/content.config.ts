@@ -16,6 +16,42 @@ const references = z
  )
  .default([]);
 
+// Blocos visíveis da LP local (layout: 'lp'). Tudo que decide a conversão fica aqui,
+// visível sem clique (estudo CRO, M02 e checklist CO-CK-064); o aprofundamento é o body.
+const lp = z.object({
+ tipo: z.enum(['cidade', 'bairro', 'area']),
+ kicker: z.string(), // ex.: "Atendimento presencial · 14,5 km de Aparecida"
+ sub: z.string(), // subtítulo do hero: como funciona e por que é crível
+ heroImage: z.string(), // nome no manifesto de imagens (Picture)
+ heroImageAlt: z.string(),
+ waMsg: z.string(), // mensagem pré-preenchida do WhatsApp, com o local/assunto
+ secao: z.string(), // prefixo do evento whatsapp_click (ex.: "LP Aparecida")
+ fatos: z.array(z.object({ t: z.string(), d: z.string() })).min(3).max(4),
+ paraQuem: z.object({
+ titulo: z.string(),
+ intro: z.string(),
+ itens: z.array(z.object({ t: z.string(), d: z.string() })).min(3),
+ naoAtende: z.string(),
+ }),
+ chegar: z.object({
+ titulo: z.string(),
+ texto: z.string(), // parágrafo local real (rota, referências verificadas)
+ rota: z.array(z.object({ t: z.string(), d: z.string() })).default([]),
+ fonteRota: z.string().optional(), // de onde vêm distância/tempo (ex.: OSRM, sem trânsito)
+ }),
+ objecoes: z.array(z.object({ q: z.string(), a: z.string() })).min(3).max(4),
+ guiaTitulo: z.string(), // texto do resumo do <details>
+ servico: z.object({
+ name: z.string(),
+ serviceType: z.string(),
+ areaServed: z.array(z.object({
+ tipo: z.enum(['City', 'Place']),
+ nome: z.string(),
+ sameAs: z.string().optional(), // Wikidata verificado
+ })).min(1),
+ }),
+});
+
 // Silos temáticos (hubs), body em markdown, meta/hero/faq no frontmatter
 const silos = defineCollection({
  loader: glob({ pattern: '**/*.md', base: './src/content/silos' }),
@@ -55,6 +91,11 @@ const posts = defineCollection({
  imageAlt: z.string().optional(),
  faqs: faq,
  references,
+ // 'lp' = página de conversão com intenção local (LpPage.astro): blocos de decisão
+ // visíveis no topo, o texto longo (body) recolhido num <details> no fim, ainda no HTML.
+ // Desenho e regras: clients/ana-clara-nutri/lp-local-2026-11/_SPEC-LP-LOCAL.md
+ layout: z.enum(['artigo', 'lp']).default('artigo'),
+ lp: lp.optional(),
  }),
 });
 

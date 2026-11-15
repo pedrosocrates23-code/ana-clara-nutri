@@ -1,0 +1,382 @@
+---
+// LP de intenção local (layout: 'lp' na coleção posts).
+//
+// Desenho e evidência: clients/ana-clara-nutri/lp-local-2026-11/_SPEC-LP-LOCAL.md e
+// _NOTAS-ESTUDO-CRO.md (estudo de CRO lido inteiro, 15/11/2026). Em resumo:
+// - Tudo o que decide a conversão fica VISÍVEL sem clique: categoria + local no H1 (message
+//   match com o title), como funciona, quem atende, onde fica e como chegar, as 3 objeções
+//   que mais pesam (convênio, valor, distância/online) e o CTA (M02 Laja; checklist CO-CK-064).
+// - O aprofundamento (o "artigo") vai recolhido num <details> no fim. Continua no HTML gerado
+//   no servidor, com H2/H3 reais: recolher não é esconder do rastreador (M06, PXL).
+// - Uma intenção por URL; conteúdo local real (rota, referências verificadas), nunca página
+//   de cidade clonada (M01, M03, M05, M07 política de spam de escala).
+// - CTA de baixo compromisso (conversa no WhatsApp) com closer que diz o que acontece depois
+//   (M01 "drop us a line"; M05 closer). Nenhuma prova inventada (M05 3.7; CO-CK-033).
+// - CFN 856/2026: nenhuma pessoa gerada por IA, sem promessa, sem título fora do rol.
+import { render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from './Button.astro';
+import Picture from './Picture.astro';
+import FactStrip from './FactStrip.astro';
+import MapEmbed from './MapEmbed.astro';
+import CtaBand from './CtaBand.astro';
+import AuthorBox from './AuthorBox.astro';
+import TableOfContents from './TableOfContents.astro';
+import { buildGraph, SCHEMA_IDS } from '../lib/schema/shared';
+import { SITE, waLink, formatarDataPt, CRN, HAS_CRN, TEL_URL, ADDRESS_LINE, FOTO_ANA_TEXTOS } from '../lib/site';
+
+const { entry } = Astro.props;
+const { data } = entry;
+const lp = data.lp!;
+const { Content, headings } = await render(entry);
+
+const siloHref = data.silo === 'blog' ? '/blog' : `/${data.silo}/`;
+const breadcrumb = [
+  { name: 'Início', href: '/' },
+  { name: data.siloLabel, href: siloHref },
+  { name: data.title, href: data.path },
+];
+
+// Grafo: a página é sobre um SERVIÇO (prestado pelo #business), com a área atendida
+// ancorada no Wikidata quando o item foi verificado. FAQPage junta as objeções visíveis
+// e as perguntas do guia (todas no HTML).
+const serviceId = `${SITE.url}${data.path}#service`;
+const service = {
+  '@type': 'Service',
+  '@id': serviceId,
+  name: lp.servico.name,
+  serviceType: lp.servico.serviceType,
+  provider: { '@id': SCHEMA_IDS.business },
+  areaServed: lp.servico.areaServed.map((a) => ({
+    '@type': a.tipo, name: a.nome, ...(a.sameAs ? { sameAs: a.sameAs } : {}),
+  })),
+  availableChannel: [
+    {
+      '@type': 'ServiceChannel', name: 'Atendimento presencial',
+      serviceLocation: { '@type': 'Place', name: SITE.venue, address: ADDRESS_LINE },
+    },
+    { '@type': 'ServiceChannel', name: 'Telenutrição (online)', serviceUrl: `${SITE.url}/nutricionista-online` },
+  ],
+};
+const graph = buildGraph({
+  path: data.path, title: data.metaTitle, breadcrumb,
+  faqs: [...lp.objecoes, ...data.faqs],
+  mainEntity: { '@id': serviceId },
+  extraNodes: [service],
+});
+
+const palavras = (entry.body ?? '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+const minutos = Math.max(1, Math.round(palavras / 200));
+const wa = waLink(lp.waMsg);
+const atualizado = data.dateModified ?? data.datePublished;
+
+const passos = [
+  { n: '01', t: 'Você chama no WhatsApp', d: 'Conta em uma frase o que te trouxe e diz se prefere presencial ou online. Quem responde é a própria Ana.' },
+  { n: '02', t: 'Recebe horários e valor', d: 'Antes de marcar qualquer coisa, você já sabe quanto custa e quais horários existem. Sem compromisso por perguntar.' },
+  { n: '03', t: 'Primeira consulta', d: 'Uma conversa de escuta sobre a sua rotina, o seu histórico e o que você já tentou, para o plano partir da vida real.' },
+  { n: '04', t: 'Acompanhamento', d: 'Retornos combinados para ajustar o que não estiver funcionando, no ritmo do seu caso.' },
+];
+---
+<BaseLayout title={data.metaTitle} description={data.description} path={data.path} graph={graph} ogImage={data.image}>
+
+  <!-- 1. Primeira dobra: categoria + local (repete o title), como funciona, CTA e closer -->
+  <section class="lp-hero" data-wa-secao={`${lp.secao} · hero`}>
+    <div class="container lp-hero__grid">
+      <div class="lp-hero__text">
+        <nav class="crumbs" aria-label="Você está em">
+          <a href="/">Início</a><span aria-hidden="true">/</span><a href={siloHref}>{data.siloLabel}</a>
+        </nav>
+        <p class="lp-kicker">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+          {lp.kicker}
+        </p>
+        <h1 class="lp-hero__title" set:html={data.h1} />
+        <p class="lp-hero__sub">{lp.sub}</p>
+        <div class="lp-hero__actions">
+          <Button href={wa} variant="whatsapp" size="lg" secao={`${lp.secao} · hero`}>Conversar no WhatsApp</Button>
+          <Button href="#como-chegar" variant="ghost" size="lg">{lp.tipo === 'area' ? 'Onde é o atendimento' : 'Como chegar'}</Button>
+        </div>
+        <p class="lp-closer">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M9.5 16.2 5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z"/></svg>
+          Você fala direto com a Ana, que informa os horários e o valor antes de qualquer agendamento.
+        </p>
+        <ul class="lp-trust" role="list">
+          {HAS_CRN && <li>{CRN}</li>}
+          <li>Formada pela UFG</li>
+          <li>Particular, sem convênio</li>
+        </ul>
+      </div>
+      <figure class="lp-hero__media">
+        <Picture name={lp.heroImage} alt={lp.heroImageAlt} loading="eager" fetchpriority="high"
+          sizes="(min-width: 980px) 520px, calc(100vw - 48px)" class="lp-hero__img" />
+      </figure>
+    </div>
+  </section>
+
+  <FactStrip items={lp.fatos} />
+
+  <!-- 2. Para quem é (com o que não atende: ajuda a eliminar e qualifica o contato) -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head section__head--split">
+        <div>
+          <span class="kicker">Para quem é</span>
+          <h2 set:html={lp.paraQuem.titulo} />
+        </div>
+        <p>{lp.paraQuem.intro}</p>
+      </div>
+      <ul class="lp-cards" role="list">
+        {lp.paraQuem.itens.map((it) => (
+          <li class="lp-card" data-reveal>
+            <h3>{it.t}</h3>
+            <p>{it.d}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="lp-nao"><strong>Importante:</strong> {lp.paraQuem.naoAtende}</p>
+    </div>
+  </section>
+
+  <!-- 3. Como funciona -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker">Passo a passo</span>
+        <h2>Como funciona, do primeiro contato ao <em>acompanhamento</em></h2>
+      </div>
+      <ol class="lp-steps" role="list">
+        {passos.map((p) => (
+          <li class="lp-step" data-reveal>
+            <span class="lp-step__n" aria-hidden="true">{p.n}</span>
+            <h3>{p.t}</h3>
+            <p>{p.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 4. Quem atende: autoridade antes do pedido, com a foto real -->
+  <section class="section">
+    <div class="container lp-who">
+      <div class="lp-who__photo" data-reveal-img>
+        <Picture name="ana-clara-retrato" alt={FOTO_ANA_TEXTOS.alt} sizes="(min-width: 900px) 380px, 70vw" class="lp-who__img" />
+      </div>
+      <div class="lp-who__text">
+        <span class="kicker">Quem atende</span>
+        <h2>{SITE.legalName}, <em>nutricionista em Goiânia</em></h2>
+        <p>Formada pela Universidade Federal de Goiás, com mais de quatro anos em nutrição clínica nos contextos hospitalar e ambulatorial. Atendo emagrecimento e reeducação alimentar, nutrição clínica, esportiva e saúde intestinal, sempre com abordagem comportamental e educacional: o plano parte da sua rotina e da sua relação com a comida, sem dieta restritiva.</p>
+        <ul class="lp-creds" role="list">
+          {HAS_CRN && <li><strong>{CRN}</strong><span>Registro ativo no conselho</span></li>}
+          <li><strong>UFG</strong><span>Bacharelado em Nutrição</span></li>
+          <li><strong>{SITE.venue}</strong><span>Local do atendimento presencial</span></li>
+        </ul>
+        <div class="lp-who__actions">
+          <Button href={wa} variant="whatsapp" secao={`${lp.secao} · quem atende`}>Falar com a Ana</Button>
+          <a class="lp-link" href={TEL_URL}>Ou ligue: {SITE.phone}</a>
+        </div>
+        <p class="lp-who__more"><a rel="author" href="/sobre">Conhecer a trajetória da Ana</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Como chegar: conteúdo local real (rota e referências verificadas) + mapa -->
+  <section class="section section--sand" id="como-chegar">
+    <div class="container lp-route">
+      <div class="lp-route__text">
+        <span class="kicker">Onde fica</span>
+        <h2 set:html={lp.chegar.titulo} />
+        <p>{lp.chegar.texto}</p>
+        {lp.chegar.rota.length > 0 && (
+          <dl class="lp-route__facts">
+            {lp.chegar.rota.map((r) => (<div><dt>{r.t}</dt><dd>{r.d}</dd></div>))}
+          </dl>
+        )}
+        {lp.chegar.fonteRota && <p class="lp-route__src">{lp.chegar.fonteRota}</p>}
+        <p class="lp-route__online">Prefere não se deslocar? A consulta também é feita <a href="/nutricionista-online/">online, por telenutrição</a>, com o mesmo acompanhamento.</p>
+      </div>
+      <div class="lp-route__map">
+        <MapEmbed title={`Mapa do ${SITE.venue}, local de atendimento da nutricionista Ana Clara em Goiânia`} />
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. As objeções que mais pesam, visíveis (o resto fica no guia) -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="kicker">Antes de marcar</span>
+        <h2>O que as pessoas <em>perguntam primeiro</em></h2>
+      </div>
+      <div class="lp-obj">
+        {lp.objecoes.map((o) => (
+          <article class="lp-obj__item" data-reveal>
+            <h3>{o.q}</h3>
+            <p>{o.a}</p>
+          </article>
+        ))}
+      </div>
+      <div class="lp-obj__cta">
+        <Button href={wa} variant="whatsapp" size="lg" secao={`${lp.secao} · objeções`}>Tirar uma dúvida no WhatsApp</Button>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand title="Vamos conversar sobre <em>o seu caso</em>?"
+    text="Agendamento direto pelo WhatsApp, com a própria Ana. Presencial no beLIV, em Goiânia, ou online para todo o Brasil."
+    secao={`${lp.secao} · faixa final`} image={lp.heroImage} />
+
+  <!-- 7. O guia completo: o texto longo recolhido, ainda no HTML (H2/H3 reais) -->
+  <section class="section lp-guide-sec">
+    <div class="container lp-guide-wrap">
+      <details class="lp-guide" id="guia" data-lp-guide>
+        <summary class="lp-guide__summary">
+          <span class="lp-guide__label">
+            <span class="kicker kicker--plain">Leitura completa · {minutos} min</span>
+            <span class="lp-guide__title">{lp.guiaTitulo}</span>
+          </span>
+          <span class="lp-guide__toggle" aria-hidden="true"><span>Abrir o guia</span><i></i></span>
+        </summary>
+        <div class="lp-guide__body">
+          <p class="lp-guide__meta">Por {SITE.legalName}{HAS_CRN ? `, ${CRN}` : ''} · Atualizado em <time datetime={atualizado}>{formatarDataPt(atualizado)}</time></p>
+          {headings.filter((h) => h.depth === 2).length > 2 && (
+            <div class="lp-guide__toc"><TableOfContents headings={headings} /></div>
+          )}
+          <article class="prose lp-guide__content">
+            <Content />
+            {data.faqs.length > 0 && (
+              <>
+                <h2 id="perguntas-frequentes">Perguntas frequentes</h2>
+                {data.faqs.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+              </>
+            )}
+          </article>
+          <div class="lp-guide__author"><AuthorBox /></div>
+          <p class="lp-guide__back"><a href={siloHref}>Ver todo o conteúdo de {data.siloLabel}</a></p>
+        </div>
+      </details>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Link com âncora para um trecho do guia (ex.: #perguntas-frequentes) abre o <details>.
+  const abrirGuia = () => {
+    const alvo = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const guia = document.querySelector<HTMLDetailsElement>('[data-lp-guide]');
+    if (guia && alvo && guia.contains(alvo) && !guia.open) { guia.open = true; alvo.scrollIntoView(); }
+  };
+  abrirGuia();
+  window.addEventListener('hashchange', abrirGuia);
+</script>
+
+<style>
+  /* ---------- Hero ---------- */
+  .lp-hero { padding: calc(var(--header-h) + clamp(28px, 5vw, 64px)) 0 clamp(40px, 6vw, 80px); background: linear-gradient(180deg, var(--sand-50), var(--paper) 78%); }
+  .lp-hero__grid { display: grid; gap: clamp(28px, 4vw, 56px); align-items: center; }
+  @media (min-width: 980px) { .lp-hero__grid { grid-template-columns: 1.08fr .92fr; } }
+  .crumbs { display: flex; gap: 8px; flex-wrap: wrap; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px; }
+  .crumbs a { color: var(--sage-700); text-decoration: none; }
+  .crumbs a:hover { text-decoration: underline; }
+  .crumbs span { opacity: .5; }
+  .lp-kicker { display: inline-flex; align-items: center; gap: 8px; margin: 0; padding: 8px 14px; border-radius: 999px; background: var(--sage-50); border: 1px solid var(--sage-100); color: var(--sage-800); font-size: .86rem; font-weight: 600; }
+  .lp-kicker svg { color: var(--sage-600); flex: none; }
+  .lp-hero__title { font-size: clamp(2.3rem, 5.4vw, 4rem); line-height: 1.03; letter-spacing: -.025em; margin: 18px 0 0; }
+  .lp-hero__title :global(em) { font-style: italic; color: var(--sage-600); }
+  .lp-hero__sub { font-size: clamp(1.06rem, 1.6vw, 1.22rem); line-height: 1.6; color: var(--ink-soft); margin: 20px 0 0; max-width: 560px; }
+  .lp-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .lp-closer { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0 0; font-size: .92rem; color: var(--ink-soft); max-width: 520px; }
+  .lp-closer svg { color: var(--sage-600); flex: none; margin-top: 2px; }
+  .lp-trust { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: .86rem; color: var(--ink-faint); }
+  .lp-trust li { display: inline-flex; align-items: center; gap: 8px; }
+  .lp-trust li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage-400); }
+  .lp-hero__media { margin: 0; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16 / 11; background: var(--sand-100); }
+  @media (min-width: 980px) { .lp-hero__media { aspect-ratio: 4 / 5; } }
+  .lp-hero__media :global(.lp-hero__img) { width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 560px) {
+    .lp-hero__actions { display: grid; }
+    .lp-hero__actions :global(.btn) { width: 100%; justify-content: center; }
+  }
+
+  /* ---------- Para quem é ---------- */
+  .lp-cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
+  @media (min-width: 640px) { .lp-cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .lp-cards { grid-template-columns: repeat(3, 1fr); } }
+  .lp-card { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px 24px; box-shadow: var(--shadow-sm); }
+  .lp-card h3 { font-size: 1.24rem; margin: 0 0 8px; line-height: 1.2; }
+  .lp-card p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+  .lp-nao { margin: 22px 0 0; padding: 16px 20px; border-left: 3px solid var(--clay-400); background: var(--paper-2); border-radius: 0 var(--r-md) var(--r-md) 0; color: var(--ink-soft); }
+  .lp-nao strong { color: var(--ink); }
+
+  /* ---------- Como funciona ---------- */
+  .lp-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: none; }
+  @media (min-width: 720px) { .lp-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1080px) { .lp-steps { grid-template-columns: repeat(4, 1fr); } }
+  .lp-step { background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px; }
+  .lp-step__n { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--sage-100); color: var(--sage-800); font-family: var(--mono); font-size: .82rem; }
+  .lp-step h3 { font-size: 1.2rem; margin: 14px 0 6px; }
+  .lp-step p { margin: 0; color: var(--ink-soft); font-size: .95rem; }
+
+  /* ---------- Quem atende ---------- */
+  .lp-who { display: grid; gap: clamp(28px, 5vw, 72px); align-items: center; }
+  @media (min-width: 900px) { .lp-who { grid-template-columns: .8fr 1.2fr; } }
+  .lp-who__photo { max-width: 380px; width: 100%; margin-inline: auto; aspect-ratio: 4 / 5; border-radius: 190px 190px var(--r-xl) var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .lp-who__photo :global(.lp-who__img) { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+  .lp-who__text h2 { margin-top: 14px; }
+  .lp-who__text p { color: var(--ink-soft); }
+  .lp-creds { list-style: none; padding: 0; margin: 22px 0 0; border-top: 1px solid var(--line); }
+  .lp-creds li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .lp-creds strong { font-weight: 600; }
+  .lp-creds span { color: var(--ink-faint); font-size: .9rem; text-align: right; }
+  .lp-who__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 26px; }
+  .lp-who__more { margin: 14px 0 0; font-size: .92rem; }
+  .lp-who__more a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
+  .lp-link { color: var(--sage-700); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--sage-300); }
+
+  /* ---------- Como chegar ---------- */
+  .lp-route { display: grid; gap: clamp(26px, 4vw, 56px); align-items: start; }
+  @media (min-width: 980px) { .lp-route { grid-template-columns: .95fr 1.05fr; } }
+  .lp-route__text h2 { margin-top: 14px; }
+  .lp-route__text > p { color: var(--ink-soft); }
+  .lp-route__facts { display: grid; gap: 0; margin: 20px 0 0; border-top: 1px solid var(--line-strong); }
+  .lp-route__facts div { display: grid; grid-template-columns: minmax(120px, .8fr) 1.2fr; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line-strong); }
+  .lp-route__facts dt { font-weight: 600; color: var(--ink); }
+  .lp-route__facts dd { margin: 0; color: var(--ink-soft); }
+  .lp-route__src { font-size: .8rem; color: var(--ink-faint); margin-top: 10px; }
+  .lp-route__online { margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--line-strong); }
+  .lp-route__online a { color: var(--sage-700); font-weight: 600; }
+
+  /* ---------- Objeções ---------- */
+  .lp-obj { display: grid; gap: 16px; }
+  @media (min-width: 720px) { .lp-obj { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .lp-obj:not(:has(> :nth-child(4))) { grid-template-columns: repeat(3, 1fr); } }
+  .lp-obj__item { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 24px; }
+  .lp-obj__item h3 { font-size: 1.2rem; margin: 0 0 10px; line-height: 1.25; }
+  .lp-obj__item p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+  .lp-obj__cta { display: flex; justify-content: center; margin-top: 28px; }
+
+  /* ---------- Guia recolhido ---------- */
+  .lp-guide-wrap { max-width: calc(980px + 2 * var(--gutter)); }
+  .lp-guide { border: 1px solid var(--line-strong); border-radius: var(--r-xl); background: #fff; box-shadow: var(--shadow-sm); overflow: hidden; }
+  .lp-guide__summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: clamp(20px, 3vw, 30px) clamp(20px, 3.4vw, 36px); }
+  .lp-guide__summary::-webkit-details-marker { display: none; }
+  .lp-guide__summary:hover { background: var(--sand-50); }
+  .lp-guide__summary:focus-visible { outline: 3px solid var(--sage-400); outline-offset: -3px; }
+  .lp-guide__label { display: grid; gap: 6px; }
+  .lp-guide__title { font-family: var(--serif); font-size: clamp(1.3rem, 2.4vw, 1.75rem); line-height: 1.2; color: var(--ink); }
+  .lp-guide__toggle { display: inline-flex; align-items: center; gap: 10px; flex: none; font-weight: 600; font-size: .92rem; color: var(--sage-700); }
+  .lp-guide__toggle i { position: relative; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--sage-300); }
+  .lp-guide__toggle i::before, .lp-guide__toggle i::after { content: ''; position: absolute; left: 50%; top: 50%; width: 12px; height: 1.5px; background: var(--sage-700); translate: -50% -50%; transition: rotate .3s var(--ease-out); }
+  .lp-guide__toggle i::after { rotate: 90deg; }
+  .lp-guide[open] .lp-guide__toggle i::after { rotate: 0deg; }
+  .lp-guide[open] .lp-guide__toggle span { font-size: 0; }
+  .lp-guide[open] .lp-guide__toggle span::after { content: 'Fechar'; font-size: .92rem; }
+  @media (max-width: 560px) { .lp-guide__toggle span { display: none; } }
+  .lp-guide__body { padding: 0 clamp(20px, 3.4vw, 36px) clamp(24px, 4vw, 40px); border-top: 1px solid var(--line); }
+  .lp-guide__meta { font-size: .86rem; color: var(--ink-faint); margin: 20px 0 0; }
+  .lp-guide__toc { margin: 18px 0 32px; }
+  .lp-guide__content { margin-top: 8px; }
+  .lp-guide__author { margin-top: 32px; }
+  .lp-guide__back { margin-top: 18px; }
+  .lp-guide__back a { color: var(--sage-700); font-weight: 600; }
+</style>
